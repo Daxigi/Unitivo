@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="Presentacion\Administrador\AñadirCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Presentacion\Administrador\AñadirProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Presentacion\Administrador\AñadirTalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Presentacion\Administrador\GestionarCategorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Presentacion\Administrador\GestionarClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Presentacion\Administrador\GestionarProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Presentacion\Administrador\GestionarTalles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Presentacion\Administrador\ListarVendedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Presentacion\Administrador\ListarVentasAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Presentacion\Administrador\MenuA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Presentacion\Administrador\ModificarCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Presentacion\Administrador\ModificarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Presentacion\Administrador\ModificarTalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Presentacion\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Presentacion\SuperAdministrador\AñadirEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Presentacion\SuperAdministrador\AñadirPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Presentacion\SuperAdministrador\AñadirUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Presentacion\SuperAdministrador\GestionarEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Presentacion\SuperAdministrador\GestionarPerfiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Presentacion\SuperAdministrador\GestionarUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Presentacion\SuperAdministrador\MenuSA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Presentacion\SuperAdministrador\ModificarEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Presentacion\SuperAdministrador\ModificarPerfiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Presentacion\SuperAdministrador\ModificarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Presentacion\Vendedor\AñadirCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Presentacion\Vendedor\AñadirVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Presentacion\Vendedor\BuscarCli.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Presentacion\Vendedor\BuscarP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Presentacion\Vendedor\DetalleVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Presentacion\Vendedor\ListarClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Presentacion\Vendedor\ListarProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Presentacion\Vendedor\ListarVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Presentacion\Vendedor\MenuV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Presentacion\Vendedor\ModificarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>
