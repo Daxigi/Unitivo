@@ -1,6 +1,7 @@
 using Unitivo.Formularios;
 using Unitivo.Formularios.Vendedor;
 using Unitivo.Presentacion;
+using Unitivo.Presentacion.Administrador;
 
 namespace Unitivo
 {
@@ -15,7 +16,7 @@ namespace Unitivo
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Login());
+            Application.Run(new AñadirCategoria());
         }
     }
 }

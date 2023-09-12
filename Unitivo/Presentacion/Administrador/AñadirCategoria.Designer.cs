@@ -28,17 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            var DataGridViewCellStyle1 = new DataGridViewCellStyle();
-            var DataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             BVolver = new Button();
-            //BVolver.Click += new EventHandler(Volver_Click);
             TabControlRegCategoria = new TabControl();
             TabPageListaCategoria = new TabPage();
             dgvRegistroCategoria = new DataGridView();
             PanelRegCategoria = new Panel();
             BRegistrarCategoria = new Button();
             TBNombreCategoria = new TextBox();
-            //TBNombreCategoria.KeyPress += new KeyPressEventHandler(TBNombreCategoria_KeyPress);
             LNombreCategoria = new Label();
             TabControlRegCategoria.SuspendLayout();
             TabPageListaCategoria.SuspendLayout();
@@ -52,11 +50,12 @@
             BVolver.FlatAppearance.BorderColor = Color.White;
             BVolver.FlatAppearance.BorderSize = 2;
             BVolver.FlatStyle = FlatStyle.Flat;
-            BVolver.Font = new Font("Britannic Bold", 14.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
+            BVolver.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             BVolver.ForeColor = Color.White;
-            BVolver.Location = new Point(568, 430);
+            BVolver.Location = new Point(663, 496);
+            BVolver.Margin = new Padding(4, 3, 4, 3);
             BVolver.Name = "BVolver";
-            BVolver.Size = new Size(100, 42);
+            BVolver.Size = new Size(117, 48);
             BVolver.TabIndex = 38;
             BVolver.Text = "Volver";
             BVolver.UseVisualStyleBackColor = false;
@@ -64,24 +63,24 @@
             // TabControlRegCategoria
             // 
             TabControlRegCategoria.Controls.Add(TabPageListaCategoria);
-            TabControlRegCategoria.Font = new Font("Britannic Bold", 10.2f, FontStyle.Regular, GraphicsUnit.Point, 0);
-            TabControlRegCategoria.Location = new Point(133, 173);
+            TabControlRegCategoria.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            TabControlRegCategoria.Location = new Point(155, 200);
             TabControlRegCategoria.Margin = new Padding(2);
             TabControlRegCategoria.Name = "TabControlRegCategoria";
             TabControlRegCategoria.SelectedIndex = 0;
-            TabControlRegCategoria.Size = new Size(535, 242);
+            TabControlRegCategoria.Size = new Size(624, 279);
             TabControlRegCategoria.TabIndex = 37;
             // 
             // TabPageListaCategoria
             // 
             TabPageListaCategoria.Controls.Add(dgvRegistroCategoria);
-            TabPageListaCategoria.Font = new Font("Britannic Bold", 10.2f, FontStyle.Regular, GraphicsUnit.Point, 0);
+            TabPageListaCategoria.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             TabPageListaCategoria.ForeColor = Color.White;
-            TabPageListaCategoria.Location = new Point(4, 25);
+            TabPageListaCategoria.Location = new Point(4, 26);
             TabPageListaCategoria.Margin = new Padding(2);
             TabPageListaCategoria.Name = "TabPageListaCategoria";
             TabPageListaCategoria.Padding = new Padding(2);
-            TabPageListaCategoria.Size = new Size(527, 213);
+            TabPageListaCategoria.Size = new Size(616, 249);
             TabPageListaCategoria.TabIndex = 0;
             TabPageListaCategoria.Text = "Lista de Categorias";
             TabPageListaCategoria.UseVisualStyleBackColor = true;
@@ -94,14 +93,14 @@
             dgvRegistroCategoria.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvRegistroCategoria.BackgroundColor = Color.RosyBrown;
             dgvRegistroCategoria.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            DataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            DataGridViewCellStyle1.BackColor = Color.FromArgb(255, 139, 0);
-            DataGridViewCellStyle1.Font = new Font("Britannic Bold", 10.2f, FontStyle.Regular, GraphicsUnit.Point, 0);
-            DataGridViewCellStyle1.ForeColor = Color.White;
-            DataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            DataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            DataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvRegistroCategoria.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(255, 139, 0);
+            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvRegistroCategoria.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvRegistroCategoria.ColumnHeadersHeight = 20;
             dgvRegistroCategoria.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dgvRegistroCategoria.Dock = DockStyle.Fill;
@@ -111,19 +110,19 @@
             dgvRegistroCategoria.Name = "dgvRegistroCategoria";
             dgvRegistroCategoria.ReadOnly = true;
             dgvRegistroCategoria.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            DataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            DataGridViewCellStyle2.BackColor = SystemColors.ActiveCaption;
-            DataGridViewCellStyle2.Font = new Font("Britannic Bold", 10.2f, FontStyle.Regular, GraphicsUnit.Point, 0);
-            DataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
-            DataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            DataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            DataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgvRegistroCategoria.RowHeadersDefaultCellStyle = DataGridViewCellStyle2;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.ActiveCaption;
+            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvRegistroCategoria.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvRegistroCategoria.RowHeadersWidth = 51;
             dgvRegistroCategoria.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dgvRegistroCategoria.RowTemplate.DefaultCellStyle.ForeColor = Color.Black;
             dgvRegistroCategoria.RowTemplate.Height = 24;
-            dgvRegistroCategoria.Size = new Size(523, 209);
+            dgvRegistroCategoria.Size = new Size(612, 245);
             dgvRegistroCategoria.TabIndex = 0;
             // 
             // PanelRegCategoria
@@ -133,9 +132,10 @@
             PanelRegCategoria.Controls.Add(BRegistrarCategoria);
             PanelRegCategoria.Controls.Add(TBNombreCategoria);
             PanelRegCategoria.Controls.Add(LNombreCategoria);
-            PanelRegCategoria.Location = new Point(192, 32);
+            PanelRegCategoria.Location = new Point(221, 29);
+            PanelRegCategoria.Margin = new Padding(4, 3, 4, 3);
             PanelRegCategoria.Name = "PanelRegCategoria";
-            PanelRegCategoria.Size = new Size(433, 112);
+            PanelRegCategoria.Size = new Size(505, 133);
             PanelRegCategoria.TabIndex = 36;
             // 
             // BRegistrarCategoria
@@ -144,45 +144,50 @@
             BRegistrarCategoria.FlatAppearance.BorderColor = Color.White;
             BRegistrarCategoria.FlatAppearance.BorderSize = 2;
             BRegistrarCategoria.FlatStyle = FlatStyle.Flat;
-            BRegistrarCategoria.Font = new Font("Britannic Bold", 13.0f);
+            BRegistrarCategoria.Font = new Font("Microsoft Sans Serif", 13F, FontStyle.Regular, GraphicsUnit.Point);
             BRegistrarCategoria.ForeColor = Color.White;
-            BRegistrarCategoria.Location = new Point(318, 48);
+            BRegistrarCategoria.Location = new Point(371, 55);
+            BRegistrarCategoria.Margin = new Padding(4, 3, 4, 3);
             BRegistrarCategoria.Name = "BRegistrarCategoria";
-            BRegistrarCategoria.Size = new Size(98, 42);
+            BRegistrarCategoria.Size = new Size(114, 48);
             BRegistrarCategoria.TabIndex = 13;
             BRegistrarCategoria.Text = "Añadir";
             BRegistrarCategoria.UseVisualStyleBackColor = false;
             // 
             // TBNombreCategoria
             // 
-            TBNombreCategoria.Font = new Font("Britannic Bold", 12.0f);
-            TBNombreCategoria.Location = new Point(20, 58);
+            TBNombreCategoria.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            TBNombreCategoria.Location = new Point(20, 66);
+            TBNombreCategoria.Margin = new Padding(4, 3, 4, 3);
             TBNombreCategoria.Name = "TBNombreCategoria";
-            TBNombreCategoria.Size = new Size(279, 25);
+            TBNombreCategoria.Size = new Size(325, 26);
             TBNombreCategoria.TabIndex = 6;
+            TBNombreCategoria.KeyPress += TBNombreCategoria_KeyPress;
             // 
             // LNombreCategoria
             // 
             LNombreCategoria.AutoSize = true;
             LNombreCategoria.BackColor = Color.Cornsilk;
-            LNombreCategoria.Font = new Font("Cooper Black", 18.0f, FontStyle.Regular, GraphicsUnit.Point, 0);
+            LNombreCategoria.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point);
             LNombreCategoria.ForeColor = Color.DarkOrange;
-            LNombreCategoria.Location = new Point(17, 10);
+            LNombreCategoria.Location = new Point(20, 12);
+            LNombreCategoria.Margin = new Padding(4, 0, 4, 0);
             LNombreCategoria.Name = "LNombreCategoria";
-            LNombreCategoria.Size = new Size(283, 27);
+            LNombreCategoria.Size = new Size(258, 29);
             LNombreCategoria.TabIndex = 0;
             LNombreCategoria.Text = "Nombre de Categoria :";
             // 
             // AñadirCategoria
             // 
-            AutoScaleDimensions = new SizeF(6.0f, 13.0f);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSeaGreen;
-            ClientSize = new Size(800, 500);
+            ClientSize = new Size(933, 577);
             Controls.Add(BVolver);
             Controls.Add(TabControlRegCategoria);
             Controls.Add(PanelRegCategoria);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(4, 3, 4, 3);
             Name = "AñadirCategoria";
             Text = "Form1";
             TabControlRegCategoria.ResumeLayout(false);
@@ -191,7 +196,6 @@
             PanelRegCategoria.ResumeLayout(false);
             PanelRegCategoria.PerformLayout();
             ResumeLayout(false);
-
         }
 
         internal Button BVolver;
