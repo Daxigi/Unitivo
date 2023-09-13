@@ -66,6 +66,9 @@
             ((System.ComponentModel.ISupportInitialize)DataGridViewRegistroCategorias).BeginInit();
             Panel2.SuspendLayout();
             SuspendLayout();
+            //
+            //Arreglo
+            //
             
             // 
             // TabControlListaProductos

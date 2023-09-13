@@ -1,19 +1,13 @@
-﻿using Microsoft.VisualBasic;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Unitivo.Presentacion.Administrador;
+using Unitivo.Presentacion.SuperAdministrador;
 
 namespace Unitivo.Presentacion.Administrador
 {
     public partial class MenuA : Form
     {
-
         private int state;
         private int px, py;
         private bool mover;
@@ -21,12 +15,12 @@ namespace Unitivo.Presentacion.Administrador
         public MenuA()
         {
             InitializeComponent();
+            hideSubMenu();
         }
 
-        private void G_Load(object sender, EventArgs e)
+        private void MenuA_Load(object sender, EventArgs e)
         {
             MinimumSize = new Size(900, 500);
-            hideSubMenu();
         }
 
         private void hideSubMenu()
@@ -36,12 +30,11 @@ namespace Unitivo.Presentacion.Administrador
             PanelSubMenuVentas.Visible = false;
             PanelSubMenuTalles.Visible = false;
             PanelSubMenuClientes.Visible = false;
-
         }
 
         private void showSubMenu(Panel subMenu)
         {
-            if (subMenu.Visible == false)
+            if (!subMenu.Visible)
             {
                 hideSubMenu();
                 subMenu.Visible = true;
@@ -64,7 +57,8 @@ namespace Unitivo.Presentacion.Administrador
 
         private void BGestionarProductosAdmin_Click(object sender, EventArgs e)
         {
-            AbrirFormulariosAdmin(new GestionarProductos());
+            GestionarProductos gestion = new();
+            AbrirFormulariosAdmin(gestion);
         }
 
         private void BVentasAdmin_Click(object sender, EventArgs e)
@@ -122,13 +116,11 @@ namespace Unitivo.Presentacion.Administrador
             AbrirFormulariosAdmin(new GestionarClientes());
         }
 
+        private Form? formActivoAdmin;
 
-
-
-        private Form formActivoAdmin = null;
         private void AbrirFormulariosAdmin(Form formHijo)
         {
-            if (formActivoAdmin is not null)
+            if (formActivoAdmin == null)
             {
                 PanelFormAdmin.Controls.Clear();
                 formHijo.TopLevel = false;
@@ -148,36 +140,32 @@ namespace Unitivo.Presentacion.Administrador
                 PanelFormAdmin.AutoScroll = true;
                 formHijo.Show();
                 hideSubMenu();
-
             }
         }
 
-
-
-    private void BSalir_Click(object sender, EventArgs e)
-    {
-        DialogResult ask;
-        ask = MessageBox.Show("¿Está seguro de que quiere cerrar sesión?", "Cerrar Aplicación", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
-        if (ask == DialogResult.Yes)
+        private void BSalir_Click(object sender, EventArgs e)
         {
-            Close();
+            DialogResult ask;
+            ask = MessageBox.Show("¿Está seguro de que quiere cerrar sesión?", "Cerrar Aplicación", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            if (ask == DialogResult.Yes)
+            {
+                Close();
 
-            // Reemplaza "LoginForm" con el nombre de tu formulario de inicio de sesión
-            Login loginForm = new Login();
-            loginForm.Show();
+                // Reemplaza "LoginForm" con el nombre de tu formulario de inicio de sesión
+                Login loginForm = new Login();
+                loginForm.Show();
 
-            // Limpia los campos de usuario y contraseña si es necesario
-            loginForm.TBUsuario.Clear();
-            loginForm.TBContraseña.Clear();
+                // Limpia los campos de usuario y contraseña si es necesario
+                loginForm.TBUsuario.Clear();
+                loginForm.TBContraseña.Clear();
+            }
         }
-    }
 
-
-    private void BCerrarMenuAdmin_Click(object sender, EventArgs e)
+        private void BCerrarMenuAdmin_Click(object sender, EventArgs e)
         {
-            MsgBoxResult ask;
-            ask = Interaction.MsgBox("¿Esta seguro de que quiere cerrar la aplicación?", (MsgBoxStyle)((int)Constants.vbExclamation + (int)Constants.vbYesNo), "Cerrar Aplicación");
-            if (ask == Constants.vbYes)
+            DialogResult ask;
+            ask = MessageBox.Show("¿Está seguro de que quiere cerrar la aplicación?", "Cerrar Aplicación", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            if (ask == DialogResult.Yes)
             {
                 Application.Exit();
             }
@@ -214,14 +202,11 @@ namespace Unitivo.Presentacion.Administrador
             mover = false;
         }
 
-
-
         private void PanelBarraMenu_MouseMove(object sender, MouseEventArgs e)
         {
             if (mover)
             {
                 Location = PointToScreen(new Point(MousePosition.X - Location.X - px, MousePosition.Y - Location.Y - py));
-
             }
         }
     }

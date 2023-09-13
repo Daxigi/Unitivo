@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Unitivo.Presentacion.Vendedor;
+using Unitivo.Presentacion.Administrador;
+using Unitivo.Presentacion.SuperAdministrador;
 
 namespace Unitivo.Presentacion
 {
@@ -40,20 +42,20 @@ namespace Unitivo.Presentacion
             {
                 if (usuario == "JUANIV" && contraseña == "123")
                 {
-                    MenuV menuVForm = new MenuV();
+                    MenuV menuVForm = new();
                     menuVForm.Show();
                     this.Hide();
                 }
                 else if (usuario == "JUANISA" && contraseña == "123")
                 {
                     this.Hide();
-                    Unitivo.Presentacion.SuperAdministrador.MenuSA menuSAForm = new Unitivo.Presentacion.SuperAdministrador.MenuSA();
+                    MenuSA menuSAForm = new();
                     menuSAForm.Show();
                 }
                 else if (usuario == "JUANIA" && contraseña == "123")
                 {
                     this.Hide();
-                    Unitivo.Presentacion.Administrador.MenuA menuAForm = new Unitivo.Presentacion.Administrador.MenuA();
+                    MenuA menuAForm = new();
                     menuAForm.Show();
                 }
                 else

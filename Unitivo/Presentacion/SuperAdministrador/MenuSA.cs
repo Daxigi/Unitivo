@@ -166,12 +166,12 @@ namespace Unitivo.Presentacion.SuperAdministrador
 
 
 
-        private Form formActivoAdministrador = null;
+        private Form? formActivoAdministrador;
 
 
         private void AbrirFormulariosAdministrador(Form formHijo)
         {
-            if (formActivoAdministrador is not null)
+            if (formActivoAdministrador == null)
             {
                 PanelFormSuperAdministrador.Controls.Clear();
                 formHijo.TopLevel = false;

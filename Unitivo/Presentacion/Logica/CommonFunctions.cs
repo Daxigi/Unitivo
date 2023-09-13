@@ -1,6 +1,4 @@
-﻿
-
-namespace Unitivo.Presentacion.Logica
+﻿namespace Unitivo.Presentacion.Logica
 {
     static class CommonFunctions
     {
@@ -58,6 +56,9 @@ namespace Unitivo.Presentacion.Logica
                 }
             }
         }
+
+
+        
 
 
 

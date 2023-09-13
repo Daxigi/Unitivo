@@ -29,7 +29,6 @@ namespace Unitivo.Presentacion.Vendedor
         {
             MinimumSize = new Size(900, 500);
             hideSubMenu();
-
         }
 
         private void hideSubMenu()
@@ -43,7 +42,6 @@ namespace Unitivo.Presentacion.Vendedor
         {
             if (subMenu.Visible == false)
             {
-                hideSubMenu();
                 subMenu.Visible = true;
             }
             else
@@ -90,6 +88,10 @@ namespace Unitivo.Presentacion.Vendedor
         {
             AbrirFormulariosVendedor(new ListarVentas());
         }
+        private void BListarProductos_Click(object sender, EventArgs e)
+        {
+            AbrirFormulariosVendedor(new ListarProductos());
+        }
 
         private void BSalir_Click(object sender, EventArgs e)
         {
@@ -106,11 +108,11 @@ namespace Unitivo.Presentacion.Vendedor
 
 
 
-        private Form formActivo = null;
+        private Form? formActivo;
 
         private void AbrirFormulariosVendedor(Form formHijo)
         {
-            if (formActivo is not null)
+            if (formActivo == null)
             {
                 PanelFormVendedor.Controls.Clear();
                 formHijo.TopLevel = false;
@@ -158,32 +160,6 @@ namespace Unitivo.Presentacion.Vendedor
             WindowState = FormWindowState.Normal;
         }
 
-        private void BListarProductos_Click(object sender, EventArgs e)
-        {
-            var formHijo = new ListarProductos();
-            if (formActivo is not null)
-            {
-                PanelFormVendedor.Controls.Clear();
-                formHijo.TopLevel = false;
-                formHijo.FormBorderStyle = FormBorderStyle.None;
-                formHijo.Dock = DockStyle.Fill;
-                formHijo.Visible = true;
-                formHijo.AutoScroll = true;
-                formHijo.VerticalScroll.Value = 0;
-                formHijo.VerticalScroll.Minimum = 0;
-                formHijo.VerticalScroll.Maximum = formHijo.Size.Height - 100;
-                formHijo.HorizontalScroll.Value = 0;
-                formHijo.HorizontalScroll.Minimum = 0;
-                formHijo.HorizontalScroll.Maximum = formHijo.Size.Width - 100;
-                PanelFormVendedor.Controls.Add(formHijo);
-                PanelFormVendedor.Tag = formHijo;
-                PanelFormVendedor.BringToFront();
-                PanelFormVendedor.AutoScroll = true;
-                formHijo.Show();
-                hideSubMenu();
-
-            }
-        }
 
         private void BMinimizarMenu_Click(object sender, EventArgs e)
         {

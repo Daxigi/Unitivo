@@ -17,6 +17,9 @@ namespace Unitivo.Presentacion.Administrador
         {
             InitializeComponent();
         }
+        
+           
+   
 
         private void TBPrecio_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -26,6 +29,22 @@ namespace Unitivo.Presentacion.Administrador
         private void TBStock_KeyPress(object sender, KeyPressEventArgs e)
         {
             CommonFunctions.ValidarNumberKeyPress((TextBox)sender, e);
+        }
+
+        private void TBNombreProducto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            CommonFunctions.ValidarStringKeyPress((TextBox)sender, e);
+        }
+
+        private void CamposNoNulos()
+        {
+            
+        }
+
+        private void bGuardar_click()
+        {
+
+            
         }
     }
 }
