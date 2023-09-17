@@ -1,7 +1,12 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage;
 using Unitivo.Formularios;
 using Unitivo.Formularios.Vendedor;
+using Unitivo.Models;
 using Unitivo.Presentacion;
 using Unitivo.Presentacion.Administrador;
+using Unitivo.Properties;
+using Unitivo.Recursos;
 
 namespace Unitivo
 {
@@ -13,6 +18,10 @@ namespace Unitivo
         [STAThread]
         static void Main()
         {
+        string stringConection = Resources.DB_ConnectionString;
+            DbContextOptionsBuilder<UnitivoContext> optionsBuilder = new();
+            UnitivoContext unitivoContext = new(optionsBuilder.UseSqlServer(stringConection).Options);
+            Contexto.dbContexto = unitivoContext;
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();

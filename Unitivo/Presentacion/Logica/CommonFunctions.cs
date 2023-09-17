@@ -5,16 +5,16 @@
 
         public static void ValidarStringKeyPress(TextBox textBox, KeyPressEventArgs e)
         {
-            // Verifica si la tecla presionada es una letra, un espacio, una tecla para volver atrás o un punto.
-            if (char.IsLetter(e.KeyChar) || e.KeyChar == ' ' || e.KeyChar == '\b' || e.KeyChar == '.')
+            // Verifica si la tecla presionada no es una letra, un espacio o un punto.
+            if (!(char.IsLetter(e.KeyChar) || e.KeyChar == ' ' || e.KeyChar == '.' || e.KeyChar == (char)Keys.Back))
             {
                 // No permite ingresar la tecla presionada.
                 e.Handled = true;
                 // Muestra un mensaje de error.
                 MessageBox.Show("Solo se aceptan letras.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
             }
         }
+
 
         public static void ValidarNumberKeyPress(TextBox textBox, KeyPressEventArgs e)
         {
@@ -42,23 +42,30 @@
             }
         }
 
-        public static void ValidarCamposNoVacios(TextBox[] textBoxes)
+        public static bool ValidarCamposNoVacios(Control control)
         {
-            // Verifica que todos los campos estén vacíos.
-            foreach (TextBox textBox in textBoxes)
+            // Verifica si el control es TextBox.
+            if (control is TextBox textBox)
             {
-                // Verifica que el texto del cuadro de texto no esté vacío.
-                if (string.IsNullOrWhiteSpace(textBox.Text))
-                {
-                    // Muestra un mensaje de error.
-                    MessageBox.Show("Debes completar los campos obligatorios!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                }
+                // Muestra un mensaje de error que incluye el nombre del campo.
+                MessageBox.Show($"Debes completar todos campos obligatorios(*)", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            // Verifica si el control es ComboBox.
+            else if (control is ComboBox comboBox && comboBox.SelectedItem == null)
+            {
+                // Muestra un mensaje de error que incluye el nombre del campo.
+                MessageBox.Show($"No pueden quedar campos vacios!.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else
+            {
+                return true;
             }
         }
 
 
-        
+
 
 
 

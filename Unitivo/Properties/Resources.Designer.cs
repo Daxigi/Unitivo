@@ -71,6 +71,15 @@ namespace Unitivo.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Server=localhost;Database=Unitivo;Integrated Security=True;Trust Server Certificate=True;.
+        /// </summary>
+        internal static string DB_ConnectionString {
+            get {
+                return ResourceManager.GetString("DB_ConnectionString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap duenos1 {

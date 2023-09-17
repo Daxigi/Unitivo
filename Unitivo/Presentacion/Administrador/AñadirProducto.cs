@@ -7,17 +7,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Unitivo.Models;
 using Unitivo.Presentacion.Logica;
+using Unitivo.Repositorios.Implementaciones;
+using Unitivo.Repositorios.Interfaces;
 
 namespace Unitivo.Presentacion.Administrador
 {
     public partial class AñadirProducto : Form
     {
+        private readonly ProductoInterface? productoRepositorio;
+
         public AñadirProducto()
         {
             InitializeComponent();
+            productoRepositorio = new ProductoRepositorio();
         }
         
+
            
    
 
