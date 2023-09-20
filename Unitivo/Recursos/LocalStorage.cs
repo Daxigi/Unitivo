@@ -14,5 +14,14 @@ namespace Unitivo.Sessions
         public static List<Talle>? talles { get; set; }
 
         public static List<Categorium>? categorias { get; set; }
+
+        //clientes
+        public static List<Cliente>? clientes { get; set; } 
+
+        //usuarios
+        public static List<Usuario>? usuarios { get; set; }
+
+        //empleados
+        public static List<Empleado>? empleados { get; set; }
     }
 }
