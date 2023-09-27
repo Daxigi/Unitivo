@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "AYSObF3ghxyMP83VN4Q/4bK0ykRkC6LRwhMgevCWhMZu9+NpUN1Dq9WwqbsyyJjBbg2bpg7nU0to2XRJBcyhMg==",
+  "dgSpecHash": "Ggp87C9qWoom8Hjre7SgcGseQglw4Zrgn2RI0SyezqviAwvyJ4Q6RC93GCEmp41jIdxZC703GIi+cX8Hv2W0mQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\maxim\\Desktop\\Unitivo\\Unitivo\\Unitivo.csproj",
+  "projectFilePath": "C:\\Users\\maxim\\Desktop\\Unitivo\\Unitivo\\Unitivo\\Unitivo.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\maxim\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\maxim\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

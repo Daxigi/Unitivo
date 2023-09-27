@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using Unitivo.Models;
+using Unitivo.Modelos;
 using Unitivo.Recursos;
 using Unitivo.Repositorios.Interfaces;
 using Unitivo.Sessions;
@@ -39,7 +39,7 @@ namespace Unitivo.Repositorios.Implementaciones
         {
             Usuario? usuario = _contexto?.Usuarios.Find(id);
             if(usuario == null) return false;
-            usuario.EstadoUsuario = false;
+            usuario.Estado = false;
             int resultado = _contexto?.SaveChanges() ?? 0;
             return resultado > 0;
         }

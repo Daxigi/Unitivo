@@ -4,7 +4,7 @@ using System.Data.SqlTypes;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Unitivo.Models;
+using Unitivo.Modelos;
 using Unitivo.Recursos;
 using Unitivo.Repositorios.Interfaces;
 
@@ -26,7 +26,7 @@ namespace Unitivo.Repositorios.Implementaciones
         public bool EliminarEmpleado(int id){
             Empleado? empleado = _contexto?.Empleados.Find(id);
             if(empleado == null) return false;
-            empleado.EstadoEmpleado = false;
+            empleado.Estado = false;
             int resultado = _contexto?.SaveChanges() ?? 0;
             return resultado > 0;
         }

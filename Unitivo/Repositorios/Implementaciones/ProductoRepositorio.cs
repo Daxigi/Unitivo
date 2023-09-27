@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Unitivo.Models;
+using Unitivo.Modelos;
 using Unitivo.Recursos;
 using Unitivo.Repositorios.Interfaces;
 using Unitivo.Sessions;
@@ -21,10 +21,10 @@ namespace Unitivo.Repositorios.Implementaciones
 
         private void CargarTalleYCategorias()
         {
-            _contexto?.Categoria.Load();
+            _contexto?.Categorias.Load();
             _contexto?.Talles.Load();
 
-            LocalStorage.categorias = _contexto?.Categoria.ToList();
+            LocalStorage.categorias = _contexto?.Categorias.ToList();
             LocalStorage.talles = _contexto?.Talles.ToList();
         }
         public void AgregarProducto(Producto producto)
@@ -41,7 +41,7 @@ namespace Unitivo.Repositorios.Implementaciones
         {
             Producto? producto = _contexto?.Productos.Find(id);
             if (producto == null) return false;
-            producto.EstadoProducto = false;
+            producto.Estado = false;
             int resultado = _contexto?.SaveChanges() ?? 0;
             return resultado > 0;
         }

@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 using Unitivo.Formularios;
 using Unitivo.Formularios.Vendedor;
-using Unitivo.Models;
+using Unitivo.Modelos;
 using Unitivo.Presentacion;
 using Unitivo.Presentacion.Administrador;
 using Unitivo.Properties;

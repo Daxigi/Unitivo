@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\maxim\\Desktop\\Unitivo\\Unitivo\\Unitivo.csproj": {}
+    "C:\\Users\\maxim\\Desktop\\Unitivo\\Unitivo\\Unitivo\\Unitivo.csproj": {}
   },
   "projects": {
-    "C:\\Users\\maxim\\Desktop\\Unitivo\\Unitivo\\Unitivo.csproj": {
+    "C:\\Users\\maxim\\Desktop\\Unitivo\\Unitivo\\Unitivo\\Unitivo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\maxim\\Desktop\\Unitivo\\Unitivo\\Unitivo.csproj",
+        "projectUniqueName": "C:\\Users\\maxim\\Desktop\\Unitivo\\Unitivo\\Unitivo\\Unitivo.csproj",
         "projectName": "Unitivo",
-        "projectPath": "C:\\Users\\maxim\\Desktop\\Unitivo\\Unitivo\\Unitivo.csproj",
+        "projectPath": "C:\\Users\\maxim\\Desktop\\Unitivo\\Unitivo\\Unitivo\\Unitivo.csproj",
         "packagesPath": "C:\\Users\\maxim\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\maxim\\Desktop\\Unitivo\\Unitivo\\obj\\",
+        "outputPath": "C:\\Users\\maxim\\Desktop\\Unitivo\\Unitivo\\Unitivo\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

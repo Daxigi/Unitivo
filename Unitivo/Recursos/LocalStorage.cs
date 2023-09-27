@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Unitivo.Models;
+using Unitivo.Modelos;
 
 namespace Unitivo.Sessions
 {
@@ -13,7 +13,7 @@ namespace Unitivo.Sessions
 
         public static List<Talle>? talles { get; set; }
 
-        public static List<Categorium>? categorias { get; set; }
+        public static List<Categoria>? categorias { get; set; }
 
         //clientes
         public static List<Cliente>? clientes { get; set; } 
