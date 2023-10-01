@@ -86,16 +86,5 @@ namespace Unitivo.Presentacion.Vendedor
                 // después de modificar el cliente.
             }
         }
-
-
-
-
-        private void DgvListarClientes_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-
-
     }
 }

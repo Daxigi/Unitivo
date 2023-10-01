@@ -30,15 +30,15 @@ namespace Unitivo.Presentacion.Vendedor
         {
             try
             {
-            ClienteConstructor cliente = new ClienteConstructor(
-                // completar los parametros con los TB de la vista
-                nombre: TBNombreCliente.Text,
-                apellido: TBApellidoCliente.Text,
-                dni: int.Parse(TBDniCliente.Text),
-                telefono: TBTelCliente.Text,
-                direccion: TBDireccionCliente.Text,
-                correo: TBCorreoCliente.Text
-            );
+                ClienteConstructor cliente = new ClienteConstructor(
+                    // completar los parametros con los TB de la vista
+                    nombre: TBNombreCliente.Text,
+                    apellido: TBApellidoCliente.Text,
+                    dni: int.Parse(TBDniCliente.Text),
+                    telefono: TBTelCliente.Text,
+                    direccion: TBDireccionCliente.Text,
+                    correo: TBCorreoCliente.Text
+                );
                 clienteRepositorio.AgregarCliente(cliente);
                 MessageBox.Show("Cliente agregado correctamente");
                 //quiero que los textbox se limpien despues de agregar el cliente

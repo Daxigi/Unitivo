@@ -113,12 +113,10 @@
             // 
             // TBDireccionCliente
             // 
-            TBDireccion.Location = new Point(213, 266);
-            TBDireccion.Margin = new Padding(4, 5, 4, 5);
-            TBDireccion.Name = "TBDireccion";
-            TBDireccion.Size = new Size(169, 27);
-            TBDireccion.TabIndex = 14;
-            TBDireccion.KeyPress += NumStr_KeyPress;
+            TBDireccionCliente.Location = new Point(213, 265);
+            TBDireccionCliente.Name = "TBDireccionCliente";
+            TBDireccionCliente.Size = new Size(169, 27);
+            TBDireccionCliente.TabIndex = 18;
             // 
             // Label6
             // 
@@ -220,12 +218,12 @@
             // 
             Label1.AutoSize = true;
             Label1.BackColor = Color.Cornsilk;
-            Label1.Font = new Font("Cooper Black", 25.8000011F, FontStyle.Regular, GraphicsUnit.Point);
+            Label1.Font = new Font("Microsoft Sans Serif", 25.8000011F, FontStyle.Regular, GraphicsUnit.Point);
             Label1.ForeColor = Color.DarkOliveGreen;
             Label1.Location = new Point(70, 38);
             Label1.Margin = new Padding(4, 0, 4, 0);
             Label1.Name = "Label1";
-            Label1.Size = new Size(405, 50);
+            Label1.Size = new Size(348, 52);
             Label1.TabIndex = 1;
             Label1.Text = "Registrar Cliente";
             // 
