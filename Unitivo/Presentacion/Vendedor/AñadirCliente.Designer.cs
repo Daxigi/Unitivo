@@ -300,6 +300,8 @@
         internal TextBox TBApellidoCliente;
         internal Label Label3;
         internal TextBox TBNombreCliente;
+
+        internal TextBox TBDireccion;
         internal Label Label2;
         internal Button BRegistrarCliente;
         internal TabControl TabControlRegClientes;
