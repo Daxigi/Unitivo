@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Unitivo.Presentacion.Logica;
 
 namespace Unitivo.Presentacion.Vendedor
 {
@@ -24,49 +25,29 @@ namespace Unitivo.Presentacion.Vendedor
             Close();
         }
 
-        // Private Sub BModCliente_Click(sender As Object, e As EventArgs) Handles BModCliente.Click
-        // Dim ask As MsgBoxResult
-        // If EspacioEnBlanco() = False Then
-        // ask = MsgBox("Seguro que desea modificar a este cliente", vbQuestion + vbYesNo, "Confirmar Modificación")
-        // If ask = vbYes Then
-        // If objDcliente.modcliente(fila, TBNombreCliente.Text, TBApellidoCliente.Text, CInt(TBDniCliente.Text), CULng(TBTelCliente.Text), TBDireccion.Text, TBCorreoCliente.Text) Then
-        // MsgBox("Se han modificado los datos con exito", vbInformation, "Confirmar Modificacion")
-        // Me.Close()
-        // End If
-        // Else
-        // TBDniCliente.Focus()
-        // End If
-        // End If
-        // End Sub
-        private void TBNombreCliente_KeyPress(object sender, KeyPressEventArgs e)
-        {
+        //Private Sub BModCliente_Click(sender As Object, e As EventArgs) Handles BModCliente.Click 
+        //End Sub
 
-            if (!char.IsLetter(e.KeyChar) & !(e.KeyChar == '.') & !(e.KeyChar == '\b'))
-            {
-                e.Handled = true;
-                Interaction.MsgBox("Solo se aceptan letras", Constants.vbCritical, "Error");
-            }
+        private void String_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            CommonFunctions.ValidarStringKeyPress((TextBox)sender, e);
         }
 
-        private void TBApellidoCliente_KeyPress(object sender, KeyPressEventArgs e)
+        private void Num_KeyPress(object sender, KeyPressEventArgs e)
         {
-
-            if (!char.IsLetter(e.KeyChar) & !(e.KeyChar == '.') & !(e.KeyChar == '\b'))
-            {
-                e.Handled = true;
-                Interaction.MsgBox("Solo se aceptan letras", Constants.vbCritical, "Error");
-            }
+            CommonFunctions.ValidarNumberKeyPress((TextBox)sender, e);
         }
 
-        private void TBDniCliente_KeyPress(object sender, KeyPressEventArgs e)
+        private void NumStr_KeyPress(object sender, KeyPressEventArgs e)
         {
-
-            if (!char.IsNumber(e.KeyChar) & !(e.KeyChar == '.') & !(e.KeyChar == '\b'))
-            {
-                e.Handled = true;
-                Interaction.MsgBox("Solo se aceptan caracteres númericos", Constants.vbCritical, "Error");
-            }
+            CommonFunctions.ValidarKeyPress((TextBox)sender, e);
         }
+
+        private void Email_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            CommonFunctions.ValidarEmailKeyPress((TextBox)sender, e);
+        }
+
 
         public object EspacioEnBlanco()
         {
@@ -87,5 +68,7 @@ namespace Unitivo.Presentacion.Vendedor
                 return false;
             }
         }
+
+
     }
 }

@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using Unitivo.Presentacion.Vendedor;
 using Unitivo.Presentacion.Administrador;
 using Unitivo.Presentacion.SuperAdministrador;
+using Unitivo.Presentacion.Logica;
 
 namespace Unitivo.Presentacion
 {
@@ -23,14 +24,12 @@ namespace Unitivo.Presentacion
         public Login()
         {
             InitializeComponent();
+            this.KeyPreview = true; // Establecer KeyPreview en true para manejar eventos clave en el formulario.
         }
-        private void TBUsuario_Keypress(object sender, KeyPressEventArgs e)
+
+        private void String_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsLetter(e.KeyChar) & !(e.KeyChar == '.') & !(e.KeyChar == '\b'))
-            {
-                e.Handled = true;
-                Interaction.MsgBox("Solo se aceptan letras", Constants.vbCritical, "Error");
-            }
+            CommonFunctions.ValidarStringKeyPress((TextBox)sender, e);
         }
 
         private void BLogin_Click(object sender, EventArgs e)
@@ -70,6 +69,7 @@ namespace Unitivo.Presentacion
 
 
 
+
         public bool EspacioEnBlanco()
         {
             DialogResult ask;
@@ -99,22 +99,43 @@ namespace Unitivo.Presentacion
             if (PictureBoxContraseña.Tag != null && PictureBoxContraseña.Tag.ToString() == "cerrado")
             {
                 PictureBoxContraseña.Tag = "abierto";
-                TBContraseña.PasswordChar = '\0'; // Mostrar caracteres normales en lugar de *
+                TBContraseña.UseSystemPasswordChar = false; // Mostrar caracteres normales en lugar de *
                 PictureBoxContraseña.BackgroundImage = Properties.Resources.ojo_abierto;
             }
             else
             {
                 PictureBoxContraseña.Tag = "cerrado";
-                TBContraseña.PasswordChar = '*'; // Ocultar caracteres con *
+                TBContraseña.UseSystemPasswordChar = true; // Utilizar el sistema de caracteres de contraseña (normalmente asteriscos)
                 PictureBoxContraseña.BackgroundImage = Properties.Resources.ojo_cerrado;
             }
         }
 
 
+
         private void Login_Load(object sender, EventArgs e)
+        {
+            TBUsuario.Focus(); // Establecer el foco en el TextBox TBUsuario al cargar el formulario.
+            TBContraseña.UseSystemPasswordChar = true; // Establecer el TextBox para mostrar asteriscos por defecto.
+            PictureBoxContraseña.Tag = "cerrado"; // Establecer el PictureBox en el estado "cerrado" por defecto.
+            PictureBoxContraseña.BackgroundImage = Properties.Resources.ojo_cerrado;
+        }
+
+
+        private void Login_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                BLogin.PerformClick();
+            }
+        }
+
+        private void Login_Shown(object sender, EventArgs e)
         {
             TBUsuario.Focus();
         }
+
+
+
 
         private void PanelBarraMenuLogin_MouseDown(object sender, MouseEventArgs e)
         {

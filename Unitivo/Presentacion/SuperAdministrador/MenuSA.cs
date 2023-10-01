@@ -124,12 +124,12 @@ namespace Unitivo.Presentacion.SuperAdministrador
 
         private void BAñadirUsuario_Click(object sender, EventArgs e)
         {
-            AbrirFormulariosAdministrador(new AñadirUsuario());
+            AbrirFormulariosSuperAdministrador(new AñadirUsuario());
         }
 
         private void BGestionarUsuarios_Click(object sender, EventArgs e)
         {
-            AbrirFormulariosAdministrador(new GestionarUsuarios());
+            AbrirFormulariosSuperAdministrador(new GestionarUsuarios());
         }
 
 
@@ -140,13 +140,13 @@ namespace Unitivo.Presentacion.SuperAdministrador
 
         private void BAñadirEmpleado_Click(object sender, EventArgs e)
         {
-            AbrirFormulariosAdministrador(new AñadirEmpleado());
+            AbrirFormulariosSuperAdministrador(new AñadirEmpleado());
         }
 
 
         private void BGestionarEmpleados_Click(object sender, EventArgs e)
         {
-            AbrirFormulariosAdministrador(new GestionarEmpleados());
+            AbrirFormulariosSuperAdministrador(new GestionarEmpleados());
         }
 
         private void BPerfiles_Click(object sender, EventArgs e)
@@ -156,42 +156,58 @@ namespace Unitivo.Presentacion.SuperAdministrador
 
         private void BAñadirPerfil_Click(object sender, EventArgs e)
         {
-            AbrirFormulariosAdministrador(new AñadirPerfil());
+            AbrirFormulariosSuperAdministrador(new AñadirPerfil());
         }
 
         private void BGestionarPerfiles_Click(object sender, EventArgs e)
         {
-            AbrirFormulariosAdministrador(new GestionarPerfiles());
+            AbrirFormulariosSuperAdministrador(new GestionarPerfiles());
         }
 
 
 
-        private Form? formActivoAdministrador;
+        // Variable para el formulario activo
+        private Form? formularioActivo;
 
-
-        private void AbrirFormulariosAdministrador(Form formHijo)
+        private void BVolver_Click(object sender, EventArgs e)
         {
-            if (formActivoAdministrador == null)
+            // Verificar si hay un formulario activo
+            if (formularioActivo != null)
             {
-                PanelFormSuperAdministrador.Controls.Clear();
-                formHijo.TopLevel = false;
-                formHijo.FormBorderStyle = FormBorderStyle.None;
-                formHijo.Dock = DockStyle.Fill;
-                formHijo.Visible = true;
-                formHijo.AutoScroll = true;
-                formHijo.VerticalScroll.Value = 0;
-                formHijo.VerticalScroll.Minimum = 0;
-                formHijo.VerticalScroll.Maximum = formHijo.Size.Height - 100;
-                formHijo.HorizontalScroll.Value = 0;
-                formHijo.HorizontalScroll.Minimum = 0;
-                formHijo.HorizontalScroll.Maximum = formHijo.Size.Width - 100;
-                PanelFormSuperAdministrador.AutoScroll = true;
-                PanelFormSuperAdministrador.Controls.Add(formHijo);
-                PanelFormSuperAdministrador.Tag = formHijo;
-                PanelFormSuperAdministrador.BringToFront();
-                formHijo.Show();
-                hideSubMenu();
+                formularioActivo.Close(); // Cerrar el formulario activo
+                formularioActivo = null;  // Establecer que no hay formulario activo
             }
+        }
+
+        private void AbrirFormulariosSuperAdministrador(Form formHijo)
+        {
+            if (formularioActivo != null)
+            {
+                formularioActivo.Close(); // Cerrar el formulario activo actual
+            }
+
+            // Configurar el formulario hijo como el formulario activo
+            formularioActivo = formHijo;
+
+            PanelFormSuperAdministrador.Controls.Clear();
+            formHijo.TopLevel = false;
+            formHijo.FormBorderStyle = FormBorderStyle.None;
+            formHijo.Dock = DockStyle.Fill;
+            formHijo.Visible = true;
+            formHijo.AutoScroll = true;
+            formHijo.VerticalScroll.Value = 0;
+            formHijo.VerticalScroll.Minimum = 0;
+            formHijo.VerticalScroll.Maximum = formHijo.Size.Height - 100;
+            formHijo.HorizontalScroll.Value = 0;
+            formHijo.HorizontalScroll.Minimum = 0;
+            formHijo.HorizontalScroll.Maximum = formHijo.Size.Width - 100;
+            PanelFormSuperAdministrador.Controls.Add(formHijo);
+            PanelFormSuperAdministrador.Tag = formHijo;
+            PanelFormSuperAdministrador.BringToFront();
+            PanelFormSuperAdministrador.AutoScroll = true;
+            formHijo.Show();
+            hideSubMenu();
+
         }
     }
 }

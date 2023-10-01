@@ -1,6 +1,6 @@
 ﻿namespace Unitivo.Presentacion.Vendedor
 {
-    partial class ListarProductos
+    partial class BuscarProducto
     {
         /// <summary>
         /// Required designer variable.
@@ -22,10 +22,14 @@
 
         #region Windows Form Designer generated code
 
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
             GroupBoxBuscarProducto = new GroupBox();
             comboBox3 = new ComboBox();
             ComboBox2 = new ComboBox();
@@ -41,6 +45,12 @@
             Stock = new DataGridViewTextBoxColumn();
             Column1 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
+            BCancelar = new Button();
+            BSeleccionar = new Button();
+            panel2 = new Panel();
+            panel1 = new Panel();
+            panel3 = new Panel();
+            panel4 = new Panel();
             GroupBoxBuscarProducto.SuspendLayout();
             TabControlListaProductos.SuspendLayout();
             TabPageListaProducto.SuspendLayout();
@@ -57,12 +67,12 @@
             GroupBoxBuscarProducto.Controls.Add(TBBuscar);
             GroupBoxBuscarProducto.Font = new Font("Britannic Bold", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             GroupBoxBuscarProducto.ForeColor = Color.SaddleBrown;
-            GroupBoxBuscarProducto.Location = new Point(109, 37);
+            GroupBoxBuscarProducto.Location = new Point(91, 43);
             GroupBoxBuscarProducto.Margin = new Padding(4, 5, 4, 5);
             GroupBoxBuscarProducto.Name = "GroupBoxBuscarProducto";
             GroupBoxBuscarProducto.Padding = new Padding(4, 5, 4, 5);
             GroupBoxBuscarProducto.Size = new Size(880, 125);
-            GroupBoxBuscarProducto.TabIndex = 19;
+            GroupBoxBuscarProducto.TabIndex = 21;
             GroupBoxBuscarProducto.TabStop = false;
             GroupBoxBuscarProducto.Text = "Productos";
             // 
@@ -117,10 +127,10 @@
             // 
             TBBuscar.Font = new Font("Britannic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
             TBBuscar.ForeColor = SystemColors.WindowFrame;
-            TBBuscar.Location = new Point(23, 54);
+            TBBuscar.Location = new Point(25, 49);
             TBBuscar.Margin = new Padding(4, 5, 4, 5);
             TBBuscar.Name = "TBBuscar";
-            TBBuscar.Size = new Size(173, 30);
+            TBBuscar.Size = new Size(172, 30);
             TBBuscar.TabIndex = 6;
             TBBuscar.KeyPress += NumStr_KeyPress;
             // 
@@ -128,11 +138,11 @@
             // 
             TabControlListaProductos.Controls.Add(TabPageListaProducto);
             TabControlListaProductos.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            TabControlListaProductos.Location = new Point(63, 189);
+            TabControlListaProductos.Location = new Point(45, 195);
             TabControlListaProductos.Name = "TabControlListaProductos";
             TabControlListaProductos.SelectedIndex = 0;
             TabControlListaProductos.Size = new Size(959, 452);
-            TabControlListaProductos.TabIndex = 18;
+            TabControlListaProductos.TabIndex = 20;
             // 
             // TabPageListaProducto
             // 
@@ -155,14 +165,14 @@
             DataGridViewListaProductos.BackgroundColor = Color.RosyBrown;
             DataGridViewListaProductos.BorderStyle = BorderStyle.None;
             DataGridViewListaProductos.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.DarkOliveGreen;
-            dataGridViewCellStyle1.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = SystemColors.Window;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            DataGridViewListaProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = Color.DarkOliveGreen;
+            dataGridViewCellStyle9.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle9.ForeColor = SystemColors.Window;
+            dataGridViewCellStyle9.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.True;
+            DataGridViewListaProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             DataGridViewListaProductos.ColumnHeadersHeight = 20;
             DataGridViewListaProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             DataGridViewListaProductos.Columns.AddRange(new DataGridViewColumn[] { Column2, Column3, Categoria, Stock, Column1, Column4 });
@@ -173,14 +183,14 @@
             DataGridViewListaProductos.Name = "DataGridViewListaProductos";
             DataGridViewListaProductos.ReadOnly = true;
             DataGridViewListaProductos.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.NavajoWhite;
-            dataGridViewCellStyle2.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            DataGridViewListaProductos.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = Color.NavajoWhite;
+            dataGridViewCellStyle10.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle10.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.True;
+            DataGridViewListaProductos.RowHeadersDefaultCellStyle = dataGridViewCellStyle10;
             DataGridViewListaProductos.RowHeadersWidth = 51;
             DataGridViewListaProductos.Size = new Size(945, 414);
             DataGridViewListaProductos.TabIndex = 6;
@@ -227,17 +237,85 @@
             Column4.Name = "Column4";
             Column4.ReadOnly = true;
             // 
-            // ListarProductos
+            // BCancelar
+            // 
+            BCancelar.BackColor = Color.Sienna;
+            BCancelar.FlatAppearance.BorderSize = 2;
+            BCancelar.FlatStyle = FlatStyle.Flat;
+            BCancelar.Font = new Font("Cooper Black", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            BCancelar.ForeColor = Color.Cornsilk;
+            BCancelar.Location = new Point(316, 670);
+            BCancelar.Margin = new Padding(4, 5, 4, 5);
+            BCancelar.Name = "BCancelar";
+            BCancelar.Size = new Size(181, 41);
+            BCancelar.TabIndex = 70;
+            BCancelar.Text = "Cancelar";
+            BCancelar.UseVisualStyleBackColor = false;
+            BCancelar.Click += BCancelar_Click;
+            // 
+            // BSeleccionar
+            // 
+            BSeleccionar.BackColor = Color.DarkOliveGreen;
+            BSeleccionar.FlatAppearance.BorderSize = 2;
+            BSeleccionar.FlatStyle = FlatStyle.Flat;
+            BSeleccionar.Font = new Font("Cooper Black", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            BSeleccionar.ForeColor = Color.Cornsilk;
+            BSeleccionar.Location = new Point(544, 670);
+            BSeleccionar.Margin = new Padding(4, 5, 4, 5);
+            BSeleccionar.Name = "BSeleccionar";
+            BSeleccionar.Size = new Size(181, 41);
+            BSeleccionar.TabIndex = 69;
+            BSeleccionar.Text = "Seleccionar";
+            BSeleccionar.UseVisualStyleBackColor = false;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.DarkOliveGreen;
+            panel2.Location = new Point(1039, 8);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(10, 733);
+            panel2.TabIndex = 71;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.DarkOliveGreen;
+            panel1.Location = new Point(0, 7);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(10, 734);
+            panel1.TabIndex = 72;
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.DarkOliveGreen;
+            panel3.Location = new Point(0, -1);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(1049, 10);
+            panel3.TabIndex = 73;
+            // 
+            // panel4
+            // 
+            panel4.BackColor = Color.DarkOliveGreen;
+            panel4.Location = new Point(0, 734);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(1049, 10);
+            panel4.TabIndex = 74;
+            // 
+            // BuscarProducto
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSeaGreen;
-            ClientSize = new Size(1067, 738);
+            ClientSize = new Size(1049, 745);
+            Controls.Add(panel4);
+            Controls.Add(panel3);
+            Controls.Add(panel1);
+            Controls.Add(panel2);
+            Controls.Add(BCancelar);
+            Controls.Add(BSeleccionar);
             Controls.Add(GroupBoxBuscarProducto);
             Controls.Add(TabControlListaProductos);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(4, 5, 4, 5);
-            Name = "ListarProductos";
+            Name = "BuscarProducto";
             Text = "Form1";
             GroupBoxBuscarProducto.ResumeLayout(false);
             GroupBoxBuscarProducto.PerformLayout();
@@ -247,7 +325,10 @@
             ResumeLayout(false);
         }
 
+        #endregion
+
         internal GroupBox GroupBoxBuscarProducto;
+        internal ComboBox comboBox3;
         internal ComboBox ComboBox2;
         internal ComboBox ComboBox1;
         internal Button BBuscarProducto;
@@ -261,9 +342,11 @@
         internal DataGridViewTextBoxColumn Stock;
         internal DataGridViewTextBoxColumn Column1;
         internal DataGridViewTextBoxColumn Column4;
-
-        #endregion
-
-        internal ComboBox comboBox3;
+        internal Button BCancelar;
+        internal Button BSeleccionar;
+        private Panel panel2;
+        private Panel panel1;
+        private Panel panel3;
+        private Panel panel4;
     }
 }

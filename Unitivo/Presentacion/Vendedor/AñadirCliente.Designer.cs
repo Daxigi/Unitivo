@@ -1,4 +1,4 @@
-﻿namespace Unitivo.Formularios
+﻿namespace Unitivo.Presentacion.Vendedor
 {
     partial class AñadirCliente
     {
@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             Panel1 = new Panel();
-            BVolver = new Button();
             BRegistrarCliente = new Button();
             TBCorreoCliente = new TextBox();
             Label7 = new Label();
@@ -56,7 +55,6 @@
             // Panel1
             // 
             Panel1.BackColor = Color.Cornsilk;
-            Panel1.Controls.Add(BVolver);
             Panel1.Controls.Add(BRegistrarCliente);
             Panel1.Controls.Add(TBCorreoCliente);
             Panel1.Controls.Add(Label7);
@@ -70,160 +68,150 @@
             Panel1.Controls.Add(Label3);
             Panel1.Controls.Add(TBNombreCliente);
             Panel1.Controls.Add(Label2);
-            Panel1.Location = new Point(60, 96);
-            Panel1.Margin = new Padding(4);
+            Panel1.Location = new Point(60, 120);
+            Panel1.Margin = new Padding(4, 5, 4, 5);
             Panel1.Name = "Panel1";
-            Panel1.Size = new Size(431, 418);
+            Panel1.Size = new Size(431, 522);
             Panel1.TabIndex = 0;
-            // 
-            // BVolver
-            // 
-            BVolver.BackColor = Color.Sienna;
-            BVolver.FlatAppearance.BorderSize = 2;
-            BVolver.FlatStyle = FlatStyle.Flat;
-            BVolver.Font = new Font("Microsoft Sans Serif", 15.75f, FontStyle.Regular, GraphicsUnit.Point, 0);
-            BVolver.ForeColor = Color.Cornsilk;
-            BVolver.Location = new Point(49, 330);
-            BVolver.Margin = new Padding(4);
-            BVolver.Name = "BVolver";
-            BVolver.Size = new Size(141, 47);
-            BVolver.TabIndex = 18;
-            BVolver.Text = "Volver";
-            BVolver.TextAlign = ContentAlignment.TopCenter;
-            BVolver.UseVisualStyleBackColor = false;
             // 
             // BRegistrarCliente
             // 
             BRegistrarCliente.BackColor = Color.DarkOliveGreen;
             BRegistrarCliente.FlatAppearance.BorderSize = 2;
             BRegistrarCliente.FlatStyle = FlatStyle.Flat;
-            BRegistrarCliente.Font = new Font("Microsoft Sans Serif", 16.0f, FontStyle.Regular, GraphicsUnit.Point, 0);
+            BRegistrarCliente.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
             BRegistrarCliente.ForeColor = Color.Cornsilk;
-            BRegistrarCliente.Location = new Point(221, 330);
-            BRegistrarCliente.Margin = new Padding(4);
+            BRegistrarCliente.Location = new Point(123, 400);
+            BRegistrarCliente.Margin = new Padding(4, 5, 4, 5);
             BRegistrarCliente.Name = "BRegistrarCliente";
-            BRegistrarCliente.Size = new Size(163, 47);
+            BRegistrarCliente.Size = new Size(163, 59);
             BRegistrarCliente.TabIndex = 17;
             BRegistrarCliente.Text = "Añadir";
             BRegistrarCliente.UseVisualStyleBackColor = false;
             // 
             // TBCorreoCliente
             // 
-            TBCorreoCliente.Location = new Point(213, 257);
-            TBCorreoCliente.Margin = new Padding(4);
+            TBCorreoCliente.Location = new Point(213, 321);
+            TBCorreoCliente.Margin = new Padding(4, 5, 4, 5);
             TBCorreoCliente.Name = "TBCorreoCliente";
-            TBCorreoCliente.Size = new Size(169, 22);
+            TBCorreoCliente.Size = new Size(169, 27);
             TBCorreoCliente.TabIndex = 16;
+            TBCorreoCliente.KeyPress += Email_KeyPress;
             // 
             // Label7
             // 
             Label7.AutoSize = true;
-            Label7.Font = new Font("Microsoft Sans Serif", 14.5f, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Label7.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             Label7.ForeColor = Color.DarkOrange;
-            Label7.Location = new Point(47, 254);
+            Label7.Location = new Point(47, 318);
             Label7.Margin = new Padding(4, 0, 4, 0);
             Label7.Name = "Label7";
-            Label7.Size = new Size(100, 29);
+            Label7.Size = new Size(102, 29);
             Label7.TabIndex = 15;
             Label7.Text = "E-mail :";
             // 
             // TBDireccion
             // 
-            TBDireccion.Location = new Point(213, 213);
-            TBDireccion.Margin = new Padding(4);
+            TBDireccion.Location = new Point(213, 266);
+            TBDireccion.Margin = new Padding(4, 5, 4, 5);
             TBDireccion.Name = "TBDireccion";
-            TBDireccion.Size = new Size(169, 22);
+            TBDireccion.Size = new Size(169, 27);
             TBDireccion.TabIndex = 14;
+            TBDireccion.KeyPress += NumStr_KeyPress;
             // 
             // Label6
             // 
             Label6.AutoSize = true;
-            Label6.Font = new Font("Microsoft Sans Serif", 14.5f, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Label6.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             Label6.ForeColor = Color.DarkOrange;
-            Label6.Location = new Point(47, 209);
+            Label6.Location = new Point(47, 261);
             Label6.Margin = new Padding(4, 0, 4, 0);
             Label6.Name = "Label6";
-            Label6.Size = new Size(133, 29);
+            Label6.Size = new Size(138, 29);
             Label6.TabIndex = 13;
             Label6.Text = "Dirección :";
             // 
             // TBTelCliente
             // 
-            TBTelCliente.Location = new Point(213, 167);
-            TBTelCliente.Margin = new Padding(4);
+            TBTelCliente.Location = new Point(213, 209);
+            TBTelCliente.Margin = new Padding(4, 5, 4, 5);
             TBTelCliente.Name = "TBTelCliente";
-            TBTelCliente.Size = new Size(169, 22);
+            TBTelCliente.Size = new Size(169, 27);
             TBTelCliente.TabIndex = 12;
+            TBTelCliente.KeyPress += Num_KeyPress;
             // 
             // Label5
             // 
             Label5.AutoSize = true;
-            Label5.Font = new Font("Microsoft Sans Serif", 14.5f, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Label5.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             Label5.ForeColor = Color.DarkOrange;
-            Label5.Location = new Point(47, 164);
+            Label5.Location = new Point(47, 205);
             Label5.Margin = new Padding(4, 0, 4, 0);
             Label5.Name = "Label5";
-            Label5.Size = new Size(125, 29);
+            Label5.Size = new Size(132, 29);
             Label5.TabIndex = 11;
             Label5.Text = "Telefono :";
             // 
             // TBDniCliente
             // 
-            TBDniCliente.Location = new Point(213, 121);
-            TBDniCliente.Margin = new Padding(4);
+            TBDniCliente.Location = new Point(213, 151);
+            TBDniCliente.Margin = new Padding(4, 5, 4, 5);
             TBDniCliente.Name = "TBDniCliente";
-            TBDniCliente.Size = new Size(169, 22);
+            TBDniCliente.Size = new Size(169, 27);
             TBDniCliente.TabIndex = 10;
+            TBDniCliente.KeyPress += Num_KeyPress;
             // 
             // Label4
             // 
             Label4.AutoSize = true;
-            Label4.Font = new Font("Microsoft Sans Serif", 14.5f, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Label4.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             Label4.ForeColor = Color.DarkOrange;
-            Label4.Location = new Point(47, 117);
+            Label4.Location = new Point(47, 146);
             Label4.Margin = new Padding(4, 0, 4, 0);
             Label4.Name = "Label4";
-            Label4.Size = new Size(69, 29);
+            Label4.Size = new Size(71, 29);
             Label4.TabIndex = 9;
             Label4.Text = "DNI :";
             // 
             // TBApellidoCliente
             // 
-            TBApellidoCliente.Location = new Point(213, 73);
-            TBApellidoCliente.Margin = new Padding(4);
+            TBApellidoCliente.Location = new Point(213, 91);
+            TBApellidoCliente.Margin = new Padding(4, 5, 4, 5);
             TBApellidoCliente.Name = "TBApellidoCliente";
-            TBApellidoCliente.Size = new Size(169, 22);
+            TBApellidoCliente.Size = new Size(169, 27);
             TBApellidoCliente.TabIndex = 8;
+            TBApellidoCliente.KeyPress += String_KeyPress;
             // 
             // Label3
             // 
             Label3.AutoSize = true;
-            Label3.Font = new Font("Microsoft Sans Serif", 14.5f, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Label3.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             Label3.ForeColor = Color.DarkOrange;
-            Label3.Location = new Point(47, 69);
+            Label3.Location = new Point(47, 86);
             Label3.Margin = new Padding(4, 0, 4, 0);
             Label3.Name = "Label3";
-            Label3.Size = new Size(118, 29);
+            Label3.Size = new Size(124, 29);
             Label3.TabIndex = 7;
             Label3.Text = "Apellido :";
             // 
             // TBNombreCliente
             // 
-            TBNombreCliente.Location = new Point(213, 25);
-            TBNombreCliente.Margin = new Padding(4);
+            TBNombreCliente.Location = new Point(213, 31);
+            TBNombreCliente.Margin = new Padding(4, 5, 4, 5);
             TBNombreCliente.Name = "TBNombreCliente";
-            TBNombreCliente.Size = new Size(169, 22);
+            TBNombreCliente.Size = new Size(169, 27);
             TBNombreCliente.TabIndex = 6;
+            TBNombreCliente.KeyPress += String_KeyPress;
             // 
             // Label2
             // 
             Label2.AutoSize = true;
-            Label2.Font = new Font("Microsoft Sans Serif", 14.5f, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Label2.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
             Label2.ForeColor = Color.DarkOrange;
-            Label2.Location = new Point(47, 21);
+            Label2.Location = new Point(47, 26);
             Label2.Margin = new Padding(4, 0, 4, 0);
             Label2.Name = "Label2";
-            Label2.Size = new Size(117, 29);
+            Label2.Size = new Size(121, 29);
             Label2.TabIndex = 5;
             Label2.Text = "Nombre :";
             // 
@@ -231,24 +219,24 @@
             // 
             Label1.AutoSize = true;
             Label1.BackColor = Color.Cornsilk;
-            Label1.Font = new Font("Microsoft Sans Serif", 26.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Label1.Font = new Font("Cooper Black", 25.8000011F, FontStyle.Regular, GraphicsUnit.Point);
             Label1.ForeColor = Color.DarkOliveGreen;
-            Label1.Location = new Point(61, 23);
+            Label1.Location = new Point(70, 38);
             Label1.Margin = new Padding(4, 0, 4, 0);
             Label1.Name = "Label1";
-            Label1.Size = new Size(349, 52);
+            Label1.Size = new Size(405, 50);
             Label1.TabIndex = 1;
             Label1.Text = "Registrar Cliente";
             // 
             // TabControlRegClientes
             // 
             TabControlRegClientes.Controls.Add(TabPageListaClientes);
-            TabControlRegClientes.Font = new Font("Microsoft Sans Serif", 11.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
-            TabControlRegClientes.Location = new Point(605, 71);
-            TabControlRegClientes.Margin = new Padding(4);
+            TabControlRegClientes.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            TabControlRegClientes.Location = new Point(605, 89);
+            TabControlRegClientes.Margin = new Padding(4, 5, 4, 5);
             TabControlRegClientes.Name = "TabControlRegClientes";
             TabControlRegClientes.SelectedIndex = 0;
-            TabControlRegClientes.Size = new Size(423, 444);
+            TabControlRegClientes.Size = new Size(423, 555);
             TabControlRegClientes.TabIndex = 2;
             // 
             // TabPageListaClientes
@@ -256,10 +244,10 @@
             TabPageListaClientes.Controls.Add(DataGridViewRegistroClientes);
             TabPageListaClientes.ForeColor = Color.White;
             TabPageListaClientes.Location = new Point(4, 33);
-            TabPageListaClientes.Margin = new Padding(4);
+            TabPageListaClientes.Margin = new Padding(4, 5, 4, 5);
             TabPageListaClientes.Name = "TabPageListaClientes";
-            TabPageListaClientes.Padding = new Padding(4);
-            TabPageListaClientes.Size = new Size(415, 407);
+            TabPageListaClientes.Padding = new Padding(4, 5, 4, 5);
+            TabPageListaClientes.Size = new Size(415, 518);
             TabPageListaClientes.TabIndex = 0;
             TabPageListaClientes.Text = "Lista de Clientes";
             TabPageListaClientes.UseVisualStyleBackColor = true;
@@ -269,24 +257,24 @@
             DataGridViewRegistroClientes.BackgroundColor = Color.RosyBrown;
             DataGridViewRegistroClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             DataGridViewRegistroClientes.Dock = DockStyle.Fill;
-            DataGridViewRegistroClientes.Location = new Point(4, 4);
-            DataGridViewRegistroClientes.Margin = new Padding(4);
+            DataGridViewRegistroClientes.Location = new Point(4, 5);
+            DataGridViewRegistroClientes.Margin = new Padding(4, 5, 4, 5);
             DataGridViewRegistroClientes.Name = "DataGridViewRegistroClientes";
             DataGridViewRegistroClientes.RowHeadersWidth = 51;
-            DataGridViewRegistroClientes.Size = new Size(407, 399);
+            DataGridViewRegistroClientes.Size = new Size(407, 508);
             DataGridViewRegistroClientes.TabIndex = 0;
             // 
             // AñadirCliente
             // 
-            AutoScaleDimensions = new SizeF(8.0f, 16.0f);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSeaGreen;
-            ClientSize = new Size(1067, 554);
+            ClientSize = new Size(1067, 692);
             Controls.Add(TabControlRegClientes);
             Controls.Add(Label1);
             Controls.Add(Panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(4);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "AñadirCliente";
             Text = "Form1";
             Panel1.ResumeLayout(false);
@@ -296,7 +284,6 @@
             ((System.ComponentModel.ISupportInitialize)DataGridViewRegistroClientes).EndInit();
             ResumeLayout(false);
             PerformLayout();
-
         }
 
         internal Panel Panel1;
@@ -314,7 +301,6 @@
         internal TextBox TBNombreCliente;
         internal Label Label2;
         internal Button BRegistrarCliente;
-        internal Button BVolver;
         internal TabControl TabControlRegClientes;
         internal TabPage TabPageListaClientes;
         internal DataGridView DataGridViewRegistroClientes;

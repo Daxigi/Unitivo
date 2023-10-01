@@ -11,9 +11,9 @@ using Unitivo.Presentacion.Logica;
 
 namespace Unitivo.Presentacion.Vendedor
 {
-    public partial class ListarProductos : Form
+    public partial class BuscarCliente : Form
     {
-        public ListarProductos()
+        public BuscarCliente()
         {
             InitializeComponent();
         }
@@ -22,6 +22,12 @@ namespace Unitivo.Presentacion.Vendedor
         {
             CommonFunctions.ValidarKeyPress((TextBox)sender, e);
         }
+
+        private void BCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
 
     }
 }
