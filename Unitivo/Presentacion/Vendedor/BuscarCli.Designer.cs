@@ -32,21 +32,19 @@ namespace Unitivo.Presentacion.Vendedor
         [DebuggerStepThrough()]
         private void InitializeComponent()
         {
-            var DataGridViewCellStyle3 = new DataGridViewCellStyle();
-            var DataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             BVolver = new Button();
-            //BVolver.Click += new EventHandler(BVolver_Click);
             BSeleccionar = new Button();
             TabControlListaClientes = new TabControl();
             TabPafeListaClientes = new TabPage();
             dgvListarCliente = new DataGridView();
-           // dgvListarCliente.CellContentClick += new DataGridViewCellEventHandler(dgvListarCliente_CellContentClick);
-            DataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
-            Column5 = new DataGridViewTextBoxColumn();
+            Id = new DataGridViewTextBoxColumn();
+            Nombre = new DataGridViewTextBoxColumn();
+            Apellido = new DataGridViewTextBoxColumn();
+            DNI = new DataGridViewTextBoxColumn();
+            Telefono = new DataGridViewTextBoxColumn();
+            Direccion = new DataGridViewTextBoxColumn();
             TabControlListaClientes.SuspendLayout();
             TabPafeListaClientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvListarCliente).BeginInit();
@@ -57,11 +55,12 @@ namespace Unitivo.Presentacion.Vendedor
             BVolver.BackColor = Color.Sienna;
             BVolver.FlatAppearance.BorderSize = 2;
             BVolver.FlatStyle = FlatStyle.Flat;
-            BVolver.Font = new Font("Cooper Black", 15.75f, FontStyle.Regular, GraphicsUnit.Point, 0);
+            BVolver.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             BVolver.ForeColor = Color.Cornsilk;
-            BVolver.Location = new Point(274, 402);
+            BVolver.Location = new Point(366, 619);
+            BVolver.Margin = new Padding(5, 4, 5, 4);
             BVolver.Name = "BVolver";
-            BVolver.Size = new Size(106, 36);
+            BVolver.Size = new Size(142, 56);
             BVolver.TabIndex = 21;
             BVolver.Text = "Volver";
             BVolver.TextAlign = ContentAlignment.TopCenter;
@@ -72,11 +71,12 @@ namespace Unitivo.Presentacion.Vendedor
             BSeleccionar.BackColor = Color.DarkOliveGreen;
             BSeleccionar.FlatAppearance.BorderSize = 2;
             BSeleccionar.FlatStyle = FlatStyle.Flat;
-            BSeleccionar.Font = new Font("Cooper Black", 15.75f, FontStyle.Regular, GraphicsUnit.Point, 0);
+            BSeleccionar.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             BSeleccionar.ForeColor = Color.Cornsilk;
-            BSeleccionar.Location = new Point(424, 402);
+            BSeleccionar.Location = new Point(566, 619);
+            BSeleccionar.Margin = new Padding(5, 4, 5, 4);
             BSeleccionar.Name = "BSeleccionar";
-            BSeleccionar.Size = new Size(144, 36);
+            BSeleccionar.Size = new Size(192, 56);
             BSeleccionar.TabIndex = 22;
             BSeleccionar.Text = "Seleccionar";
             BSeleccionar.TextAlign = ContentAlignment.TopCenter;
@@ -85,25 +85,25 @@ namespace Unitivo.Presentacion.Vendedor
             // TabControlListaClientes
             // 
             TabControlListaClientes.Controls.Add(TabPafeListaClientes);
-            TabControlListaClientes.Font = new Font("Britannic Bold", 11.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
-            TabControlListaClientes.Location = new Point(66, 30);
-            TabControlListaClientes.Margin = new Padding(2);
+            TabControlListaClientes.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            TabControlListaClientes.Location = new Point(88, 47);
+            TabControlListaClientes.Margin = new Padding(2, 3, 2, 3);
             TabControlListaClientes.Name = "TabControlListaClientes";
             TabControlListaClientes.SelectedIndex = 0;
-            TabControlListaClientes.Size = new Size(671, 340);
+            TabControlListaClientes.Size = new Size(895, 523);
             TabControlListaClientes.TabIndex = 23;
             // 
             // TabPafeListaClientes
             // 
             TabPafeListaClientes.BackColor = Color.FromArgb(31, 31, 69);
             TabPafeListaClientes.Controls.Add(dgvListarCliente);
-            TabPafeListaClientes.Font = new Font("Britannic Bold", 12.0f);
+            TabPafeListaClientes.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             TabPafeListaClientes.ForeColor = Color.White;
-            TabPafeListaClientes.Location = new Point(4, 25);
-            TabPafeListaClientes.Margin = new Padding(2);
+            TabPafeListaClientes.Location = new Point(4, 33);
+            TabPafeListaClientes.Margin = new Padding(2, 3, 2, 3);
             TabPafeListaClientes.Name = "TabPafeListaClientes";
-            TabPafeListaClientes.Padding = new Padding(2);
-            TabPafeListaClientes.Size = new Size(663, 311);
+            TabPafeListaClientes.Padding = new Padding(2, 3, 2, 3);
+            TabPafeListaClientes.Size = new Size(887, 486);
             TabPafeListaClientes.TabIndex = 0;
             TabPafeListaClientes.Text = "Lista de Clientes";
             // 
@@ -114,88 +114,88 @@ namespace Unitivo.Presentacion.Vendedor
             dgvListarCliente.BackgroundColor = Color.RosyBrown;
             dgvListarCliente.BorderStyle = BorderStyle.None;
             dgvListarCliente.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            DataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            DataGridViewCellStyle3.BackColor = Color.DarkOliveGreen;
-            DataGridViewCellStyle3.Font = new Font("Britannic Bold", 12.0f);
-            DataGridViewCellStyle3.ForeColor = SystemColors.Window;
-            DataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            DataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            DataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgvListarCliente.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.DarkOliveGreen;
+            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.Window;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvListarCliente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvListarCliente.ColumnHeadersHeight = 20;
             dgvListarCliente.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dgvListarCliente.Columns.AddRange(new DataGridViewColumn[] { DataGridViewTextBoxColumn2, Column1, Column2, Column3, Column4, Column5 });
+            dgvListarCliente.Columns.AddRange(new DataGridViewColumn[] { Id, Nombre, Apellido, DNI, Telefono, Direccion });
             dgvListarCliente.Dock = DockStyle.Fill;
             dgvListarCliente.EnableHeadersVisualStyles = false;
-            dgvListarCliente.Location = new Point(2, 2);
+            dgvListarCliente.Location = new Point(2, 3);
+            dgvListarCliente.Margin = new Padding(5, 4, 5, 4);
             dgvListarCliente.Name = "dgvListarCliente";
             dgvListarCliente.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            DataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            DataGridViewCellStyle4.BackColor = Color.NavajoWhite;
-            DataGridViewCellStyle4.Font = new Font("Britannic Bold", 12.0f);
-            DataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
-            DataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            DataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            DataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            dgvListarCliente.RowHeadersDefaultCellStyle = DataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.NavajoWhite;
+            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvListarCliente.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvListarCliente.RowHeadersWidth = 51;
-            dgvListarCliente.Size = new Size(659, 307);
+            dgvListarCliente.Size = new Size(883, 480);
             dgvListarCliente.TabIndex = 7;
             // 
-            // DataGridViewTextBoxColumn2
+            // Id
             // 
-            DataGridViewTextBoxColumn2.HeaderText = "ID";
-            DataGridViewTextBoxColumn2.MinimumWidth = 6;
-            DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2";
+            Id.HeaderText = "ID";
+            Id.MinimumWidth = 6;
+            Id.Name = "Id";
             // 
-            // Column1
+            // Nombre
             // 
-            Column1.HeaderText = "Nombre";
-            Column1.MinimumWidth = 6;
-            Column1.Name = "Column1";
+            Nombre.HeaderText = "Nombre";
+            Nombre.MinimumWidth = 6;
+            Nombre.Name = "Nombre";
             // 
-            // Column2
+            // Apellido
             // 
-            Column2.HeaderText = "Apellido";
-            Column2.MinimumWidth = 6;
-            Column2.Name = "Column2";
+            Apellido.HeaderText = "Apellido";
+            Apellido.MinimumWidth = 6;
+            Apellido.Name = "Apellido";
             // 
-            // Column3
+            // DNI
             // 
-            Column3.HeaderText = "DNI";
-            Column3.MinimumWidth = 6;
-            Column3.Name = "Column3";
+            DNI.HeaderText = "DNI";
+            DNI.MinimumWidth = 6;
+            DNI.Name = "DNI";
             // 
-            // Column4
+            // Telefono
             // 
-            Column4.HeaderText = "Telefono";
-            Column4.MinimumWidth = 6;
-            Column4.Name = "Column4";
+            Telefono.HeaderText = "Telefono";
+            Telefono.MinimumWidth = 6;
+            Telefono.Name = "Telefono";
             // 
-            // Column5
+            // Direccion
             // 
-            Column5.HeaderText = "Dirección";
-            Column5.MinimumWidth = 6;
-            Column5.Name = "Column5";
+            Direccion.HeaderText = "Dirección";
+            Direccion.MinimumWidth = 6;
+            Direccion.Name = "Direccion";
             // 
             // BuscarCli
             // 
-            AutoScaleDimensions = new SizeF(6.0f, 13.0f);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSeaGreen;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1066, 692);
             Controls.Add(TabControlListaClientes);
             Controls.Add(BSeleccionar);
             Controls.Add(BVolver);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(5, 4, 5, 4);
             Name = "BuscarCli";
             Text = "Form1";
             TabControlListaClientes.ResumeLayout(false);
             TabPafeListaClientes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvListarCliente).EndInit();
-            //Load += new EventHandler(BuscarCli_Load);
             ResumeLayout(false);
-
         }
 
         internal Button BVolver;
@@ -203,12 +203,12 @@ namespace Unitivo.Presentacion.Vendedor
         internal TabControl TabControlListaClientes;
         internal TabPage TabPafeListaClientes;
         internal DataGridView dgvListarCliente;
-        internal DataGridViewTextBoxColumn DataGridViewTextBoxColumn2;
-        internal DataGridViewTextBoxColumn Column1;
-        internal DataGridViewTextBoxColumn Column2;
-        internal DataGridViewTextBoxColumn Column3;
-        internal DataGridViewTextBoxColumn Column4;
-        internal DataGridViewTextBoxColumn Column5;
+        private DataGridViewTextBoxColumn Id;
+        private DataGridViewTextBoxColumn Nombre;
+        private DataGridViewTextBoxColumn Apellido;
+        private DataGridViewTextBoxColumn DNI;
+        private DataGridViewTextBoxColumn Telefono;
+        private DataGridViewTextBoxColumn Direccion;
     }
 
     #endregion

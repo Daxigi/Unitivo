@@ -21,8 +21,6 @@ public partial class Cliente
 
     public bool Estado { get; set; }
 
-    public DateTime? Edad { get; set; }
-
     public DateTime FechaCreacion { get; set; }
 
     public DateTime? FechaModificacion { get; set; }

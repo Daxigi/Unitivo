@@ -4,16 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Unitivo.Modelos;
+using Unitivo.Presentacion.Logica.Constructores;
 
 namespace Unitivo.Repositorio.Interfaces
 {
     public interface ClienteInterface
     {
-        public void AgregarCliente(Cliente cliente);
+        public void AgregarCliente(ClienteConstructor cliente);
         public bool EliminarCliente(int id);
         public bool ModificarCliente(Cliente cliente);
-        public Cliente BuscarCliente(int id);
-        public List<Cliente> ListarClientes();
+        public Cliente BuscarClientPorId(int id);
 
+        public Cliente BuscarClientePorMail(string mail);   
+        public List<Cliente> BuscarCliente(object parametro);
+        public List<Cliente> ListarClientes();
+        public List<Cliente> ListarClientesActivos();
     }
 }

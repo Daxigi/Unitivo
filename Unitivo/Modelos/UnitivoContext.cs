@@ -75,7 +75,6 @@ public partial class UnitivoContext : DbContext
                 .IsUnicode(false)
                 .HasColumnName("direccion");
             entity.Property(e => e.Dni).HasColumnName("dni");
-            entity.Property(e => e.Edad).HasColumnName("edad");
             entity.Property(e => e.Estado).HasColumnName("estado");
             entity.Property(e => e.FechaCreacion).HasDefaultValueSql("(getdate())");
             entity.Property(e => e.FechaModificacion).HasDefaultValueSql("(getdate())");
@@ -139,7 +138,6 @@ public partial class UnitivoContext : DbContext
                 .IsUnicode(false)
                 .HasColumnName("direccion");
             entity.Property(e => e.Dni).HasColumnName("dni");
-            entity.Property(e => e.Edad).HasColumnName("edad");
             entity.Property(e => e.Estado).HasColumnName("estado");
             entity.Property(e => e.FechaCreacion).HasDefaultValueSql("(getdate())");
             entity.Property(e => e.FechaModificacion).HasDefaultValueSql("(getdate())");

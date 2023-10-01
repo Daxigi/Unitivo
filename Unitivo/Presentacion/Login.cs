@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using Unitivo.Presentacion.Vendedor;
 using Unitivo.Presentacion.Administrador;
 using Unitivo.Presentacion.SuperAdministrador;
+using Unitivo.Sessions;
 
 namespace Unitivo.Presentacion
 {
@@ -42,18 +43,21 @@ namespace Unitivo.Presentacion
             {
                 if (usuario == "JUANIV" && contraseña == "123")
                 {
+                    Session.idUsuario = 1;
                     MenuV menuVForm = new();
                     menuVForm.Show();
                     this.Hide();
                 }
                 else if (usuario == "JUANISA" && contraseña == "123")
                 {
+                    Session.idUsuario = 2;
                     this.Hide();
                     MenuSA menuSAForm = new();
                     menuSAForm.Show();
                 }
                 else if (usuario == "JUANIA" && contraseña == "123")
                 {
+                    Session.idUsuario = 3;
                     this.Hide();
                     MenuA menuAForm = new();
                     menuAForm.Show();
