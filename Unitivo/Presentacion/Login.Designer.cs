@@ -29,29 +29,22 @@
         private void InitializeComponent()
         {
             PanelBarraMenuLogin = new Panel();
-            PanelBarraMenuLogin.MouseDown += new MouseEventHandler(PanelBarraMenuLogin_MouseDown);
-            PanelBarraMenuLogin.MouseUp += new MouseEventHandler(PanelBarraMenuLogin_MouseUp);
-            PanelBarraMenuLogin.MouseMove += new MouseEventHandler(PanelBarraMenuLogin_MouseMove);
+            BMaximizarMenu = new Button();
+            BCerrarMenu = new Button();
+            BRestaurarMenu = new Button();
+            BMinimizarMenu = new Button();
             Panel2 = new Panel();
+            panel6 = new Panel();
+            panel5 = new Panel();
+            panel4 = new Panel();
+            panel3 = new Panel();
+            PictureBoxContraseña = new PictureBox();
             TBContraseña = new TextBox();
             TBUsuario = new TextBox();
-            TBUsuario.KeyPress += new KeyPressEventHandler(TBUsuario_Keypress);
-            TBUsuario.TextChanged += new EventHandler(TBUsuario_TextChanged);
             BLogin = new Button();
-            BLogin.Click += new EventHandler(BLogin_Click);
             Label3 = new Label();
             Label2 = new Label();
             Label1 = new Label();
-            PictureBoxContraseña = new PictureBox();
-            PictureBoxContraseña.Click += new EventHandler(PictureBoxContraseña_Click);
-            BMaximizarMenu = new Button();
-            BMaximizarMenu.Click += new EventHandler(BMaximizarMenu_Click);
-            BCerrarMenu = new Button();
-            BCerrarMenu.Click += new EventHandler(BCerrarMenu_Click);
-            BRestaurarMenu = new Button();
-            BRestaurarMenu.Click += new EventHandler(BRestaurarMenu_Click);
-            BMinimizarMenu = new Button();
-            BMinimizarMenu.Click += new EventHandler(BMinimizarMenu_Click);
             Panel1 = new Panel();
             PanelBarraMenuLogin.SuspendLayout();
             Panel2.SuspendLayout();
@@ -67,96 +60,13 @@
             PanelBarraMenuLogin.Controls.Add(BMinimizarMenu);
             PanelBarraMenuLogin.Dock = DockStyle.Top;
             PanelBarraMenuLogin.Location = new Point(0, 0);
+            PanelBarraMenuLogin.Margin = new Padding(4, 5, 4, 5);
             PanelBarraMenuLogin.Name = "PanelBarraMenuLogin";
-            PanelBarraMenuLogin.Size = new Size(760, 50);
+            PanelBarraMenuLogin.Size = new Size(1013, 77);
             PanelBarraMenuLogin.TabIndex = 0;
-            // 
-            // Panel2
-            // 
-            Panel2.Anchor = AnchorStyles.None;
-            Panel2.BackColor = Color.Cornsilk;
-            Panel2.Controls.Add(PictureBoxContraseña);
-            Panel2.Controls.Add(TBContraseña);
-            Panel2.Controls.Add(TBUsuario);
-            Panel2.Controls.Add(BLogin);
-            Panel2.Controls.Add(Label3);
-            Panel2.Controls.Add(Label2);
-            Panel2.Controls.Add(Label1);
-            Panel2.Location = new Point(241, 85);
-            Panel2.Name = "Panel2";
-            Panel2.Size = new Size(280, 340);
-            Panel2.TabIndex = 1;
-            // 
-            // TBContraseña
-            // 
-            TBContraseña.Location = new Point(66, 221);
-            TBContraseña.Name = "TBContraseña";
-            TBContraseña.Size = new Size(150, 20);
-            TBContraseña.TabIndex = 5;
-            // 
-            // TBUsuario
-            // 
-            TBUsuario.Location = new Point(66, 146);
-            TBUsuario.Name = "TBUsuario";
-            TBUsuario.Size = new Size(150, 20);
-            TBUsuario.TabIndex = 4;
-            // 
-            // BLogin
-            // 
-            BLogin.FlatAppearance.BorderSize = 2;
-            BLogin.FlatStyle = FlatStyle.Flat;
-            BLogin.Font = new Font("Cooper Black", 18.0f, FontStyle.Regular, GraphicsUnit.Point, 0);
-            BLogin.ForeColor = Color.HotPink;
-            BLogin.Location = new Point(71, 269);
-            BLogin.Name = "BLogin";
-            BLogin.Size = new Size(141, 39);
-            BLogin.TabIndex = 3;
-            BLogin.Text = "Ingresar";
-            BLogin.UseVisualStyleBackColor = true;
-            // 
-            // Label3
-            // 
-            Label3.AutoSize = true;
-            Label3.Font = new Font("Cooper Black", 18.0f, FontStyle.Regular, GraphicsUnit.Point, 0);
-            Label3.ForeColor = Color.DarkOliveGreen;
-            Label3.Location = new Point(67, 178);
-            Label3.Name = "Label3";
-            Label3.Size = new Size(151, 27);
-            Label3.TabIndex = 2;
-            Label3.Text = "Contraseña";
-            // 
-            // Label2
-            // 
-            Label2.AutoSize = true;
-            Label2.Font = new Font("Cooper Black", 18.0f, FontStyle.Regular, GraphicsUnit.Point, 0);
-            Label2.ForeColor = Color.DarkOliveGreen;
-            Label2.Location = new Point(86, 104);
-            Label2.Name = "Label2";
-            Label2.Size = new Size(109, 27);
-            Label2.TabIndex = 1;
-            Label2.Text = "Usuario";
-            // 
-            // Label1
-            // 
-            Label1.AutoSize = true;
-            Label1.Font = new Font("Cooper Black", 26.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
-            Label1.ForeColor = Color.DarkOrange;
-            Label1.Location = new Point(13, 26);
-            Label1.Name = "Label1";
-            Label1.Size = new Size(259, 40);
-            Label1.TabIndex = 0;
-            Label1.Text = "Iniciar Sesión";
-            // 
-            // PictureBoxContraseña
-            // 
-            PictureBoxContraseña.BackColor = Color.White;
-            PictureBoxContraseña.BackgroundImage = Properties.Resources.ojo_cerrado;
-            PictureBoxContraseña.BackgroundImageLayout = ImageLayout.Stretch;
-            PictureBoxContraseña.Location = new Point(189, 223);
-            PictureBoxContraseña.Name = "PictureBoxContraseña";
-            PictureBoxContraseña.Size = new Size(25, 16);
-            PictureBoxContraseña.TabIndex = 6;
-            PictureBoxContraseña.TabStop = false;
+            PanelBarraMenuLogin.MouseDown += PanelBarraMenuLogin_MouseDown;
+            PanelBarraMenuLogin.MouseMove += PanelBarraMenuLogin_MouseMove;
+            PanelBarraMenuLogin.MouseUp += PanelBarraMenuLogin_MouseUp;
             // 
             // BMaximizarMenu
             // 
@@ -165,11 +75,13 @@
             BMaximizarMenu.BackgroundImageLayout = ImageLayout.Stretch;
             BMaximizarMenu.FlatAppearance.BorderSize = 0;
             BMaximizarMenu.FlatStyle = FlatStyle.Flat;
-            BMaximizarMenu.Location = new Point(670, 12);
+            BMaximizarMenu.Location = new Point(893, 18);
+            BMaximizarMenu.Margin = new Padding(4, 5, 4, 5);
             BMaximizarMenu.Name = "BMaximizarMenu";
-            BMaximizarMenu.Size = new Size(25, 25);
+            BMaximizarMenu.Size = new Size(33, 38);
             BMaximizarMenu.TabIndex = 3;
             BMaximizarMenu.UseVisualStyleBackColor = true;
+            BMaximizarMenu.Click += BMaximizarMenu_Click;
             // 
             // BCerrarMenu
             // 
@@ -178,11 +90,13 @@
             BCerrarMenu.BackgroundImageLayout = ImageLayout.Stretch;
             BCerrarMenu.FlatAppearance.BorderSize = 0;
             BCerrarMenu.FlatStyle = FlatStyle.Flat;
-            BCerrarMenu.Location = new Point(710, 12);
+            BCerrarMenu.Location = new Point(947, 18);
+            BCerrarMenu.Margin = new Padding(4, 5, 4, 5);
             BCerrarMenu.Name = "BCerrarMenu";
-            BCerrarMenu.Size = new Size(25, 25);
+            BCerrarMenu.Size = new Size(33, 38);
             BCerrarMenu.TabIndex = 2;
             BCerrarMenu.UseVisualStyleBackColor = true;
+            BCerrarMenu.Click += BCerrarMenu_Click;
             // 
             // BRestaurarMenu
             // 
@@ -191,11 +105,13 @@
             BRestaurarMenu.BackgroundImageLayout = ImageLayout.Stretch;
             BRestaurarMenu.FlatAppearance.BorderSize = 0;
             BRestaurarMenu.FlatStyle = FlatStyle.Flat;
-            BRestaurarMenu.Location = new Point(670, 12);
+            BRestaurarMenu.Location = new Point(893, 18);
+            BRestaurarMenu.Margin = new Padding(4, 5, 4, 5);
             BRestaurarMenu.Name = "BRestaurarMenu";
-            BRestaurarMenu.Size = new Size(25, 25);
+            BRestaurarMenu.Size = new Size(33, 38);
             BRestaurarMenu.TabIndex = 1;
             BRestaurarMenu.UseVisualStyleBackColor = true;
+            BRestaurarMenu.Click += BRestaurarMenu_Click;
             // 
             // BMinimizarMenu
             // 
@@ -204,39 +120,179 @@
             BMinimizarMenu.BackgroundImageLayout = ImageLayout.Stretch;
             BMinimizarMenu.FlatAppearance.BorderSize = 0;
             BMinimizarMenu.FlatStyle = FlatStyle.Flat;
-            BMinimizarMenu.Location = new Point(629, 12);
+            BMinimizarMenu.Location = new Point(839, 18);
+            BMinimizarMenu.Margin = new Padding(4, 5, 4, 5);
             BMinimizarMenu.Name = "BMinimizarMenu";
-            BMinimizarMenu.Size = new Size(25, 25);
+            BMinimizarMenu.Size = new Size(33, 38);
             BMinimizarMenu.TabIndex = 0;
             BMinimizarMenu.UseVisualStyleBackColor = true;
+            BMinimizarMenu.Click += BMinimizarMenu_Click;
+            // 
+            // Panel2
+            // 
+            Panel2.Anchor = AnchorStyles.None;
+            Panel2.BackColor = Color.Cornsilk;
+            Panel2.Controls.Add(panel6);
+            Panel2.Controls.Add(panel5);
+            Panel2.Controls.Add(panel4);
+            Panel2.Controls.Add(panel3);
+            Panel2.Controls.Add(PictureBoxContraseña);
+            Panel2.Controls.Add(TBContraseña);
+            Panel2.Controls.Add(TBUsuario);
+            Panel2.Controls.Add(BLogin);
+            Panel2.Controls.Add(Label3);
+            Panel2.Controls.Add(Label2);
+            Panel2.Controls.Add(Label1);
+            Panel2.Location = new Point(321, 131);
+            Panel2.Margin = new Padding(4, 5, 4, 5);
+            Panel2.Name = "Panel2";
+            Panel2.Size = new Size(373, 523);
+            Panel2.TabIndex = 1;
+            // 
+            // panel6
+            // 
+            panel6.BackColor = Color.PaleGoldenrod;
+            panel6.Location = new Point(0, 0);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(373, 10);
+            panel6.TabIndex = 9;
+            // 
+            // panel5
+            // 
+            panel5.BackColor = Color.PaleGoldenrod;
+            panel5.Location = new Point(0, 513);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(373, 10);
+            panel5.TabIndex = 8;
+            // 
+            // panel4
+            // 
+            panel4.BackColor = Color.PaleGoldenrod;
+            panel4.Location = new Point(363, 10);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(10, 505);
+            panel4.TabIndex = 8;
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.PaleGoldenrod;
+            panel3.Location = new Point(0, 10);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(10, 505);
+            panel3.TabIndex = 7;
+            // 
+            // PictureBoxContraseña
+            // 
+            PictureBoxContraseña.BackColor = Color.White;
+            PictureBoxContraseña.BackgroundImage = Properties.Resources.ojo_cerrado;
+            PictureBoxContraseña.BackgroundImageLayout = ImageLayout.Stretch;
+            PictureBoxContraseña.Location = new Point(253, 341);
+            PictureBoxContraseña.Margin = new Padding(4, 5, 4, 5);
+            PictureBoxContraseña.Name = "PictureBoxContraseña";
+            PictureBoxContraseña.Size = new Size(33, 25);
+            PictureBoxContraseña.TabIndex = 6;
+            PictureBoxContraseña.TabStop = false;
+            PictureBoxContraseña.Click += PictureBoxContraseña_Click;
+            // 
+            // TBContraseña
+            // 
+            TBContraseña.Location = new Point(88, 340);
+            TBContraseña.Margin = new Padding(4, 5, 4, 5);
+            TBContraseña.Name = "TBContraseña";
+            TBContraseña.Size = new Size(199, 27);
+            TBContraseña.TabIndex = 5;
+            // 
+            // TBUsuario
+            // 
+            TBUsuario.Location = new Point(88, 225);
+            TBUsuario.Margin = new Padding(4, 5, 4, 5);
+            TBUsuario.Name = "TBUsuario";
+            TBUsuario.Size = new Size(199, 27);
+            TBUsuario.TabIndex = 4;
+            TBUsuario.TextChanged += TBUsuario_TextChanged;
+            TBUsuario.KeyPress += String_KeyPress;
+            // 
+            // BLogin
+            // 
+            BLogin.FlatAppearance.BorderSize = 2;
+            BLogin.FlatStyle = FlatStyle.Flat;
+            BLogin.Font = new Font("Cooper Black", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            BLogin.ForeColor = Color.HotPink;
+            BLogin.Location = new Point(95, 414);
+            BLogin.Margin = new Padding(4, 5, 4, 5);
+            BLogin.Name = "BLogin";
+            BLogin.Size = new Size(188, 60);
+            BLogin.TabIndex = 3;
+            BLogin.Text = "Ingresar";
+            BLogin.UseVisualStyleBackColor = true;
+            BLogin.Click += BLogin_Click;
+            // 
+            // Label3
+            // 
+            Label3.AutoSize = true;
+            Label3.Font = new Font("Cooper Black", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            Label3.ForeColor = Color.DarkOliveGreen;
+            Label3.Location = new Point(89, 274);
+            Label3.Margin = new Padding(4, 0, 4, 0);
+            Label3.Name = "Label3";
+            Label3.Size = new Size(189, 35);
+            Label3.TabIndex = 2;
+            Label3.Text = "Contraseña";
+            // 
+            // Label2
+            // 
+            Label2.AutoSize = true;
+            Label2.Font = new Font("Cooper Black", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            Label2.ForeColor = Color.DarkOliveGreen;
+            Label2.Location = new Point(115, 160);
+            Label2.Margin = new Padding(4, 0, 4, 0);
+            Label2.Name = "Label2";
+            Label2.Size = new Size(136, 35);
+            Label2.TabIndex = 1;
+            Label2.Text = "Usuario";
+            // 
+            // Label1
+            // 
+            Label1.AutoSize = true;
+            Label1.Font = new Font("Cooper Black", 26.25F, FontStyle.Regular, GraphicsUnit.Point);
+            Label1.ForeColor = Color.DarkOrange;
+            Label1.Location = new Point(17, 40);
+            Label1.Margin = new Padding(4, 0, 4, 0);
+            Label1.Name = "Label1";
+            Label1.Size = new Size(329, 50);
+            Label1.TabIndex = 0;
+            Label1.Text = "Iniciar Sesión";
             // 
             // Panel1
             // 
             Panel1.Anchor = AnchorStyles.None;
             Panel1.BackgroundImage = Properties.Resources.imggrande4;
-            Panel1.Location = new Point(0, 50);
+            Panel1.Location = new Point(0, 77);
+            Panel1.Margin = new Padding(4, 5, 4, 5);
             Panel1.Name = "Panel1";
-            Panel1.Size = new Size(760, 410);
+            Panel1.Size = new Size(1013, 631);
             Panel1.TabIndex = 2;
             // 
             // Login
             // 
-            AutoScaleDimensions = new SizeF(6.0f, 13.0f);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(760, 460);
+            ClientSize = new Size(1013, 708);
             Controls.Add(Panel2);
             Controls.Add(PanelBarraMenuLogin);
             Controls.Add(Panel1);
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(4, 5, 4, 5);
             Name = "Login";
+            Load += Login_Load;
+            Shown += Login_Shown;
+            KeyDown += Login_KeyDown;
             PanelBarraMenuLogin.ResumeLayout(false);
             Panel2.ResumeLayout(false);
             Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)PictureBoxContraseña).EndInit();
-            Load += new EventHandler(Login_Load);
             ResumeLayout(false);
-
         }
 
         internal Panel PanelBarraMenuLogin;
@@ -255,5 +311,10 @@
         internal Panel Panel1;
 
         #endregion
+
+        private Panel panel5;
+        private Panel panel4;
+        private Panel panel3;
+        private Panel panel6;
     }
 }

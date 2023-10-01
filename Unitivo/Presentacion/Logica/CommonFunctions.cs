@@ -5,40 +5,54 @@
 
         public static void ValidarStringKeyPress(TextBox textBox, KeyPressEventArgs e)
         {
-            // Verifica si la tecla presionada no es una letra, un espacio o un punto.
-            if (!(char.IsLetter(e.KeyChar) || e.KeyChar == ' ' || e.KeyChar == '.' || e.KeyChar == (char)Keys.Back))
+            // Verifica si la tecla presionada no es una letra o un espacio.
+            if (!(char.IsLetter(e.KeyChar) || e.KeyChar == ' ' || e.KeyChar == (char)Keys.Back))
             {
                 // No permite ingresar la tecla presionada.
                 e.Handled = true;
                 // Muestra un mensaje de error.
-                MessageBox.Show("Solo se aceptan letras.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Solo se aceptan letras y espacios.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
 
         public static void ValidarNumberKeyPress(TextBox textBox, KeyPressEventArgs e)
         {
-            // Verifica que la tecla presionada sea un número, una tecla de borrado o un espacio.
-            if (!char.IsDigit(e.KeyChar) & e.KeyChar != '.' & e.KeyChar != '\b')
+            // Verifica que la tecla presionada sea un número o una tecla de borrado.
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != '\b')
             {
                 // No permite ingresar la tecla presionada.
                 e.Handled = true;
                 // Muestra un mensaje de error.
-                MessageBox.Show("Solo se aceptan numeros.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                MessageBox.Show("Solo se aceptan números.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
+
         public static void ValidarKeyPress(TextBox textBox, KeyPressEventArgs e)
         {
-            // Verifica que la tecla presionada sea un número, una tecla de borrado o un espacio.
-            if (!char.IsLetterOrDigit(e.KeyChar) & e.KeyChar != '.' & e.KeyChar != '\b')
+            // Verifica que la tecla presionada sea una letra, un número o un espacio.
+            if (!char.IsLetterOrDigit(e.KeyChar) && e.KeyChar != ' ' && e.KeyChar != (char)Keys.Back)
             {
                 // No permite ingresar la tecla presionada.
                 e.Handled = true;
                 // Muestra un mensaje de error.
                 MessageBox.Show("No se aceptan caracteres especiales", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
+
+        public static void ValidarEmailKeyPress(TextBox textBox, KeyPressEventArgs e)
+        {
+            // Define los caracteres permitidos en un correo electrónico.
+            string validChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@._-";
+
+            // Verifica si el carácter ingresado no es válido para un correo electrónico.
+            if (!validChars.Contains(e.KeyChar))
+            {
+                e.Handled = true;
+                MessageBox.Show("Por favor, ingresa un correo electrónico válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

@@ -16,5 +16,11 @@ namespace Unitivo.Presentacion.Vendedor
         {
             InitializeComponent();
         }
+
+        private void BVolver_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
     }
 }

@@ -79,13 +79,13 @@
     <Compile Update="Presentacion\Vendedor\AñadirVentas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Presentacion\Vendedor\BuscarCli.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Presentacion\Vendedor\BuscarP.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Presentacion\Vendedor\DetalleVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Presentacion\Vendedor\BuscarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Presentacion\Vendedor\BuscarProducto.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Presentacion\Vendedor\ListarClientes.cs">

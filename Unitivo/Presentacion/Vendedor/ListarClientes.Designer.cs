@@ -228,6 +228,88 @@
             Column5.MinimumWidth = 6;
             Column5.Name = "Column5";
             // 
+            // TBBuscar
+            // 
+            TBBuscar.Location = new Point(260, 69);
+            TBBuscar.Margin = new Padding(4, 5, 4, 5);
+            TBBuscar.Name = "TBBuscar";
+            TBBuscar.Size = new Size(220, 38);
+            TBBuscar.TabIndex = 1;
+            TBBuscar.KeyPress += Num_KeyPress;
+            // 
+            // ComboBoxBuscarDni
+            // 
+            ComboBoxBuscarDni.Font = new Font("Cooper Black", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            ComboBoxBuscarDni.ForeColor = Color.SaddleBrown;
+            ComboBoxBuscarDni.FormattingEnabled = true;
+            ComboBoxBuscarDni.Location = new Point(59, 72);
+            ComboBoxBuscarDni.Margin = new Padding(4, 5, 4, 5);
+            ComboBoxBuscarDni.Name = "ComboBoxBuscarDni";
+            ComboBoxBuscarDni.Size = new Size(160, 31);
+            ComboBoxBuscarDni.TabIndex = 0;
+            ComboBoxBuscarDni.Text = "DNI";
+            // 
+            // TabControlListaClientes
+            // 
+            TabControlListaClientes.Controls.Add(TabPageListaClientes);
+            TabControlListaClientes.Font = new Font("Britannic Bold", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            TabControlListaClientes.Location = new Point(128, 254);
+            TabControlListaClientes.Margin = new Padding(4, 5, 4, 5);
+            TabControlListaClientes.Name = "TabControlListaClientes";
+            TabControlListaClientes.SelectedIndex = 0;
+            TabControlListaClientes.Size = new Size(780, 331);
+            TabControlListaClientes.TabIndex = 1;
+            // 
+            // TabPageListaClientes
+            // 
+            TabPageListaClientes.Controls.Add(DgvListarClientes);
+            TabPageListaClientes.Font = new Font("Britannic Bold", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            TabPageListaClientes.Location = new Point(4, 30);
+            TabPageListaClientes.Margin = new Padding(4, 5, 4, 5);
+            TabPageListaClientes.Name = "TabPageListaClientes";
+            TabPageListaClientes.Padding = new Padding(4, 5, 4, 5);
+            TabPageListaClientes.Size = new Size(772, 297);
+            TabPageListaClientes.TabIndex = 0;
+            TabPageListaClientes.Text = "Lista de Clientes";
+            TabPageListaClientes.UseVisualStyleBackColor = true;
+            // 
+            // DgvListarClientes
+            // 
+            DgvListarClientes.BackgroundColor = Color.RosyBrown;
+            DgvListarClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DgvListarClientes.Dock = DockStyle.Fill;
+            DgvListarClientes.Location = new Point(4, 5);
+            DgvListarClientes.Margin = new Padding(4, 5, 4, 5);
+            DgvListarClientes.Name = "DgvListarClientes";
+            DgvListarClientes.RowHeadersWidth = 51;
+            DgvListarClientes.Size = new Size(764, 287);
+            DgvListarClientes.TabIndex = 0;
+            // 
+            // BEditarCliente
+            // 
+            BEditarCliente.BackColor = Color.Goldenrod;
+            BEditarCliente.ForeColor = Color.White;
+            BEditarCliente.Image = Properties.Resources.icons8_editar_archivo_26;
+            BEditarCliente.Location = new Point(948, 458);
+            BEditarCliente.Margin = new Padding(4, 5, 4, 5);
+            BEditarCliente.Name = "BEditarCliente";
+            BEditarCliente.Size = new Size(67, 69);
+            BEditarCliente.TabIndex = 4;
+            BEditarCliente.UseVisualStyleBackColor = false;
+            BEditarCliente.Click += BEditarCliente_Click;
+            // 
+            // BImprimirClientes
+            // 
+            BImprimirClientes.BackColor = Color.SteelBlue;
+            BImprimirClientes.ForeColor = Color.White;
+            BImprimirClientes.Image = Properties.Resources.icons8_imprimir_26;
+            BImprimirClientes.Location = new Point(948, 355);
+            BImprimirClientes.Margin = new Padding(4, 5, 4, 5);
+            BImprimirClientes.Name = "BImprimirClientes";
+            BImprimirClientes.Size = new Size(67, 69);
+            BImprimirClientes.TabIndex = 3;
+            BImprimirClientes.UseVisualStyleBackColor = false;
+            // 
             // ListarClientes
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -256,8 +338,7 @@
         internal ComboBox ComboBoxBuscarDni;
         internal TabControl TabControlListaClientes;
         internal TabPage TabPageListaClientes;
-        internal DataGridView dgvListarClientes;
-        internal Button BImprimirClientes;
+        internal DataGridView DgvListarClientes;
         internal Button BEditarCliente;
         internal Button BVolver;
         internal TabPage TabPafeListaClientes;

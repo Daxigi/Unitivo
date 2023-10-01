@@ -11,21 +11,20 @@ using Unitivo.Presentacion.Logica;
 using Unitivo.Presentacion.Logica.Constructores;
 using Unitivo.Repositorio.Interfaces;
 using Univivo.Repositorios.Implementaciones;
+using Unitivo.Modelos;
 
-namespace Unitivo.Formularios
+namespace Unitivo.Presentacion.Vendedor
 {
     public partial class AñadirCliente : Form
     {
         ClienteRepositorio clienteRepositorio = new ClienteRepositorio();
+
+
         public AñadirCliente()
         {
             InitializeComponent();
         }
 
-        private void AgregarCliente()
-        {
-            
-        }
 
         private void BRegistrarCliente_Click(object sender, EventArgs e)
         {
@@ -60,6 +59,25 @@ namespace Unitivo.Formularios
             TBTelCliente.Text = "";
             TBDireccionCliente.Text = "";
             TBCorreoCliente.Text = "";
+        }
+        private void String_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            CommonFunctions.ValidarStringKeyPress((TextBox)sender, e);
+        }
+
+        private void Num_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            CommonFunctions.ValidarNumberKeyPress((TextBox)sender, e);
+        }
+
+        private void NumStr_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            CommonFunctions.ValidarKeyPress((TextBox)sender, e);
+        }
+
+        private void Email_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            CommonFunctions.ValidarEmailKeyPress((TextBox)sender, e);
         }
     }
 }

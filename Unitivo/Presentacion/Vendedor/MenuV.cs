@@ -108,32 +108,48 @@ namespace Unitivo.Presentacion.Vendedor
 
 
 
-        private Form? formActivo;
+        // Variable para el formulario activo
+        private Form? formularioActivo;
+
+        private void BVolver_Click(object sender, EventArgs e)
+        {
+            // Verificar si hay un formulario activo
+            if (formularioActivo != null)
+            {
+                formularioActivo.Close(); // Cerrar el formulario activo
+                formularioActivo = null;  // Establecer que no hay formulario activo
+            }
+        }
 
         private void AbrirFormulariosVendedor(Form formHijo)
         {
-            if (formActivo == null)
+            if (formularioActivo != null)
             {
-                PanelFormVendedor.Controls.Clear();
-                formHijo.TopLevel = false;
-                formHijo.FormBorderStyle = FormBorderStyle.None;
-                formHijo.Dock = DockStyle.Fill;
-                formHijo.Visible = true;
-                formHijo.AutoScroll = true;
-                formHijo.VerticalScroll.Value = 0;
-                formHijo.VerticalScroll.Minimum = 0;
-                formHijo.VerticalScroll.Maximum = formHijo.Size.Height - 100;
-                formHijo.HorizontalScroll.Value = 0;
-                formHijo.HorizontalScroll.Minimum = 0;
-                formHijo.HorizontalScroll.Maximum = formHijo.Size.Width - 100;
-                PanelFormVendedor.Controls.Add(formHijo);
-                PanelFormVendedor.Tag = formHijo;
-                PanelFormVendedor.BringToFront();
-                PanelFormVendedor.AutoScroll = true;
-                formHijo.Show();
-                hideSubMenu();
-
+                formularioActivo.Close(); // Cerrar el formulario activo actual
             }
+
+            // Configurar el formulario hijo como el formulario activo
+            formularioActivo = formHijo;
+
+            PanelFormVendedor.Controls.Clear();
+            formHijo.TopLevel = false;
+            formHijo.FormBorderStyle = FormBorderStyle.None;
+            formHijo.Dock = DockStyle.Fill;
+            formHijo.Visible = true;
+            formHijo.AutoScroll = true;
+            formHijo.VerticalScroll.Value = 0;
+            formHijo.VerticalScroll.Minimum = 0;
+            formHijo.VerticalScroll.Maximum = formHijo.Size.Height - 100;
+            formHijo.HorizontalScroll.Value = 0;
+            formHijo.HorizontalScroll.Minimum = 0;
+            formHijo.HorizontalScroll.Maximum = formHijo.Size.Width - 100;
+            PanelFormVendedor.Controls.Add(formHijo);
+            PanelFormVendedor.Tag = formHijo;
+            PanelFormVendedor.BringToFront();
+            PanelFormVendedor.AutoScroll = true;
+            formHijo.Show();
+            hideSubMenu();
+
         }
 
         private void BCerrarMenu_Click(object sender, EventArgs e)

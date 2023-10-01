@@ -30,27 +30,37 @@
         {
             Panel1 = new Panel();
             BCancelar = new Button();
-            BCancelar.Click += new EventHandler(BCancelar_Click);
             BModCliente = new Button();
             TBCorreoCliente = new TextBox();
             Label7 = new Label();
             TBDireccion = new TextBox();
             Label6 = new Label();
             TBTelCliente = new TextBox();
-            TBTelCliente.KeyPress += new KeyPressEventHandler(TBDniCliente_KeyPress);
             Label5 = new Label();
             TBDniCliente = new TextBox();
-            TBDniCliente.KeyPress += new KeyPressEventHandler(TBDniCliente_KeyPress);
             Label4 = new Label();
             TBApellidoCliente = new TextBox();
-            TBApellidoCliente.KeyPress += new KeyPressEventHandler(TBNombreCliente_KeyPress);
-            TBApellidoCliente.KeyPress += new KeyPressEventHandler(TBApellidoCliente_KeyPress);
             Label3 = new Label();
             TBNombreCliente = new TextBox();
-            TBNombreCliente.KeyPress += new KeyPressEventHandler(TBNombreCliente_KeyPress);
             Label2 = new Label();
             Label1 = new Label();
+            panel2 = new Panel();
+            panel12 = new Panel();
+            panel10 = new Panel();
+            panel6 = new Panel();
+            panel3 = new Panel();
+            panel13 = new Panel();
+            panel9 = new Panel();
+            panel7 = new Panel();
+            panel8 = new Panel();
+            panel4 = new Panel();
+            panel5 = new Panel();
+            panel11 = new Panel();
             Panel1.SuspendLayout();
+            panel2.SuspendLayout();
+            panel3.SuspendLayout();
+            panel4.SuspendLayout();
+            panel5.SuspendLayout();
             SuspendLayout();
             // 
             // Panel1
@@ -70,9 +80,10 @@
             Panel1.Controls.Add(Label3);
             Panel1.Controls.Add(TBNombreCliente);
             Panel1.Controls.Add(Label2);
-            Panel1.Location = new Point(239, 78);
+            Panel1.Location = new Point(175, 144);
+            Panel1.Margin = new Padding(4, 5, 4, 5);
             Panel1.Name = "Panel1";
-            Panel1.Size = new Size(323, 340);
+            Panel1.Size = new Size(431, 484);
             Panel1.TabIndex = 1;
             // 
             // BCancelar
@@ -80,135 +91,155 @@
             BCancelar.BackColor = Color.Sienna;
             BCancelar.FlatAppearance.BorderSize = 2;
             BCancelar.FlatStyle = FlatStyle.Flat;
-            BCancelar.Font = new Font("Cooper Black", 15.75f, FontStyle.Regular, GraphicsUnit.Point, 0);
+            BCancelar.Font = new Font("Cooper Black", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             BCancelar.ForeColor = Color.Cornsilk;
-            BCancelar.Location = new Point(37, 268);
+            BCancelar.Location = new Point(43, 393);
+            BCancelar.Margin = new Padding(4, 5, 4, 5);
             BCancelar.Name = "BCancelar";
-            BCancelar.Size = new Size(106, 38);
+            BCancelar.Size = new Size(141, 58);
             BCancelar.TabIndex = 18;
             BCancelar.Text = "Volver";
-            BCancelar.TextAlign = ContentAlignment.TopCenter;
             BCancelar.UseVisualStyleBackColor = false;
+            BCancelar.Click += BCancelar_Click;
             // 
             // BModCliente
             // 
             BModCliente.BackColor = Color.DarkOliveGreen;
             BModCliente.FlatAppearance.BorderSize = 2;
             BModCliente.FlatStyle = FlatStyle.Flat;
-            BModCliente.Font = new Font("Cooper Black", 16.0f, FontStyle.Regular, GraphicsUnit.Point, 0);
+            BModCliente.Font = new Font("Cooper Black", 16F, FontStyle.Regular, GraphicsUnit.Point);
             BModCliente.ForeColor = Color.Cornsilk;
-            BModCliente.Location = new Point(166, 268);
+            BModCliente.Location = new Point(215, 393);
+            BModCliente.Margin = new Padding(4, 5, 4, 5);
             BModCliente.Name = "BModCliente";
-            BModCliente.Size = new Size(133, 38);
+            BModCliente.Size = new Size(177, 58);
             BModCliente.TabIndex = 17;
             BModCliente.Text = "Modificar";
             BModCliente.UseVisualStyleBackColor = false;
             // 
             // TBCorreoCliente
             // 
-            TBCorreoCliente.Location = new Point(160, 209);
+            TBCorreoCliente.Location = new Point(213, 322);
+            TBCorreoCliente.Margin = new Padding(4, 5, 4, 5);
             TBCorreoCliente.Name = "TBCorreoCliente";
-            TBCorreoCliente.Size = new Size(128, 20);
+            TBCorreoCliente.Size = new Size(169, 27);
             TBCorreoCliente.TabIndex = 16;
+            TBCorreoCliente.KeyPress += Email_KeyPress;
             // 
             // Label7
             // 
             Label7.AutoSize = true;
-            Label7.Font = new Font("Cooper Black", 14.5f, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Label7.Font = new Font("Cooper Black", 14.5F, FontStyle.Regular, GraphicsUnit.Point);
             Label7.ForeColor = Color.DarkOrange;
-            Label7.Location = new Point(35, 206);
+            Label7.Location = new Point(47, 317);
+            Label7.Margin = new Padding(4, 0, 4, 0);
             Label7.Name = "Label7";
-            Label7.Size = new Size(85, 23);
+            Label7.Size = new Size(106, 29);
             Label7.TabIndex = 15;
             Label7.Text = "E-mail :";
             // 
             // TBDireccion
             // 
-            TBDireccion.Location = new Point(160, 173);
+            TBDireccion.Location = new Point(213, 266);
+            TBDireccion.Margin = new Padding(4, 5, 4, 5);
             TBDireccion.Name = "TBDireccion";
-            TBDireccion.Size = new Size(128, 20);
+            TBDireccion.Size = new Size(169, 27);
             TBDireccion.TabIndex = 14;
+            TBDireccion.KeyPress += NumStr_KeyPress;
             // 
             // Label6
             // 
             Label6.AutoSize = true;
-            Label6.Font = new Font("Cooper Black", 14.5f, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Label6.Font = new Font("Cooper Black", 14.5F, FontStyle.Regular, GraphicsUnit.Point);
             Label6.ForeColor = Color.DarkOrange;
-            Label6.Location = new Point(35, 170);
+            Label6.Location = new Point(47, 262);
+            Label6.Margin = new Padding(4, 0, 4, 0);
             Label6.Name = "Label6";
-            Label6.Size = new Size(120, 23);
+            Label6.Size = new Size(148, 29);
             Label6.TabIndex = 13;
             Label6.Text = "Dirección :";
             // 
             // TBTelCliente
             // 
-            TBTelCliente.Location = new Point(160, 136);
+            TBTelCliente.Location = new Point(213, 209);
+            TBTelCliente.Margin = new Padding(4, 5, 4, 5);
             TBTelCliente.Name = "TBTelCliente";
-            TBTelCliente.Size = new Size(128, 20);
+            TBTelCliente.Size = new Size(169, 27);
             TBTelCliente.TabIndex = 12;
+            TBTelCliente.KeyPress += Num_KeyPress;
             // 
             // Label5
             // 
             Label5.AutoSize = true;
-            Label5.Font = new Font("Cooper Black", 14.5f, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Label5.Font = new Font("Cooper Black", 14.5F, FontStyle.Regular, GraphicsUnit.Point);
             Label5.ForeColor = Color.DarkOrange;
-            Label5.Location = new Point(35, 133);
+            Label5.Location = new Point(47, 205);
+            Label5.Margin = new Padding(4, 0, 4, 0);
             Label5.Name = "Label5";
-            Label5.Size = new Size(109, 23);
+            Label5.Size = new Size(137, 29);
             Label5.TabIndex = 11;
             Label5.Text = "Telefono :";
             // 
             // TBDniCliente
             // 
-            TBDniCliente.Location = new Point(160, 98);
+            TBDniCliente.Location = new Point(213, 151);
+            TBDniCliente.Margin = new Padding(4, 5, 4, 5);
             TBDniCliente.Name = "TBDniCliente";
-            TBDniCliente.Size = new Size(128, 20);
+            TBDniCliente.Size = new Size(169, 27);
             TBDniCliente.TabIndex = 10;
+            TBDniCliente.KeyPress += Num_KeyPress;
             // 
             // Label4
             // 
             Label4.AutoSize = true;
-            Label4.Font = new Font("Cooper Black", 14.5f, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Label4.Font = new Font("Cooper Black", 14.5F, FontStyle.Regular, GraphicsUnit.Point);
             Label4.ForeColor = Color.DarkOrange;
-            Label4.Location = new Point(35, 95);
+            Label4.Location = new Point(47, 146);
+            Label4.Margin = new Padding(4, 0, 4, 0);
             Label4.Name = "Label4";
-            Label4.Size = new Size(62, 23);
+            Label4.Size = new Size(77, 29);
             Label4.TabIndex = 9;
             Label4.Text = "DNI :";
             // 
             // TBApellidoCliente
             // 
-            TBApellidoCliente.Location = new Point(160, 59);
+            TBApellidoCliente.Location = new Point(213, 91);
+            TBApellidoCliente.Margin = new Padding(4, 5, 4, 5);
             TBApellidoCliente.Name = "TBApellidoCliente";
-            TBApellidoCliente.Size = new Size(128, 20);
+            TBApellidoCliente.Size = new Size(169, 27);
             TBApellidoCliente.TabIndex = 8;
+            TBApellidoCliente.KeyPress += String_KeyPress;
             // 
             // Label3
             // 
             Label3.AutoSize = true;
-            Label3.Font = new Font("Cooper Black", 14.5f, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Label3.Font = new Font("Cooper Black", 14.5F, FontStyle.Regular, GraphicsUnit.Point);
             Label3.ForeColor = Color.DarkOrange;
-            Label3.Location = new Point(35, 56);
+            Label3.Location = new Point(47, 86);
+            Label3.Margin = new Padding(4, 0, 4, 0);
             Label3.Name = "Label3";
-            Label3.Size = new Size(108, 23);
+            Label3.Size = new Size(135, 29);
             Label3.TabIndex = 7;
             Label3.Text = "Apellido :";
             // 
             // TBNombreCliente
             // 
-            TBNombreCliente.Location = new Point(160, 20);
+            TBNombreCliente.Location = new Point(213, 31);
+            TBNombreCliente.Margin = new Padding(4, 5, 4, 5);
             TBNombreCliente.Name = "TBNombreCliente";
-            TBNombreCliente.Size = new Size(128, 20);
+            TBNombreCliente.Size = new Size(169, 27);
             TBNombreCliente.TabIndex = 6;
+            TBNombreCliente.KeyPress += String_KeyPress;
             // 
             // Label2
             // 
             Label2.AutoSize = true;
-            Label2.Font = new Font("Cooper Black", 14.5f, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Label2.Font = new Font("Cooper Black", 14.5F, FontStyle.Regular, GraphicsUnit.Point);
             Label2.ForeColor = Color.DarkOrange;
-            Label2.Location = new Point(35, 17);
+            Label2.Location = new Point(47, 26);
+            Label2.Margin = new Padding(4, 0, 4, 0);
             Label2.Name = "Label2";
-            Label2.Size = new Size(104, 23);
+            Label2.Size = new Size(128, 29);
             Label2.TabIndex = 5;
             Label2.Text = "Nombre :";
             // 
@@ -216,30 +247,143 @@
             // 
             Label1.AutoSize = true;
             Label1.BackColor = Color.Cornsilk;
-            Label1.Font = new Font("Cooper Black", 26.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Label1.Font = new Font("Cooper Black", 26.25F, FontStyle.Regular, GraphicsUnit.Point);
             Label1.ForeColor = Color.DarkOliveGreen;
-            Label1.Location = new Point(240, 21);
+            Label1.Location = new Point(186, 66);
+            Label1.Margin = new Padding(4, 0, 4, 0);
             Label1.Name = "Label1";
-            Label1.Size = new Size(324, 40);
+            Label1.Size = new Size(410, 50);
             Label1.TabIndex = 2;
             Label1.Text = "Modificar Cliente";
             // 
+            // panel2
+            // 
+            panel2.BackColor = Color.RosyBrown;
+            panel2.Controls.Add(panel12);
+            panel2.Controls.Add(panel10);
+            panel2.Controls.Add(panel6);
+            panel2.Location = new Point(760, -2);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(53, 696);
+            panel2.TabIndex = 3;
+            // 
+            // panel12
+            // 
+            panel12.BackColor = Color.Gray;
+            panel12.Location = new Point(0, 683);
+            panel12.Name = "panel12";
+            panel12.Size = new Size(57, 11);
+            panel12.TabIndex = 8;
+            // 
+            // panel10
+            // 
+            panel10.BackColor = Color.Gray;
+            panel10.Location = new Point(0, 2);
+            panel10.Name = "panel10";
+            panel10.Size = new Size(57, 11);
+            panel10.TabIndex = 7;
+            // 
+            // panel6
+            // 
+            panel6.BackColor = Color.Gray;
+            panel6.Location = new Point(44, 3);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(10, 696);
+            panel6.TabIndex = 4;
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.RosyBrown;
+            panel3.Controls.Add(panel13);
+            panel3.Controls.Add(panel9);
+            panel3.Controls.Add(panel7);
+            panel3.Location = new Point(0, -2);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(54, 696);
+            panel3.TabIndex = 4;
+            // 
+            // panel13
+            // 
+            panel13.BackColor = Color.Gray;
+            panel13.Location = new Point(9, 683);
+            panel13.Name = "panel13";
+            panel13.Size = new Size(45, 11);
+            panel13.TabIndex = 9;
+            // 
+            // panel9
+            // 
+            panel9.BackColor = Color.Gray;
+            panel9.Location = new Point(0, 2);
+            panel9.Name = "panel9";
+            panel9.Size = new Size(67, 11);
+            panel9.TabIndex = 6;
+            // 
+            // panel7
+            // 
+            panel7.BackColor = Color.Gray;
+            panel7.Location = new Point(0, 3);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(10, 696);
+            panel7.TabIndex = 5;
+            // 
+            // panel8
+            // 
+            panel8.BackColor = Color.Gray;
+            panel8.Location = new Point(0, 0);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(708, 11);
+            panel8.TabIndex = 5;
+            // 
+            // panel4
+            // 
+            panel4.BackColor = Color.RosyBrown;
+            panel4.Controls.Add(panel8);
+            panel4.Location = new Point(54, 0);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(708, 23);
+            panel4.TabIndex = 4;
+            // 
+            // panel5
+            // 
+            panel5.BackColor = Color.RosyBrown;
+            panel5.Controls.Add(panel11);
+            panel5.Location = new Point(54, 671);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(708, 23);
+            panel5.TabIndex = 5;
+            // 
+            // panel11
+            // 
+            panel11.BackColor = Color.Gray;
+            panel11.Location = new Point(0, 10);
+            panel11.Name = "panel11";
+            panel11.Size = new Size(708, 11);
+            panel11.TabIndex = 6;
+            // 
             // ModificarCliente
             // 
-            AutoScaleDimensions = new SizeF(6.0f, 13.0f);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSeaGreen;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(812, 692);
+            Controls.Add(panel2);
             Controls.Add(Label1);
             Controls.Add(Panel1);
+            Controls.Add(panel4);
+            Controls.Add(panel5);
+            Controls.Add(panel3);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(4, 5, 4, 5);
             Name = "ModificarCliente";
             Text = "Form1";
             Panel1.ResumeLayout(false);
             Panel1.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel3.ResumeLayout(false);
+            panel4.ResumeLayout(false);
+            panel5.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
-
         }
 
         internal Panel Panel1;
@@ -260,5 +404,18 @@
         internal Label Label1;
 
         #endregion
+
+        private Panel panel2;
+        private Panel panel3;
+        private Panel panel4;
+        private Panel panel5;
+        private Panel panel6;
+        private Panel panel7;
+        private Panel panel8;
+        private Panel panel9;
+        private Panel panel12;
+        private Panel panel10;
+        private Panel panel13;
+        private Panel panel11;
     }
 }
