@@ -16,6 +16,19 @@
         }
 
 
+        public static void ValidarPassword(TextBox textBox, KeyPressEventArgs e)
+        {
+            // Verifica si la tecla presionada es un espacio en blanco.
+            if (e.KeyChar == ' ')
+            {
+                // No permite ingresar la tecla presionada.
+                e.Handled = true;
+                // Muestra un mensaje de error.
+                MessageBox.Show("No se permiten espacios en la contraseña.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
 
         public static void ValidarNumberKeyPress(TextBox textBox, KeyPressEventArgs e)
         {
