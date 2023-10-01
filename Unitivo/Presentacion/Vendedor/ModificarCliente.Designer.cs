@@ -91,7 +91,7 @@
             BCancelar.BackColor = Color.Sienna;
             BCancelar.FlatAppearance.BorderSize = 2;
             BCancelar.FlatStyle = FlatStyle.Flat;
-            BCancelar.Font = new Font("Cooper Black", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            BCancelar.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             BCancelar.ForeColor = Color.Cornsilk;
             BCancelar.Location = new Point(43, 393);
             BCancelar.Margin = new Padding(4, 5, 4, 5);
@@ -107,7 +107,7 @@
             BModCliente.BackColor = Color.DarkOliveGreen;
             BModCliente.FlatAppearance.BorderSize = 2;
             BModCliente.FlatStyle = FlatStyle.Flat;
-            BModCliente.Font = new Font("Cooper Black", 16F, FontStyle.Regular, GraphicsUnit.Point);
+            BModCliente.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Point);
             BModCliente.ForeColor = Color.Cornsilk;
             BModCliente.Location = new Point(215, 393);
             BModCliente.Margin = new Padding(4, 5, 4, 5);
@@ -129,12 +129,12 @@
             // Label7
             // 
             Label7.AutoSize = true;
-            Label7.Font = new Font("Cooper Black", 14.5F, FontStyle.Regular, GraphicsUnit.Point);
+            Label7.Font = new Font("Microsoft Sans Serif", 14.5F, FontStyle.Regular, GraphicsUnit.Point);
             Label7.ForeColor = Color.DarkOrange;
             Label7.Location = new Point(47, 317);
             Label7.Margin = new Padding(4, 0, 4, 0);
             Label7.Name = "Label7";
-            Label7.Size = new Size(106, 29);
+            Label7.Size = new Size(100, 29);
             Label7.TabIndex = 15;
             Label7.Text = "E-mail :";
             // 
@@ -150,12 +150,12 @@
             // Label6
             // 
             Label6.AutoSize = true;
-            Label6.Font = new Font("Cooper Black", 14.5F, FontStyle.Regular, GraphicsUnit.Point);
+            Label6.Font = new Font("Microsoft Sans Serif", 14.5F, FontStyle.Regular, GraphicsUnit.Point);
             Label6.ForeColor = Color.DarkOrange;
             Label6.Location = new Point(47, 262);
             Label6.Margin = new Padding(4, 0, 4, 0);
             Label6.Name = "Label6";
-            Label6.Size = new Size(148, 29);
+            Label6.Size = new Size(133, 29);
             Label6.TabIndex = 13;
             Label6.Text = "Dirección :";
             // 
@@ -171,12 +171,12 @@
             // Label5
             // 
             Label5.AutoSize = true;
-            Label5.Font = new Font("Cooper Black", 14.5F, FontStyle.Regular, GraphicsUnit.Point);
+            Label5.Font = new Font("Microsoft Sans Serif", 14.5F, FontStyle.Regular, GraphicsUnit.Point);
             Label5.ForeColor = Color.DarkOrange;
             Label5.Location = new Point(47, 205);
             Label5.Margin = new Padding(4, 0, 4, 0);
             Label5.Name = "Label5";
-            Label5.Size = new Size(137, 29);
+            Label5.Size = new Size(125, 29);
             Label5.TabIndex = 11;
             Label5.Text = "Telefono :";
             // 
@@ -192,12 +192,12 @@
             // Label4
             // 
             Label4.AutoSize = true;
-            Label4.Font = new Font("Cooper Black", 14.5F, FontStyle.Regular, GraphicsUnit.Point);
+            Label4.Font = new Font("Microsoft Sans Serif", 14.5F, FontStyle.Regular, GraphicsUnit.Point);
             Label4.ForeColor = Color.DarkOrange;
             Label4.Location = new Point(47, 146);
             Label4.Margin = new Padding(4, 0, 4, 0);
             Label4.Name = "Label4";
-            Label4.Size = new Size(77, 29);
+            Label4.Size = new Size(69, 29);
             Label4.TabIndex = 9;
             Label4.Text = "DNI :";
             // 
@@ -213,12 +213,12 @@
             // Label3
             // 
             Label3.AutoSize = true;
-            Label3.Font = new Font("Cooper Black", 14.5F, FontStyle.Regular, GraphicsUnit.Point);
+            Label3.Font = new Font("Microsoft Sans Serif", 14.5F, FontStyle.Regular, GraphicsUnit.Point);
             Label3.ForeColor = Color.DarkOrange;
             Label3.Location = new Point(47, 86);
             Label3.Margin = new Padding(4, 0, 4, 0);
             Label3.Name = "Label3";
-            Label3.Size = new Size(135, 29);
+            Label3.Size = new Size(118, 29);
             Label3.TabIndex = 7;
             Label3.Text = "Apellido :";
             // 
@@ -234,12 +234,12 @@
             // Label2
             // 
             Label2.AutoSize = true;
-            Label2.Font = new Font("Cooper Black", 14.5F, FontStyle.Regular, GraphicsUnit.Point);
+            Label2.Font = new Font("Microsoft Sans Serif", 14.5F, FontStyle.Regular, GraphicsUnit.Point);
             Label2.ForeColor = Color.DarkOrange;
             Label2.Location = new Point(47, 26);
             Label2.Margin = new Padding(4, 0, 4, 0);
             Label2.Name = "Label2";
-            Label2.Size = new Size(128, 29);
+            Label2.Size = new Size(117, 29);
             Label2.TabIndex = 5;
             Label2.Text = "Nombre :";
             // 
@@ -247,12 +247,12 @@
             // 
             Label1.AutoSize = true;
             Label1.BackColor = Color.Cornsilk;
-            Label1.Font = new Font("Cooper Black", 26.25F, FontStyle.Regular, GraphicsUnit.Point);
+            Label1.Font = new Font("Microsoft Sans Serif", 26.25F, FontStyle.Regular, GraphicsUnit.Point);
             Label1.ForeColor = Color.DarkOliveGreen;
             Label1.Location = new Point(186, 66);
             Label1.Margin = new Padding(4, 0, 4, 0);
             Label1.Name = "Label1";
-            Label1.Size = new Size(410, 50);
+            Label1.Size = new Size(348, 52);
             Label1.TabIndex = 2;
             Label1.Text = "Modificar Cliente";
             // 
@@ -375,6 +375,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4, 5, 4, 5);
             Name = "ModificarCliente";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             Panel1.ResumeLayout(false);
             Panel1.PerformLayout();

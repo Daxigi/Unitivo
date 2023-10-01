@@ -61,13 +61,14 @@
             // Define los caracteres permitidos en un correo electrónico.
             string validChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@._-";
 
-            // Verifica si el carácter ingresado no es válido para un correo electrónico.
-            if (!validChars.Contains(e.KeyChar))
+            // Verifica si la tecla presionada no es válida para un correo electrónico, excepto si es la tecla "Retroceso".
+            if (e.KeyChar != (char)Keys.Back && !validChars.Contains(e.KeyChar))
             {
                 e.Handled = true;
                 MessageBox.Show("Por favor, ingresa un correo electrónico válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         public static bool ValidarCamposNoVacios(Control control)
         {
