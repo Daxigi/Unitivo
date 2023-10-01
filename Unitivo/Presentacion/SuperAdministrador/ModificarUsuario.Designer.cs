@@ -30,17 +30,14 @@
         {
             PanelModUsuarios = new Panel();
             BCancelarModifCliente = new Button();
-            //BCancelarModifCliente.Click += new EventHandler(BCancelarModifCliente_Click);
             GroupBoxDatosCliente = new GroupBox();
             ComboBoxPerfil = new ComboBox();
             LDni = new Label();
             TBContraseñaUsuario = new TextBox();
             TBNombreUsuario = new TextBox();
-            //TBNombreUsuario.KeyPress += new KeyPressEventHandler(TBNombreUsuario_KeyPress);
             LNombreCliente = new Label();
             LApellidoCliente = new Label();
             BModificarCliente = new Button();
-            //BModificarCliente.Click += new EventHandler(BModificarCliente_Click);
             PanelModUsuarios.SuspendLayout();
             GroupBoxDatosCliente.SuspendLayout();
             SuspendLayout();
@@ -52,10 +49,10 @@
             PanelModUsuarios.Controls.Add(BCancelarModifCliente);
             PanelModUsuarios.Controls.Add(GroupBoxDatosCliente);
             PanelModUsuarios.Controls.Add(BModificarCliente);
-            PanelModUsuarios.Location = new Point(173, 30);
-            PanelModUsuarios.Margin = new Padding(4);
+            PanelModUsuarios.Location = new Point(91, 50);
+            PanelModUsuarios.Margin = new Padding(5, 6, 5, 6);
             PanelModUsuarios.Name = "PanelModUsuarios";
-            PanelModUsuarios.Size = new Size(454, 391);
+            PanelModUsuarios.Size = new Size(605, 602);
             PanelModUsuarios.TabIndex = 2;
             // 
             // BCancelarModifCliente
@@ -63,16 +60,17 @@
             BCancelarModifCliente.BackColor = Color.Sienna;
             BCancelarModifCliente.FlatAppearance.BorderSize = 2;
             BCancelarModifCliente.FlatStyle = FlatStyle.Flat;
-            BCancelarModifCliente.Font = new Font("Britannic Bold", 15.0f);
+            BCancelarModifCliente.Font = new Font("Britannic Bold", 15F, FontStyle.Regular, GraphicsUnit.Point);
             BCancelarModifCliente.ForeColor = Color.White;
-            BCancelarModifCliente.Location = new Point(114, 323);
-            BCancelarModifCliente.Margin = new Padding(4);
+            BCancelarModifCliente.Location = new Point(152, 497);
+            BCancelarModifCliente.Margin = new Padding(5, 6, 5, 6);
             BCancelarModifCliente.Name = "BCancelarModifCliente";
-            BCancelarModifCliente.Size = new Size(105, 41);
+            BCancelarModifCliente.Size = new Size(140, 63);
             BCancelarModifCliente.TabIndex = 12;
             BCancelarModifCliente.Text = "Volver";
             BCancelarModifCliente.TextImageRelation = TextImageRelation.ImageBeforeText;
             BCancelarModifCliente.UseVisualStyleBackColor = false;
+            BCancelarModifCliente.Click += BCancelarModif_Click;
             // 
             // GroupBoxDatosCliente
             // 
@@ -82,11 +80,13 @@
             GroupBoxDatosCliente.Controls.Add(TBNombreUsuario);
             GroupBoxDatosCliente.Controls.Add(LNombreCliente);
             GroupBoxDatosCliente.Controls.Add(LApellidoCliente);
-            GroupBoxDatosCliente.Font = new Font("Britannic Bold", 20.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
+            GroupBoxDatosCliente.Font = new Font("Britannic Bold", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
             GroupBoxDatosCliente.ForeColor = Color.White;
-            GroupBoxDatosCliente.Location = new Point(64, 39);
+            GroupBoxDatosCliente.Location = new Point(85, 60);
+            GroupBoxDatosCliente.Margin = new Padding(4, 5, 4, 5);
             GroupBoxDatosCliente.Name = "GroupBoxDatosCliente";
-            GroupBoxDatosCliente.Size = new Size(332, 265);
+            GroupBoxDatosCliente.Padding = new Padding(4, 5, 4, 5);
+            GroupBoxDatosCliente.Size = new Size(443, 408);
             GroupBoxDatosCliente.TabIndex = 19;
             GroupBoxDatosCliente.TabStop = false;
             GroupBoxDatosCliente.Text = "Modificar Datos";
@@ -95,61 +95,62 @@
             // 
             ComboBoxPerfil.FormattingEnabled = true;
             ComboBoxPerfil.Items.AddRange(new object[] { "Vendedor", "Gerente" });
-            ComboBoxPerfil.Location = new Point(98, 204);
-            ComboBoxPerfil.Margin = new Padding(2);
+            ComboBoxPerfil.Location = new Point(131, 314);
             ComboBoxPerfil.Name = "ComboBoxPerfil";
-            ComboBoxPerfil.Size = new Size(161, 38);
+            ComboBoxPerfil.Size = new Size(213, 45);
             ComboBoxPerfil.TabIndex = 20;
             // 
             // LDni
             // 
             LDni.AutoSize = true;
-            LDni.Font = new Font("Britannic Bold", 12.0f);
+            LDni.Font = new Font("Britannic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
             LDni.ForeColor = Color.White;
-            LDni.Location = new Point(95, 184);
-            LDni.Margin = new Padding(4, 0, 4, 0);
+            LDni.Location = new Point(127, 283);
+            LDni.Margin = new Padding(5, 0, 5, 0);
             LDni.Name = "LDni";
-            LDni.Size = new Size(46, 17);
+            LDni.Size = new Size(58, 22);
             LDni.TabIndex = 19;
             LDni.Text = "Perfil";
             // 
             // TBContraseñaUsuario
             // 
-            TBContraseñaUsuario.Location = new Point(98, 136);
-            TBContraseñaUsuario.Margin = new Padding(4);
+            TBContraseñaUsuario.Location = new Point(131, 209);
+            TBContraseñaUsuario.Margin = new Padding(5, 6, 5, 6);
             TBContraseñaUsuario.Name = "TBContraseñaUsuario";
-            TBContraseñaUsuario.Size = new Size(161, 37);
+            TBContraseñaUsuario.Size = new Size(213, 45);
             TBContraseñaUsuario.TabIndex = 8;
+            TBContraseñaUsuario.KeyPress += Contraseña_KeyPress;
             // 
             // TBNombreUsuario
             // 
-            TBNombreUsuario.Location = new Point(98, 68);
-            TBNombreUsuario.Margin = new Padding(4);
+            TBNombreUsuario.Location = new Point(131, 105);
+            TBNombreUsuario.Margin = new Padding(5, 6, 5, 6);
             TBNombreUsuario.Name = "TBNombreUsuario";
-            TBNombreUsuario.Size = new Size(161, 37);
+            TBNombreUsuario.Size = new Size(213, 45);
             TBNombreUsuario.TabIndex = 6;
+            TBNombreUsuario.KeyPress += String_KeyPress;
             // 
             // LNombreCliente
             // 
             LNombreCliente.AutoSize = true;
-            LNombreCliente.Font = new Font("Britannic Bold", 12.0f);
+            LNombreCliente.Font = new Font("Britannic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
             LNombreCliente.ForeColor = Color.White;
-            LNombreCliente.Location = new Point(95, 46);
-            LNombreCliente.Margin = new Padding(4, 0, 4, 0);
+            LNombreCliente.Location = new Point(127, 71);
+            LNombreCliente.Margin = new Padding(5, 0, 5, 0);
             LNombreCliente.Name = "LNombreCliente";
-            LNombreCliente.Size = new Size(69, 17);
+            LNombreCliente.Size = new Size(85, 22);
             LNombreCliente.TabIndex = 0;
             LNombreCliente.Text = "Nombre:";
             // 
             // LApellidoCliente
             // 
             LApellidoCliente.AutoSize = true;
-            LApellidoCliente.Font = new Font("Britannic Bold", 12.0f);
+            LApellidoCliente.Font = new Font("Britannic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
             LApellidoCliente.ForeColor = Color.White;
-            LApellidoCliente.Location = new Point(95, 115);
-            LApellidoCliente.Margin = new Padding(4, 0, 4, 0);
+            LApellidoCliente.Location = new Point(127, 177);
+            LApellidoCliente.Margin = new Padding(5, 0, 5, 0);
             LApellidoCliente.Name = "LApellidoCliente";
-            LApellidoCliente.Size = new Size(94, 17);
+            LApellidoCliente.Size = new Size(118, 22);
             LApellidoCliente.TabIndex = 4;
             LApellidoCliente.Text = "Contraseña:";
             // 
@@ -159,31 +160,31 @@
             BModificarCliente.FlatAppearance.BorderColor = Color.White;
             BModificarCliente.FlatAppearance.BorderSize = 2;
             BModificarCliente.FlatStyle = FlatStyle.Flat;
-            BModificarCliente.Font = new Font("Britannic Bold", 15.0f);
+            BModificarCliente.Font = new Font("Britannic Bold", 15F, FontStyle.Regular, GraphicsUnit.Point);
             BModificarCliente.ForeColor = Color.White;
-            BModificarCliente.Location = new Point(256, 323);
-            BModificarCliente.Margin = new Padding(4);
+            BModificarCliente.Location = new Point(341, 497);
+            BModificarCliente.Margin = new Padding(5, 6, 5, 6);
             BModificarCliente.Name = "BModificarCliente";
-            BModificarCliente.Size = new Size(107, 41);
+            BModificarCliente.Size = new Size(143, 63);
             BModificarCliente.TabIndex = 13;
             BModificarCliente.Text = "Modificar";
             BModificarCliente.UseVisualStyleBackColor = false;
             // 
             // ModificarUsuario
             // 
-            AutoScaleDimensions = new SizeF(6.0f, 13.0f);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.SlateGray;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(806, 704);
             Controls.Add(PanelModUsuarios);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(4, 5, 4, 5);
             Name = "ModificarUsuario";
             Text = "Form1";
             PanelModUsuarios.ResumeLayout(false);
             GroupBoxDatosCliente.ResumeLayout(false);
             GroupBoxDatosCliente.PerformLayout();
             ResumeLayout(false);
-
         }
 
         internal Panel PanelModUsuarios;

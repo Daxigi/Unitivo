@@ -30,10 +30,8 @@
         {
             PanelModMarca = new Panel();
             BCancelarModifCliente = new Button();
-            //BCancelarModifCliente.Click += new EventHandler(BCancelarModifCliente_Click);
             GroupBoxDatosPerfil = new GroupBox();
             TBModPerfil = new TextBox();
-            //TBModPerfil.KeyPress += new KeyPressEventHandler(TBModPerfil_KeyPress);
             LModPerfil = new Label();
             BModificarPerfil = new Button();
             PanelModMarca.SuspendLayout();
@@ -47,10 +45,10 @@
             PanelModMarca.Controls.Add(BCancelarModifCliente);
             PanelModMarca.Controls.Add(GroupBoxDatosPerfil);
             PanelModMarca.Controls.Add(BModificarPerfil);
-            PanelModMarca.Location = new Point(171, 74);
-            PanelModMarca.Margin = new Padding(4);
+            PanelModMarca.Location = new Point(92, 90);
+            PanelModMarca.Margin = new Padding(5, 6, 5, 6);
             PanelModMarca.Name = "PanelModMarca";
-            PanelModMarca.Size = new Size(459, 302);
+            PanelModMarca.Size = new Size(612, 465);
             PanelModMarca.TabIndex = 7;
             // 
             // BCancelarModifCliente
@@ -58,46 +56,51 @@
             BCancelarModifCliente.BackColor = Color.Sienna;
             BCancelarModifCliente.FlatAppearance.BorderSize = 2;
             BCancelarModifCliente.FlatStyle = FlatStyle.Flat;
-            BCancelarModifCliente.Font = new Font("Britannic Bold", 13.0f);
+            BCancelarModifCliente.Font = new Font("Britannic Bold", 13F, FontStyle.Regular, GraphicsUnit.Point);
             BCancelarModifCliente.ForeColor = Color.White;
-            BCancelarModifCliente.Location = new Point(183, 240);
-            BCancelarModifCliente.Margin = new Padding(4);
+            BCancelarModifCliente.Location = new Point(244, 369);
+            BCancelarModifCliente.Margin = new Padding(5, 6, 5, 6);
             BCancelarModifCliente.Name = "BCancelarModifCliente";
-            BCancelarModifCliente.Size = new Size(98, 42);
+            BCancelarModifCliente.Size = new Size(131, 65);
             BCancelarModifCliente.TabIndex = 12;
             BCancelarModifCliente.Text = "Volver";
             BCancelarModifCliente.TextImageRelation = TextImageRelation.ImageBeforeText;
             BCancelarModifCliente.UseVisualStyleBackColor = false;
+            BCancelarModifCliente.Click += BCancelarModifCliente_Click;
             // 
             // GroupBoxDatosPerfil
             // 
             GroupBoxDatosPerfil.Controls.Add(TBModPerfil);
             GroupBoxDatosPerfil.Controls.Add(LModPerfil);
-            GroupBoxDatosPerfil.Font = new Font("Cooper Black", 18.0f, FontStyle.Regular, GraphicsUnit.Point, 0);
+            GroupBoxDatosPerfil.Font = new Font("Cooper Black", 18F, FontStyle.Regular, GraphicsUnit.Point);
             GroupBoxDatosPerfil.ForeColor = Color.White;
-            GroupBoxDatosPerfil.Location = new Point(38, 18);
+            GroupBoxDatosPerfil.Location = new Point(51, 28);
+            GroupBoxDatosPerfil.Margin = new Padding(4, 5, 4, 5);
             GroupBoxDatosPerfil.Name = "GroupBoxDatosPerfil";
-            GroupBoxDatosPerfil.Size = new Size(355, 200);
+            GroupBoxDatosPerfil.Padding = new Padding(4, 5, 4, 5);
+            GroupBoxDatosPerfil.Size = new Size(473, 308);
             GroupBoxDatosPerfil.TabIndex = 19;
             GroupBoxDatosPerfil.TabStop = false;
             GroupBoxDatosPerfil.Text = "Modificar Perfil";
             // 
             // TBModPerfil
             // 
-            TBModPerfil.Location = new Point(95, 98);
+            TBModPerfil.Location = new Point(127, 151);
+            TBModPerfil.Margin = new Padding(4, 5, 4, 5);
             TBModPerfil.Name = "TBModPerfil";
-            TBModPerfil.Size = new Size(167, 35);
+            TBModPerfil.Size = new Size(221, 42);
             TBModPerfil.TabIndex = 16;
+            TBModPerfil.KeyPress += String_KeyPress;
             // 
             // LModPerfil
             // 
             LModPerfil.AutoSize = true;
-            LModPerfil.Font = new Font("Britannic Bold", 14.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
+            LModPerfil.Font = new Font("Britannic Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             LModPerfil.ForeColor = Color.White;
-            LModPerfil.Location = new Point(92, 69);
-            LModPerfil.Margin = new Padding(6, 0, 6, 0);
+            LModPerfil.Location = new Point(123, 106);
+            LModPerfil.Margin = new Padding(8, 0, 8, 0);
             LModPerfil.Name = "LModPerfil";
-            LModPerfil.Size = new Size(65, 21);
+            LModPerfil.Size = new Size(84, 27);
             LModPerfil.TabIndex = 15;
             LModPerfil.Text = "Perfil: ";
             // 
@@ -107,31 +110,31 @@
             BModificarPerfil.FlatAppearance.BorderColor = Color.White;
             BModificarPerfil.FlatAppearance.BorderSize = 2;
             BModificarPerfil.FlatStyle = FlatStyle.Flat;
-            BModificarPerfil.Font = new Font("Britannic Bold", 13.0f);
+            BModificarPerfil.Font = new Font("Britannic Bold", 13F, FontStyle.Regular, GraphicsUnit.Point);
             BModificarPerfil.ForeColor = Color.White;
-            BModificarPerfil.Location = new Point(295, 240);
-            BModificarPerfil.Margin = new Padding(4);
+            BModificarPerfil.Location = new Point(393, 369);
+            BModificarPerfil.Margin = new Padding(5, 6, 5, 6);
             BModificarPerfil.Name = "BModificarPerfil";
-            BModificarPerfil.Size = new Size(98, 42);
+            BModificarPerfil.Size = new Size(131, 65);
             BModificarPerfil.TabIndex = 13;
             BModificarPerfil.Text = "Modificar";
             BModificarPerfil.UseVisualStyleBackColor = false;
             // 
             // ModificarPerfiles
             // 
-            AutoScaleDimensions = new SizeF(6.0f, 13.0f);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.SlateGray;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(839, 647);
             Controls.Add(PanelModMarca);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(4, 5, 4, 5);
             Name = "ModificarPerfiles";
             Text = "Form1";
             PanelModMarca.ResumeLayout(false);
             GroupBoxDatosPerfil.ResumeLayout(false);
             GroupBoxDatosPerfil.PerformLayout();
             ResumeLayout(false);
-
         }
 
         internal Panel PanelModMarca;
