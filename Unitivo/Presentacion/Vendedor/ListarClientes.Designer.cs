@@ -34,18 +34,19 @@
             BEditarCliente = new Button();
             BImprimirClientes = new Button();
             TabControlListaClientes = new TabControl();
-            TabPafeListaClientes = new TabPage();
-            dgvListarCliente = new DataGridView();
-            DataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+            TabPageListaCliente = new TabPage();
+            DataGridViewListarClientes = new DataGridView();
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewTextBoxColumn();
+            Column6 = new DataGridViewTextBoxColumn();
+            Column7 = new DataGridViewTextBoxColumn();
             GroupBoxClientes.SuspendLayout();
             TabControlListaClientes.SuspendLayout();
-            TabPafeListaClientes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvListarCliente).BeginInit();
+            TabPageListaCliente.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)DataGridViewListarClientes).BeginInit();
             SuspendLayout();
             // 
             // GroupBoxClientes
@@ -76,7 +77,6 @@
             BBuscar.Size = new Size(59, 61);
             BBuscar.TabIndex = 2;
             BBuscar.UseVisualStyleBackColor = false;
-            BBuscar.Click += BBuscar_Click;
             // 
             // TBBuscar
             // 
@@ -126,109 +126,114 @@
             // 
             // TabControlListaClientes
             // 
-            TabControlListaClientes.Controls.Add(TabPafeListaClientes);
-            TabControlListaClientes.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            TabControlListaClientes.Location = new Point(128, 254);
-            TabControlListaClientes.Margin = new Padding(4, 5, 4, 5);
+            TabControlListaClientes.Controls.Add(TabPageListaCliente);
+            TabControlListaClientes.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            TabControlListaClientes.Location = new Point(79, 267);
             TabControlListaClientes.Name = "TabControlListaClientes";
             TabControlListaClientes.SelectedIndex = 0;
-            TabControlListaClientes.Size = new Size(780, 331);
-            TabControlListaClientes.TabIndex = 1;
+            TabControlListaClientes.Size = new Size(811, 306);
+            TabControlListaClientes.TabIndex = 70;
             // 
-            // TabPafeListaClientes
+            // TabPageListaCliente
             // 
-            TabPafeListaClientes.BackColor = Color.FromArgb(31, 31, 69);
-            TabPafeListaClientes.Controls.Add(dgvListarCliente);
-            TabPafeListaClientes.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            TabPafeListaClientes.ForeColor = Color.White;
-            TabPafeListaClientes.Location = new Point(4, 33);
-            TabPafeListaClientes.Margin = new Padding(2, 3, 2, 3);
-            TabPafeListaClientes.Name = "TabPafeListaClientes";
-            TabPafeListaClientes.Padding = new Padding(2, 3, 2, 3);
-            TabPafeListaClientes.Size = new Size(772, 294);
-            TabPafeListaClientes.TabIndex = 0;
-            TabPafeListaClientes.Text = "Lista de Clientes";
+            TabPageListaCliente.Controls.Add(DataGridViewListarClientes);
+            TabPageListaCliente.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            TabPageListaCliente.ForeColor = Color.White;
+            TabPageListaCliente.Location = new Point(4, 28);
+            TabPageListaCliente.Name = "TabPageListaCliente";
+            TabPageListaCliente.Padding = new Padding(3);
+            TabPageListaCliente.Size = new Size(803, 274);
+            TabPageListaCliente.TabIndex = 0;
+            TabPageListaCliente.Text = "Lista de Clientes";
+            TabPageListaCliente.UseVisualStyleBackColor = true;
             // 
-            // dgvListarCliente
+            // DataGridViewListarClientes
             // 
-            dgvListarCliente.AllowUserToAddRows = false;
-            dgvListarCliente.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvListarCliente.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dgvListarCliente.BackgroundColor = Color.RosyBrown;
-            dgvListarCliente.BorderStyle = BorderStyle.None;
-            dgvListarCliente.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            DataGridViewListarClientes.AllowUserToAddRows = false;
+            DataGridViewListarClientes.AllowUserToDeleteRows = false;
+            DataGridViewListarClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            DataGridViewListarClientes.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            DataGridViewListarClientes.BackgroundColor = Color.RosyBrown;
+            DataGridViewListarClientes.BorderStyle = BorderStyle.None;
+            DataGridViewListarClientes.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = Color.DarkOliveGreen;
-            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = SystemColors.InfoText;
+            dataGridViewCellStyle1.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.Window;
             dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvListarCliente.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dgvListarCliente.ColumnHeadersHeight = 20;
-            dgvListarCliente.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dgvListarCliente.Columns.AddRange(new DataGridViewColumn[] { DataGridViewTextBoxColumn2, Column1, Column2, Column3, Column4, Column5 });
+            DataGridViewListarClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            DataGridViewListarClientes.ColumnHeadersHeight = 20;
+            DataGridViewListarClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            DataGridViewListarClientes.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6, Column7 });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridViewCellStyle2.ForeColor = Color.Black;
             dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvListarCliente.DefaultCellStyle = dataGridViewCellStyle2;
-            dgvListarCliente.Dock = DockStyle.Fill;
-            dgvListarCliente.EnableHeadersVisualStyles = false;
-            dgvListarCliente.Location = new Point(2, 3);
-            dgvListarCliente.Margin = new Padding(5, 4, 5, 4);
-            dgvListarCliente.Name = "dgvListarCliente";
-            dgvListarCliente.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            DataGridViewListarClientes.DefaultCellStyle = dataGridViewCellStyle2;
+            DataGridViewListarClientes.Dock = DockStyle.Fill;
+            DataGridViewListarClientes.EnableHeadersVisualStyles = false;
+            DataGridViewListarClientes.Location = new Point(3, 3);
+            DataGridViewListarClientes.Margin = new Padding(4, 5, 4, 5);
+            DataGridViewListarClientes.Name = "DataGridViewListarClientes";
+            DataGridViewListarClientes.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.NavajoWhite;
-            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
             dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgvListarCliente.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            dgvListarCliente.RowHeadersWidth = 51;
-            dgvListarCliente.Size = new Size(768, 288);
-            dgvListarCliente.TabIndex = 7;
-            // 
-            // DataGridViewTextBoxColumn2
-            // 
-            DataGridViewTextBoxColumn2.HeaderText = "ID";
-            DataGridViewTextBoxColumn2.MinimumWidth = 6;
-            DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2";
+            DataGridViewListarClientes.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            DataGridViewListarClientes.RowHeadersWidth = 51;
+            DataGridViewListarClientes.Size = new Size(797, 268);
+            DataGridViewListarClientes.TabIndex = 6;
             // 
             // Column1
             // 
-            Column1.HeaderText = "Nombre";
+            Column1.HeaderText = "ID";
             Column1.MinimumWidth = 6;
             Column1.Name = "Column1";
             // 
             // Column2
             // 
-            Column2.HeaderText = "Apellido";
+            Column2.HeaderText = "Nombre";
             Column2.MinimumWidth = 6;
             Column2.Name = "Column2";
             // 
             // Column3
             // 
-            Column3.HeaderText = "DNI";
+            Column3.HeaderText = "Apellido";
             Column3.MinimumWidth = 6;
             Column3.Name = "Column3";
             // 
             // Column4
             // 
-            Column4.HeaderText = "Telefono";
+            Column4.HeaderText = "Dni";
             Column4.MinimumWidth = 6;
             Column4.Name = "Column4";
             // 
             // Column5
             // 
-            Column5.HeaderText = "Dirección";
+            Column5.HeaderText = "Telefono";
             Column5.MinimumWidth = 6;
             Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            Column6.HeaderText = "Direccion";
+            Column6.MinimumWidth = 6;
+            Column6.Name = "Column6";
+            // 
+            // Column7
+            // 
+            Column7.HeaderText = "Email";
+            Column7.MinimumWidth = 6;
+            Column7.Name = "Column7";
             // 
             // ListarClientes
             // 
@@ -247,8 +252,8 @@
             GroupBoxClientes.ResumeLayout(false);
             GroupBoxClientes.PerformLayout();
             TabControlListaClientes.ResumeLayout(false);
-            TabPafeListaClientes.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgvListarCliente).EndInit();
+            TabPageListaCliente.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)DataGridViewListarClientes).EndInit();
             ResumeLayout(false);
         }
 
@@ -257,19 +262,20 @@
         internal Button BBuscar;
         internal TextBox TBBuscar;
         internal ComboBox ComboBoxBuscarDni;
-        internal TabControl TabControlListaClientes;
         internal TabPage TabPageListaClientes;
         internal DataGridView DgvListarClientes;
         internal Button BEditarCliente;
         internal Button BVolver;
-        internal TabPage TabPafeListaClientes;
-        internal DataGridView dgvListarCliente;
-        internal DataGridViewTextBoxColumn DataGridViewTextBoxColumn2;
-        internal DataGridViewTextBoxColumn Column1;
-        internal DataGridViewTextBoxColumn Column2;
-        internal DataGridViewTextBoxColumn Column3;
-        internal DataGridViewTextBoxColumn Column4;
-        internal DataGridViewTextBoxColumn Column5;
+        internal TabControl TabControlListaClientes;
+        internal TabPage TabPageListaCliente;
+        internal DataGridView DataGridViewListarClientes;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Column4;
+        private DataGridViewTextBoxColumn Column5;
+        private DataGridViewTextBoxColumn Column6;
+        private DataGridViewTextBoxColumn Column7;
     }
 
     #endregion

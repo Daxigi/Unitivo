@@ -12,7 +12,7 @@ using Unitivo.Presentacion.Logica;
 
 namespace Unitivo.Presentacion.Administrador
 {
-    
+
     public partial class AñadirCategoria : Form
     {
         public AñadirCategoria()
@@ -20,9 +20,9 @@ namespace Unitivo.Presentacion.Administrador
             InitializeComponent();
         }
 
-        private void TBNombreCategoria_KeyPress(object sender, KeyPressEventArgs e)
+        private void String_KeyPress(object sender, KeyPressEventArgs e)
         {
-            CommonFunctions.ValidarKeyPress((TextBox)sender, e);
+            CommonFunctions.ValidarStringKeyPress((TextBox)sender, e);
         }
     }
 }

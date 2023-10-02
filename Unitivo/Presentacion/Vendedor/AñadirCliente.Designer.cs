@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             Panel1 = new Panel();
             BRegistrarCliente = new Button();
             TBCorreoCliente = new TextBox();
@@ -43,13 +46,20 @@
             TBNombreCliente = new TextBox();
             Label2 = new Label();
             Label1 = new Label();
-            TabControlRegClientes = new TabControl();
-            TabPageListaClientes = new TabPage();
-            DataGridViewRegistroClientes = new DataGridView();
+            TabControlListaClientes = new TabControl();
+            TabPageListaCliente = new TabPage();
+            DataGridViewListarClientes = new DataGridView();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
+            Column5 = new DataGridViewTextBoxColumn();
+            Column6 = new DataGridViewTextBoxColumn();
+            Column7 = new DataGridViewTextBoxColumn();
             Panel1.SuspendLayout();
-            TabControlRegClientes.SuspendLayout();
-            TabPageListaClientes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)DataGridViewRegistroClientes).BeginInit();
+            TabControlListaClientes.SuspendLayout();
+            TabPageListaCliente.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)DataGridViewListarClientes).BeginInit();
             SuspendLayout();
             // 
             // Panel1
@@ -117,6 +127,7 @@
             TBDireccionCliente.Name = "TBDireccionCliente";
             TBDireccionCliente.Size = new Size(169, 27);
             TBDireccionCliente.TabIndex = 18;
+            TBDireccionCliente.KeyPress += NumStr_KeyPress;
             // 
             // Label6
             // 
@@ -227,41 +238,116 @@
             Label1.TabIndex = 1;
             Label1.Text = "Registrar Cliente";
             // 
-            // TabControlRegClientes
+            // TabControlListaClientes
             // 
-            TabControlRegClientes.Controls.Add(TabPageListaClientes);
-            TabControlRegClientes.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            TabControlRegClientes.Location = new Point(605, 89);
-            TabControlRegClientes.Margin = new Padding(4, 5, 4, 5);
-            TabControlRegClientes.Name = "TabControlRegClientes";
-            TabControlRegClientes.SelectedIndex = 0;
-            TabControlRegClientes.Size = new Size(423, 555);
-            TabControlRegClientes.TabIndex = 2;
+            TabControlListaClientes.Controls.Add(TabPageListaCliente);
+            TabControlListaClientes.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            TabControlListaClientes.Location = new Point(561, 120);
+            TabControlListaClientes.Name = "TabControlListaClientes";
+            TabControlListaClientes.SelectedIndex = 0;
+            TabControlListaClientes.Size = new Size(481, 522);
+            TabControlListaClientes.TabIndex = 70;
             // 
-            // TabPageListaClientes
+            // TabPageListaCliente
             // 
-            TabPageListaClientes.Controls.Add(DataGridViewRegistroClientes);
-            TabPageListaClientes.ForeColor = Color.White;
-            TabPageListaClientes.Location = new Point(4, 33);
-            TabPageListaClientes.Margin = new Padding(4, 5, 4, 5);
-            TabPageListaClientes.Name = "TabPageListaClientes";
-            TabPageListaClientes.Padding = new Padding(4, 5, 4, 5);
-            TabPageListaClientes.Size = new Size(415, 518);
-            TabPageListaClientes.TabIndex = 0;
-            TabPageListaClientes.Text = "Lista de Clientes";
-            TabPageListaClientes.UseVisualStyleBackColor = true;
+            TabPageListaCliente.Controls.Add(DataGridViewListarClientes);
+            TabPageListaCliente.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            TabPageListaCliente.ForeColor = Color.White;
+            TabPageListaCliente.Location = new Point(4, 28);
+            TabPageListaCliente.Name = "TabPageListaCliente";
+            TabPageListaCliente.Padding = new Padding(3);
+            TabPageListaCliente.Size = new Size(473, 490);
+            TabPageListaCliente.TabIndex = 0;
+            TabPageListaCliente.Text = "Lista de Clientes";
+            TabPageListaCliente.UseVisualStyleBackColor = true;
             // 
-            // DataGridViewRegistroClientes
+            // DataGridViewListarClientes
             // 
-            DataGridViewRegistroClientes.BackgroundColor = Color.RosyBrown;
-            DataGridViewRegistroClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DataGridViewRegistroClientes.Dock = DockStyle.Fill;
-            DataGridViewRegistroClientes.Location = new Point(4, 5);
-            DataGridViewRegistroClientes.Margin = new Padding(4, 5, 4, 5);
-            DataGridViewRegistroClientes.Name = "DataGridViewRegistroClientes";
-            DataGridViewRegistroClientes.RowHeadersWidth = 51;
-            DataGridViewRegistroClientes.Size = new Size(407, 508);
-            DataGridViewRegistroClientes.TabIndex = 0;
+            DataGridViewListarClientes.AllowUserToAddRows = false;
+            DataGridViewListarClientes.AllowUserToDeleteRows = false;
+            DataGridViewListarClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            DataGridViewListarClientes.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            DataGridViewListarClientes.BackgroundColor = Color.RosyBrown;
+            DataGridViewListarClientes.BorderStyle = BorderStyle.None;
+            DataGridViewListarClientes.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.DarkOliveGreen;
+            dataGridViewCellStyle1.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.Window;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            DataGridViewListarClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            DataGridViewListarClientes.ColumnHeadersHeight = 20;
+            DataGridViewListarClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            DataGridViewListarClientes.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6, Column7 });
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            DataGridViewListarClientes.DefaultCellStyle = dataGridViewCellStyle2;
+            DataGridViewListarClientes.Dock = DockStyle.Fill;
+            DataGridViewListarClientes.EnableHeadersVisualStyles = false;
+            DataGridViewListarClientes.Location = new Point(3, 3);
+            DataGridViewListarClientes.Margin = new Padding(4, 5, 4, 5);
+            DataGridViewListarClientes.Name = "DataGridViewListarClientes";
+            DataGridViewListarClientes.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.NavajoWhite;
+            dataGridViewCellStyle3.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            DataGridViewListarClientes.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            DataGridViewListarClientes.RowHeadersWidth = 51;
+            DataGridViewListarClientes.Size = new Size(467, 484);
+            DataGridViewListarClientes.TabIndex = 6;
+            // 
+            // Column1
+            // 
+            Column1.HeaderText = "ID";
+            Column1.MinimumWidth = 6;
+            Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            Column2.HeaderText = "Nombre";
+            Column2.MinimumWidth = 6;
+            Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            Column3.HeaderText = "Apellido";
+            Column3.MinimumWidth = 6;
+            Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            Column4.HeaderText = "Dni";
+            Column4.MinimumWidth = 6;
+            Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            Column5.HeaderText = "Telefono";
+            Column5.MinimumWidth = 6;
+            Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            Column6.HeaderText = "Direccion";
+            Column6.MinimumWidth = 6;
+            Column6.Name = "Column6";
+            // 
+            // Column7
+            // 
+            Column7.HeaderText = "Email";
+            Column7.MinimumWidth = 6;
+            Column7.Name = "Column7";
             // 
             // AñadirCliente
             // 
@@ -269,7 +355,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSeaGreen;
             ClientSize = new Size(1067, 692);
-            Controls.Add(TabControlRegClientes);
+            Controls.Add(TabControlListaClientes);
             Controls.Add(Label1);
             Controls.Add(Panel1);
             FormBorderStyle = FormBorderStyle.None;
@@ -278,9 +364,9 @@
             Text = "Form1";
             Panel1.ResumeLayout(false);
             Panel1.PerformLayout();
-            TabControlRegClientes.ResumeLayout(false);
-            TabPageListaClientes.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)DataGridViewRegistroClientes).EndInit();
+            TabControlListaClientes.ResumeLayout(false);
+            TabPageListaCliente.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)DataGridViewListarClientes).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -302,10 +388,18 @@
         internal TextBox TBDireccion;
         internal Label Label2;
         internal Button BRegistrarCliente;
-        internal TabControl TabControlRegClientes;
-        internal TabPage TabPageListaClientes;
-        internal DataGridView DataGridViewRegistroClientes;
 
         #endregion
+
+        internal TabControl TabControlListaClientes;
+        internal TabPage TabPageListaCliente;
+        internal DataGridView DataGridViewListarClientes;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Column4;
+        private DataGridViewTextBoxColumn Column5;
+        private DataGridViewTextBoxColumn Column6;
+        private DataGridViewTextBoxColumn Column7;
     }
 }

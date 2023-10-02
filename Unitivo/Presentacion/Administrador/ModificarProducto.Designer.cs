@@ -29,20 +29,16 @@
         private void InitializeComponent()
         {
             PanelModClientes = new Panel();
-            BCancelarModifCliente = new Button();
-            //BCancelarModifCliente.Click += new EventHandler(BCancelarModifCliente_Click_1);
+            BCancelar = new Button();
             BModificarProducto = new Button();
             GroupBoxDatosCliente = new GroupBox();
             TBStockProducto = new TextBox();
-            //TBStockProducto.KeyPress += new KeyPressEventHandler(TBCodigoProducto_KeyPress);
             Label4 = new Label();
             CBTalleProducto = new ComboBox();
             Label5 = new Label();
             Label6 = new Label();
             TBPrecioProducto = new TextBox();
-            //TBPrecioProducto.KeyPress += new KeyPressEventHandler(TBCodigoProducto_KeyPress);
             TBNombreProducto = new TextBox();
-            //TBNombreProducto.KeyPress += new KeyPressEventHandler(TBNombreProducto_KeyPress);
             LMarca = new Label();
             CBMarcaProducto = new ComboBox();
             Label3 = new Label();
@@ -56,30 +52,31 @@
             // 
             PanelModClientes.BackColor = Color.RosyBrown;
             PanelModClientes.BackgroundImageLayout = ImageLayout.None;
-            PanelModClientes.Controls.Add(BCancelarModifCliente);
+            PanelModClientes.Controls.Add(BCancelar);
             PanelModClientes.Controls.Add(BModificarProducto);
             PanelModClientes.Controls.Add(GroupBoxDatosCliente);
-            PanelModClientes.Location = new Point(146, 42);
-            PanelModClientes.Margin = new Padding(4);
+            PanelModClientes.Location = new Point(86, 71);
+            PanelModClientes.Margin = new Padding(5, 6, 5, 6);
             PanelModClientes.Name = "PanelModClientes";
-            PanelModClientes.Size = new Size(508, 366);
+            PanelModClientes.Size = new Size(677, 563);
             PanelModClientes.TabIndex = 3;
             // 
-            // BCancelarModifCliente
+            // BCancelar
             // 
-            BCancelarModifCliente.BackColor = Color.Sienna;
-            BCancelarModifCliente.FlatAppearance.BorderSize = 2;
-            BCancelarModifCliente.FlatStyle = FlatStyle.Flat;
-            BCancelarModifCliente.Font = new Font("Britannic Bold", 13.0f);
-            BCancelarModifCliente.ForeColor = Color.White;
-            BCancelarModifCliente.Location = new Point(267, 310);
-            BCancelarModifCliente.Margin = new Padding(4);
-            BCancelarModifCliente.Name = "BCancelarModifCliente";
-            BCancelarModifCliente.Size = new Size(98, 42);
-            BCancelarModifCliente.TabIndex = 14;
-            BCancelarModifCliente.Text = "Volver";
-            BCancelarModifCliente.TextImageRelation = TextImageRelation.ImageBeforeText;
-            BCancelarModifCliente.UseVisualStyleBackColor = false;
+            BCancelar.BackColor = Color.Sienna;
+            BCancelar.FlatAppearance.BorderSize = 2;
+            BCancelar.FlatStyle = FlatStyle.Flat;
+            BCancelar.Font = new Font("Britannic Bold", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            BCancelar.ForeColor = Color.White;
+            BCancelar.Location = new Point(356, 477);
+            BCancelar.Margin = new Padding(5, 6, 5, 6);
+            BCancelar.Name = "BCancelar";
+            BCancelar.Size = new Size(131, 65);
+            BCancelar.TabIndex = 14;
+            BCancelar.Text = "Volver";
+            BCancelar.TextImageRelation = TextImageRelation.ImageBeforeText;
+            BCancelar.UseVisualStyleBackColor = false;
+            BCancelar.Click += BCancelar_Click;
             // 
             // BModificarProducto
             // 
@@ -87,12 +84,12 @@
             BModificarProducto.FlatAppearance.BorderColor = Color.White;
             BModificarProducto.FlatAppearance.BorderSize = 2;
             BModificarProducto.FlatStyle = FlatStyle.Flat;
-            BModificarProducto.Font = new Font("Britannic Bold", 13.0f);
+            BModificarProducto.Font = new Font("Britannic Bold", 13F, FontStyle.Regular, GraphicsUnit.Point);
             BModificarProducto.ForeColor = Color.White;
-            BModificarProducto.Location = new Point(386, 310);
-            BModificarProducto.Margin = new Padding(4);
+            BModificarProducto.Location = new Point(515, 477);
+            BModificarProducto.Margin = new Padding(5, 6, 5, 6);
             BModificarProducto.Name = "BModificarProducto";
-            BModificarProducto.Size = new Size(98, 42);
+            BModificarProducto.Size = new Size(131, 65);
             BModificarProducto.TabIndex = 15;
             BModificarProducto.Text = "Modificar";
             BModificarProducto.UseVisualStyleBackColor = false;
@@ -111,163 +108,169 @@
             GroupBoxDatosCliente.Controls.Add(Label3);
             GroupBoxDatosCliente.Controls.Add(Label2);
             GroupBoxDatosCliente.Controls.Add(CBCategoriaProducto);
-            GroupBoxDatosCliente.Font = new Font("Cooper Black", 20.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
+            GroupBoxDatosCliente.Font = new Font("Cooper Black", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
             GroupBoxDatosCliente.ForeColor = Color.White;
-            GroupBoxDatosCliente.Location = new Point(34, 23);
+            GroupBoxDatosCliente.Location = new Point(45, 35);
+            GroupBoxDatosCliente.Margin = new Padding(4, 5, 4, 5);
             GroupBoxDatosCliente.Name = "GroupBoxDatosCliente";
-            GroupBoxDatosCliente.Size = new Size(450, 271);
+            GroupBoxDatosCliente.Padding = new Padding(4, 5, 4, 5);
+            GroupBoxDatosCliente.Size = new Size(600, 417);
             GroupBoxDatosCliente.TabIndex = 19;
             GroupBoxDatosCliente.TabStop = false;
             GroupBoxDatosCliente.Text = "Modificar Producto";
             // 
             // TBStockProducto
             // 
-            TBStockProducto.Font = new Font("Britannic Bold", 14.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
-            TBStockProducto.Location = new Point(243, 207);
-            TBStockProducto.Margin = new Padding(4);
+            TBStockProducto.Font = new Font("Britannic Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            TBStockProducto.Location = new Point(324, 318);
+            TBStockProducto.Margin = new Padding(5, 6, 5, 6);
             TBStockProducto.Name = "TBStockProducto";
-            TBStockProducto.Size = new Size(161, 29);
+            TBStockProducto.Size = new Size(213, 34);
             TBStockProducto.TabIndex = 10;
             // 
             // Label4
             // 
             Label4.AutoSize = true;
-            Label4.Font = new Font("Britannic Bold", 14.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Label4.Font = new Font("Britannic Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             Label4.ForeColor = Color.White;
-            Label4.Location = new Point(239, 183);
-            Label4.Margin = new Padding(6, 0, 6, 0);
+            Label4.Location = new Point(319, 282);
+            Label4.Margin = new Padding(8, 0, 8, 0);
             Label4.Name = "Label4";
-            Label4.Size = new Size(60, 21);
+            Label4.Size = new Size(78, 27);
             Label4.TabIndex = 16;
             Label4.Text = "Stock:";
             // 
             // CBTalleProducto
             // 
-            CBTalleProducto.Font = new Font("Britannic Bold", 14.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
+            CBTalleProducto.Font = new Font("Britannic Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             CBTalleProducto.FormattingEnabled = true;
             CBTalleProducto.Items.AddRange(new object[] { "DNI", "OTRO" });
-            CBTalleProducto.Location = new Point(243, 81);
+            CBTalleProducto.Location = new Point(324, 125);
+            CBTalleProducto.Margin = new Padding(4, 5, 4, 5);
             CBTalleProducto.Name = "CBTalleProducto";
-            CBTalleProducto.Size = new Size(161, 29);
+            CBTalleProducto.Size = new Size(213, 35);
             CBTalleProducto.TabIndex = 19;
             // 
             // Label5
             // 
             Label5.AutoSize = true;
-            Label5.Font = new Font("Britannic Bold", 14.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Label5.Font = new Font("Britannic Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             Label5.ForeColor = Color.White;
-            Label5.Location = new Point(239, 118);
-            Label5.Margin = new Padding(6, 0, 6, 0);
+            Label5.Location = new Point(319, 182);
+            Label5.Margin = new Padding(8, 0, 8, 0);
             Label5.Name = "Label5";
-            Label5.Size = new Size(73, 21);
+            Label5.Size = new Size(94, 27);
             Label5.TabIndex = 17;
             Label5.Text = "Precio: ";
             // 
             // Label6
             // 
             Label6.AutoSize = true;
-            Label6.Font = new Font("Britannic Bold", 14.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Label6.Font = new Font("Britannic Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             Label6.ForeColor = Color.White;
-            Label6.Location = new Point(239, 56);
-            Label6.Margin = new Padding(6, 0, 6, 0);
+            Label6.Location = new Point(319, 86);
+            Label6.Margin = new Padding(8, 0, 8, 0);
             Label6.Name = "Label6";
-            Label6.Size = new Size(60, 21);
+            Label6.Size = new Size(77, 27);
             Label6.TabIndex = 18;
             Label6.Text = "Talle: ";
             // 
             // TBPrecioProducto
             // 
-            TBPrecioProducto.Font = new Font("Britannic Bold", 14.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
-            TBPrecioProducto.Location = new Point(243, 141);
-            TBPrecioProducto.Margin = new Padding(4);
+            TBPrecioProducto.Font = new Font("Britannic Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            TBPrecioProducto.Location = new Point(324, 217);
+            TBPrecioProducto.Margin = new Padding(5, 6, 5, 6);
             TBPrecioProducto.Name = "TBPrecioProducto";
-            TBPrecioProducto.Size = new Size(161, 29);
+            TBPrecioProducto.Size = new Size(213, 34);
             TBPrecioProducto.TabIndex = 15;
             // 
             // TBNombreProducto
             // 
-            TBNombreProducto.Font = new Font("Britannic Bold", 14.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
-            TBNombreProducto.Location = new Point(47, 207);
-            TBNombreProducto.Margin = new Padding(4);
+            TBNombreProducto.Font = new Font("Britannic Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            TBNombreProducto.Location = new Point(63, 318);
+            TBNombreProducto.Margin = new Padding(5, 6, 5, 6);
             TBNombreProducto.Name = "TBNombreProducto";
-            TBNombreProducto.Size = new Size(161, 29);
+            TBNombreProducto.Size = new Size(213, 34);
             TBNombreProducto.TabIndex = 8;
             // 
             // LMarca
             // 
             LMarca.AutoSize = true;
-            LMarca.Font = new Font("Britannic Bold", 14.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
+            LMarca.Font = new Font("Britannic Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             LMarca.ForeColor = Color.White;
-            LMarca.Location = new Point(46, 118);
-            LMarca.Margin = new Padding(6, 0, 6, 0);
+            LMarca.Location = new Point(61, 182);
+            LMarca.Margin = new Padding(8, 0, 8, 0);
             LMarca.Name = "LMarca";
-            LMarca.Size = new Size(72, 21);
+            LMarca.Size = new Size(92, 27);
             LMarca.TabIndex = 20;
             LMarca.Text = "Marca: ";
             // 
             // CBMarcaProducto
             // 
-            CBMarcaProducto.Font = new Font("Britannic Bold", 14.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
+            CBMarcaProducto.Font = new Font("Britannic Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             CBMarcaProducto.FormattingEnabled = true;
             CBMarcaProducto.Items.AddRange(new object[] { "DNI", "OTRO" });
-            CBMarcaProducto.Location = new Point(47, 141);
+            CBMarcaProducto.Location = new Point(63, 217);
+            CBMarcaProducto.Margin = new Padding(4, 5, 4, 5);
             CBMarcaProducto.Name = "CBMarcaProducto";
-            CBMarcaProducto.Size = new Size(161, 29);
+            CBMarcaProducto.Size = new Size(213, 35);
             CBMarcaProducto.TabIndex = 21;
             // 
             // Label3
             // 
             Label3.AutoSize = true;
-            Label3.Font = new Font("Britannic Bold", 14.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Label3.Font = new Font("Britannic Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             Label3.ForeColor = Color.White;
-            Label3.Location = new Point(44, 56);
-            Label3.Margin = new Padding(6, 0, 6, 0);
+            Label3.Location = new Point(59, 86);
+            Label3.Margin = new Padding(8, 0, 8, 0);
             Label3.Name = "Label3";
-            Label3.Size = new Size(101, 21);
+            Label3.Size = new Size(129, 27);
             Label3.TabIndex = 15;
             Label3.Text = "Categoría: ";
             // 
             // Label2
             // 
             Label2.AutoSize = true;
-            Label2.Font = new Font("Britannic Bold", 14.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Label2.Font = new Font("Britannic Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             Label2.ForeColor = Color.White;
-            Label2.Location = new Point(47, 180);
-            Label2.Margin = new Padding(6, 0, 6, 0);
+            Label2.Location = new Point(63, 277);
+            Label2.Margin = new Padding(8, 0, 8, 0);
             Label2.Name = "Label2";
-            Label2.Size = new Size(79, 21);
+            Label2.Size = new Size(101, 27);
             Label2.TabIndex = 14;
             Label2.Text = "Nombre:";
             // 
             // CBCategoriaProducto
             // 
-            CBCategoriaProducto.Font = new Font("Britannic Bold", 14.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
+            CBCategoriaProducto.Font = new Font("Britannic Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             CBCategoriaProducto.FormattingEnabled = true;
             CBCategoriaProducto.Items.AddRange(new object[] { "DNI", "OTRO" });
-            CBCategoriaProducto.Location = new Point(47, 81);
+            CBCategoriaProducto.Location = new Point(63, 125);
+            CBCategoriaProducto.Margin = new Padding(4, 5, 4, 5);
             CBCategoriaProducto.Name = "CBCategoriaProducto";
-            CBCategoriaProducto.Size = new Size(161, 29);
+            CBCategoriaProducto.Size = new Size(213, 35);
             CBCategoriaProducto.TabIndex = 18;
             // 
             // ModificarProducto
             // 
-            AutoScaleDimensions = new SizeF(6.0f, 13.0f);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.SlateGray;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(898, 692);
             Controls.Add(PanelModClientes);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(4, 5, 4, 5);
             Name = "ModificarProducto";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             PanelModClientes.ResumeLayout(false);
             GroupBoxDatosCliente.ResumeLayout(false);
             GroupBoxDatosCliente.PerformLayout();
             ResumeLayout(false);
-
         }
 
         internal Panel PanelModClientes;
-        internal Button BCancelarModifCliente;
+        internal Button BCancelar;
         internal Button BModificarProducto;
         internal GroupBox GroupBoxDatosCliente;
         internal TextBox TBStockProducto;

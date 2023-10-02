@@ -30,6 +30,7 @@
         {
             BSalir = new Button();
             PanelMenuLateral = new Panel();
+            BVolver = new Button();
             PanelSubMenuClientes = new Panel();
             BGestionarClientes = new Button();
             BClientes = new Button();
@@ -74,7 +75,7 @@
             BSalir.FlatStyle = FlatStyle.Flat;
             BSalir.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point);
             BSalir.ForeColor = Color.Cornsilk;
-            BSalir.Location = new Point(0, 1088);
+            BSalir.Location = new Point(0, 1144);
             BSalir.Margin = new Padding(4, 5, 4, 5);
             BSalir.Name = "BSalir";
             BSalir.Size = new Size(286, 56);
@@ -88,6 +89,7 @@
             // 
             PanelMenuLateral.AutoScroll = true;
             PanelMenuLateral.BackColor = Color.Tan;
+            PanelMenuLateral.Controls.Add(BVolver);
             PanelMenuLateral.Controls.Add(PanelSubMenuClientes);
             PanelMenuLateral.Controls.Add(BClientes);
             PanelMenuLateral.Controls.Add(PanelSubMenuTalles);
@@ -105,6 +107,24 @@
             PanelMenuLateral.Name = "PanelMenuLateral";
             PanelMenuLateral.Size = new Size(307, 908);
             PanelMenuLateral.TabIndex = 8;
+            // 
+            // BVolver
+            // 
+            BVolver.BackColor = Color.Cornsilk;
+            BVolver.Dock = DockStyle.Bottom;
+            BVolver.FlatAppearance.BorderSize = 2;
+            BVolver.FlatStyle = FlatStyle.Flat;
+            BVolver.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            BVolver.ForeColor = Color.Sienna;
+            BVolver.Location = new Point(0, 1088);
+            BVolver.Margin = new Padding(4, 5, 4, 5);
+            BVolver.Name = "BVolver";
+            BVolver.Size = new Size(286, 56);
+            BVolver.TabIndex = 19;
+            BVolver.Text = "Volver";
+            BVolver.TextAlign = ContentAlignment.TopCenter;
+            BVolver.UseVisualStyleBackColor = false;
+            BVolver.Click += BVolver_Click;
             // 
             // PanelSubMenuClientes
             // 
@@ -578,5 +598,7 @@
         internal Button BClientes;
 
         #endregion
+
+        internal Button BVolver;
     }
 }

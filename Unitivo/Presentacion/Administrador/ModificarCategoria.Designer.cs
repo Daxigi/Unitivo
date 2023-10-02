@@ -29,11 +29,9 @@
         private void InitializeComponent()
         {
             PanelModCategoria = new Panel();
-            BCancelarModifCategoria = new Button();
-            //BCancelarModifCategoria.Click += new EventHandler(BCancelarModifCategoria_Click);
+            BCancelar = new Button();
             GroupBoxDatosCategoria = new GroupBox();
             TBNombreCategoria = new TextBox();
-            //TBNombreCategoria.KeyPress += new KeyPressEventHandler(TBNombreCategoria_KeyPress);
             LModCategoria = new Label();
             BModificarCategoria = new Button();
             PanelModCategoria.SuspendLayout();
@@ -44,60 +42,64 @@
             // 
             PanelModCategoria.BackColor = Color.RosyBrown;
             PanelModCategoria.BackgroundImageLayout = ImageLayout.None;
-            PanelModCategoria.Controls.Add(BCancelarModifCategoria);
+            PanelModCategoria.Controls.Add(BCancelar);
             PanelModCategoria.Controls.Add(GroupBoxDatosCategoria);
             PanelModCategoria.Controls.Add(BModificarCategoria);
-            PanelModCategoria.Location = new Point(171, 74);
-            PanelModCategoria.Margin = new Padding(4);
+            PanelModCategoria.Location = new Point(101, 90);
+            PanelModCategoria.Margin = new Padding(5, 6, 5, 6);
             PanelModCategoria.Name = "PanelModCategoria";
-            PanelModCategoria.Size = new Size(459, 302);
+            PanelModCategoria.Size = new Size(612, 465);
             PanelModCategoria.TabIndex = 8;
             // 
-            // BCancelarModifCategoria
+            // BCancelar
             // 
-            BCancelarModifCategoria.BackColor = Color.Sienna;
-            BCancelarModifCategoria.FlatAppearance.BorderSize = 2;
-            BCancelarModifCategoria.FlatStyle = FlatStyle.Flat;
-            BCancelarModifCategoria.Font = new Font("Britannic Bold", 13.0f);
-            BCancelarModifCategoria.ForeColor = Color.White;
-            BCancelarModifCategoria.Location = new Point(183, 240);
-            BCancelarModifCategoria.Margin = new Padding(4);
-            BCancelarModifCategoria.Name = "BCancelarModifCategoria";
-            BCancelarModifCategoria.Size = new Size(98, 42);
-            BCancelarModifCategoria.TabIndex = 12;
-            BCancelarModifCategoria.Text = "Volver";
-            BCancelarModifCategoria.TextImageRelation = TextImageRelation.ImageBeforeText;
-            BCancelarModifCategoria.UseVisualStyleBackColor = false;
+            BCancelar.BackColor = Color.Sienna;
+            BCancelar.FlatAppearance.BorderSize = 2;
+            BCancelar.FlatStyle = FlatStyle.Flat;
+            BCancelar.Font = new Font("Britannic Bold", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            BCancelar.ForeColor = Color.White;
+            BCancelar.Location = new Point(244, 369);
+            BCancelar.Margin = new Padding(5, 6, 5, 6);
+            BCancelar.Name = "BCancelar";
+            BCancelar.Size = new Size(131, 65);
+            BCancelar.TabIndex = 12;
+            BCancelar.Text = "Volver";
+            BCancelar.TextImageRelation = TextImageRelation.ImageBeforeText;
+            BCancelar.UseVisualStyleBackColor = false;
+            BCancelar.Click += BCancelar_Click;
             // 
             // GroupBoxDatosCategoria
             // 
             GroupBoxDatosCategoria.Controls.Add(TBNombreCategoria);
             GroupBoxDatosCategoria.Controls.Add(LModCategoria);
-            GroupBoxDatosCategoria.Font = new Font("Cooper Black", 18.0f, FontStyle.Regular, GraphicsUnit.Point, 0);
+            GroupBoxDatosCategoria.Font = new Font("Cooper Black", 18F, FontStyle.Regular, GraphicsUnit.Point);
             GroupBoxDatosCategoria.ForeColor = Color.White;
-            GroupBoxDatosCategoria.Location = new Point(38, 18);
+            GroupBoxDatosCategoria.Location = new Point(51, 28);
+            GroupBoxDatosCategoria.Margin = new Padding(4, 5, 4, 5);
             GroupBoxDatosCategoria.Name = "GroupBoxDatosCategoria";
-            GroupBoxDatosCategoria.Size = new Size(355, 200);
+            GroupBoxDatosCategoria.Padding = new Padding(4, 5, 4, 5);
+            GroupBoxDatosCategoria.Size = new Size(473, 308);
             GroupBoxDatosCategoria.TabIndex = 19;
             GroupBoxDatosCategoria.TabStop = false;
             GroupBoxDatosCategoria.Text = "Modificar Categoria";
             // 
             // TBNombreCategoria
             // 
-            TBNombreCategoria.Location = new Point(95, 98);
+            TBNombreCategoria.Location = new Point(127, 151);
+            TBNombreCategoria.Margin = new Padding(4, 5, 4, 5);
             TBNombreCategoria.Name = "TBNombreCategoria";
-            TBNombreCategoria.Size = new Size(167, 35);
+            TBNombreCategoria.Size = new Size(221, 42);
             TBNombreCategoria.TabIndex = 16;
             // 
             // LModCategoria
             // 
             LModCategoria.AutoSize = true;
-            LModCategoria.Font = new Font("Britannic Bold", 14.25f, FontStyle.Regular, GraphicsUnit.Point, 0);
+            LModCategoria.Font = new Font("Britannic Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             LModCategoria.ForeColor = Color.White;
-            LModCategoria.Location = new Point(92, 69);
-            LModCategoria.Margin = new Padding(6, 0, 6, 0);
+            LModCategoria.Location = new Point(123, 106);
+            LModCategoria.Margin = new Padding(8, 0, 8, 0);
             LModCategoria.Name = "LModCategoria";
-            LModCategoria.Size = new Size(106, 21);
+            LModCategoria.Size = new Size(136, 27);
             LModCategoria.TabIndex = 15;
             LModCategoria.Text = "Categoria : ";
             // 
@@ -107,35 +109,36 @@
             BModificarCategoria.FlatAppearance.BorderColor = Color.White;
             BModificarCategoria.FlatAppearance.BorderSize = 2;
             BModificarCategoria.FlatStyle = FlatStyle.Flat;
-            BModificarCategoria.Font = new Font("Britannic Bold", 13.0f);
+            BModificarCategoria.Font = new Font("Britannic Bold", 13F, FontStyle.Regular, GraphicsUnit.Point);
             BModificarCategoria.ForeColor = Color.White;
-            BModificarCategoria.Location = new Point(295, 240);
-            BModificarCategoria.Margin = new Padding(4);
+            BModificarCategoria.Location = new Point(393, 369);
+            BModificarCategoria.Margin = new Padding(5, 6, 5, 6);
             BModificarCategoria.Name = "BModificarCategoria";
-            BModificarCategoria.Size = new Size(98, 42);
+            BModificarCategoria.Size = new Size(131, 65);
             BModificarCategoria.TabIndex = 13;
             BModificarCategoria.Text = "Modificar";
             BModificarCategoria.UseVisualStyleBackColor = false;
             // 
             // ModificarCategoria
             // 
-            AutoScaleDimensions = new SizeF(6.0f, 13.0f);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.SlateGray;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(876, 635);
             Controls.Add(PanelModCategoria);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(4, 5, 4, 5);
             Name = "ModificarCategoria";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             PanelModCategoria.ResumeLayout(false);
             GroupBoxDatosCategoria.ResumeLayout(false);
             GroupBoxDatosCategoria.PerformLayout();
             ResumeLayout(false);
-
         }
 
         internal Panel PanelModCategoria;
-        internal Button BCancelarModifCategoria;
+        internal Button BCancelar;
         internal GroupBox GroupBoxDatosCategoria;
         internal TextBox TBNombreCategoria;
         internal Label LModCategoria;

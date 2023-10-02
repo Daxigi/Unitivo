@@ -130,6 +130,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4, 5, 4, 5);
             Name = "ModificarPerfiles";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             PanelModMarca.ResumeLayout(false);
             GroupBoxDatosPerfil.ResumeLayout(false);

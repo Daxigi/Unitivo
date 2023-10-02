@@ -23,35 +23,24 @@ namespace Unitivo.Presentacion.Administrador
             InitializeComponent();
             productoRepositorio = new ProductoRepositorio();
         }
-        
 
-           
-   
 
-        private void TBPrecio_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            CommonFunctions.ValidarNumberKeyPress((TextBox)sender, e);
-        }
 
-        private void TBStock_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            CommonFunctions.ValidarNumberKeyPress((TextBox)sender, e);
-        }
-
-        private void TBNombreProducto_KeyPress(object sender, KeyPressEventArgs e)
+        private void String_KeyPress(object sender, KeyPressEventArgs e)
         {
             CommonFunctions.ValidarStringKeyPress((TextBox)sender, e);
         }
 
-        private void CamposNoNulos()
+        private void Num_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
+            CommonFunctions.ValidarNumberKeyPress((TextBox)sender, e);
         }
 
-        private void bGuardar_click()
-        {
 
-            
-        }
+
+
+
+
+
     }
 }

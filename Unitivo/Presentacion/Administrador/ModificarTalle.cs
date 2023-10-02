@@ -16,5 +16,11 @@ namespace Unitivo.Presentacion.Administrador
         {
             InitializeComponent();
         }
+
+        private void BCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
     }
 }

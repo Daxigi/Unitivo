@@ -180,6 +180,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4, 5, 4, 5);
             Name = "ModificarUsuario";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             PanelModUsuarios.ResumeLayout(false);
             GroupBoxDatosCliente.ResumeLayout(false);

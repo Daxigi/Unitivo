@@ -28,72 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
-            var DataGridViewCellStyle3 = new DataGridViewCellStyle();
-            var DataGridViewCellStyle4 = new DataGridViewCellStyle();
-            GroupBoxGestionProductos = new GroupBox();
-            ComboBox1 = new ComboBox();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             BEliminarProducto = new Button();
-            //BEliminarProducto.Click += new EventHandler(BEliminarProducto_Click);
             BModificarProducto = new Button();
-            //BModificarProducto.Click += new EventHandler(BModificarProducto_Click);
+            GroupBoxBuscarProducto = new GroupBox();
+            comboBox3 = new ComboBox();
+            ComboBox2 = new ComboBox();
+            ComboBox1 = new ComboBox();
             BBuscarProducto = new Button();
-            TBGestionProductos = new TextBox();
-            //TBGestionProductos.KeyPress += new KeyPressEventHandler(TBGestionProductos_KeyPress);
-            TabListaCategorias = new TabControl();
-            TabPageListaTalle = new TabPage();
-            dgvListaProductos = new DataGridView();
+            TBBuscar = new TextBox();
+            TabControlListaProductos = new TabControl();
+            TabPageListaProducto = new TabPage();
+            DataGridViewListaProductos = new DataGridView();
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
             Categoria = new DataGridViewTextBoxColumn();
             Stock = new DataGridViewTextBoxColumn();
             Column1 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
-            Talle = new DataGridViewTextBoxColumn();
-            BVolver = new Button();
-            //BVolver.Click += new EventHandler(BVolver_Click);
-            GroupBoxGestionProductos.SuspendLayout();
-            TabListaCategorias.SuspendLayout();
-            TabPageListaTalle.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvListaProductos).BeginInit();
+            GroupBoxBuscarProducto.SuspendLayout();
+            TabControlListaProductos.SuspendLayout();
+            TabPageListaProducto.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)DataGridViewListaProductos).BeginInit();
             SuspendLayout();
-            // 
-            // GroupBoxGestionProductos
-            // 
-            GroupBoxGestionProductos.BackColor = Color.Cornsilk;
-            GroupBoxGestionProductos.Controls.Add(ComboBox1);
-            GroupBoxGestionProductos.Controls.Add(BBuscarProducto);
-            GroupBoxGestionProductos.Controls.Add(TBGestionProductos);
-            GroupBoxGestionProductos.Font = new Font("Cooper Black", 15.75f, FontStyle.Regular, GraphicsUnit.Point, 0);
-            GroupBoxGestionProductos.ForeColor = Color.SaddleBrown;
-            GroupBoxGestionProductos.Location = new Point(193, 24);
-            GroupBoxGestionProductos.Name = "GroupBoxGestionProductos";
-            GroupBoxGestionProductos.Size = new Size(425, 99);
-            GroupBoxGestionProductos.TabIndex = 23;
-            GroupBoxGestionProductos.TabStop = false;
-            GroupBoxGestionProductos.Text = "Gestión de Productos";
-            // 
-            // ComboBox1
-            // 
-            ComboBox1.Font = new Font("Britannic Bold", 12.0f, FontStyle.Regular, GraphicsUnit.Point, 0);
-            ComboBox1.FormattingEnabled = true;
-            ComboBox1.Location = new Point(267, 49);
-            ComboBox1.Margin = new Padding(4, 2, 2, 2);
-            ComboBox1.Name = "ComboBox1";
-            ComboBox1.Size = new Size(121, 25);
-            ComboBox1.TabIndex = 30;
-            ComboBox1.Text = "Categorias";
             // 
             // BEliminarProducto
             // 
             BEliminarProducto.BackColor = Color.Brown;
             BEliminarProducto.FlatAppearance.BorderSize = 2;
             BEliminarProducto.FlatStyle = FlatStyle.Flat;
-            BEliminarProducto.Font = new Font("Britannic Bold", 10.2f, FontStyle.Regular, GraphicsUnit.Point, 0);
+            BEliminarProducto.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             BEliminarProducto.ForeColor = Color.White;
             BEliminarProducto.Image = Properties.Resources.icons8_basura_26;
-            BEliminarProducto.Location = new Point(733, 345);
+            BEliminarProducto.Location = new Point(970, 532);
+            BEliminarProducto.Margin = new Padding(4, 5, 4, 5);
             BEliminarProducto.Name = "BEliminarProducto";
-            BEliminarProducto.Size = new Size(50, 45);
+            BEliminarProducto.Size = new Size(67, 69);
             BEliminarProducto.TabIndex = 12;
             BEliminarProducto.TextImageRelation = TextImageRelation.ImageBeforeText;
             BEliminarProducto.UseVisualStyleBackColor = false;
@@ -104,14 +75,66 @@
             BModificarProducto.FlatAppearance.BorderColor = Color.White;
             BModificarProducto.FlatAppearance.BorderSize = 2;
             BModificarProducto.FlatStyle = FlatStyle.Flat;
-            BModificarProducto.Font = new Font("Britannic Bold", 10.2f, FontStyle.Regular, GraphicsUnit.Point, 0);
+            BModificarProducto.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             BModificarProducto.ForeColor = Color.White;
             BModificarProducto.Image = Properties.Resources.icons8_editar_archivo_26;
-            BModificarProducto.Location = new Point(733, 269);
+            BModificarProducto.Location = new Point(970, 415);
+            BModificarProducto.Margin = new Padding(4, 5, 4, 5);
             BModificarProducto.Name = "BModificarProducto";
-            BModificarProducto.Size = new Size(50, 45);
+            BModificarProducto.Size = new Size(67, 69);
             BModificarProducto.TabIndex = 13;
             BModificarProducto.UseVisualStyleBackColor = false;
+            BModificarProducto.Click += BModificarProducto_Click;
+            // 
+            // GroupBoxBuscarProducto
+            // 
+            GroupBoxBuscarProducto.BackColor = Color.Cornsilk;
+            GroupBoxBuscarProducto.Controls.Add(comboBox3);
+            GroupBoxBuscarProducto.Controls.Add(ComboBox2);
+            GroupBoxBuscarProducto.Controls.Add(ComboBox1);
+            GroupBoxBuscarProducto.Controls.Add(BBuscarProducto);
+            GroupBoxBuscarProducto.Controls.Add(TBBuscar);
+            GroupBoxBuscarProducto.Font = new Font("Britannic Bold", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            GroupBoxBuscarProducto.ForeColor = Color.SaddleBrown;
+            GroupBoxBuscarProducto.Location = new Point(60, 88);
+            GroupBoxBuscarProducto.Margin = new Padding(4, 5, 4, 5);
+            GroupBoxBuscarProducto.Name = "GroupBoxBuscarProducto";
+            GroupBoxBuscarProducto.Padding = new Padding(4, 5, 4, 5);
+            GroupBoxBuscarProducto.Size = new Size(880, 125);
+            GroupBoxBuscarProducto.TabIndex = 82;
+            GroupBoxBuscarProducto.TabStop = false;
+            GroupBoxBuscarProducto.Text = "Productos";
+            // 
+            // comboBox3
+            // 
+            comboBox3.Font = new Font("Britannic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            comboBox3.FormattingEnabled = true;
+            comboBox3.Location = new Point(681, 49);
+            comboBox3.Name = "comboBox3";
+            comboBox3.Size = new Size(160, 30);
+            comboBox3.TabIndex = 30;
+            comboBox3.Text = "Talle";
+            // 
+            // ComboBox2
+            // 
+            ComboBox2.Font = new Font("Britannic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            ComboBox2.FormattingEnabled = true;
+            ComboBox2.Location = new Point(496, 49);
+            ComboBox2.Name = "ComboBox2";
+            ComboBox2.Size = new Size(160, 30);
+            ComboBox2.TabIndex = 29;
+            ComboBox2.Text = "Marcas";
+            // 
+            // ComboBox1
+            // 
+            ComboBox1.Font = new Font("Britannic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            ComboBox1.FormattingEnabled = true;
+            ComboBox1.Location = new Point(315, 49);
+            ComboBox1.Margin = new Padding(5, 3, 3, 3);
+            ComboBox1.Name = "ComboBox1";
+            ComboBox1.Size = new Size(160, 30);
+            ComboBox1.TabIndex = 28;
+            ComboBox1.Text = "Categorias";
             // 
             // BBuscarProducto
             // 
@@ -119,84 +142,87 @@
             BBuscarProducto.FlatAppearance.BorderColor = Color.White;
             BBuscarProducto.FlatAppearance.BorderSize = 2;
             BBuscarProducto.FlatStyle = FlatStyle.Flat;
-            BBuscarProducto.Font = new Font("Britannic Bold", 10.2f, FontStyle.Regular, GraphicsUnit.Point, 0);
+            BBuscarProducto.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             BBuscarProducto.ForeColor = Color.White;
             BBuscarProducto.Image = Properties.Resources.icons8_búsqueda_26;
-            BBuscarProducto.Location = new Point(198, 39);
+            BBuscarProducto.Location = new Point(225, 42);
+            BBuscarProducto.Margin = new Padding(4, 5, 4, 5);
             BBuscarProducto.Name = "BBuscarProducto";
-            BBuscarProducto.Size = new Size(49, 41);
+            BBuscarProducto.Size = new Size(53, 54);
             BBuscarProducto.TabIndex = 14;
             BBuscarProducto.UseVisualStyleBackColor = false;
             // 
-            // TBGestionProductos
+            // TBBuscar
             // 
-            TBGestionProductos.Font = new Font("Britannic Bold", 12.0f);
-            TBGestionProductos.Location = new Point(49, 49);
-            TBGestionProductos.Name = "TBGestionProductos";
-            TBGestionProductos.Size = new Size(131, 25);
-            TBGestionProductos.TabIndex = 6;
+            TBBuscar.Font = new Font("Britannic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            TBBuscar.ForeColor = SystemColors.WindowFrame;
+            TBBuscar.Location = new Point(23, 54);
+            TBBuscar.Margin = new Padding(4, 5, 4, 5);
+            TBBuscar.Name = "TBBuscar";
+            TBBuscar.Size = new Size(173, 30);
+            TBBuscar.TabIndex = 6;
+            TBBuscar.KeyPress += NumStr_KeyPress;
             // 
-            // TabListaCategorias
+            // TabControlListaProductos
             // 
-            TabListaCategorias.Controls.Add(TabPageListaTalle);
-            TabListaCategorias.Font = new Font("Britannic Bold", 10.2f, FontStyle.Regular, GraphicsUnit.Point, 0);
-            TabListaCategorias.Location = new Point(24, 150);
-            TabListaCategorias.Margin = new Padding(2);
-            TabListaCategorias.Name = "TabListaCategorias";
-            TabListaCategorias.SelectedIndex = 0;
-            TabListaCategorias.Size = new Size(688, 301);
-            TabListaCategorias.TabIndex = 22;
+            TabControlListaProductos.Controls.Add(TabPageListaProducto);
+            TabControlListaProductos.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            TabControlListaProductos.Location = new Point(40, 255);
+            TabControlListaProductos.Name = "TabControlListaProductos";
+            TabControlListaProductos.SelectedIndex = 0;
+            TabControlListaProductos.Size = new Size(900, 452);
+            TabControlListaProductos.TabIndex = 81;
             // 
-            // TabPageListaTalle
+            // TabPageListaProducto
             // 
-            TabPageListaTalle.Controls.Add(dgvListaProductos);
-            TabPageListaTalle.Font = new Font("Britannic Bold", 10.2f, FontStyle.Regular, GraphicsUnit.Point, 0);
-            TabPageListaTalle.ForeColor = Color.White;
-            TabPageListaTalle.Location = new Point(4, 25);
-            TabPageListaTalle.Margin = new Padding(2);
-            TabPageListaTalle.Name = "TabPageListaTalle";
-            TabPageListaTalle.Padding = new Padding(2);
-            TabPageListaTalle.Size = new Size(680, 272);
-            TabPageListaTalle.TabIndex = 0;
-            TabPageListaTalle.Text = "Lista de Productos";
-            TabPageListaTalle.UseVisualStyleBackColor = true;
+            TabPageListaProducto.Controls.Add(DataGridViewListaProductos);
+            TabPageListaProducto.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            TabPageListaProducto.ForeColor = Color.White;
+            TabPageListaProducto.Location = new Point(4, 28);
+            TabPageListaProducto.Name = "TabPageListaProducto";
+            TabPageListaProducto.Padding = new Padding(3);
+            TabPageListaProducto.Size = new Size(892, 420);
+            TabPageListaProducto.TabIndex = 0;
+            TabPageListaProducto.Text = "Lista de Producto";
+            TabPageListaProducto.UseVisualStyleBackColor = true;
             // 
-            // dgvListaProductos
+            // DataGridViewListaProductos
             // 
-            dgvListaProductos.AllowUserToDeleteRows = false;
-            dgvListaProductos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvListaProductos.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dgvListaProductos.BackgroundColor = Color.RosyBrown;
-            dgvListaProductos.BorderStyle = BorderStyle.None;
-            dgvListaProductos.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            DataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            DataGridViewCellStyle3.BackColor = Color.DarkOliveGreen;
-            DataGridViewCellStyle3.Font = new Font("Britannic Bold", 10.2f, FontStyle.Regular, GraphicsUnit.Point, 0);
-            DataGridViewCellStyle3.ForeColor = SystemColors.Window;
-            DataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            DataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            DataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgvListaProductos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3;
-            dgvListaProductos.ColumnHeadersHeight = 20;
-            dgvListaProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dgvListaProductos.Columns.AddRange(new DataGridViewColumn[] { Column2, Column3, Categoria, Stock, Column1, Column4, Talle });
-            dgvListaProductos.Dock = DockStyle.Fill;
-            dgvListaProductos.EnableHeadersVisualStyles = false;
-            dgvListaProductos.Location = new Point(2, 2);
-            dgvListaProductos.Name = "dgvListaProductos";
-            dgvListaProductos.ReadOnly = true;
-            dgvListaProductos.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            DataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            DataGridViewCellStyle4.BackColor = Color.NavajoWhite;
-            DataGridViewCellStyle4.Font = new Font("Britannic Bold", 10.2f, FontStyle.Regular, GraphicsUnit.Point, 0);
-            DataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
-            DataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            DataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            DataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            dgvListaProductos.RowHeadersDefaultCellStyle = DataGridViewCellStyle4;
-            dgvListaProductos.RowHeadersWidth = 51;
-            dgvListaProductos.Size = new Size(676, 268);
-            dgvListaProductos.TabIndex = 8;
+            DataGridViewListaProductos.AllowUserToDeleteRows = false;
+            DataGridViewListaProductos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            DataGridViewListaProductos.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            DataGridViewListaProductos.BackgroundColor = Color.RosyBrown;
+            DataGridViewListaProductos.BorderStyle = BorderStyle.None;
+            DataGridViewListaProductos.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.DarkOliveGreen;
+            dataGridViewCellStyle1.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.Window;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            DataGridViewListaProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            DataGridViewListaProductos.ColumnHeadersHeight = 20;
+            DataGridViewListaProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            DataGridViewListaProductos.Columns.AddRange(new DataGridViewColumn[] { Column2, Column3, Categoria, Stock, Column1, Column4 });
+            DataGridViewListaProductos.Dock = DockStyle.Fill;
+            DataGridViewListaProductos.EnableHeadersVisualStyles = false;
+            DataGridViewListaProductos.Location = new Point(3, 3);
+            DataGridViewListaProductos.Margin = new Padding(4, 5, 4, 5);
+            DataGridViewListaProductos.Name = "DataGridViewListaProductos";
+            DataGridViewListaProductos.ReadOnly = true;
+            DataGridViewListaProductos.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.NavajoWhite;
+            dataGridViewCellStyle2.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            DataGridViewListaProductos.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            DataGridViewListaProductos.RowHeadersWidth = 51;
+            DataGridViewListaProductos.Size = new Size(886, 414);
+            DataGridViewListaProductos.TabIndex = 6;
             // 
             // Column2
             // 
@@ -228,7 +254,7 @@
             // 
             // Column1
             // 
-            Column1.HeaderText = "Marca";
+            Column1.HeaderText = "Talle";
             Column1.MinimumWidth = 6;
             Column1.Name = "Column1";
             Column1.ReadOnly = true;
@@ -240,69 +266,47 @@
             Column4.Name = "Column4";
             Column4.ReadOnly = true;
             // 
-            // Talle
-            // 
-            Talle.HeaderText = "Talle";
-            Talle.MinimumWidth = 6;
-            Talle.Name = "Talle";
-            Talle.ReadOnly = true;
-            // 
-            // BVolver
-            // 
-            BVolver.BackColor = Color.Sienna;
-            BVolver.FlatAppearance.BorderSize = 2;
-            BVolver.FlatStyle = FlatStyle.Flat;
-            BVolver.Font = new Font("Cooper Black", 15.75f, FontStyle.Regular, GraphicsUnit.Point, 0);
-            BVolver.ForeColor = Color.Cornsilk;
-            BVolver.Location = new Point(606, 475);
-            BVolver.Name = "BVolver";
-            BVolver.Size = new Size(106, 38);
-            BVolver.TabIndex = 80;
-            BVolver.Text = "Volver";
-            BVolver.TextAlign = ContentAlignment.TopCenter;
-            BVolver.UseVisualStyleBackColor = false;
-            // 
             // GestionarProductos
             // 
-            AutoScaleDimensions = new SizeF(6.0f, 13.0f);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSeaGreen;
-            ClientSize = new Size(810, 550);
-            Controls.Add(BVolver);
-            Controls.Add(GroupBoxGestionProductos);
+            ClientSize = new Size(1080, 846);
+            Controls.Add(GroupBoxBuscarProducto);
+            Controls.Add(TabControlListaProductos);
             Controls.Add(BModificarProducto);
             Controls.Add(BEliminarProducto);
-            Controls.Add(TabListaCategorias);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(4, 5, 4, 5);
             Name = "GestionarProductos";
             Text = "Form1";
-            GroupBoxGestionProductos.ResumeLayout(false);
-            GroupBoxGestionProductos.PerformLayout();
-            TabListaCategorias.ResumeLayout(false);
-            TabPageListaTalle.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgvListaProductos).EndInit();
+            GroupBoxBuscarProducto.ResumeLayout(false);
+            GroupBoxBuscarProducto.PerformLayout();
+            TabControlListaProductos.ResumeLayout(false);
+            TabPageListaProducto.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)DataGridViewListaProductos).EndInit();
             ResumeLayout(false);
-
         }
 
-        internal GroupBox GroupBoxGestionProductos;
-        internal ComboBox ComboBox1;
         internal Button BEliminarProducto;
         internal Button BModificarProducto;
+
+        #endregion
+
+        internal GroupBox GroupBoxBuscarProducto;
+        internal ComboBox comboBox3;
+        internal ComboBox ComboBox2;
+        internal ComboBox ComboBox1;
         internal Button BBuscarProducto;
-        internal TextBox TBGestionProductos;
-        internal TabControl TabListaCategorias;
-        internal TabPage TabPageListaTalle;
-        internal DataGridView dgvListaProductos;
+        internal TextBox TBBuscar;
+        internal TabControl TabControlListaProductos;
+        internal TabPage TabPageListaProducto;
+        internal DataGridView DataGridViewListaProductos;
         internal DataGridViewTextBoxColumn Column2;
         internal DataGridViewTextBoxColumn Column3;
         internal DataGridViewTextBoxColumn Categoria;
         internal DataGridViewTextBoxColumn Stock;
         internal DataGridViewTextBoxColumn Column1;
         internal DataGridViewTextBoxColumn Column4;
-        internal DataGridViewTextBoxColumn Talle;
-        internal Button BVolver;
-
-        #endregion
     }
 }

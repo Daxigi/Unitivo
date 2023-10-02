@@ -48,7 +48,6 @@
             Panel2 = new Panel();
             CBCategoria = new ComboBox();
             BAñadirProducto = new Button();
-            BVolver = new Button();
             CBMarca = new ComboBox();
             LMarca = new Label();
             CBTalle = new ComboBox();
@@ -66,10 +65,6 @@
             ((System.ComponentModel.ISupportInitialize)DataGridViewRegistroCategorias).BeginInit();
             Panel2.SuspendLayout();
             SuspendLayout();
-            //
-            //Arreglo
-            //
-            
             // 
             // TabControlListaProductos
             // 
@@ -99,6 +94,7 @@
             // 
             // DataGridViewListaProductos
             // 
+            DataGridViewListaProductos.AllowUserToAddRows = false;
             DataGridViewListaProductos.AllowUserToDeleteRows = false;
             DataGridViewListaProductos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DataGridViewListaProductos.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
@@ -227,7 +223,7 @@
             Label1.BackColor = Color.Cornsilk;
             Label1.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
             Label1.ForeColor = Color.DarkOliveGreen;
-            Label1.Location = new Point(32, 39);
+            Label1.Location = new Point(66, 40);
             Label1.Margin = new Padding(6, 0, 6, 0);
             Label1.Name = "Label1";
             Label1.Size = new Size(279, 39);
@@ -239,7 +235,6 @@
             Panel2.BackColor = Color.Cornsilk;
             Panel2.Controls.Add(CBCategoria);
             Panel2.Controls.Add(BAñadirProducto);
-            Panel2.Controls.Add(BVolver);
             Panel2.Controls.Add(CBMarca);
             Panel2.Controls.Add(LMarca);
             Panel2.Controls.Add(CBTalle);
@@ -271,26 +266,13 @@
             BAñadirProducto.BackColor = Color.DarkOliveGreen;
             BAñadirProducto.Font = new Font("Microsoft Sans Serif", 13F, FontStyle.Regular, GraphicsUnit.Point);
             BAñadirProducto.ForeColor = Color.White;
-            BAñadirProducto.Location = new Point(192, 497);
+            BAñadirProducto.Location = new Point(96, 470);
             BAñadirProducto.Margin = new Padding(2, 3, 2, 3);
             BAñadirProducto.Name = "BAñadirProducto";
             BAñadirProducto.Size = new Size(120, 63);
             BAñadirProducto.TabIndex = 2;
             BAñadirProducto.Text = "Añadir";
             BAñadirProducto.UseVisualStyleBackColor = false;
-            // 
-            // BVolver
-            // 
-            BVolver.BackColor = Color.Sienna;
-            BVolver.Font = new Font("Microsoft Sans Serif", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            BVolver.ForeColor = Color.White;
-            BVolver.Location = new Point(33, 497);
-            BVolver.Margin = new Padding(2, 3, 2, 3);
-            BVolver.Name = "BVolver";
-            BVolver.Size = new Size(122, 63);
-            BVolver.TabIndex = 3;
-            BVolver.Text = "Volver";
-            BVolver.UseVisualStyleBackColor = false;
             // 
             // CBMarca
             // 
@@ -356,7 +338,7 @@
             TBNombreProducto.Name = "TBNombreProducto";
             TBNombreProducto.Size = new Size(174, 27);
             TBNombreProducto.TabIndex = 5;
-            TBNombreProducto.KeyPress += TBNombreProducto_KeyPress;
+            TBNombreProducto.KeyPress += String_KeyPress;
             // 
             // Label2
             // 
@@ -391,7 +373,7 @@
             TBPrecio.Name = "TBPrecio";
             TBPrecio.Size = new Size(174, 27);
             TBPrecio.TabIndex = 8;
-            TBPrecio.KeyPress += TBPrecio_KeyPress;
+            TBPrecio.KeyPress += Num_KeyPress;
             // 
             // Label4
             // 
@@ -413,7 +395,7 @@
             TBStock.Name = "TBStock";
             TBStock.Size = new Size(174, 27);
             TBStock.TabIndex = 7;
-            TBStock.KeyPress += TBStock_KeyPress;
+            TBStock.KeyPress += Num_KeyPress;
             // 
             // AñadirProducto
             // 
@@ -436,9 +418,7 @@
             Panel2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
-            
-    }
-
+        }
 
         internal TabControl TabControlListaProductos;
         internal TabPage TabPageListaProducto;
@@ -448,7 +428,6 @@
         internal Panel Panel2;
         internal ComboBox CBCategoria;
         internal Button BAñadirProducto;
-        internal Button BVolver;
         internal ComboBox CBMarca;
         internal Label LMarca;
         internal ComboBox CBTalle;
@@ -470,5 +449,5 @@
         #endregion
     }
 
-    
+
 }

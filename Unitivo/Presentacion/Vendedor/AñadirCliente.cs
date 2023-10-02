@@ -23,6 +23,7 @@ namespace Unitivo.Presentacion.Vendedor
         public AñadirCliente()
         {
             InitializeComponent();
+            CargarClientes();
         }
 
 
@@ -79,6 +80,20 @@ namespace Unitivo.Presentacion.Vendedor
         {
             CommonFunctions.ValidarEmailKeyPress((TextBox)sender, e);
         }
+
+        private void CargarClientes()
+        {
+            List<Cliente> clientes = clienteRepositorio.ListarClientesActivos();
+            DataGridViewListarClientes.Rows.Clear();
+            DataGridViewListarClientes.Refresh();
+            foreach (Cliente cliente in clienteRepositorio.ListarClientes())
+            {
+                DataGridViewListarClientes.Rows.Add(cliente.Id, cliente.Nombre, cliente.Apellido, cliente.Dni, cliente.Telefono, cliente.Direccion, cliente.Correo);
+            }
+        }
+
+
+
     }
 }
 

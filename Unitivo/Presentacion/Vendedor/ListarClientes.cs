@@ -23,48 +23,6 @@ namespace Unitivo.Presentacion.Vendedor
             CargarClientes();
         }
 
-
-
-        private void CargarClientes()
-        {
-            List<Cliente> clientes = clienteRepositorio.ListarClientesActivos();
-            dgvListarCliente.Rows.Clear();
-            dgvListarCliente.Refresh();
-            foreach (Cliente cliente in clienteRepositorio.ListarClientes())
-            {
-                dgvListarCliente.Rows.Add(cliente.Id, cliente.Nombre, cliente.Apellido, cliente.Dni, cliente.Telefono, cliente.Direccion, cliente.Correo);
-            }
-        }
-
-
-        private void BBuscar_Click(object sender, EventArgs e)
-        {
-            object parametro = TBBuscar.Text;
-
-            if (parametro != null)
-            {
-                List<Cliente> clientes = clienteRepositorio.BuscarCliente(parametro);
-                if (clientes != null)
-                {
-                    dgvListarCliente.Rows.Clear();
-                    dgvListarCliente.Refresh();
-                    foreach (Cliente cliente in clientes)
-                    {
-                        dgvListarCliente.Rows.Add(cliente.Id, cliente.Nombre, cliente.Apellido, cliente.Dni, cliente.Telefono, cliente.Direccion, cliente.Correo);
-                    }
-                }
-                else
-                {
-                    dgvListarCliente.Rows.Clear();
-                    dgvListarCliente.Refresh();
-                }
-            }
-            else
-            {
-                CargarClientes();
-            }
-        }
-
         private void Num_KeyPress(object sender, KeyPressEventArgs e)
         {
             CommonFunctions.ValidarNumberKeyPress((TextBox)sender, e);
@@ -85,6 +43,47 @@ namespace Unitivo.Presentacion.Vendedor
                 // Por ejemplo, actualizar la lista de clientes o realizar otras acciones necesarias
                 // después de modificar el cliente.
             }
+        }
+
+        private void CargarClientes()
+        {
+            List<Cliente> clientes = clienteRepositorio.ListarClientesActivos();
+            DataGridViewListarClientes.Rows.Clear();
+            DataGridViewListarClientes.Refresh();
+            foreach (Cliente cliente in clienteRepositorio.ListarClientes())
+            {
+                DataGridViewListarClientes.Rows.Add(cliente.Id, cliente.Nombre, cliente.Apellido, cliente.Dni, cliente.Telefono, cliente.Direccion, cliente.Correo);
+            }
+        }
+
+
+        private void BBuscar_Click(object sender, EventArgs e)
+        {
+            object parametro = TBBuscar.Text;
+
+            if (parametro != null)
+            {
+                List<Cliente> clientes = clienteRepositorio.BuscarCliente(parametro);
+                if (clientes != null)
+                {
+                    DataGridViewListarClientes.Rows.Clear();
+                    DataGridViewListarClientes.Refresh();
+                    foreach (Cliente cliente in clientes)
+                    {
+                        DataGridViewListarClientes.Rows.Add(cliente.Id, cliente.Nombre, cliente.Apellido, cliente.Dni, cliente.Telefono, cliente.Direccion, cliente.Correo);
+                    }
+                }
+                else
+                {
+                    DataGridViewListarClientes.Rows.Clear();
+                    DataGridViewListarClientes.Refresh();
+                }
+            }
+            else
+            {
+                CargarClientes();
+            }
+
         }
     }
 }

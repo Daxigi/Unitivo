@@ -70,6 +70,7 @@
             // 
             // dgvListaVentas
             // 
+            dgvListaVentas.AllowUserToAddRows = false;
             dgvListaVentas.AllowUserToDeleteRows = false;
             dgvListaVentas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvListaVentas.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
@@ -213,6 +214,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4, 5, 4, 5);
             Name = "DetalleVenta";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             TabDetalleVenta.ResumeLayout(false);
             TabPageDetalleVenta.ResumeLayout(false);
