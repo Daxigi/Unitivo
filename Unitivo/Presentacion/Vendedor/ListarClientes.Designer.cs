@@ -30,7 +30,7 @@
             GroupBoxClientes = new GroupBox();
             BBuscar = new Button();
             TBBuscar = new TextBox();
-            ComboBoxBuscarDni = new ComboBox();
+            ComboBoxBuscar = new ComboBox();
             BEditarCliente = new Button();
             BImprimirClientes = new Button();
             TabControlListaClientes = new TabControl();
@@ -54,7 +54,7 @@
             GroupBoxClientes.BackColor = Color.FloralWhite;
             GroupBoxClientes.Controls.Add(BBuscar);
             GroupBoxClientes.Controls.Add(TBBuscar);
-            GroupBoxClientes.Controls.Add(ComboBoxBuscarDni);
+            GroupBoxClientes.Controls.Add(ComboBoxBuscar);
             GroupBoxClientes.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             GroupBoxClientes.ForeColor = Color.DarkOrange;
             GroupBoxClientes.Location = new Point(208, 51);
@@ -87,17 +87,18 @@
             TBBuscar.TabIndex = 1;
             TBBuscar.KeyPress += Num_KeyPress;
             // 
-            // ComboBoxBuscarDni
+            // ComboBoxBuscar
             // 
-            ComboBoxBuscarDni.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            ComboBoxBuscarDni.ForeColor = Color.SaddleBrown;
-            ComboBoxBuscarDni.FormattingEnabled = true;
-            ComboBoxBuscarDni.Location = new Point(59, 72);
-            ComboBoxBuscarDni.Margin = new Padding(4, 5, 4, 5);
-            ComboBoxBuscarDni.Name = "ComboBoxBuscarDni";
-            ComboBoxBuscarDni.Size = new Size(160, 33);
-            ComboBoxBuscarDni.TabIndex = 0;
-            ComboBoxBuscarDni.Text = "DNI";
+            ComboBoxBuscar.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            ComboBoxBuscar.ForeColor = Color.SaddleBrown;
+            ComboBoxBuscar.FormattingEnabled = true;
+            ComboBoxBuscar.Items.AddRange(new object[] { "DNI", "Nombre y Apellido" });
+            ComboBoxBuscar.Location = new Point(49, 74);
+            ComboBoxBuscar.Margin = new Padding(4, 5, 4, 5);
+            ComboBoxBuscar.Name = "ComboBoxBuscar";
+            ComboBoxBuscar.Size = new Size(167, 33);
+            ComboBoxBuscar.TabIndex = 0;
+            ComboBoxBuscar.Text = "Filtrar por:";
             // 
             // BEditarCliente
             // 
@@ -152,7 +153,7 @@
             DataGridViewListarClientes.AllowUserToAddRows = false;
             DataGridViewListarClientes.AllowUserToDeleteRows = false;
             DataGridViewListarClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            DataGridViewListarClientes.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            DataGridViewListarClientes.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedCells;
             DataGridViewListarClientes.BackgroundColor = Color.RosyBrown;
             DataGridViewListarClientes.BorderStyle = BorderStyle.None;
             DataGridViewListarClientes.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
@@ -261,7 +262,7 @@
         internal GroupBox GroupBoxClientes;
         internal Button BBuscar;
         internal TextBox TBBuscar;
-        internal ComboBox ComboBoxBuscarDni;
+        internal ComboBox ComboBoxBuscar;
         internal TabPage TabPageListaClientes;
         internal DataGridView DgvListarClientes;
         internal Button BEditarCliente;

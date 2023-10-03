@@ -265,7 +265,7 @@
             // 
             DataGridViewListarClientes.AllowUserToAddRows = false;
             DataGridViewListarClientes.AllowUserToDeleteRows = false;
-            DataGridViewListarClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            DataGridViewListarClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             DataGridViewListarClientes.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             DataGridViewListarClientes.BackgroundColor = Color.RosyBrown;
             DataGridViewListarClientes.BorderStyle = BorderStyle.None;
@@ -312,42 +312,49 @@
             Column1.HeaderText = "ID";
             Column1.MinimumWidth = 6;
             Column1.Name = "Column1";
+            Column1.Width = 52;
             // 
             // Column2
             // 
             Column2.HeaderText = "Nombre";
             Column2.MinimumWidth = 6;
             Column2.Name = "Column2";
+            Column2.Width = 93;
             // 
             // Column3
             // 
             Column3.HeaderText = "Apellido";
             Column3.MinimumWidth = 6;
             Column3.Name = "Column3";
+            Column3.Width = 95;
             // 
             // Column4
             // 
             Column4.HeaderText = "Dni";
             Column4.MinimumWidth = 6;
             Column4.Name = "Column4";
+            Column4.Width = 62;
             // 
             // Column5
             // 
             Column5.HeaderText = "Telefono";
             Column5.MinimumWidth = 6;
             Column5.Name = "Column5";
+            Column5.Width = 99;
             // 
             // Column6
             // 
             Column6.HeaderText = "Direccion";
             Column6.MinimumWidth = 6;
             Column6.Name = "Column6";
+            Column6.Width = 107;
             // 
             // Column7
             // 
             Column7.HeaderText = "Email";
             Column7.MinimumWidth = 6;
             Column7.Name = "Column7";
+            Column7.Width = 78;
             // 
             // AñadirCliente
             // 
