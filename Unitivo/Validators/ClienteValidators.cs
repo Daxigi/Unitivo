@@ -35,7 +35,7 @@ namespace Unitivo.Validators
             //validar telefono
             RuleFor(x => x.Telefono)
                 .NotEmpty().WithMessage("El campo Telefono es obligatorio")
-                .Length(9, 9).WithMessage("El campo Telefono debe tener 9 caracteres")
+                .Length(10, 10).WithMessage("El campo Telefono debe tener 10 caracteres")
                 ;
             //validar direccion
             RuleFor(x => x.Direccion)

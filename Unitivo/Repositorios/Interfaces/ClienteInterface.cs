@@ -10,9 +10,9 @@ namespace Unitivo.Repositorio.Interfaces
 {
     public interface ClienteInterface
     {
-        public void AgregarCliente(ClienteConstructor cliente);
+        public bool AgregarCliente(ClienteConstructor cliente);
         public bool EliminarCliente(int id);
-        public bool ModificarCliente(Cliente cliente);
+        public bool ModificarCliente(ClienteConstructor cliente);
         public Cliente BuscarClientPorId(int id);
 
         public Cliente BuscarClientePorMail(string mail);   

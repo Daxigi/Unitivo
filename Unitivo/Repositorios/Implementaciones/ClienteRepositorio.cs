@@ -17,66 +17,121 @@ namespace Univivo.Repositorios.Implementaciones
             _contexto = Contexto.dbContexto;
         }
 
-      public void AgregarCliente(ClienteConstructor x)
-{
-    try
-    {
-        x.FechaCreacion = DateTime.Now;
-        x.Estado = true;
-        x.UsuarioCreacion = Session.idUsuario;
-
-        Cliente cliente = new Cliente();
-
-        cliente.Nombre = x.Nombre;
-        cliente.Apellido = x.Apellido;
-        cliente.Dni = x.Dni;
-        cliente.Correo = x.Correo;
-        cliente.Direccion = x.Direccion;
-        cliente.Telefono = x.Telefono;
-        cliente.FechaCreacion = x.FechaCreacion; 
-        cliente.Estado = x.Estado;
-        cliente.UsuarioCreacion = x.UsuarioCreacion;
-
-        var validator = new ClienteValidators();
-        var result = validator.Validate(cliente);
-
-        if (!result.IsValid)
+        public bool AgregarCliente(ClienteConstructor x)
         {
-            StringBuilder sb = new StringBuilder();
-            foreach (var failure in result.Errors)
+            try
             {
-                sb.AppendLine($"{failure.PropertyName}: {failure.ErrorMessage}");
+                x.FechaCreacion = DateTime.Now;
+                x.Estado = true;
+                x.UsuarioCreacion = Session.idUsuario;
+
+                Cliente cliente = new Cliente();
+
+                cliente.Nombre = x.Nombre;
+                cliente.Apellido = x.Apellido;
+                cliente.Dni = x.Dni;
+                cliente.Correo = x.Correo;
+                cliente.Direccion = x.Direccion;
+                cliente.Telefono = x.Telefono;
+                cliente.FechaCreacion = x.FechaCreacion;
+                cliente.Estado = x.Estado;
+                cliente.UsuarioCreacion = x.UsuarioCreacion;
+
+                var validator = new ClienteValidators();
+                var result = validator.Validate(cliente);
+
+                if (!result.IsValid)
+                {
+                    StringBuilder sb = new StringBuilder();
+                    foreach (var failure in result.Errors)
+                    {
+                        sb.AppendLine($"{failure.PropertyName}: {failure.ErrorMessage}");
+                    }
+                    throw new ValidationException(sb.ToString());
+                }
+
+                if (BuscarClientePorDni(x.Dni) != null)
+                {
+                    MessageBox.Show("El DNI ya está asociado a un cliente.", "Clientes", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false; // Retorna false si ya existe un cliente con el mismo DNI
+                }
+                // Validar que el correo sea único
+
+                if (BuscarClientePorMail(x.Correo) != null)
+                {
+                    MessageBox.Show("El correo ya está asociado a un cliente.", "Clientes", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false; // Retorna false si ya existe un cliente con el mismo correo
+                }
+
+                // Agrega el cliente al contexto de Entity Framework
+
+                _contexto?.Clientes.Add(cliente);
+                _contexto?.SaveChanges();
+
+                // Retorna true si el cliente se agregó con éxito
+                return true;
             }
-            throw new ValidationException(sb.ToString());
+            catch (Exception ex)
+            {
+                // Retorna false si hubo un error durante la inserción
+                MessageBox.Show(ex.Message, "Clientes", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
         }
 
-        if (BuscarClientePorDni(x.Dni) != null)
-        {
-            MessageBox.Show("El DNI ya está asociado a un cliente.", "Clientes", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            return; // Retorna sin agregar el cliente si ya existe uno con el mismo DNI
+        public bool ModificarCliente(ClienteConstructor x){
+            try
+            {
+                Cliente cliente = BuscarClientePorDni(x.Dni);
+
+                cliente.Nombre = x.Nombre;
+                cliente.Apellido = x.Apellido;
+                cliente.Dni = x.Dni;
+                cliente.Correo = x.Correo;
+                cliente.Direccion = x.Direccion;
+                cliente.Telefono = x.Telefono;
+
+                var validator = new ClienteValidators();
+                var result = validator.Validate(cliente);
+
+                if (!result.IsValid)
+                {
+                    StringBuilder sb = new StringBuilder();
+                    foreach (var failure in result.Errors)
+                    {
+                        sb.AppendLine($"{failure.PropertyName}: {failure.ErrorMessage}");
+                    }
+                    throw new ValidationException(sb.ToString());
+                }
+
+                if (BuscarClientePorDni(x.Dni).Dni != cliente.Dni)
+                {
+                    MessageBox.Show("El DNI ya está asociado a un cliente.", "Clientes", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false; // Retorna false si ya existe un cliente con el mismo DNI
+                }
+                // Validar que el correo sea único
+
+                if (BuscarClientePorMail(x.Correo).Correo != cliente.Correo)
+                {
+                    MessageBox.Show("El correo ya está asociado a un cliente.", "Clientes", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false; // Retorna false si ya existe un cliente con el mismo correo
+                }
+
+                // Agrega el cliente al contexto de Entity Framework
+
+                _contexto?.Clientes.Update(cliente);
+                _contexto?.SaveChanges();
+
+                // Retorna true si el cliente se agregó con éxito
+                return true;
+            }
+            catch (Exception ex)
+            {
+                // Retorna false si hubo un error durante la inserción
+                MessageBox.Show(ex.Message, "Clientes", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
         }
-        // Validar que el correo sea único
-
-        if (BuscarClientePorMail(x.Correo) != null)
-        {
-            MessageBox.Show("El correo ya está asociado a un cliente.", "Clientes", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            return; // Retorna sin agregar el cliente si ya existe uno con el mismo correo
-        }
-
-        // Agrega el cliente al contexto de Entity Framework
-        
-        
-        
-
-        _contexto?.Clientes.Add(cliente);
-        _contexto?.SaveChanges();
-    }
-    catch (Exception ex)
-    {
-        // corrije el error
-        MessageBox.Show(ex.Message, "Clientes", MessageBoxButtons.OK, MessageBoxIcon.Error);
-    }
-    }
 
 
 
@@ -88,11 +143,6 @@ namespace Univivo.Repositorios.Implementaciones
             return resultado > 0;
         }
 
-        public bool ModificarCliente(Cliente cliente){
-            _contexto?.Clientes.Update(cliente);
-            int resultado = _contexto?.SaveChanges() ?? 0;
-            return resultado > 0;
-        }
 
         public Cliente BuscarClientPorId(int id)
         {

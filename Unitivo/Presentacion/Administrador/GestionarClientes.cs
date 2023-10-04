@@ -27,7 +27,7 @@ namespace Unitivo.Presentacion.Administrador
         private void BModificarCliente_Click(object sender, EventArgs e)
         {
             // Crear una instancia del formulario ModificarCliente
-            ModificarCliente modificarClienteForm = new ModificarCliente();
+            ModificarCliente modificarClienteForm = new ModificarCliente(1);
 
             // Mostrar el formulario como un cuadro de diálogo modal
             DialogResult result = modificarClienteForm.ShowDialog();
