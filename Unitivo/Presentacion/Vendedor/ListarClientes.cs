@@ -28,6 +28,15 @@ namespace Unitivo.Presentacion.Vendedor
             CommonFunctions.ValidarNumberKeyPress((TextBox)sender, e);
         }
 
+        private void String_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            CommonFunctions.ValidarNumberKeyPress((TextBox)sender, e);
+        }
+
+        private void NumStr_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            CommonFunctions.ValidarKeyPress((TextBox)sender, e);
+        }
 
         private void BEditarCliente_Click(object sender, EventArgs e)
         {
@@ -83,7 +92,8 @@ namespace Unitivo.Presentacion.Vendedor
             {
                 CargarClientes();
             }
-
         }
+
+
     }
 }

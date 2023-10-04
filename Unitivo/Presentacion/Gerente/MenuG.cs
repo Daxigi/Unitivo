@@ -9,20 +9,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Unitivo.Presentacion.SuperAdministrador
+namespace Unitivo.Presentacion.Gerente
 {
-    public partial class MenuSA : Form
+    public partial class MenuG : Form
     {
         private int state;
         private int px, py;
         private bool mover;
 
-        public MenuSA()
+        public MenuG()
         {
             InitializeComponent();
         }
 
-        private void MenuA_Load(object sender, EventArgs e)
+        private void MenuG_Load(object sender, EventArgs e)
         {
             MinimumSize = new Size(900, 500);
             hideSubMenu();
@@ -30,9 +30,8 @@ namespace Unitivo.Presentacion.SuperAdministrador
 
         private void hideSubMenu()
         {
-            PanelSubMenuUsuarios.Visible = false;
-            PanelSubMenuEmpleados.Visible = false;
-            PanelSubMenuPerfiles.Visible = false;
+            PanelSubMenuBD.Visible = false;
+            PanelSubMenuReportes.Visible = false;
         }
 
         private void showSubMenu(Panel subMenu)
@@ -67,7 +66,7 @@ namespace Unitivo.Presentacion.SuperAdministrador
 
 
 
-        private void BCerrarMenuSA_Click(object sender, EventArgs e)
+        private void BCerrarMenuG_Click(object sender, EventArgs e)
         {
             MsgBoxResult ask;
             ask = Interaction.MsgBox("¿Esta seguro de que quiere cerrar sesión?", (MsgBoxStyle)((int)Constants.vbExclamation + (int)Constants.vbYesNo), "Cerrar Sesión");
@@ -77,37 +76,37 @@ namespace Unitivo.Presentacion.SuperAdministrador
             }
         }
 
-        private void BMaximizarMenuSA_Click(object sender, EventArgs e)
+        private void BMaximizarMenuG_Click(object sender, EventArgs e)
         {
-            BMaximizarMenuSA.Visible = false;
-            BRestaurarMenuSA.Visible = true;
+            BMaximizarMenuG.Visible = false;
+            BRestaurarMenuG.Visible = true;
             WindowState = FormWindowState.Maximized;
         }
 
-        private void BRestaurarMenuSA_Click(object sender, EventArgs e)
+        private void BRestaurarMenuG_Click(object sender, EventArgs e)
         {
-            BRestaurarMenuSA.Visible = false;
-            BMaximizarMenuSA.Visible = true;
+            BRestaurarMenuG.Visible = false;
+            BMaximizarMenuG.Visible = true;
             WindowState = FormWindowState.Normal;
         }
 
-        private void BMinimizarMenuSA_Click(object sender, EventArgs e)
+        private void BMinimizarMenuG_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
         }
 
-        private void PanelBarraMenuAdmin_MouseDown(object sender, MouseEventArgs e)
+        private void PanelBarraMenuG_MouseDown(object sender, MouseEventArgs e)
         {
             px = e.X;
             py = e.Y;
             mover = true;
         }
 
-        private void PanelBarraMenuAdmin_MouseUp(object sender, MouseEventArgs e)
+        private void PanelBarraMenuG_MouseUp(object sender, MouseEventArgs e)
         {
             mover = false;
         }
-        private void PanelBarraMenuAdmin_MouseMove(object sender, MouseEventArgs e)
+        private void PanelBarraMenuG_MouseMove(object sender, MouseEventArgs e)
         {
             if (mover)
             {
@@ -117,52 +116,27 @@ namespace Unitivo.Presentacion.SuperAdministrador
         }
 
 
-        private void BUsuarios_Click(object sender, EventArgs e)
+        private void BBaseDeDatos_Click(object sender, EventArgs e)
         {
-            showSubMenu(PanelSubMenuUsuarios);
+            showSubMenu(PanelSubMenuBD);
         }
 
-        private void BAñadirUsuario_Click(object sender, EventArgs e)
+        private void BFunciones_Click(object sender, EventArgs e)
         {
-            AbrirFormulariosSuperAdministrador(new AñadirUsuario());
+            AbrirFormulariosG(new ManejoBD());
         }
 
-        private void BGestionarUsuarios_Click(object sender, EventArgs e)
+        private void BReportes_Click(object sender, EventArgs e)
         {
-            AbrirFormulariosSuperAdministrador(new GestionarUsuarios());
+            showSubMenu(PanelSubMenuReportes);
         }
 
-
-        private void BEmpleados_Click(object sender, EventArgs e)
+        private void BVentasCategoria_Click(object sender, EventArgs e)
         {
-            showSubMenu(PanelSubMenuEmpleados);
-        }
-
-        private void BAñadirEmpleado_Click(object sender, EventArgs e)
-        {
-            AbrirFormulariosSuperAdministrador(new AñadirEmpleado());
+            AbrirFormulariosG(new VentasPorCategoria());
         }
 
 
-        private void BGestionarEmpleados_Click(object sender, EventArgs e)
-        {
-            AbrirFormulariosSuperAdministrador(new GestionarEmpleados());
-        }
-
-        private void BPerfiles_Click(object sender, EventArgs e)
-        {
-            showSubMenu(PanelSubMenuPerfiles);
-        }
-
-        private void BAñadirPerfil_Click(object sender, EventArgs e)
-        {
-            AbrirFormulariosSuperAdministrador(new AñadirPerfil());
-        }
-
-        private void BGestionarPerfiles_Click(object sender, EventArgs e)
-        {
-            AbrirFormulariosSuperAdministrador(new GestionarPerfiles());
-        }
 
 
 
@@ -179,7 +153,7 @@ namespace Unitivo.Presentacion.SuperAdministrador
             }
         }
 
-        private void AbrirFormulariosSuperAdministrador(Form formHijo)
+        private void AbrirFormulariosG(Form formHijo)
         {
             if (formularioActivo != null)
             {
@@ -189,7 +163,7 @@ namespace Unitivo.Presentacion.SuperAdministrador
             // Configurar el formulario hijo como el formulario activo
             formularioActivo = formHijo;
 
-            PanelFormSuperAdministrador.Controls.Clear();
+            PanelFormG.Controls.Clear();
             formHijo.TopLevel = false;
             formHijo.FormBorderStyle = FormBorderStyle.None;
             formHijo.Dock = DockStyle.Fill;
@@ -201,13 +175,14 @@ namespace Unitivo.Presentacion.SuperAdministrador
             formHijo.HorizontalScroll.Value = 0;
             formHijo.HorizontalScroll.Minimum = 0;
             formHijo.HorizontalScroll.Maximum = formHijo.Size.Width - 100;
-            PanelFormSuperAdministrador.Controls.Add(formHijo);
-            PanelFormSuperAdministrador.Tag = formHijo;
-            PanelFormSuperAdministrador.BringToFront();
-            PanelFormSuperAdministrador.AutoScroll = true;
+            PanelFormG.Controls.Add(formHijo);
+            PanelFormG.Tag = formHijo;
+            PanelFormG.BringToFront();
+            PanelFormG.AutoScroll = true;
             formHijo.Show();
             hideSubMenu();
 
         }
+
     }
 }

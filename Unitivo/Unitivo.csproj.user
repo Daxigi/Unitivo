@@ -40,6 +40,18 @@
     <Compile Update="Presentacion\Administrador\ModificarTalle.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Presentacion\Gerente\ReporteMensual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Presentacion\Gerente\VentasPorCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Presentacion\Gerente\ManejoBD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Presentacion\Gerente\MenuG.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Presentacion\Login.cs">
       <SubType>Form</SubType>
     </Compile>

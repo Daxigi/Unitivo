@@ -24,13 +24,13 @@
 
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             GroupBoxClientes = new GroupBox();
             BBuscar = new Button();
             TBBuscar = new TextBox();
-            ComboBoxBuscar = new ComboBox();
+            ComboBoxBuscarLC = new ComboBox();
             BEditarCliente = new Button();
             BImprimirClientes = new Button();
             TabControlListaClientes = new TabControl();
@@ -54,7 +54,7 @@
             GroupBoxClientes.BackColor = Color.FloralWhite;
             GroupBoxClientes.Controls.Add(BBuscar);
             GroupBoxClientes.Controls.Add(TBBuscar);
-            GroupBoxClientes.Controls.Add(ComboBoxBuscar);
+            GroupBoxClientes.Controls.Add(ComboBoxBuscarLC);
             GroupBoxClientes.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             GroupBoxClientes.ForeColor = Color.DarkOrange;
             GroupBoxClientes.Location = new Point(208, 51);
@@ -77,6 +77,7 @@
             BBuscar.Size = new Size(59, 61);
             BBuscar.TabIndex = 2;
             BBuscar.UseVisualStyleBackColor = false;
+            BBuscar.Click += BBuscar_Click;
             // 
             // TBBuscar
             // 
@@ -85,20 +86,19 @@
             TBBuscar.Name = "TBBuscar";
             TBBuscar.Size = new Size(220, 37);
             TBBuscar.TabIndex = 1;
-            TBBuscar.KeyPress += Num_KeyPress;
             // 
-            // ComboBoxBuscar
+            // ComboBoxBuscarLC
             // 
-            ComboBoxBuscar.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            ComboBoxBuscar.ForeColor = Color.SaddleBrown;
-            ComboBoxBuscar.FormattingEnabled = true;
-            ComboBoxBuscar.Items.AddRange(new object[] { "DNI", "Nombre y Apellido" });
-            ComboBoxBuscar.Location = new Point(49, 74);
-            ComboBoxBuscar.Margin = new Padding(4, 5, 4, 5);
-            ComboBoxBuscar.Name = "ComboBoxBuscar";
-            ComboBoxBuscar.Size = new Size(167, 33);
-            ComboBoxBuscar.TabIndex = 0;
-            ComboBoxBuscar.Text = "Buscar por:";
+            ComboBoxBuscarLC.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            ComboBoxBuscarLC.ForeColor = Color.SaddleBrown;
+            ComboBoxBuscarLC.FormattingEnabled = true;
+            ComboBoxBuscarLC.Items.AddRange(new object[] { "DNI", "Nombre y Apellido" });
+            ComboBoxBuscarLC.Location = new Point(49, 74);
+            ComboBoxBuscarLC.Margin = new Padding(4, 5, 4, 5);
+            ComboBoxBuscarLC.Name = "ComboBoxBuscarLC";
+            ComboBoxBuscarLC.Size = new Size(167, 33);
+            ComboBoxBuscarLC.TabIndex = 0;
+            ComboBoxBuscarLC.Text = "Buscar por:";
             // 
             // BEditarCliente
             // 
@@ -157,39 +157,39 @@
             DataGridViewListarClientes.BackgroundColor = Color.RosyBrown;
             DataGridViewListarClientes.BorderStyle = BorderStyle.None;
             DataGridViewListarClientes.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.DarkOliveGreen;
-            dataGridViewCellStyle1.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = SystemColors.Window;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            DataGridViewListarClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.DarkOliveGreen;
+            dataGridViewCellStyle4.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = SystemColors.Window;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            DataGridViewListarClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             DataGridViewListarClientes.ColumnHeadersHeight = 20;
             DataGridViewListarClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             DataGridViewListarClientes.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6, Column7 });
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            DataGridViewListarClientes.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = SystemColors.Window;
+            dataGridViewCellStyle5.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
+            DataGridViewListarClientes.DefaultCellStyle = dataGridViewCellStyle5;
             DataGridViewListarClientes.Dock = DockStyle.Fill;
             DataGridViewListarClientes.EnableHeadersVisualStyles = false;
             DataGridViewListarClientes.Location = new Point(3, 3);
             DataGridViewListarClientes.Margin = new Padding(4, 5, 4, 5);
             DataGridViewListarClientes.Name = "DataGridViewListarClientes";
             DataGridViewListarClientes.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.NavajoWhite;
-            dataGridViewCellStyle3.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            DataGridViewListarClientes.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.NavajoWhite;
+            dataGridViewCellStyle6.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
+            DataGridViewListarClientes.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             DataGridViewListarClientes.RowHeadersWidth = 51;
             DataGridViewListarClientes.Size = new Size(797, 268);
             DataGridViewListarClientes.TabIndex = 6;
@@ -262,7 +262,7 @@
         internal GroupBox GroupBoxClientes;
         internal Button BBuscar;
         internal TextBox TBBuscar;
-        internal ComboBox ComboBoxBuscar;
+        internal ComboBox ComboBoxBuscarLC;
         internal TabPage TabPageListaClientes;
         internal DataGridView DgvListarClientes;
         internal Button BEditarCliente;
