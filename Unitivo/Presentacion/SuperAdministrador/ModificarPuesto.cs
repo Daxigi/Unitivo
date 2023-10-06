@@ -9,24 +9,29 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Unitivo.Presentacion.Logica;
 
-namespace Unitivo.Presentacion.Administrador
+namespace Unitivo.Presentacion.SuperAdministrador
 {
-    public partial class ModificarCategoria : Form
+    public partial class ModificarPuesto : Form
     {
-        public ModificarCategoria()
+        public ModificarPuesto()
         {
             InitializeComponent();
         }
 
-        private void StrNum_KeyPress(object sender, KeyPressEventArgs e)
+        private void String_KeyPress(object sender, KeyPressEventArgs e)
         {
-            CommonFunctions.ValidarKeyPress((TextBox)sender, e);
+            CommonFunctions.ValidarStringKeyPress((TextBox)sender, e);
         }
 
-        private void BModificarCategoria_Click(object sender, EventArgs e)
+        private void BCancelarModifCliente_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void BModificarPerfil_Click(object sender, EventArgs e)
         {
             // Verificar si algún TextBox está vacío.
-            if (string.IsNullOrWhiteSpace(TBNombreCategoria.Text))
+            if (string.IsNullOrWhiteSpace(TBModPerfil.Text))
             {
                 // Mostrar un mensaje de error si al menos un campo está vacío.
                 MessageBox.Show("El campo es obligatorio. Por favor, complete todos los campos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -34,14 +39,10 @@ namespace Unitivo.Presentacion.Administrador
             else
             {
                 // Mostrar un mensaje de éxito.
-                MessageBox.Show("Categoria modificada con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Puesto registrado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
-        private void BCancelar_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
 
     }
 }

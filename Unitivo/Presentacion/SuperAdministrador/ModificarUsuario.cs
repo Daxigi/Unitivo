@@ -33,5 +33,22 @@ namespace Unitivo.Presentacion.SuperAdministrador
             Close();
         }
 
+        private void BModificarUsuario_Click(object sender, EventArgs e)
+        {
+            // Verificar si algún TextBox está vacío.
+            if (string.IsNullOrWhiteSpace(TBNombreUsuario.Text) ||
+                string.IsNullOrWhiteSpace(TBContraseñaUsuario.Text) ||
+                ComboBoxPerfil.SelectedIndex == -1)
+            {
+                // Mostrar un mensaje de error si al menos un campo está vacío.
+                MessageBox.Show("Todos los campos son obligatorios. Por favor, complete todos los campos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                // Mostrar un mensaje de éxito.
+                MessageBox.Show("Usuario modificado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
     }
 }

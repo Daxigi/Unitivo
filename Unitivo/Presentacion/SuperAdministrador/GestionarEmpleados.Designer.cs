@@ -36,7 +36,7 @@
             BBuscarUsuario = new Button();
             TBGestionUsuario = new TextBox();
             BModificarEmpleado = new Button();
-            BEliminarUsuario = new Button();
+            BEliminarEmpleado = new Button();
             BAltaEmpleado = new Button();
             TabControlListaEmpleados = new TabControl();
             TabPageListaEmpleados = new TabPage();
@@ -101,7 +101,7 @@
             BModificarEmpleado.BackColor = Color.SteelBlue;
             BModificarEmpleado.ForeColor = Color.White;
             BModificarEmpleado.Image = Properties.Resources.icons8_editar_archivo_26;
-            BModificarEmpleado.Location = new Point(964, 360);
+            BModificarEmpleado.Location = new Point(987, 360);
             BModificarEmpleado.Margin = new Padding(4, 5, 4, 5);
             BModificarEmpleado.Name = "BModificarEmpleado";
             BModificarEmpleado.Size = new Size(67, 69);
@@ -109,24 +109,25 @@
             BModificarEmpleado.UseVisualStyleBackColor = false;
             BModificarEmpleado.Click += BModificarEmpleado_Click;
             // 
-            // BEliminarUsuario
+            // BEliminarEmpleado
             // 
-            BEliminarUsuario.BackColor = Color.Brown;
-            BEliminarUsuario.ForeColor = Color.White;
-            BEliminarUsuario.Image = Properties.Resources.icons8_basura_26;
-            BEliminarUsuario.Location = new Point(964, 454);
-            BEliminarUsuario.Margin = new Padding(4, 5, 4, 5);
-            BEliminarUsuario.Name = "BEliminarUsuario";
-            BEliminarUsuario.Size = new Size(67, 69);
-            BEliminarUsuario.TabIndex = 75;
-            BEliminarUsuario.UseVisualStyleBackColor = false;
+            BEliminarEmpleado.BackColor = Color.Brown;
+            BEliminarEmpleado.ForeColor = Color.White;
+            BEliminarEmpleado.Image = Properties.Resources.icons8_basura_26;
+            BEliminarEmpleado.Location = new Point(987, 454);
+            BEliminarEmpleado.Margin = new Padding(4, 5, 4, 5);
+            BEliminarEmpleado.Name = "BEliminarEmpleado";
+            BEliminarEmpleado.Size = new Size(67, 69);
+            BEliminarEmpleado.TabIndex = 75;
+            BEliminarEmpleado.UseVisualStyleBackColor = false;
+            BEliminarEmpleado.Click += BEliminarEmpleado_Click;
             // 
             // BAltaEmpleado
             // 
             BAltaEmpleado.BackColor = Color.DarkOliveGreen;
             BAltaEmpleado.ForeColor = Color.White;
             BAltaEmpleado.Image = Properties.Resources.icons8_más_2_matemáticas_30;
-            BAltaEmpleado.Location = new Point(964, 454);
+            BAltaEmpleado.Location = new Point(987, 454);
             BAltaEmpleado.Margin = new Padding(4, 5, 4, 5);
             BAltaEmpleado.Name = "BAltaEmpleado";
             BAltaEmpleado.Size = new Size(67, 69);
@@ -137,11 +138,11 @@
             // 
             TabControlListaEmpleados.Controls.Add(TabPageListaEmpleados);
             TabControlListaEmpleados.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            TabControlListaEmpleados.Location = new Point(49, 219);
+            TabControlListaEmpleados.Location = new Point(30, 218);
             TabControlListaEmpleados.Margin = new Padding(4, 3, 4, 3);
             TabControlListaEmpleados.Name = "TabControlListaEmpleados";
             TabControlListaEmpleados.SelectedIndex = 0;
-            TabControlListaEmpleados.Size = new Size(880, 412);
+            TabControlListaEmpleados.Size = new Size(944, 412);
             TabControlListaEmpleados.TabIndex = 81;
             // 
             // TabPageListaEmpleados
@@ -153,13 +154,14 @@
             TabPageListaEmpleados.Margin = new Padding(4, 3, 4, 3);
             TabPageListaEmpleados.Name = "TabPageListaEmpleados";
             TabPageListaEmpleados.Padding = new Padding(4, 3, 4, 3);
-            TabPageListaEmpleados.Size = new Size(872, 380);
+            TabPageListaEmpleados.Size = new Size(936, 380);
             TabPageListaEmpleados.TabIndex = 0;
             TabPageListaEmpleados.Text = "Lista de Empleados";
             TabPageListaEmpleados.UseVisualStyleBackColor = true;
             // 
             // dgvEmpleados
             // 
+            dgvEmpleados.AllowUserToAddRows = false;
             dgvEmpleados.AllowUserToDeleteRows = false;
             dgvEmpleados.BackgroundColor = Color.RosyBrown;
             dgvEmpleados.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
@@ -200,7 +202,7 @@
             dgvEmpleados.RowHeadersWidth = 51;
             dataGridViewCellStyle4.ForeColor = Color.Black;
             dgvEmpleados.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            dgvEmpleados.Size = new Size(864, 374);
+            dgvEmpleados.Size = new Size(928, 374);
             dgvEmpleados.TabIndex = 2;
             // 
             // Column1
@@ -268,7 +270,7 @@
             Controls.Add(TabControlListaEmpleados);
             Controls.Add(GroupBoxGestionUsuarios);
             Controls.Add(BModificarEmpleado);
-            Controls.Add(BEliminarUsuario);
+            Controls.Add(BEliminarEmpleado);
             Controls.Add(BAltaEmpleado);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4, 5, 4, 5);
@@ -286,7 +288,7 @@
         internal Button BBuscarUsuario;
         internal TextBox TBGestionUsuario;
         internal Button BModificarEmpleado;
-        internal Button BEliminarUsuario;
+        internal Button BEliminarEmpleado;
         internal Button BAltaEmpleado;
 
         #endregion

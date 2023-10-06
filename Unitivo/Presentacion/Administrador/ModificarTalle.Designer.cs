@@ -90,6 +90,7 @@
             TBModTalle.Name = "TBModTalle";
             TBModTalle.Size = new Size(221, 42);
             TBModTalle.TabIndex = 16;
+            TBModTalle.KeyPress += Num_KeyPress;
             // 
             // LModTalle
             // 
@@ -118,6 +119,7 @@
             BModificarTalle.TabIndex = 13;
             BModificarTalle.Text = "Modificar";
             BModificarTalle.UseVisualStyleBackColor = false;
+            BModificarTalle.Click += BModificarTalle_Click;
             // 
             // ModificarTalle
             // 

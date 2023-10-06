@@ -112,6 +112,7 @@
             BRegistrarEmpleado.TabIndex = 17;
             BRegistrarEmpleado.Text = "Añadir";
             BRegistrarEmpleado.UseVisualStyleBackColor = false;
+            BRegistrarEmpleado.Click += BRegistrarEmpleado_Click;
             // 
             // TBCorreoEmpleado
             // 
@@ -266,6 +267,7 @@
             // 
             // dgvEmpleados
             // 
+            dgvEmpleados.AllowUserToAddRows = false;
             dgvEmpleados.AllowUserToDeleteRows = false;
             dgvEmpleados.BackgroundColor = Color.RosyBrown;
             dgvEmpleados.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;

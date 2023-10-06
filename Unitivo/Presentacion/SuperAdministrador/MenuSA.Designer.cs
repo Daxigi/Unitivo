@@ -138,7 +138,7 @@
             BGestionarPerfiles.Name = "BGestionarPerfiles";
             BGestionarPerfiles.Size = new Size(307, 62);
             BGestionarPerfiles.TabIndex = 2;
-            BGestionarPerfiles.Text = "Gestionar Perfiles";
+            BGestionarPerfiles.Text = "Gestionar Puestos";
             BGestionarPerfiles.UseVisualStyleBackColor = false;
             BGestionarPerfiles.Click += BGestionarPerfiles_Click;
             // 
@@ -155,7 +155,7 @@
             BAñadirPerfil.Name = "BAñadirPerfil";
             BAñadirPerfil.Size = new Size(307, 62);
             BAñadirPerfil.TabIndex = 1;
-            BAñadirPerfil.Text = "Añadir Perfil";
+            BAñadirPerfil.Text = "Añadir Puesto";
             BAñadirPerfil.UseVisualStyleBackColor = false;
             BAñadirPerfil.Click += BAñadirPerfil_Click;
             // 
@@ -174,7 +174,7 @@
             BPerfiles.Name = "BPerfiles";
             BPerfiles.Size = new Size(307, 80);
             BPerfiles.TabIndex = 12;
-            BPerfiles.Text = "Perfiles";
+            BPerfiles.Text = "Puestos";
             BPerfiles.TextAlign = ContentAlignment.MiddleLeft;
             BPerfiles.TextImageRelation = TextImageRelation.ImageBeforeText;
             BPerfiles.UseVisualStyleBackColor = false;

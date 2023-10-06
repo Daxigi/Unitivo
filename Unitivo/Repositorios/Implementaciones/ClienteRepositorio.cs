@@ -7,7 +7,7 @@ using Unitivo.Validators;
 using System.Text;
 using System.ComponentModel.DataAnnotations;
 
-namespace Univivo.Repositorios.Implementaciones
+namespace Unitivo.Repositorios.Implementaciones
 {
     public class ClienteRepositorio : ClienteInterface{
         private readonly UnitivoContext? _contexto;

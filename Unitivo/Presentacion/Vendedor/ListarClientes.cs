@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Unitivo.Modelos;
 using Unitivo.Presentacion.Logica;
-using Univivo.Repositorios.Implementaciones;
+using Unitivo.Repositorios.Implementaciones;
 
 namespace Unitivo.Presentacion.Vendedor
 {
@@ -21,6 +21,7 @@ namespace Unitivo.Presentacion.Vendedor
         {
             InitializeComponent();
             CargarClientes();
+            ComboBoxBuscar.SelectedIndex = 0;
         }
 
         private void BuscarPorComboBox(object sender, KeyPressEventArgs e)
@@ -51,6 +52,7 @@ namespace Unitivo.Presentacion.Vendedor
             if (DataGridViewListarClientes.SelectedRows.Count > 0)
             {
                 // Obtén el ID del cliente seleccionado
+
                 int idSeleccionado = Convert.ToInt32(DataGridViewListarClientes.SelectedRows[0].Cells["ID"].Value);
 
                 // Crea una instancia del formulario ModificarCliente y pasa los detalles del cliente como parámetros
@@ -63,7 +65,7 @@ namespace Unitivo.Presentacion.Vendedor
                 if (result == DialogResult.OK)
                 {
                     // Realiza acciones si se cerró el formulario con DialogResult.OK
-                       CargarClientes();
+                    CargarClientes();
                 }
             }
             else
@@ -113,11 +115,8 @@ namespace Unitivo.Presentacion.Vendedor
         }
 
 
-        }
-
-        private void ComboBoxBuscar_SelectedValueChanged(object sender, EventArgs e)
-        {
-            TBBuscar.Clear();
-        }
     }
+
+
 }
+

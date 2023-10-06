@@ -90,6 +90,7 @@
             TBBuscarTalle.Name = "TBBuscarTalle";
             TBBuscarTalle.Size = new Size(196, 30);
             TBBuscarTalle.TabIndex = 6;
+            TBBuscarTalle.KeyPress += Num_KeyPress;
             // 
             // BModificarTalle
             // 
@@ -123,6 +124,7 @@
             BEliminarTalle.TabIndex = 88;
             BEliminarTalle.TextImageRelation = TextImageRelation.ImageBeforeText;
             BEliminarTalle.UseVisualStyleBackColor = false;
+            BEliminarTalle.Click += BEliminarTalle_Click;
             // 
             // TabListaTalles
             // 

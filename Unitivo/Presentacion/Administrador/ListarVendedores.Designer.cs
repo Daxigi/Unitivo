@@ -57,7 +57,7 @@
             BImprimirVendedor.BackColor = Color.SteelBlue;
             BImprimirVendedor.ForeColor = Color.White;
             BImprimirVendedor.Image = Properties.Resources.icons8_imprimir_26;
-            BImprimirVendedor.Location = new Point(961, 429);
+            BImprimirVendedor.Location = new Point(987, 424);
             BImprimirVendedor.Margin = new Padding(4, 5, 4, 5);
             BImprimirVendedor.Name = "BImprimirVendedor";
             BImprimirVendedor.Size = new Size(67, 69);
@@ -99,16 +99,17 @@
             TBBuscarVendedor.Name = "TBBuscarVendedor";
             TBBuscarVendedor.Size = new Size(220, 38);
             TBBuscarVendedor.TabIndex = 1;
+            TBBuscarVendedor.KeyPress += StrNum_KeyPress;
             // 
             // TabControlListaVendedores
             // 
             TabControlListaVendedores.Controls.Add(TabPageListaVendedores);
             TabControlListaVendedores.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            TabControlListaVendedores.Location = new Point(49, 239);
+            TabControlListaVendedores.Location = new Point(27, 239);
             TabControlListaVendedores.Margin = new Padding(4, 3, 4, 3);
             TabControlListaVendedores.Name = "TabControlListaVendedores";
             TabControlListaVendedores.SelectedIndex = 0;
-            TabControlListaVendedores.Size = new Size(880, 412);
+            TabControlListaVendedores.Size = new Size(944, 412);
             TabControlListaVendedores.TabIndex = 82;
             // 
             // TabPageListaVendedores
@@ -120,13 +121,14 @@
             TabPageListaVendedores.Margin = new Padding(4, 3, 4, 3);
             TabPageListaVendedores.Name = "TabPageListaVendedores";
             TabPageListaVendedores.Padding = new Padding(4, 3, 4, 3);
-            TabPageListaVendedores.Size = new Size(872, 380);
+            TabPageListaVendedores.Size = new Size(936, 380);
             TabPageListaVendedores.TabIndex = 0;
             TabPageListaVendedores.Text = "Lista de Vendedores";
             TabPageListaVendedores.UseVisualStyleBackColor = true;
             // 
             // dgvEmpleados
             // 
+            dgvEmpleados.AllowUserToAddRows = false;
             dgvEmpleados.AllowUserToDeleteRows = false;
             dgvEmpleados.BackgroundColor = Color.RosyBrown;
             dgvEmpleados.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
@@ -167,7 +169,7 @@
             dgvEmpleados.RowHeadersWidth = 51;
             dataGridViewCellStyle4.ForeColor = Color.Black;
             dgvEmpleados.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            dgvEmpleados.Size = new Size(864, 374);
+            dgvEmpleados.Size = new Size(928, 374);
             dgvEmpleados.TabIndex = 2;
             // 
             // Column1

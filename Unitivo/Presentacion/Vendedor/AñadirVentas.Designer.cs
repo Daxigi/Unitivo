@@ -199,6 +199,7 @@ namespace Unitivo.Formularios.Vendedor
             // 
             // TBTelCliVenta
             // 
+            TBTelCliVenta.Enabled = false;
             TBTelCliVenta.Location = new Point(781, 88);
             TBTelCliVenta.Margin = new Padding(4, 5, 4, 5);
             TBTelCliVenta.Name = "TBTelCliVenta";
@@ -219,6 +220,7 @@ namespace Unitivo.Formularios.Vendedor
             // 
             // TBApellidoCliVenta
             // 
+            TBApellidoCliVenta.Enabled = false;
             TBApellidoCliVenta.Location = new Point(588, 88);
             TBApellidoCliVenta.Margin = new Padding(4, 5, 4, 5);
             TBApellidoCliVenta.Name = "TBApellidoCliVenta";
@@ -239,6 +241,7 @@ namespace Unitivo.Formularios.Vendedor
             // 
             // TBNombreCliVenta
             // 
+            TBNombreCliVenta.Enabled = false;
             TBNombreCliVenta.Location = new Point(395, 88);
             TBNombreCliVenta.Margin = new Padding(4, 5, 4, 5);
             TBNombreCliVenta.Name = "TBNombreCliVenta";
@@ -316,6 +319,7 @@ namespace Unitivo.Formularios.Vendedor
             BAñadir.Size = new Size(60, 62);
             BAñadir.TabIndex = 12;
             BAñadir.UseVisualStyleBackColor = false;
+            BAñadir.Click += BAñadir_Click;
             // 
             // Label10
             // 
@@ -352,6 +356,7 @@ namespace Unitivo.Formularios.Vendedor
             // 
             // TBTalle
             // 
+            TBTalle.Enabled = false;
             TBTalle.Location = new Point(588, 89);
             TBTalle.Margin = new Padding(4, 5, 4, 5);
             TBTalle.Name = "TBTalle";
@@ -372,6 +377,7 @@ namespace Unitivo.Formularios.Vendedor
             // 
             // TBStock
             // 
+            TBStock.Enabled = false;
             TBStock.Location = new Point(445, 89);
             TBStock.Margin = new Padding(4, 5, 4, 5);
             TBStock.Name = "TBStock";
@@ -392,6 +398,7 @@ namespace Unitivo.Formularios.Vendedor
             // 
             // TBPrecio
             // 
+            TBPrecio.Enabled = false;
             TBPrecio.Font = new Font("Britannic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
             TBPrecio.Location = new Point(304, 89);
             TBPrecio.Margin = new Padding(4, 5, 4, 5);
@@ -436,6 +443,7 @@ namespace Unitivo.Formularios.Vendedor
             // 
             // dgvListaVentas
             // 
+            dgvListaVentas.AllowUserToAddRows = false;
             dgvListaVentas.AllowUserToDeleteRows = false;
             dgvListaVentas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvListaVentas.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
@@ -545,6 +553,7 @@ namespace Unitivo.Formularios.Vendedor
             BConfirmar.TabIndex = 66;
             BConfirmar.Text = "Confirmar";
             BConfirmar.UseVisualStyleBackColor = false;
+            BConfirmar.Click += BConfirmar_Click;
             // 
             // BModificarProducto
             // 
@@ -557,6 +566,7 @@ namespace Unitivo.Formularios.Vendedor
             BModificarProducto.Size = new Size(67, 69);
             BModificarProducto.TabIndex = 69;
             BModificarProducto.UseVisualStyleBackColor = false;
+            BModificarProducto.Click += BModificarProducto_Click;
             // 
             // BEliminarProducto
             // 
@@ -569,6 +579,7 @@ namespace Unitivo.Formularios.Vendedor
             BEliminarProducto.Size = new Size(67, 69);
             BEliminarProducto.TabIndex = 68;
             BEliminarProducto.UseVisualStyleBackColor = false;
+            BEliminarProducto.Click += BEliminarProducto_Click;
             // 
             // AñadirVentas
             // 

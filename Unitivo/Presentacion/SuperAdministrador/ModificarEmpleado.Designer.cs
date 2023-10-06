@@ -113,6 +113,7 @@
             BModEmpleado.TabIndex = 17;
             BModEmpleado.Text = "Modificar";
             BModEmpleado.UseVisualStyleBackColor = false;
+            BModEmpleado.Click += BModEmpleado_Click;
             // 
             // TBCorreoEmpleado
             // 

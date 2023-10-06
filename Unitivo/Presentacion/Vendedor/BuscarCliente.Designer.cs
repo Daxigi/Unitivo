@@ -31,6 +31,7 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             GroupBoxClientes = new GroupBox();
+            Label2 = new Label();
             BBuscar = new Button();
             TBBuscar = new TextBox();
             ComboBoxBuscarDni = new ComboBox();
@@ -59,6 +60,7 @@
             // GroupBoxClientes
             // 
             GroupBoxClientes.BackColor = Color.FloralWhite;
+            GroupBoxClientes.Controls.Add(Label2);
             GroupBoxClientes.Controls.Add(BBuscar);
             GroupBoxClientes.Controls.Add(TBBuscar);
             GroupBoxClientes.Controls.Add(ComboBoxBuscarDni);
@@ -73,12 +75,24 @@
             GroupBoxClientes.TabStop = false;
             GroupBoxClientes.Text = "Clientes";
             // 
+            // Label2
+            // 
+            Label2.AutoSize = true;
+            Label2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            Label2.ForeColor = Color.DarkOliveGreen;
+            Label2.Location = new Point(45, 50);
+            Label2.Margin = new Padding(5, 0, 5, 0);
+            Label2.Name = "Label2";
+            Label2.Size = new Size(112, 25);
+            Label2.TabIndex = 6;
+            Label2.Text = "Buscar por:";
+            // 
             // BBuscar
             // 
             BBuscar.BackColor = Color.DarkOliveGreen;
             BBuscar.ForeColor = Color.White;
             BBuscar.Image = Properties.Resources.icons8_búsqueda_26;
-            BBuscar.Location = new Point(526, 56);
+            BBuscar.Location = new Point(516, 61);
             BBuscar.Margin = new Padding(4, 5, 4, 5);
             BBuscar.Name = "BBuscar";
             BBuscar.Size = new Size(60, 62);
@@ -87,24 +101,26 @@
             // 
             // TBBuscar
             // 
-            TBBuscar.Location = new Point(260, 69);
+            TBBuscar.Location = new Point(296, 74);
             TBBuscar.Margin = new Padding(4, 5, 4, 5);
             TBBuscar.Name = "TBBuscar";
-            TBBuscar.Size = new Size(220, 38);
+            TBBuscar.Size = new Size(185, 38);
             TBBuscar.TabIndex = 1;
             TBBuscar.KeyPress += NumStr_KeyPress;
             // 
             // ComboBoxBuscarDni
             // 
+            ComboBoxBuscarDni.BackColor = SystemColors.Window;
+            ComboBoxBuscarDni.DropDownStyle = ComboBoxStyle.DropDownList;
             ComboBoxBuscarDni.Font = new Font("Cooper Black", 12F, FontStyle.Regular, GraphicsUnit.Point);
             ComboBoxBuscarDni.ForeColor = Color.SaddleBrown;
             ComboBoxBuscarDni.FormattingEnabled = true;
-            ComboBoxBuscarDni.Location = new Point(59, 72);
+            ComboBoxBuscarDni.Items.AddRange(new object[] { "Dni", "Nombre y Apellido" });
+            ComboBoxBuscarDni.Location = new Point(49, 77);
             ComboBoxBuscarDni.Margin = new Padding(4, 5, 4, 5);
             ComboBoxBuscarDni.Name = "ComboBoxBuscarDni";
-            ComboBoxBuscarDni.Size = new Size(160, 31);
+            ComboBoxBuscarDni.Size = new Size(198, 31);
             ComboBoxBuscarDni.TabIndex = 0;
-            ComboBoxBuscarDni.Text = "DNI";
             // 
             // panel1
             // 
@@ -320,5 +336,6 @@
         private DataGridViewTextBoxColumn Column5;
         private DataGridViewTextBoxColumn Column6;
         private DataGridViewTextBoxColumn Column7;
+        internal Label Label2;
     }
 }

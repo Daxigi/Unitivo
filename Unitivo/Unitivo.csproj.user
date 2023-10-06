@@ -58,7 +58,7 @@
     <Compile Update="Presentacion\SuperAdministrador\AñadirEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Presentacion\SuperAdministrador\AñadirPerfil.cs">
+    <Compile Update="Presentacion\SuperAdministrador\AñadirPuesto.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Presentacion\SuperAdministrador\AñadirUsuario.cs">
@@ -67,7 +67,7 @@
     <Compile Update="Presentacion\SuperAdministrador\GestionarEmpleados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Presentacion\SuperAdministrador\GestionarPerfiles.cs">
+    <Compile Update="Presentacion\SuperAdministrador\GestionarPuestos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Presentacion\SuperAdministrador\GestionarUsuarios.cs">
@@ -79,7 +79,7 @@
     <Compile Update="Presentacion\SuperAdministrador\ModificarEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Presentacion\SuperAdministrador\ModificarPerfiles.cs">
+    <Compile Update="Presentacion\SuperAdministrador\ModificarPuesto.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Presentacion\SuperAdministrador\ModificarUsuario.cs">

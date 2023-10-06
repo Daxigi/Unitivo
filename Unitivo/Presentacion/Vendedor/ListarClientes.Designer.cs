@@ -24,13 +24,14 @@
 
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             GroupBoxClientes = new GroupBox();
+            Label2 = new Label();
             BBuscar = new Button();
             TBBuscar = new TextBox();
-            ComboBoxBuscarLC = new ComboBox();
+            ComboBoxBuscar = new ComboBox();
             BEditarCliente = new Button();
             BImprimirClientes = new Button();
             TabControlListaClientes = new TabControl();
@@ -52,65 +53,77 @@
             // GroupBoxClientes
             // 
             GroupBoxClientes.BackColor = Color.FloralWhite;
+            GroupBoxClientes.Controls.Add(Label2);
             GroupBoxClientes.Controls.Add(BBuscar);
             GroupBoxClientes.Controls.Add(TBBuscar);
-            GroupBoxClientes.Controls.Add(ComboBoxBuscarLC);
+            GroupBoxClientes.Controls.Add(ComboBoxBuscar);
             GroupBoxClientes.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             GroupBoxClientes.ForeColor = Color.DarkOrange;
-            GroupBoxClientes.Location = new Point(182, 38);
-            GroupBoxClientes.Margin = new Padding(4, 3, 4, 3);
+            GroupBoxClientes.Location = new Point(208, 51);
+            GroupBoxClientes.Margin = new Padding(5, 4, 5, 4);
             GroupBoxClientes.Name = "GroupBoxClientes";
-            GroupBoxClientes.Padding = new Padding(4, 3, 4, 3);
-            GroupBoxClientes.Size = new Size(540, 115);
+            GroupBoxClientes.Padding = new Padding(5, 4, 5, 4);
+            GroupBoxClientes.Size = new Size(617, 153);
             GroupBoxClientes.TabIndex = 0;
             GroupBoxClientes.TabStop = false;
             GroupBoxClientes.Text = "Clientes";
+            // 
+            // Label2
+            // 
+            Label2.AutoSize = true;
+            Label2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            Label2.ForeColor = Color.DarkOliveGreen;
+            Label2.Location = new Point(49, 45);
+            Label2.Margin = new Padding(5, 0, 5, 0);
+            Label2.Name = "Label2";
+            Label2.Size = new Size(117, 25);
+            Label2.TabIndex = 32;
+            Label2.Text = "Buscar por :";
             // 
             // BBuscar
             // 
             BBuscar.BackColor = Color.DarkOliveGreen;
             BBuscar.ForeColor = Color.White;
             BBuscar.Image = Properties.Resources.icons8_búsqueda_26;
-            BBuscar.Location = new Point(453, 47);
-            BBuscar.Margin = new Padding(4, 3, 4, 3);
+            BBuscar.Location = new Point(518, 63);
+            BBuscar.Margin = new Padding(5, 4, 5, 4);
             BBuscar.Name = "BBuscar";
-            BBuscar.Size = new Size(52, 46);
+            BBuscar.Size = new Size(59, 61);
             BBuscar.TabIndex = 2;
             BBuscar.UseVisualStyleBackColor = false;
             BBuscar.Click += BBuscar_Click;
             // 
             // TBBuscar
             // 
-            TBBuscar.Location = new Point(228, 52);
-            TBBuscar.Margin = new Padding(4);
+            TBBuscar.Location = new Point(261, 69);
+            TBBuscar.Margin = new Padding(5);
             TBBuscar.Name = "TBBuscar";
-            TBBuscar.Size = new Size(193, 31);
+            TBBuscar.Size = new Size(220, 37);
             TBBuscar.TabIndex = 1;
             TBBuscar.KeyPress += BuscarPorComboBox;
             // 
-            // ComboBoxBuscarLC
+            // ComboBoxBuscar
             // 
+            ComboBoxBuscar.DropDownStyle = ComboBoxStyle.DropDownList;
             ComboBoxBuscar.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
             ComboBoxBuscar.ForeColor = Color.SaddleBrown;
             ComboBoxBuscar.FormattingEnabled = true;
             ComboBoxBuscar.Items.AddRange(new object[] { "DNI", "Nombre y Apellido" });
-            ComboBoxBuscar.Location = new Point(43, 56);
-            ComboBoxBuscar.Margin = new Padding(4);
+            ComboBoxBuscar.Location = new Point(49, 75);
+            ComboBoxBuscar.Margin = new Padding(5);
             ComboBoxBuscar.Name = "ComboBoxBuscar";
-            ComboBoxBuscar.Size = new Size(147, 28);
+            ComboBoxBuscar.Size = new Size(167, 33);
             ComboBoxBuscar.TabIndex = 0;
-            ComboBoxBuscar.Text = "Filtrar por:";
-            ComboBoxBuscar.SelectedValueChanged += ComboBoxBuscar_SelectedValueChanged;
             // 
             // BEditarCliente
             // 
             BEditarCliente.BackColor = Color.Goldenrod;
             BEditarCliente.ForeColor = Color.White;
             BEditarCliente.Image = Properties.Resources.icons8_editar_archivo_26;
-            BEditarCliente.Location = new Point(830, 344);
-            BEditarCliente.Margin = new Padding(4);
+            BEditarCliente.Location = new Point(949, 459);
+            BEditarCliente.Margin = new Padding(5);
             BEditarCliente.Name = "BEditarCliente";
-            BEditarCliente.Size = new Size(59, 52);
+            BEditarCliente.Size = new Size(67, 69);
             BEditarCliente.TabIndex = 4;
             BEditarCliente.UseVisualStyleBackColor = false;
             BEditarCliente.Click += BEditarCliente_Click;
@@ -120,10 +133,10 @@
             BImprimirClientes.BackColor = Color.SteelBlue;
             BImprimirClientes.ForeColor = Color.White;
             BImprimirClientes.Image = Properties.Resources.icons8_imprimir_26;
-            BImprimirClientes.Location = new Point(830, 266);
-            BImprimirClientes.Margin = new Padding(4);
+            BImprimirClientes.Location = new Point(949, 355);
+            BImprimirClientes.Margin = new Padding(5);
             BImprimirClientes.Name = "BImprimirClientes";
-            BImprimirClientes.Size = new Size(59, 52);
+            BImprimirClientes.Size = new Size(67, 69);
             BImprimirClientes.TabIndex = 3;
             BImprimirClientes.UseVisualStyleBackColor = false;
             // 
@@ -131,11 +144,10 @@
             // 
             TabControlListaClientes.Controls.Add(TabPageListaCliente);
             TabControlListaClientes.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            TabControlListaClientes.Location = new Point(69, 200);
-            TabControlListaClientes.Margin = new Padding(3, 2, 3, 2);
+            TabControlListaClientes.Location = new Point(79, 267);
             TabControlListaClientes.Name = "TabControlListaClientes";
             TabControlListaClientes.SelectedIndex = 0;
-            TabControlListaClientes.Size = new Size(710, 230);
+            TabControlListaClientes.Size = new Size(811, 307);
             TabControlListaClientes.TabIndex = 70;
             // 
             // TabPageListaCliente
@@ -143,11 +155,10 @@
             TabPageListaCliente.Controls.Add(DataGridViewListarClientes);
             TabPageListaCliente.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             TabPageListaCliente.ForeColor = Color.White;
-            TabPageListaCliente.Location = new Point(4, 26);
-            TabPageListaCliente.Margin = new Padding(3, 2, 3, 2);
+            TabPageListaCliente.Location = new Point(4, 29);
             TabPageListaCliente.Name = "TabPageListaCliente";
-            TabPageListaCliente.Padding = new Padding(3, 2, 3, 2);
-            TabPageListaCliente.Size = new Size(702, 200);
+            TabPageListaCliente.Padding = new Padding(3);
+            TabPageListaCliente.Size = new Size(803, 274);
             TabPageListaCliente.TabIndex = 0;
             TabPageListaCliente.Text = "Lista de Clientes";
             TabPageListaCliente.UseVisualStyleBackColor = true;
@@ -175,15 +186,15 @@
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
             dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.Black;
+            dataGridViewCellStyle2.ForeColor = Color.White;
             dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             DataGridViewListarClientes.DefaultCellStyle = dataGridViewCellStyle2;
             DataGridViewListarClientes.Dock = DockStyle.Fill;
             DataGridViewListarClientes.EnableHeadersVisualStyles = false;
-            DataGridViewListarClientes.Location = new Point(3, 2);
-            DataGridViewListarClientes.Margin = new Padding(4);
+            DataGridViewListarClientes.Location = new Point(3, 3);
+            DataGridViewListarClientes.Margin = new Padding(5);
             DataGridViewListarClientes.Name = "DataGridViewListarClientes";
             DataGridViewListarClientes.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -195,7 +206,7 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
             DataGridViewListarClientes.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             DataGridViewListarClientes.RowHeadersWidth = 51;
-            DataGridViewListarClientes.Size = new Size(696, 196);
+            DataGridViewListarClientes.Size = new Size(797, 268);
             DataGridViewListarClientes.TabIndex = 6;
             // 
             // ID
@@ -242,16 +253,16 @@
             // 
             // ListarClientes
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSeaGreen;
-            ClientSize = new Size(933, 519);
+            ClientSize = new Size(1066, 692);
             Controls.Add(TabControlListaClientes);
             Controls.Add(BEditarCliente);
             Controls.Add(BImprimirClientes);
             Controls.Add(GroupBoxClientes);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(4, 3, 4, 3);
+            Margin = new Padding(5, 4, 5, 4);
             Name = "ListarClientes";
             Text = "Form1";
             GroupBoxClientes.ResumeLayout(false);
@@ -266,7 +277,7 @@
         internal GroupBox GroupBoxClientes;
         internal Button BBuscar;
         internal TextBox TBBuscar;
-        internal ComboBox ComboBoxBuscarLC;
+        internal ComboBox ComboBoxBuscar;
         internal TabPage TabPageListaClientes;
         internal DataGridView DgvListarClientes;
         internal Button BEditarCliente;
@@ -281,6 +292,7 @@
         private DataGridViewTextBoxColumn Column5;
         private DataGridViewTextBoxColumn Column6;
         private DataGridViewTextBoxColumn Column7;
+        internal Label Label2;
     }
 
     #endregion

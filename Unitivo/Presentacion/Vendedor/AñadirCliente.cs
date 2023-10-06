@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using Unitivo.Presentacion.Logica;
 using Unitivo.Presentacion.Logica.Constructores;
 using Unitivo.Repositorio.Interfaces;
-using Univivo.Repositorios.Implementaciones;
+using Unitivo.Repositorios.Implementaciones;
 using Unitivo.Modelos;
 
 namespace Unitivo.Presentacion.Vendedor
@@ -99,8 +99,10 @@ namespace Unitivo.Presentacion.Vendedor
             }
         }
 
+        private void AñadirCliente_Load(object sender, EventArgs e)
+        {
 
-
+        }
     }
 }
 

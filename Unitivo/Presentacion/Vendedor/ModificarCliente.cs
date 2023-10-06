@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using Unitivo.Modelos;
 using Unitivo.Presentacion.Logica;
 using Unitivo.Presentacion.Logica.Constructores;
-using Univivo.Repositorios.Implementaciones;
+using Unitivo.Repositorios.Implementaciones;
 
 namespace Unitivo.Presentacion.Vendedor
 {

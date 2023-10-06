@@ -184,6 +184,8 @@
             // 
             // DataGridViewListaVentas
             // 
+            DataGridViewListaVentas.AllowUserToAddRows = false;
+            DataGridViewListaVentas.AllowUserToDeleteRows = false;
             DataGridViewListaVentas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DataGridViewListaVentas.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             DataGridViewListaVentas.BackgroundColor = Color.RosyBrown;
@@ -205,6 +207,7 @@
             DataGridViewListaVentas.Location = new Point(3, 3);
             DataGridViewListaVentas.Margin = new Padding(4, 5, 4, 5);
             DataGridViewListaVentas.Name = "DataGridViewListaVentas";
+            DataGridViewListaVentas.ReadOnly = true;
             DataGridViewListaVentas.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.NavajoWhite;
@@ -223,30 +226,35 @@
             Column1.HeaderText = "N° Factura";
             Column1.MinimumWidth = 6;
             Column1.Name = "Column1";
+            Column1.ReadOnly = true;
             // 
             // Column2
             // 
             Column2.HeaderText = "Fecha";
             Column2.MinimumWidth = 6;
             Column2.Name = "Column2";
+            Column2.ReadOnly = true;
             // 
             // Column5
             // 
             Column5.HeaderText = "Cliente";
             Column5.MinimumWidth = 6;
             Column5.Name = "Column5";
+            Column5.ReadOnly = true;
             // 
             // Column3
             // 
             Column3.HeaderText = "Cantidad";
             Column3.MinimumWidth = 6;
             Column3.Name = "Column3";
+            Column3.ReadOnly = true;
             // 
             // Column6
             // 
             Column6.HeaderText = "Total";
             Column6.MinimumWidth = 6;
             Column6.Name = "Column6";
+            Column6.ReadOnly = true;
             // 
             // ListarVentasAdmin
             // 

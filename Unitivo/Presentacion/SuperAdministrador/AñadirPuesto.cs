@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Unitivo.Presentacion.Logica;
 
-namespace Unitivo.Presentacion.Administrador
+namespace Unitivo.Presentacion.SuperAdministrador
 {
-    public partial class AñadirTalle : Form
+    public partial class AñadirPuesto : Form
     {
-        public AñadirTalle()
+        public AñadirPuesto()
         {
             InitializeComponent();
         }
@@ -23,13 +23,13 @@ namespace Unitivo.Presentacion.Administrador
             CommonFunctions.ValidarStringKeyPress((TextBox)sender, e);
         }
 
-        private void BRegistrarTalle_Click(object sender, EventArgs e)
+        private void BRegistrarPerfil_Click(object sender, EventArgs e)
         {
             // Verificar si el campo Nombre de Perfil está vacío.
-            if (string.IsNullOrWhiteSpace(TBNombreTalle.Text))
+            if (string.IsNullOrWhiteSpace(TBNombrePerfil.Text))
             {
                 // Mostrar un mensaje de error si el campo está vacío.
-                MessageBox.Show("El campo Nombre de Talle es obligatorio. Por favor, complételo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("El campo Nombre de Perfil es obligatorio. Por favor, complételo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -37,25 +37,27 @@ namespace Unitivo.Presentacion.Administrador
 
                 // Valores estáticos para el ID y el estado.
                 string id = "1";
-                string descripcion = TBNombreTalle.Text;
+                string nombrePerfil = TBNombrePerfil.Text;
                 string estado = "1";
 
                 // Crear una nueva fila para el DataGridView.
                 DataGridViewRow row = new DataGridViewRow();
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = id });
-                row.Cells.Add(new DataGridViewTextBoxCell { Value = descripcion });
+                row.Cells.Add(new DataGridViewTextBoxCell { Value = nombrePerfil });
                 row.Cells.Add(new DataGridViewTextBoxCell { Value = estado });
 
                 // Agregar la fila al DataGridView.
-                dgvRegistroTalles.Rows.Add(row);
+                dgvRegistroPerfil.Rows.Add(row);
 
                 // Limpiar el campo Nombre de Perfil después de agregar el perfil.
-                TBNombreTalle.Clear();
+                TBNombrePerfil.Clear();
 
                 // Mostrar un mensaje de éxito.
-                MessageBox.Show("Talle registrada con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Puesto registrado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+
 
     }
 }

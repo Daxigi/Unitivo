@@ -156,12 +156,12 @@ namespace Unitivo.Presentacion.SuperAdministrador
 
         private void BAñadirPerfil_Click(object sender, EventArgs e)
         {
-            AbrirFormulariosSuperAdministrador(new AñadirPerfil());
+            AbrirFormulariosSuperAdministrador(new AñadirPuesto());
         }
 
         private void BGestionarPerfiles_Click(object sender, EventArgs e)
         {
-            AbrirFormulariosSuperAdministrador(new GestionarPerfiles());
+            AbrirFormulariosSuperAdministrador(new GestionarPuestos());
         }
 
 

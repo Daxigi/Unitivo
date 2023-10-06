@@ -16,6 +16,9 @@ namespace Unitivo.Presentacion.Vendedor
         public BuscarCliente()
         {
             InitializeComponent();
+
+            // Establecer la selección inicial en la primera opción.
+            ComboBoxBuscarDni.SelectedIndex = 0;
         }
 
         private void NumStr_KeyPress(object sender, KeyPressEventArgs e)

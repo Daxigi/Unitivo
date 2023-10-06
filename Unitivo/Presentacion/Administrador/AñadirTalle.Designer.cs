@@ -33,13 +33,13 @@
             TabControlRegTalles = new TabControl();
             TabPageListaTalles = new TabPage();
             dgvRegistroTalles = new DataGridView();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
             PanelRegTalles = new Panel();
             BRegistrarTalle = new Button();
             TBNombreTalle = new TextBox();
             LNombreTalle = new Label();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
             TabControlRegTalles.SuspendLayout();
             TabPageListaTalles.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvRegistroTalles).BeginInit();
@@ -63,7 +63,7 @@
             TabPageListaTalles.ForeColor = Color.White;
             TabPageListaTalles.Location = new Point(4, 28);
             TabPageListaTalles.Name = "TabPageListaTalles";
-            TabPageListaTalles.Padding = new Padding(3, 3, 3, 3);
+            TabPageListaTalles.Padding = new Padding(3);
             TabPageListaTalles.Size = new Size(705, 340);
             TabPageListaTalles.TabIndex = 0;
             TabPageListaTalles.Text = "Lista de Talles";
@@ -109,6 +109,27 @@
             dgvRegistroTalles.Size = new Size(699, 334);
             dgvRegistroTalles.TabIndex = 0;
             // 
+            // Column1
+            // 
+            Column1.HeaderText = "ID";
+            Column1.MinimumWidth = 6;
+            Column1.Name = "Column1";
+            Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            Column2.HeaderText = "Descripcion";
+            Column2.MinimumWidth = 6;
+            Column2.Name = "Column2";
+            Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            Column3.HeaderText = "Estado";
+            Column3.MinimumWidth = 6;
+            Column3.Name = "Column3";
+            Column3.ReadOnly = true;
+            // 
             // PanelRegTalles
             // 
             PanelRegTalles.BackColor = Color.Cornsilk;
@@ -137,6 +158,7 @@
             BRegistrarTalle.TabIndex = 13;
             BRegistrarTalle.Text = "Añadir";
             BRegistrarTalle.UseVisualStyleBackColor = false;
+            BRegistrarTalle.Click += BRegistrarTalle_Click;
             // 
             // TBNombreTalle
             // 
@@ -160,27 +182,6 @@
             LNombreTalle.Size = new Size(283, 35);
             LNombreTalle.TabIndex = 0;
             LNombreTalle.Text = "Nombre de Talle :";
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "ID";
-            Column1.MinimumWidth = 6;
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Descripcion";
-            Column2.MinimumWidth = 6;
-            Column2.Name = "Column2";
-            Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Estado";
-            Column3.MinimumWidth = 6;
-            Column3.Name = "Column3";
-            Column3.ReadOnly = true;
             // 
             // AñadirTalle
             // 

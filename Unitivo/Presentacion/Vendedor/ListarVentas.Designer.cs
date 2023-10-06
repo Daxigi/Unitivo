@@ -198,6 +198,7 @@
             // 
             // DataGridViewListaVentas
             // 
+            DataGridViewListaVentas.AllowUserToAddRows = false;
             DataGridViewListaVentas.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DataGridViewListaVentas.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             DataGridViewListaVentas.BackgroundColor = Color.RosyBrown;

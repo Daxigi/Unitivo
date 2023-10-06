@@ -161,6 +161,7 @@
             BRegistrarCategoria.TabIndex = 13;
             BRegistrarCategoria.Text = "Añadir";
             BRegistrarCategoria.UseVisualStyleBackColor = false;
+            BRegistrarCategoria.Click += BRegistrarCategoria_Click;
             // 
             // TBNombreCategoria
             // 

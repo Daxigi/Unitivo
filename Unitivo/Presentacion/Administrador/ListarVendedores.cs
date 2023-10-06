@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Unitivo.Presentacion.Logica;
 
 namespace Unitivo.Presentacion.Administrador
 {
@@ -15,6 +16,11 @@ namespace Unitivo.Presentacion.Administrador
         public ListarVendedores()
         {
             InitializeComponent();
+        }
+
+        private void StrNum_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            CommonFunctions.ValidarKeyPress((TextBox)sender, e);
         }
     }
 }

@@ -254,6 +254,7 @@
             // 
             // CBCategoria
             // 
+            CBCategoria.DropDownStyle = ComboBoxStyle.DropDownList;
             CBCategoria.FormattingEnabled = true;
             CBCategoria.Location = new Point(137, 131);
             CBCategoria.Margin = new Padding(2, 3, 2, 3);
@@ -273,9 +274,11 @@
             BAñadirProducto.TabIndex = 2;
             BAñadirProducto.Text = "Añadir";
             BAñadirProducto.UseVisualStyleBackColor = false;
+            BAñadirProducto.Click += BAñadirProducto_Click;
             // 
             // CBMarca
             // 
+            CBMarca.DropDownStyle = ComboBoxStyle.DropDownList;
             CBMarca.FormattingEnabled = true;
             CBMarca.Location = new Point(137, 379);
             CBMarca.Margin = new Padding(2, 3, 2, 3);
@@ -298,6 +301,7 @@
             // 
             // CBTalle
             // 
+            CBTalle.DropDownStyle = ComboBoxStyle.DropDownList;
             CBTalle.FormattingEnabled = true;
             CBTalle.Location = new Point(137, 321);
             CBTalle.Margin = new Padding(2, 3, 2, 3);

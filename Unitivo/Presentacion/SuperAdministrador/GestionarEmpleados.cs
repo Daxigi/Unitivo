@@ -40,5 +40,17 @@ namespace Unitivo.Presentacion.SuperAdministrador
             }
         }
 
+        private void BEliminarEmpleado_Click(object sender, EventArgs e)
+        {
+            if (dgvEmpleados.SelectedRows.Count == 0)
+            {
+                // No hay una fila seleccionada en el dgvEmpleados, muestra un mensaje de error.
+                MessageBox.Show("Debe seleccionar una fila para eliminar un empleado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; // Salir del método sin realizar ninguna acción adicional.
+            }
+
+            // Aquí puedes agregar el código para eliminar el producto seleccionado.
+        }
+
     }
 }
