@@ -50,7 +50,7 @@ namespace Unitivo.Presentacion.Vendedor
             List<Cliente> clientes = clienteRepositorio.ListarClientesActivos();
             DataGridViewListarClientes.Rows.Clear();
             DataGridViewListarClientes.Refresh();
-            foreach (Cliente cliente in clienteRepositorio.ListarClientes())
+            foreach (Cliente cliente in clientes)
             {
                 DataGridViewListarClientes.Rows.Add(cliente.Id, cliente.Nombre, cliente.Apellido, cliente.Dni, cliente.Telefono, cliente.Direccion, cliente.Correo);
             }
