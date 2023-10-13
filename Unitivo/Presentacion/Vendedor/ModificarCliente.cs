@@ -101,7 +101,14 @@ namespace Unitivo.Presentacion.Vendedor
             if (nuevoNombre != nombreOriginal || nuevoApellido != apellidoOriginal || nuevoDni != dniOriginal ||
                 nuevoTelefono != telefonoOriginal || nuevaDireccion != direccionOriginal || nuevoCorreo != correoOriginal)
             {
-                ClienteConstructor cliente = new ClienteConstructor(nuevoNombre, nuevoApellido, nuevoDni, nuevoTelefono, nuevaDireccion, nuevoCorreo);
+                Cliente cliente = new Cliente();
+                //asigna los campos a cliente.
+                cliente.Nombre = nuevoNombre;
+                cliente.Apellido = nuevoApellido;
+                cliente.Dni = nuevoDni;
+                cliente.Telefono = nuevoTelefono;
+                cliente.Direccion = nuevaDireccion;
+                cliente.Correo = nuevoCorreo;
                 try
                 {
                     if (clienteRepositorio.ModificarCliente(cliente))

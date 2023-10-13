@@ -17,7 +17,7 @@ namespace Unitivo.Repositorios.Implementaciones
             _contexto = Contexto.dbContexto;
         }
 
-        public bool AgregarCliente(ClienteConstructor x)
+        public bool AgregarCliente(Cliente x)
         {
             try
             {
@@ -79,7 +79,7 @@ namespace Unitivo.Repositorios.Implementaciones
             }
         }
 
-        public bool ModificarCliente(ClienteConstructor x){
+        public bool ModificarCliente(Cliente x){
             try
             {
                 Cliente cliente = BuscarClientePorDni(x.Dni);
