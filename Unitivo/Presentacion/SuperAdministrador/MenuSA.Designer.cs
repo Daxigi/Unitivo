@@ -30,6 +30,9 @@
         {
             BSalir = new Button();
             PanelMenuLateral = new Panel();
+            PanelSubMenuBD = new Panel();
+            BFunciones = new Button();
+            BBaseDeDatos = new Button();
             BVolver = new Button();
             PanelSubMenuPerfiles = new Panel();
             BGestionarPerfiles = new Button();
@@ -51,6 +54,7 @@
             PanelFormSuperAdministrador = new Panel();
             Label1 = new Label();
             PanelMenuLateral.SuspendLayout();
+            PanelSubMenuBD.SuspendLayout();
             PanelSubMenuPerfiles.SuspendLayout();
             PanelSubMenuEmpleados.SuspendLayout();
             PanelSubMenuUsuarios.SuspendLayout();
@@ -80,6 +84,8 @@
             // 
             PanelMenuLateral.AutoScroll = true;
             PanelMenuLateral.BackColor = Color.Tan;
+            PanelMenuLateral.Controls.Add(PanelSubMenuBD);
+            PanelMenuLateral.Controls.Add(BBaseDeDatos);
             PanelMenuLateral.Controls.Add(BVolver);
             PanelMenuLateral.Controls.Add(PanelSubMenuPerfiles);
             PanelMenuLateral.Controls.Add(BPerfiles);
@@ -94,6 +100,55 @@
             PanelMenuLateral.Name = "PanelMenuLateral";
             PanelMenuLateral.Size = new Size(307, 908);
             PanelMenuLateral.TabIndex = 5;
+            // 
+            // PanelSubMenuBD
+            // 
+            PanelSubMenuBD.BackColor = Color.FloralWhite;
+            PanelSubMenuBD.Controls.Add(BFunciones);
+            PanelSubMenuBD.Dock = DockStyle.Top;
+            PanelSubMenuBD.Location = new Point(0, 716);
+            PanelSubMenuBD.Margin = new Padding(4, 5, 4, 5);
+            PanelSubMenuBD.Name = "PanelSubMenuBD";
+            PanelSubMenuBD.Size = new Size(307, 75);
+            PanelSubMenuBD.TabIndex = 17;
+            // 
+            // BFunciones
+            // 
+            BFunciones.BackColor = Color.FloralWhite;
+            BFunciones.Dock = DockStyle.Top;
+            BFunciones.FlatAppearance.BorderSize = 0;
+            BFunciones.FlatStyle = FlatStyle.Flat;
+            BFunciones.Font = new Font("Cooper Black", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            BFunciones.ForeColor = Color.Sienna;
+            BFunciones.Location = new Point(0, 0);
+            BFunciones.Margin = new Padding(4, 5, 4, 5);
+            BFunciones.Name = "BFunciones";
+            BFunciones.Size = new Size(307, 62);
+            BFunciones.TabIndex = 1;
+            BFunciones.Text = "Funciones";
+            BFunciones.UseVisualStyleBackColor = false;
+            BFunciones.Click += BFunciones_Click;
+            // 
+            // BBaseDeDatos
+            // 
+            BBaseDeDatos.BackColor = Color.RosyBrown;
+            BBaseDeDatos.Dock = DockStyle.Top;
+            BBaseDeDatos.FlatAppearance.BorderSize = 0;
+            BBaseDeDatos.FlatStyle = FlatStyle.Flat;
+            BBaseDeDatos.Font = new Font("Cooper Black", 16.5F, FontStyle.Regular, GraphicsUnit.Point);
+            BBaseDeDatos.ForeColor = Color.Cornsilk;
+            BBaseDeDatos.Image = Properties.Resources.icons8_base_de_datos_50;
+            BBaseDeDatos.ImageAlign = ContentAlignment.MiddleLeft;
+            BBaseDeDatos.Location = new Point(0, 636);
+            BBaseDeDatos.Margin = new Padding(4, 5, 4, 5);
+            BBaseDeDatos.Name = "BBaseDeDatos";
+            BBaseDeDatos.Size = new Size(307, 80);
+            BBaseDeDatos.TabIndex = 16;
+            BBaseDeDatos.Text = "Base de Datos";
+            BBaseDeDatos.TextAlign = ContentAlignment.MiddleLeft;
+            BBaseDeDatos.TextImageRelation = TextImageRelation.ImageBeforeText;
+            BBaseDeDatos.UseVisualStyleBackColor = false;
+            BBaseDeDatos.Click += BBaseDeDatos_Click;
             // 
             // BVolver
             // 
@@ -122,7 +177,7 @@
             PanelSubMenuPerfiles.Location = new Point(0, 502);
             PanelSubMenuPerfiles.Margin = new Padding(4, 5, 4, 5);
             PanelSubMenuPerfiles.Name = "PanelSubMenuPerfiles";
-            PanelSubMenuPerfiles.Size = new Size(307, 140);
+            PanelSubMenuPerfiles.Size = new Size(307, 134);
             PanelSubMenuPerfiles.TabIndex = 13;
             // 
             // BGestionarPerfiles
@@ -429,6 +484,7 @@
             Text = "Form1";
             Load += MenuA_Load;
             PanelMenuLateral.ResumeLayout(false);
+            PanelSubMenuBD.ResumeLayout(false);
             PanelSubMenuPerfiles.ResumeLayout(false);
             PanelSubMenuEmpleados.ResumeLayout(false);
             PanelSubMenuUsuarios.ResumeLayout(false);
@@ -463,5 +519,8 @@
         #endregion
 
         internal Button BVolver;
+        internal Panel PanelSubMenuBD;
+        internal Button BFunciones;
+        internal Button BBaseDeDatos;
     }
 }

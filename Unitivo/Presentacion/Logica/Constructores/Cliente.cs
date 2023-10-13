@@ -44,17 +44,6 @@ namespace Unitivo.Presentacion.Logica.Constructores
                 Direccion = direccion;
                 Correo = correo;
             }
-
-        public ClienteConstructor(string nombre, string apellido, int dni, string telefono, string direccion, string correo, bool estado)
-        {
-            Nombre = nombre;
-            Apellido = apellido;
-            Dni = dni;
-            Telefono = telefono;
-            Direccion = direccion;
-            Correo = correo;
-            Estado = estado;
-        }
     }
 
 }

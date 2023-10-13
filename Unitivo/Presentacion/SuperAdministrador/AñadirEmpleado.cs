@@ -7,15 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Unitivo.Modelos;
 using Unitivo.Presentacion.Logica;
+using Unitivo.Presentacion.Logica.Constructores;
+using Unitivo.Repositorios.Implementaciones;
 
 namespace Unitivo.Presentacion.SuperAdministrador
 {
     public partial class AñadirEmpleado : Form
     {
+        EmpleadoRepositorio empleadoRepositorio = new EmpleadoRepositorio();
         public AñadirEmpleado()
         {
             InitializeComponent();
+            CargarEmpleados();
         }
 
         private void String_KeyPress(object sender, KeyPressEventArgs e)
@@ -41,40 +46,46 @@ namespace Unitivo.Presentacion.SuperAdministrador
 
         private void BRegistrarEmpleado_Click(object sender, EventArgs e)
         {
-            // Verificar si algún TextBox está vacío.
-            if (string.IsNullOrWhiteSpace(TBNombreEmpleado.Text) ||
-                string.IsNullOrWhiteSpace(TBApellidoEmpleado.Text) ||
-                string.IsNullOrWhiteSpace(TBDniEmpleado.Text) ||
-                string.IsNullOrWhiteSpace(TBTelEmpleado.Text) ||
-                string.IsNullOrWhiteSpace(TBDireccionEmpleado.Text) ||
-                string.IsNullOrWhiteSpace(TBCorreoEmpleado.Text))
+            try
             {
-                // Mostrar un mensaje de error si al menos un campo está vacío.
-                MessageBox.Show("Todos los campos son obligatorios. Por favor, complete todos los campos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Empleado empleado = new Empleado();
+                empleado.Nombre = TBNombreEmpleado.Text;
+                empleado.Apellido = TBApellidoEmpleado.Text;
+                empleado.Dni = int.Parse(TBDniEmpleado.Text);
+                empleado.Telefono = TBTelEmpleado.Text;
+                empleado.Direccion = TBDireccionEmpleado.Text;
+                empleado.Correo = TBCorreoEmpleado.Text;
+                
+
+                if (empleadoRepositorio.AgregarEmpleado(empleado))
+                {
+                    MessageBox.Show("Empleado agregado correctamente");
+                    LimpiarTextBoxs();
+                    CargarEmpleados();
+                }
+                else
+                {
+                    MessageBox.Show("Error al agregar empleado");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                // Todos los campos están llenos, puedes proceder a agregar al empleado al DataGridView.
-
-                // Crear una nueva fila para el DataGridView.
-                DataGridViewRow row = new DataGridViewRow();
-                row.Cells.Add(new DataGridViewTextBoxCell { Value = TBNombreEmpleado.Text });
-                row.Cells.Add(new DataGridViewTextBoxCell { Value = TBApellidoEmpleado.Text });
-                row.Cells.Add(new DataGridViewTextBoxCell { Value = TBDniEmpleado.Text });
-                row.Cells.Add(new DataGridViewTextBoxCell { Value = TBTelEmpleado.Text });
-                row.Cells.Add(new DataGridViewTextBoxCell { Value = TBDireccionEmpleado.Text });
-                row.Cells.Add(new DataGridViewTextBoxCell { Value = TBCorreoEmpleado.Text });
-
-                // Agregar la fila al DataGridView.
-                dgvEmpleados.Rows.Add(row);
-
-                // Limpiar los TextBox después de agregar el empleado.
-                LimpiarTextBoxs();
-
-                // Mostrar un mensaje de éxito.
-                MessageBox.Show("Empleado registrado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // Captura y maneja el error que ocurra en empleadoRepositorio.AgregarEmpleado(empleado)
+                MessageBox.Show("Error al agregar empleado: " + ex.Message, "Empleado", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void CargarEmpleados()
+        {
+            List<Empleado> empleados = empleadoRepositorio.ListarEmpleados();
+            DataGridViewListarEmpleados.Rows.Clear();
+            DataGridViewListarEmpleados.Refresh();
+            foreach (Empleado empleado in empleados)
+            {
+                DataGridViewListarEmpleados.Rows.Add(empleado.Id, empleado.Nombre, empleado.Apellido, empleado.Dni, empleado.Telefono, empleado.Direccion, empleado.Correo);
+            }
+        }
+
 
         // Método para limpiar los TextBox después de agregar un empleado.
         private void LimpiarTextBoxs()

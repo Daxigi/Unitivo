@@ -1,4 +1,4 @@
-﻿namespace Unitivo.Presentacion.Gerente
+﻿namespace Unitivo.Presentacion.SuperAdministrador
 {
     partial class ManejoBD
     {
@@ -28,14 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
+            panel3 = new Panel();
+            panel2 = new Panel();
             Label1 = new Label();
             panel1 = new Panel();
             BRestaurar = new Button();
             BResguardar = new Button();
-            panel2 = new Panel();
-            panel3 = new Panel();
             panel1.SuspendLayout();
             SuspendLayout();
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.LightSteelBlue;
+            panel3.Location = new Point(182, 341);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(29, 279);
+            panel3.TabIndex = 12;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.LightSteelBlue;
+            panel2.Location = new Point(870, 341);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(29, 279);
+            panel2.TabIndex = 11;
             // 
             // Label1
             // 
@@ -43,11 +59,11 @@
             Label1.BackColor = Color.Cornsilk;
             Label1.Font = new Font("Cooper Black", 36F, FontStyle.Regular, GraphicsUnit.Point);
             Label1.ForeColor = Color.DarkGoldenrod;
-            Label1.Location = new Point(291, 237);
+            Label1.Location = new Point(315, 288);
             Label1.Margin = new Padding(4, 0, 4, 0);
             Label1.Name = "Label1";
             Label1.Size = new Size(444, 69);
-            Label1.TabIndex = 5;
+            Label1.TabIndex = 9;
             Label1.Text = "Base de Datos";
             // 
             // panel1
@@ -55,10 +71,10 @@
             panel1.BackColor = Color.DarkSeaGreen;
             panel1.Controls.Add(BRestaurar);
             panel1.Controls.Add(BResguardar);
-            panel1.Location = new Point(184, 290);
+            panel1.Location = new Point(208, 341);
             panel1.Name = "panel1";
             panel1.Size = new Size(663, 279);
-            panel1.TabIndex = 6;
+            panel1.TabIndex = 10;
             // 
             // BRestaurar
             // 
@@ -90,22 +106,6 @@
             BResguardar.Text = "Resguardar";
             BResguardar.UseVisualStyleBackColor = false;
             // 
-            // panel2
-            // 
-            panel2.BackColor = Color.LightSteelBlue;
-            panel2.Location = new Point(846, 290);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(29, 279);
-            panel2.TabIndex = 7;
-            // 
-            // panel3
-            // 
-            panel3.BackColor = Color.LightSteelBlue;
-            panel3.Location = new Point(158, 290);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(29, 279);
-            panel3.TabIndex = 8;
-            // 
             // ManejoBD
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -126,11 +126,11 @@
 
         #endregion
 
+        private Panel panel3;
+        private Panel panel2;
         internal Label Label1;
         private Panel panel1;
         internal Button BRestaurar;
         internal Button BResguardar;
-        private Panel panel2;
-        private Panel panel3;
     }
 }

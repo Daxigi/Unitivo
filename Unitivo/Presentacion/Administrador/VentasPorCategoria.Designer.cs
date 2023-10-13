@@ -1,4 +1,4 @@
-﻿namespace Unitivo.Presentacion.Gerente
+﻿namespace Unitivo.Presentacion.Administrador
 {
     partial class VentasPorCategoria
     {
@@ -30,7 +30,9 @@
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            label3 = new Label();
             GroupBoxBuscarCategoia = new GroupBox();
+            ComboBoxBuscarDni = new ComboBox();
             DateTimePicker2 = new DateTimePicker();
             Label2 = new Label();
             Label1 = new Label();
@@ -39,8 +41,6 @@
             TabControlListaProductos = new TabControl();
             TabPageListaProducto = new TabPage();
             DataGridViewListaVentas = new DataGridView();
-            label3 = new Label();
-            ComboBoxBuscarDni = new ComboBox();
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
@@ -50,6 +50,19 @@
             TabPageListaProducto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)DataGridViewListaVentas).BeginInit();
             SuspendLayout();
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = Color.Cornsilk;
+            label3.Font = new Font("Cooper Black", 28.2F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = Color.DarkOliveGreen;
+            label3.Location = new Point(258, 44);
+            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(529, 54);
+            label3.TabIndex = 76;
+            label3.Text = "Ventas por Categoria";
             // 
             // GroupBoxBuscarCategoia
             // 
@@ -62,14 +75,26 @@
             GroupBoxBuscarCategoia.Controls.Add(DateTimePicker1);
             GroupBoxBuscarCategoia.Font = new Font("Britannic Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             GroupBoxBuscarCategoia.ForeColor = Color.SaddleBrown;
-            GroupBoxBuscarCategoia.Location = new Point(40, 146);
+            GroupBoxBuscarCategoia.Location = new Point(30, 154);
             GroupBoxBuscarCategoia.Margin = new Padding(4, 5, 4, 5);
             GroupBoxBuscarCategoia.Name = "GroupBoxBuscarCategoia";
             GroupBoxBuscarCategoia.Padding = new Padding(4, 5, 4, 5);
             GroupBoxBuscarCategoia.Size = new Size(984, 137);
-            GroupBoxBuscarCategoia.TabIndex = 72;
+            GroupBoxBuscarCategoia.TabIndex = 75;
             GroupBoxBuscarCategoia.TabStop = false;
             GroupBoxBuscarCategoia.Text = "Filtrar Busqueda";
+            // 
+            // ComboBoxBuscarDni
+            // 
+            ComboBoxBuscarDni.Font = new Font("Cooper Black", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            ComboBoxBuscarDni.ForeColor = Color.SaddleBrown;
+            ComboBoxBuscarDni.FormattingEnabled = true;
+            ComboBoxBuscarDni.Location = new Point(443, 65);
+            ComboBoxBuscarDni.Margin = new Padding(4, 5, 4, 5);
+            ComboBoxBuscarDni.Name = "ComboBoxBuscarDni";
+            ComboBoxBuscarDni.Size = new Size(160, 31);
+            ComboBoxBuscarDni.TabIndex = 34;
+            ComboBoxBuscarDni.Text = "Categoria";
             // 
             // DateTimePicker2
             // 
@@ -85,7 +110,7 @@
             // 
             Label2.AutoSize = true;
             Label2.Font = new Font("Britannic Bold", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            Label2.Location = new Point(270, 40);
+            Label2.Location = new Point(271, 42);
             Label2.Margin = new Padding(4, 0, 4, 0);
             Label2.Name = "Label2";
             Label2.Size = new Size(94, 21);
@@ -96,7 +121,7 @@
             // 
             Label1.AutoSize = true;
             Label1.Font = new Font("Britannic Bold", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            Label1.Location = new Point(100, 40);
+            Label1.Location = new Point(101, 42);
             Label1.Margin = new Padding(4, 0, 4, 0);
             Label1.Name = "Label1";
             Label1.Size = new Size(115, 21);
@@ -133,11 +158,11 @@
             // 
             TabControlListaProductos.Controls.Add(TabPageListaProducto);
             TabControlListaProductos.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            TabControlListaProductos.Location = new Point(40, 313);
+            TabControlListaProductos.Location = new Point(30, 321);
             TabControlListaProductos.Name = "TabControlListaProductos";
             TabControlListaProductos.SelectedIndex = 0;
             TabControlListaProductos.Size = new Size(984, 449);
-            TabControlListaProductos.TabIndex = 71;
+            TabControlListaProductos.TabIndex = 74;
             // 
             // TabPageListaProducto
             // 
@@ -188,31 +213,6 @@
             DataGridViewListaVentas.Size = new Size(970, 411);
             DataGridViewListaVentas.TabIndex = 5;
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.Cornsilk;
-            label3.Font = new Font("Cooper Black", 28.2F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.ForeColor = Color.DarkOliveGreen;
-            label3.Location = new Point(268, 36);
-            label3.Margin = new Padding(4, 0, 4, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(529, 54);
-            label3.TabIndex = 73;
-            label3.Text = "Ventas por Categoria";
-            // 
-            // ComboBoxBuscarDni
-            // 
-            ComboBoxBuscarDni.Font = new Font("Cooper Black", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            ComboBoxBuscarDni.ForeColor = Color.SaddleBrown;
-            ComboBoxBuscarDni.FormattingEnabled = true;
-            ComboBoxBuscarDni.Location = new Point(443, 65);
-            ComboBoxBuscarDni.Margin = new Padding(4, 5, 4, 5);
-            ComboBoxBuscarDni.Name = "ComboBoxBuscarDni";
-            ComboBoxBuscarDni.Size = new Size(160, 31);
-            ComboBoxBuscarDni.TabIndex = 34;
-            ComboBoxBuscarDni.Text = "Categoria";
-            // 
             // Column1
             // 
             Column1.HeaderText = "ID";
@@ -242,7 +242,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSeaGreen;
-            ClientSize = new Size(1062, 861);
+            ClientSize = new Size(1044, 814);
             Controls.Add(label3);
             Controls.Add(GroupBoxBuscarCategoia);
             Controls.Add(TabControlListaProductos);
@@ -260,7 +260,9 @@
 
         #endregion
 
+        internal Label label3;
         internal GroupBox GroupBoxBuscarCategoia;
+        internal ComboBox ComboBoxBuscarDni;
         internal DateTimePicker DateTimePicker2;
         internal Label Label2;
         internal Label Label1;
@@ -269,8 +271,6 @@
         internal TabControl TabControlListaProductos;
         internal TabPage TabPageListaProducto;
         internal DataGridView DataGridViewListaVentas;
-        internal Label label3;
-        internal ComboBox ComboBoxBuscarDni;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;

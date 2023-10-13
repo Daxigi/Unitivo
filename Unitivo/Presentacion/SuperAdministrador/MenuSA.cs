@@ -116,6 +116,15 @@ namespace Unitivo.Presentacion.SuperAdministrador
             }
         }
 
+        private void BBaseDeDatos_Click(object sender, EventArgs e)
+        {
+            showSubMenu(PanelSubMenuBD);
+        }
+
+        private void BFunciones_Click(object sender, EventArgs e)
+        {
+            AbrirFormulariosSuperAdministrador(new ManejoBD());
+        }
 
         private void BUsuarios_Click(object sender, EventArgs e)
         {

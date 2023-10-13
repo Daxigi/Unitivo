@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Unitivo.Presentacion.Gerente
+namespace Unitivo.Presentacion.Administrador
 {
     public partial class VentasPorCategoria : Form
     {

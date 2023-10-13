@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Unitivo.Presentacion.Gerente
+namespace Unitivo.Presentacion.SuperAdministrador
 {
-    public partial class ReporteMensual : Form
+    public partial class ManejoBD : Form
     {
-        public ReporteMensual()
+        public ManejoBD()
         {
             InitializeComponent();
         }
