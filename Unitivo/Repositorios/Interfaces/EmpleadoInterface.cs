@@ -8,7 +8,7 @@ using Unitivo.Modelos;
 namespace Unitivo.Repositorios.Interfaces{
     public interface EmpleadoInterface
     {
-        public void AgregarEmpleado(Empleado empleado);
+        public bool AgregarEmpleado(Empleado empleado);
         
         public bool EliminarEmpleado(int id);
 
@@ -17,5 +17,11 @@ namespace Unitivo.Repositorios.Interfaces{
         public Empleado buscarEmpleado(int id);
 
         public List<Empleado> ListarEmpleados();
+
+        public Empleado BuscarEmpleadoPorId(int id);
+
+        public Empleado BuscarEmpleadosPorDni();
+
+        public Empleado BuscarEmpleadosPorMail(string mail);
     }
 }

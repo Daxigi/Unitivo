@@ -30,6 +30,10 @@
         {
             BSalir = new Button();
             PanelMenuLateral = new Panel();
+            PanelSubMenuReportes = new Panel();
+            button3 = new Button();
+            BVentasCategoria = new Button();
+            BReportes = new Button();
             BVolver = new Button();
             PanelSubMenuClientes = new Panel();
             BGestionarClientes = new Button();
@@ -58,6 +62,7 @@
             PanelFormAdmin = new Panel();
             Label1 = new Label();
             PanelMenuLateral.SuspendLayout();
+            PanelSubMenuReportes.SuspendLayout();
             PanelSubMenuClientes.SuspendLayout();
             PanelSubMenuTalles.SuspendLayout();
             PanelSubMenuCategorias.SuspendLayout();
@@ -75,7 +80,7 @@
             BSalir.FlatStyle = FlatStyle.Flat;
             BSalir.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point);
             BSalir.ForeColor = Color.Cornsilk;
-            BSalir.Location = new Point(0, 1144);
+            BSalir.Location = new Point(0, 1366);
             BSalir.Margin = new Padding(4, 5, 4, 5);
             BSalir.Name = "BSalir";
             BSalir.Size = new Size(286, 56);
@@ -89,6 +94,8 @@
             // 
             PanelMenuLateral.AutoScroll = true;
             PanelMenuLateral.BackColor = Color.Tan;
+            PanelMenuLateral.Controls.Add(PanelSubMenuReportes);
+            PanelMenuLateral.Controls.Add(BReportes);
             PanelMenuLateral.Controls.Add(BVolver);
             PanelMenuLateral.Controls.Add(PanelSubMenuClientes);
             PanelMenuLateral.Controls.Add(BClientes);
@@ -108,6 +115,72 @@
             PanelMenuLateral.Size = new Size(307, 908);
             PanelMenuLateral.TabIndex = 8;
             // 
+            // PanelSubMenuReportes
+            // 
+            PanelSubMenuReportes.BackColor = Color.FloralWhite;
+            PanelSubMenuReportes.Controls.Add(button3);
+            PanelSubMenuReportes.Controls.Add(BVentasCategoria);
+            PanelSubMenuReportes.Dock = DockStyle.Top;
+            PanelSubMenuReportes.Location = new Point(0, 1168);
+            PanelSubMenuReportes.Margin = new Padding(4, 5, 4, 5);
+            PanelSubMenuReportes.Name = "PanelSubMenuReportes";
+            PanelSubMenuReportes.Size = new Size(286, 142);
+            PanelSubMenuReportes.TabIndex = 21;
+            // 
+            // button3
+            // 
+            button3.BackColor = Color.FloralWhite;
+            button3.Dock = DockStyle.Top;
+            button3.FlatAppearance.BorderSize = 0;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            button3.ForeColor = Color.Sienna;
+            button3.Location = new Point(0, 62);
+            button3.Margin = new Padding(4, 5, 4, 5);
+            button3.Name = "button3";
+            button3.Size = new Size(286, 62);
+            button3.TabIndex = 2;
+            button3.Text = "Mas Vendidos";
+            button3.UseVisualStyleBackColor = false;
+            // 
+            // BVentasCategoria
+            // 
+            BVentasCategoria.BackColor = Color.FloralWhite;
+            BVentasCategoria.Dock = DockStyle.Top;
+            BVentasCategoria.FlatAppearance.BorderSize = 0;
+            BVentasCategoria.FlatStyle = FlatStyle.Flat;
+            BVentasCategoria.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            BVentasCategoria.ForeColor = Color.Sienna;
+            BVentasCategoria.Location = new Point(0, 0);
+            BVentasCategoria.Margin = new Padding(4, 5, 4, 5);
+            BVentasCategoria.Name = "BVentasCategoria";
+            BVentasCategoria.Size = new Size(286, 62);
+            BVentasCategoria.TabIndex = 1;
+            BVentasCategoria.Text = "Ventas por Categoria";
+            BVentasCategoria.UseVisualStyleBackColor = false;
+            BVentasCategoria.Click += BVentasCategoria_Click;
+            // 
+            // BReportes
+            // 
+            BReportes.BackColor = Color.RosyBrown;
+            BReportes.Dock = DockStyle.Top;
+            BReportes.FlatAppearance.BorderSize = 0;
+            BReportes.FlatStyle = FlatStyle.Flat;
+            BReportes.Font = new Font("Microsoft Sans Serif", 16.5F, FontStyle.Regular, GraphicsUnit.Point);
+            BReportes.ForeColor = Color.Cornsilk;
+            BReportes.Image = Properties.Resources.icons8_ventas_totales_48;
+            BReportes.ImageAlign = ContentAlignment.MiddleLeft;
+            BReportes.Location = new Point(0, 1088);
+            BReportes.Margin = new Padding(4, 5, 4, 5);
+            BReportes.Name = "BReportes";
+            BReportes.Size = new Size(286, 80);
+            BReportes.TabIndex = 20;
+            BReportes.Text = "Reportes";
+            BReportes.TextAlign = ContentAlignment.MiddleLeft;
+            BReportes.TextImageRelation = TextImageRelation.ImageBeforeText;
+            BReportes.UseVisualStyleBackColor = false;
+            BReportes.Click += BReportes_Click;
+            // 
             // BVolver
             // 
             BVolver.BackColor = Color.Cornsilk;
@@ -116,7 +189,7 @@
             BVolver.FlatStyle = FlatStyle.Flat;
             BVolver.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point);
             BVolver.ForeColor = Color.Sienna;
-            BVolver.Location = new Point(0, 1088);
+            BVolver.Location = new Point(0, 1310);
             BVolver.Margin = new Padding(4, 5, 4, 5);
             BVolver.Name = "BVolver";
             BVolver.Size = new Size(286, 56);
@@ -557,6 +630,7 @@
             Name = "MenuA";
             Text = "Form1";
             PanelMenuLateral.ResumeLayout(false);
+            PanelSubMenuReportes.ResumeLayout(false);
             PanelSubMenuClientes.ResumeLayout(false);
             PanelSubMenuTalles.ResumeLayout(false);
             PanelSubMenuCategorias.ResumeLayout(false);
@@ -600,5 +674,9 @@
         #endregion
 
         internal Button BVolver;
+        internal Panel PanelSubMenuReportes;
+        internal Button button3;
+        internal Button BVentasCategoria;
+        internal Button BReportes;
     }
 }

@@ -1,16 +1,16 @@
-﻿//using fluentvalidation
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using FluentValidation;
 using Unitivo.Modelos;
 
-
-
 namespace Unitivo.Validators
 {
-    public class ClienteValidators : AbstractValidator<Cliente>
+    public class EmpleadoValidator : AbstractValidator<Empleado>
     {
-        public ClienteValidators()
+        public EmpleadoValidator()
         {
             //validar dni 
             RuleFor(x => x.Dni)

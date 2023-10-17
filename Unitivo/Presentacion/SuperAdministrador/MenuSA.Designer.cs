@@ -30,6 +30,9 @@
         {
             BSalir = new Button();
             PanelMenuLateral = new Panel();
+            PanelSubMenuBD = new Panel();
+            BFunciones = new Button();
+            BBaseDeDatos = new Button();
             BVolver = new Button();
             PanelSubMenuPerfiles = new Panel();
             BGestionarPerfiles = new Button();
@@ -44,13 +47,14 @@
             BAñadirUsuario = new Button();
             BUsuarios = new Button();
             PanelBarraMenu = new Panel();
-            BMaximizarMenuGerente = new Button();
-            BCerrarMenuGerente = new Button();
-            BRestaurarMenuGerente = new Button();
-            BMinimizarMenuGerente = new Button();
+            BMaximizarMenuSA = new Button();
+            BCerrarMenuSA = new Button();
+            BRestaurarMenuSA = new Button();
+            BMinimizarMenuSA = new Button();
             PanelFormSuperAdministrador = new Panel();
             Label1 = new Label();
             PanelMenuLateral.SuspendLayout();
+            PanelSubMenuBD.SuspendLayout();
             PanelSubMenuPerfiles.SuspendLayout();
             PanelSubMenuEmpleados.SuspendLayout();
             PanelSubMenuUsuarios.SuspendLayout();
@@ -80,6 +84,8 @@
             // 
             PanelMenuLateral.AutoScroll = true;
             PanelMenuLateral.BackColor = Color.Tan;
+            PanelMenuLateral.Controls.Add(PanelSubMenuBD);
+            PanelMenuLateral.Controls.Add(BBaseDeDatos);
             PanelMenuLateral.Controls.Add(BVolver);
             PanelMenuLateral.Controls.Add(PanelSubMenuPerfiles);
             PanelMenuLateral.Controls.Add(BPerfiles);
@@ -94,6 +100,55 @@
             PanelMenuLateral.Name = "PanelMenuLateral";
             PanelMenuLateral.Size = new Size(307, 908);
             PanelMenuLateral.TabIndex = 5;
+            // 
+            // PanelSubMenuBD
+            // 
+            PanelSubMenuBD.BackColor = Color.FloralWhite;
+            PanelSubMenuBD.Controls.Add(BFunciones);
+            PanelSubMenuBD.Dock = DockStyle.Top;
+            PanelSubMenuBD.Location = new Point(0, 716);
+            PanelSubMenuBD.Margin = new Padding(4, 5, 4, 5);
+            PanelSubMenuBD.Name = "PanelSubMenuBD";
+            PanelSubMenuBD.Size = new Size(307, 75);
+            PanelSubMenuBD.TabIndex = 17;
+            // 
+            // BFunciones
+            // 
+            BFunciones.BackColor = Color.FloralWhite;
+            BFunciones.Dock = DockStyle.Top;
+            BFunciones.FlatAppearance.BorderSize = 0;
+            BFunciones.FlatStyle = FlatStyle.Flat;
+            BFunciones.Font = new Font("Cooper Black", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            BFunciones.ForeColor = Color.Sienna;
+            BFunciones.Location = new Point(0, 0);
+            BFunciones.Margin = new Padding(4, 5, 4, 5);
+            BFunciones.Name = "BFunciones";
+            BFunciones.Size = new Size(307, 62);
+            BFunciones.TabIndex = 1;
+            BFunciones.Text = "Funciones";
+            BFunciones.UseVisualStyleBackColor = false;
+            BFunciones.Click += BFunciones_Click;
+            // 
+            // BBaseDeDatos
+            // 
+            BBaseDeDatos.BackColor = Color.RosyBrown;
+            BBaseDeDatos.Dock = DockStyle.Top;
+            BBaseDeDatos.FlatAppearance.BorderSize = 0;
+            BBaseDeDatos.FlatStyle = FlatStyle.Flat;
+            BBaseDeDatos.Font = new Font("Cooper Black", 16.5F, FontStyle.Regular, GraphicsUnit.Point);
+            BBaseDeDatos.ForeColor = Color.Cornsilk;
+            BBaseDeDatos.Image = Properties.Resources.icons8_base_de_datos_50;
+            BBaseDeDatos.ImageAlign = ContentAlignment.MiddleLeft;
+            BBaseDeDatos.Location = new Point(0, 636);
+            BBaseDeDatos.Margin = new Padding(4, 5, 4, 5);
+            BBaseDeDatos.Name = "BBaseDeDatos";
+            BBaseDeDatos.Size = new Size(307, 80);
+            BBaseDeDatos.TabIndex = 16;
+            BBaseDeDatos.Text = "Base de Datos";
+            BBaseDeDatos.TextAlign = ContentAlignment.MiddleLeft;
+            BBaseDeDatos.TextImageRelation = TextImageRelation.ImageBeforeText;
+            BBaseDeDatos.UseVisualStyleBackColor = false;
+            BBaseDeDatos.Click += BBaseDeDatos_Click;
             // 
             // BVolver
             // 
@@ -122,7 +177,7 @@
             PanelSubMenuPerfiles.Location = new Point(0, 502);
             PanelSubMenuPerfiles.Margin = new Padding(4, 5, 4, 5);
             PanelSubMenuPerfiles.Name = "PanelSubMenuPerfiles";
-            PanelSubMenuPerfiles.Size = new Size(307, 140);
+            PanelSubMenuPerfiles.Size = new Size(307, 134);
             PanelSubMenuPerfiles.TabIndex = 13;
             // 
             // BGestionarPerfiles
@@ -138,7 +193,7 @@
             BGestionarPerfiles.Name = "BGestionarPerfiles";
             BGestionarPerfiles.Size = new Size(307, 62);
             BGestionarPerfiles.TabIndex = 2;
-            BGestionarPerfiles.Text = "Gestionar Perfiles";
+            BGestionarPerfiles.Text = "Gestionar Puestos";
             BGestionarPerfiles.UseVisualStyleBackColor = false;
             BGestionarPerfiles.Click += BGestionarPerfiles_Click;
             // 
@@ -155,7 +210,7 @@
             BAñadirPerfil.Name = "BAñadirPerfil";
             BAñadirPerfil.Size = new Size(307, 62);
             BAñadirPerfil.TabIndex = 1;
-            BAñadirPerfil.Text = "Añadir Perfil";
+            BAñadirPerfil.Text = "Añadir Puesto";
             BAñadirPerfil.UseVisualStyleBackColor = false;
             BAñadirPerfil.Click += BAñadirPerfil_Click;
             // 
@@ -174,7 +229,7 @@
             BPerfiles.Name = "BPerfiles";
             BPerfiles.Size = new Size(307, 80);
             BPerfiles.TabIndex = 12;
-            BPerfiles.Text = "Perfiles";
+            BPerfiles.Text = "Puestos";
             BPerfiles.TextAlign = ContentAlignment.MiddleLeft;
             BPerfiles.TextImageRelation = TextImageRelation.ImageBeforeText;
             BPerfiles.UseVisualStyleBackColor = false;
@@ -317,10 +372,10 @@
             // PanelBarraMenu
             // 
             PanelBarraMenu.BackColor = Color.Tan;
-            PanelBarraMenu.Controls.Add(BMaximizarMenuGerente);
-            PanelBarraMenu.Controls.Add(BCerrarMenuGerente);
-            PanelBarraMenu.Controls.Add(BRestaurarMenuGerente);
-            PanelBarraMenu.Controls.Add(BMinimizarMenuGerente);
+            PanelBarraMenu.Controls.Add(BMaximizarMenuSA);
+            PanelBarraMenu.Controls.Add(BCerrarMenuSA);
+            PanelBarraMenu.Controls.Add(BRestaurarMenuSA);
+            PanelBarraMenu.Controls.Add(BMinimizarMenuSA);
             PanelBarraMenu.Dock = DockStyle.Top;
             PanelBarraMenu.Location = new Point(0, 0);
             PanelBarraMenu.Margin = new Padding(4, 5, 4, 5);
@@ -331,65 +386,65 @@
             PanelBarraMenu.MouseMove += PanelBarraMenuAdmin_MouseMove;
             PanelBarraMenu.MouseUp += PanelBarraMenuAdmin_MouseUp;
             // 
-            // BMaximizarMenuGerente
+            // BMaximizarMenuSA
             // 
-            BMaximizarMenuGerente.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            BMaximizarMenuGerente.BackgroundImage = Properties.Resources.maximizarBlanco;
-            BMaximizarMenuGerente.BackgroundImageLayout = ImageLayout.Stretch;
-            BMaximizarMenuGerente.FlatAppearance.BorderSize = 0;
-            BMaximizarMenuGerente.FlatStyle = FlatStyle.Flat;
-            BMaximizarMenuGerente.Location = new Point(1264, 26);
-            BMaximizarMenuGerente.Margin = new Padding(4, 5, 4, 5);
-            BMaximizarMenuGerente.Name = "BMaximizarMenuGerente";
-            BMaximizarMenuGerente.Size = new Size(40, 46);
-            BMaximizarMenuGerente.TabIndex = 3;
-            BMaximizarMenuGerente.UseVisualStyleBackColor = true;
-            BMaximizarMenuGerente.Click += BMaximizarMenuGerente_Click;
+            BMaximizarMenuSA.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            BMaximizarMenuSA.BackgroundImage = Properties.Resources.maximizarBlanco;
+            BMaximizarMenuSA.BackgroundImageLayout = ImageLayout.Stretch;
+            BMaximizarMenuSA.FlatAppearance.BorderSize = 0;
+            BMaximizarMenuSA.FlatStyle = FlatStyle.Flat;
+            BMaximizarMenuSA.Location = new Point(1264, 26);
+            BMaximizarMenuSA.Margin = new Padding(4, 5, 4, 5);
+            BMaximizarMenuSA.Name = "BMaximizarMenuSA";
+            BMaximizarMenuSA.Size = new Size(40, 46);
+            BMaximizarMenuSA.TabIndex = 3;
+            BMaximizarMenuSA.UseVisualStyleBackColor = true;
+            BMaximizarMenuSA.Click += BMaximizarMenuSA_Click;
             // 
-            // BCerrarMenuGerente
+            // BCerrarMenuSA
             // 
-            BCerrarMenuGerente.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            BCerrarMenuGerente.BackgroundImage = Properties.Resources.cerrarventana;
-            BCerrarMenuGerente.BackgroundImageLayout = ImageLayout.Stretch;
-            BCerrarMenuGerente.FlatAppearance.BorderSize = 0;
-            BCerrarMenuGerente.FlatStyle = FlatStyle.Flat;
-            BCerrarMenuGerente.Location = new Point(1320, 26);
-            BCerrarMenuGerente.Margin = new Padding(4, 5, 4, 5);
-            BCerrarMenuGerente.Name = "BCerrarMenuGerente";
-            BCerrarMenuGerente.Size = new Size(40, 46);
-            BCerrarMenuGerente.TabIndex = 2;
-            BCerrarMenuGerente.UseVisualStyleBackColor = true;
-            BCerrarMenuGerente.Click += BCerrarMenuGerente_Click;
+            BCerrarMenuSA.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            BCerrarMenuSA.BackgroundImage = Properties.Resources.cerrarventana;
+            BCerrarMenuSA.BackgroundImageLayout = ImageLayout.Stretch;
+            BCerrarMenuSA.FlatAppearance.BorderSize = 0;
+            BCerrarMenuSA.FlatStyle = FlatStyle.Flat;
+            BCerrarMenuSA.Location = new Point(1320, 26);
+            BCerrarMenuSA.Margin = new Padding(4, 5, 4, 5);
+            BCerrarMenuSA.Name = "BCerrarMenuSA";
+            BCerrarMenuSA.Size = new Size(40, 46);
+            BCerrarMenuSA.TabIndex = 2;
+            BCerrarMenuSA.UseVisualStyleBackColor = true;
+            BCerrarMenuSA.Click += BCerrarMenuSA_Click;
             // 
-            // BRestaurarMenuGerente
+            // BRestaurarMenuSA
             // 
-            BRestaurarMenuGerente.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            BRestaurarMenuGerente.BackgroundImage = Properties.Resources.restaurarventana;
-            BRestaurarMenuGerente.BackgroundImageLayout = ImageLayout.Stretch;
-            BRestaurarMenuGerente.FlatAppearance.BorderSize = 0;
-            BRestaurarMenuGerente.FlatStyle = FlatStyle.Flat;
-            BRestaurarMenuGerente.Location = new Point(1267, 26);
-            BRestaurarMenuGerente.Margin = new Padding(4, 5, 4, 5);
-            BRestaurarMenuGerente.Name = "BRestaurarMenuGerente";
-            BRestaurarMenuGerente.Size = new Size(40, 46);
-            BRestaurarMenuGerente.TabIndex = 1;
-            BRestaurarMenuGerente.UseVisualStyleBackColor = true;
-            BRestaurarMenuGerente.Click += BRestaurarMenuGerente_Click;
+            BRestaurarMenuSA.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            BRestaurarMenuSA.BackgroundImage = Properties.Resources.restaurarventana;
+            BRestaurarMenuSA.BackgroundImageLayout = ImageLayout.Stretch;
+            BRestaurarMenuSA.FlatAppearance.BorderSize = 0;
+            BRestaurarMenuSA.FlatStyle = FlatStyle.Flat;
+            BRestaurarMenuSA.Location = new Point(1267, 26);
+            BRestaurarMenuSA.Margin = new Padding(4, 5, 4, 5);
+            BRestaurarMenuSA.Name = "BRestaurarMenuSA";
+            BRestaurarMenuSA.Size = new Size(40, 46);
+            BRestaurarMenuSA.TabIndex = 1;
+            BRestaurarMenuSA.UseVisualStyleBackColor = true;
+            BRestaurarMenuSA.Click += BRestaurarMenuSA_Click;
             // 
-            // BMinimizarMenuGerente
+            // BMinimizarMenuSA
             // 
-            BMinimizarMenuGerente.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            BMinimizarMenuGerente.BackgroundImage = Properties.Resources.minimizar_blanco;
-            BMinimizarMenuGerente.BackgroundImageLayout = ImageLayout.Stretch;
-            BMinimizarMenuGerente.FlatAppearance.BorderSize = 0;
-            BMinimizarMenuGerente.FlatStyle = FlatStyle.Flat;
-            BMinimizarMenuGerente.Location = new Point(1213, 26);
-            BMinimizarMenuGerente.Margin = new Padding(4, 5, 4, 5);
-            BMinimizarMenuGerente.Name = "BMinimizarMenuGerente";
-            BMinimizarMenuGerente.Size = new Size(40, 46);
-            BMinimizarMenuGerente.TabIndex = 0;
-            BMinimizarMenuGerente.UseVisualStyleBackColor = true;
-            BMinimizarMenuGerente.Click += BMinimizarMenuGerente_Click;
+            BMinimizarMenuSA.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            BMinimizarMenuSA.BackgroundImage = Properties.Resources.minimizar_blanco;
+            BMinimizarMenuSA.BackgroundImageLayout = ImageLayout.Stretch;
+            BMinimizarMenuSA.FlatAppearance.BorderSize = 0;
+            BMinimizarMenuSA.FlatStyle = FlatStyle.Flat;
+            BMinimizarMenuSA.Location = new Point(1213, 26);
+            BMinimizarMenuSA.Margin = new Padding(4, 5, 4, 5);
+            BMinimizarMenuSA.Name = "BMinimizarMenuSA";
+            BMinimizarMenuSA.Size = new Size(40, 46);
+            BMinimizarMenuSA.TabIndex = 0;
+            BMinimizarMenuSA.UseVisualStyleBackColor = true;
+            BMinimizarMenuSA.Click += BMinimizarMenuSA_Click;
             // 
             // PanelFormSuperAdministrador
             // 
@@ -429,6 +484,7 @@
             Text = "Form1";
             Load += MenuA_Load;
             PanelMenuLateral.ResumeLayout(false);
+            PanelSubMenuBD.ResumeLayout(false);
             PanelSubMenuPerfiles.ResumeLayout(false);
             PanelSubMenuEmpleados.ResumeLayout(false);
             PanelSubMenuUsuarios.ResumeLayout(false);
@@ -454,14 +510,17 @@
         internal Button BAñadirUsuario;
         internal Button BUsuarios;
         internal Panel PanelBarraMenu;
-        internal Button BMaximizarMenuGerente;
-        internal Button BCerrarMenuGerente;
-        internal Button BRestaurarMenuGerente;
-        internal Button BMinimizarMenuGerente;
+        internal Button BMaximizarMenuSA;
+        internal Button BCerrarMenuSA;
+        internal Button BRestaurarMenuSA;
+        internal Button BMinimizarMenuSA;
         internal Button BGestionarPerfiles;
 
         #endregion
 
         internal Button BVolver;
+        internal Panel PanelSubMenuBD;
+        internal Button BFunciones;
+        internal Button BBaseDeDatos;
     }
 }

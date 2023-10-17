@@ -64,6 +64,76 @@ namespace Unitivo.Formularios.Vendedor
             }
         }
 
+        private void BAñadir_Click(object sender, EventArgs e)
+        {
+            // Verificar si alguno de los campos está vacío.
+            if (string.IsNullOrEmpty(TBDniCliVenta.Text) ||
+                string.IsNullOrEmpty(TBNombreCliVenta.Text) ||
+                string.IsNullOrEmpty(TBApellidoCliVenta.Text) ||
+                string.IsNullOrEmpty(TBTelCliVenta.Text) ||
+                string.IsNullOrEmpty(TBProductoVenta.Text) ||
+                string.IsNullOrEmpty(TBPrecio.Text) ||
+                string.IsNullOrEmpty(TBStock.Text) ||
+                string.IsNullOrEmpty(TBTalle.Text) ||
+                string.IsNullOrEmpty(TBCantidad.Text))
+            {
+                // Al menos uno de los campos está vacío, mostrar un mensaje de error.
+                MessageBox.Show("Por favor, complete todos los campos antes de añadir la venta.", "Campos Vacíos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                // Todos los campos están llenos, puedes realizar la acción de agregar el producto.
+                // Agregar código aquí para realizar la acción deseada, por ejemplo, agregar el producto a una lista o base de datos.
+
+                // Después de agregar el producto, mostrar un mensaje de éxito.
+                MessageBox.Show("Venta añadida con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void BConfirmar_Click(object sender, EventArgs e)
+        {
+            if (dgvListaVentas.RowCount > 0)
+            {
+                // Hay elementos en dgvListaVentas, puedes realizar la acción deseada (por ejemplo, confirmar la venta).
+                // Agrega aquí el código para confirmar la venta.
+
+                MessageBox.Show("Venta confirmada.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                // No se ha realizado la venta de ningún producto.
+                MessageBox.Show("No se ha realizado la venta de ningún producto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void BEliminarProducto_Click(object sender, EventArgs e)
+        {
+            if (dgvListaVentas.SelectedRows.Count == 0)
+            {
+                // No hay una fila seleccionada en el dgvListaVentas, muestra un mensaje de error.
+                MessageBox.Show("Debe seleccionar una fila para eliminar un producto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; // Salir del método sin realizar ninguna acción adicional.
+            }
+
+            // Aquí puedes agregar el código para eliminar el producto seleccionado.
+        }
+
+        private void BModificarProducto_Click(object sender, EventArgs e)
+        {
+            if (dgvListaVentas.SelectedRows.Count == 0)
+            {
+                // No hay una fila seleccionada en el dgvListaVentas, muestra un mensaje de error.
+                MessageBox.Show("Debe seleccionar una fila para modificar un producto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; // Salir del método sin realizar ninguna acción adicional.
+            }
+
+            // Aquí puedes agregar el código para eliminar el producto seleccionado.
+        }
+
+
+
+
+
 
 
 

@@ -122,6 +122,7 @@
             BEliminarCategoria.TabIndex = 24;
             BEliminarCategoria.TextImageRelation = TextImageRelation.ImageBeforeText;
             BEliminarCategoria.UseVisualStyleBackColor = false;
+            BEliminarCategoria.Click += BEliminarCategoria_Click;
             // 
             // BAltaCategoria
             // 

@@ -1,6 +1,6 @@
 ﻿namespace Unitivo.Presentacion.SuperAdministrador
 {
-    partial class AñadirPerfil
+    partial class GestionarPuestos
     {
         /// <summary>
         /// Required designer variable.
@@ -30,31 +30,113 @@
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            GroupBoxGestionPerfil = new GroupBox();
+            BBuscarPerfil = new Button();
+            TBGestionPerfil = new TextBox();
+            BModificarPerfiles = new Button();
+            BEliminarPerfiles = new Button();
+            BAltaPerfil = new Button();
             TabControlRegPerfil = new TabControl();
             TabPageListaPerfil = new TabPage();
             dgvRegistroPerfil = new DataGridView();
-            PanelRegClientes = new Panel();
-            BRegistrarPerfil = new Button();
-            TBNombrePerfil = new TextBox();
-            LNombrePerfil = new Label();
             ID = new DataGridViewTextBoxColumn();
             Descripcion = new DataGridViewTextBoxColumn();
             Estado = new DataGridViewTextBoxColumn();
+            GroupBoxGestionPerfil.SuspendLayout();
             TabControlRegPerfil.SuspendLayout();
             TabPageListaPerfil.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvRegistroPerfil).BeginInit();
-            PanelRegClientes.SuspendLayout();
             SuspendLayout();
+            // 
+            // GroupBoxGestionPerfil
+            // 
+            GroupBoxGestionPerfil.BackColor = Color.Cornsilk;
+            GroupBoxGestionPerfil.Controls.Add(BBuscarPerfil);
+            GroupBoxGestionPerfil.Controls.Add(TBGestionPerfil);
+            GroupBoxGestionPerfil.Font = new Font("Cooper Black", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            GroupBoxGestionPerfil.ForeColor = Color.Sienna;
+            GroupBoxGestionPerfil.Location = new Point(343, 54);
+            GroupBoxGestionPerfil.Margin = new Padding(4, 5, 4, 5);
+            GroupBoxGestionPerfil.Name = "GroupBoxGestionPerfil";
+            GroupBoxGestionPerfil.Padding = new Padding(4, 5, 4, 5);
+            GroupBoxGestionPerfil.Size = new Size(407, 143);
+            GroupBoxGestionPerfil.TabIndex = 84;
+            GroupBoxGestionPerfil.TabStop = false;
+            GroupBoxGestionPerfil.Text = "Gestión de Puestos";
+            // 
+            // BBuscarPerfil
+            // 
+            BBuscarPerfil.BackColor = Color.DarkOliveGreen;
+            BBuscarPerfil.FlatAppearance.BorderColor = Color.White;
+            BBuscarPerfil.FlatAppearance.BorderSize = 2;
+            BBuscarPerfil.FlatStyle = FlatStyle.Flat;
+            BBuscarPerfil.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            BBuscarPerfil.ForeColor = Color.White;
+            BBuscarPerfil.Image = Properties.Resources.icons8_búsqueda_26;
+            BBuscarPerfil.Location = new Point(283, 57);
+            BBuscarPerfil.Margin = new Padding(4, 5, 4, 5);
+            BBuscarPerfil.Name = "BBuscarPerfil";
+            BBuscarPerfil.Size = new Size(60, 63);
+            BBuscarPerfil.TabIndex = 14;
+            BBuscarPerfil.UseVisualStyleBackColor = false;
+            // 
+            // TBGestionPerfil
+            // 
+            TBGestionPerfil.Font = new Font("Britannic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            TBGestionPerfil.Location = new Point(76, 71);
+            TBGestionPerfil.Margin = new Padding(4, 5, 4, 5);
+            TBGestionPerfil.Name = "TBGestionPerfil";
+            TBGestionPerfil.Size = new Size(173, 30);
+            TBGestionPerfil.TabIndex = 6;
+            TBGestionPerfil.KeyPress += String_KeyPress;
+            // 
+            // BModificarPerfiles
+            // 
+            BModificarPerfiles.BackColor = Color.SteelBlue;
+            BModificarPerfiles.ForeColor = Color.White;
+            BModificarPerfiles.Image = Properties.Resources.icons8_editar_archivo_26;
+            BModificarPerfiles.Location = new Point(933, 353);
+            BModificarPerfiles.Margin = new Padding(4, 5, 4, 5);
+            BModificarPerfiles.Name = "BModificarPerfiles";
+            BModificarPerfiles.Size = new Size(67, 69);
+            BModificarPerfiles.TabIndex = 82;
+            BModificarPerfiles.UseVisualStyleBackColor = false;
+            BModificarPerfiles.Click += BModificarPerfiles_Click;
+            // 
+            // BEliminarPerfiles
+            // 
+            BEliminarPerfiles.BackColor = Color.Brown;
+            BEliminarPerfiles.ForeColor = Color.White;
+            BEliminarPerfiles.Image = Properties.Resources.icons8_basura_26;
+            BEliminarPerfiles.Location = new Point(933, 447);
+            BEliminarPerfiles.Margin = new Padding(4, 5, 4, 5);
+            BEliminarPerfiles.Name = "BEliminarPerfiles";
+            BEliminarPerfiles.Size = new Size(67, 69);
+            BEliminarPerfiles.TabIndex = 81;
+            BEliminarPerfiles.UseVisualStyleBackColor = false;
+            BEliminarPerfiles.Click += BEliminarPerfiles_Click;
+            // 
+            // BAltaPerfil
+            // 
+            BAltaPerfil.BackColor = Color.DarkOliveGreen;
+            BAltaPerfil.ForeColor = Color.White;
+            BAltaPerfil.Image = Properties.Resources.icons8_más_2_matemáticas_30;
+            BAltaPerfil.Location = new Point(933, 447);
+            BAltaPerfil.Margin = new Padding(4, 5, 4, 5);
+            BAltaPerfil.Name = "BAltaPerfil";
+            BAltaPerfil.Size = new Size(67, 69);
+            BAltaPerfil.TabIndex = 86;
+            BAltaPerfil.UseVisualStyleBackColor = false;
             // 
             // TabControlRegPerfil
             // 
             TabControlRegPerfil.Controls.Add(TabPageListaPerfil);
             TabControlRegPerfil.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            TabControlRegPerfil.Location = new Point(147, 279);
+            TabControlRegPerfil.Location = new Point(158, 226);
             TabControlRegPerfil.Name = "TabControlRegPerfil";
             TabControlRegPerfil.SelectedIndex = 0;
             TabControlRegPerfil.Size = new Size(713, 372);
-            TabControlRegPerfil.TabIndex = 13;
+            TabControlRegPerfil.TabIndex = 87;
             // 
             // TabPageListaPerfil
             // 
@@ -63,14 +145,15 @@
             TabPageListaPerfil.ForeColor = Color.White;
             TabPageListaPerfil.Location = new Point(4, 28);
             TabPageListaPerfil.Name = "TabPageListaPerfil";
-            TabPageListaPerfil.Padding = new Padding(3, 3, 3, 3);
+            TabPageListaPerfil.Padding = new Padding(3);
             TabPageListaPerfil.Size = new Size(705, 340);
             TabPageListaPerfil.TabIndex = 0;
-            TabPageListaPerfil.Text = "Lista de Perfil";
+            TabPageListaPerfil.Text = "Lista de Puestos";
             TabPageListaPerfil.UseVisualStyleBackColor = true;
             // 
             // dgvRegistroPerfil
             // 
+            dgvRegistroPerfil.AllowUserToAddRows = false;
             dgvRegistroPerfil.AllowUserToDeleteRows = false;
             dgvRegistroPerfil.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvRegistroPerfil.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
@@ -108,58 +191,6 @@
             dgvRegistroPerfil.Size = new Size(699, 334);
             dgvRegistroPerfil.TabIndex = 0;
             // 
-            // PanelRegClientes
-            // 
-            PanelRegClientes.BackColor = Color.Cornsilk;
-            PanelRegClientes.BackgroundImageLayout = ImageLayout.None;
-            PanelRegClientes.Controls.Add(BRegistrarPerfil);
-            PanelRegClientes.Controls.Add(TBNombrePerfil);
-            PanelRegClientes.Controls.Add(LNombrePerfil);
-            PanelRegClientes.Location = new Point(226, 76);
-            PanelRegClientes.Margin = new Padding(4, 5, 4, 5);
-            PanelRegClientes.Name = "PanelRegClientes";
-            PanelRegClientes.Size = new Size(577, 172);
-            PanelRegClientes.TabIndex = 12;
-            // 
-            // BRegistrarPerfil
-            // 
-            BRegistrarPerfil.BackColor = Color.DarkOliveGreen;
-            BRegistrarPerfil.FlatAppearance.BorderColor = Color.White;
-            BRegistrarPerfil.FlatAppearance.BorderSize = 2;
-            BRegistrarPerfil.FlatStyle = FlatStyle.Flat;
-            BRegistrarPerfil.Font = new Font("Britannic Bold", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            BRegistrarPerfil.ForeColor = Color.White;
-            BRegistrarPerfil.Location = new Point(424, 74);
-            BRegistrarPerfil.Margin = new Padding(4, 5, 4, 5);
-            BRegistrarPerfil.Name = "BRegistrarPerfil";
-            BRegistrarPerfil.Size = new Size(131, 65);
-            BRegistrarPerfil.TabIndex = 13;
-            BRegistrarPerfil.Text = "Añadir";
-            BRegistrarPerfil.UseVisualStyleBackColor = false;
-            // 
-            // TBNombrePerfil
-            // 
-            TBNombrePerfil.Font = new Font("Britannic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            TBNombrePerfil.Location = new Point(27, 89);
-            TBNombrePerfil.Margin = new Padding(4, 5, 4, 5);
-            TBNombrePerfil.Name = "TBNombrePerfil";
-            TBNombrePerfil.Size = new Size(371, 30);
-            TBNombrePerfil.TabIndex = 6;
-            TBNombrePerfil.KeyPress += String_KeyPress;
-            // 
-            // LNombrePerfil
-            // 
-            LNombrePerfil.AutoSize = true;
-            LNombrePerfil.BackColor = Color.Cornsilk;
-            LNombrePerfil.Font = new Font("Cooper Black", 21.75F, FontStyle.Regular, GraphicsUnit.Point);
-            LNombrePerfil.ForeColor = Color.DarkOrange;
-            LNombrePerfil.Location = new Point(27, 12);
-            LNombrePerfil.Margin = new Padding(4, 0, 4, 0);
-            LNombrePerfil.Name = "LNombrePerfil";
-            LNombrePerfil.Size = new Size(357, 42);
-            LNombrePerfil.TabIndex = 0;
-            LNombrePerfil.Text = "Nombre de Perfil :";
-            // 
             // ID
             // 
             ID.HeaderText = "ID";
@@ -181,36 +212,41 @@
             Estado.Name = "Estado";
             Estado.ReadOnly = true;
             // 
-            // AñadirPerfil
+            // GestionarPerfiles
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSeaGreen;
-            ClientSize = new Size(1067, 754);
+            ClientSize = new Size(1067, 692);
             Controls.Add(TabControlRegPerfil);
-            Controls.Add(PanelRegClientes);
+            Controls.Add(GroupBoxGestionPerfil);
+            Controls.Add(BModificarPerfiles);
+            Controls.Add(BEliminarPerfiles);
+            Controls.Add(BAltaPerfil);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4, 5, 4, 5);
-            Name = "AñadirPerfil";
+            Name = "GestionarPerfiles";
             Text = "Form1";
+            GroupBoxGestionPerfil.ResumeLayout(false);
+            GroupBoxGestionPerfil.PerformLayout();
             TabControlRegPerfil.ResumeLayout(false);
             TabPageListaPerfil.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvRegistroPerfil).EndInit();
-            PanelRegClientes.ResumeLayout(false);
-            PanelRegClientes.PerformLayout();
             ResumeLayout(false);
         }
+
+        internal GroupBox GroupBoxGestionPerfil;
+        internal Button BBuscarPerfil;
+        internal TextBox TBGestionPerfil;
+        internal Button BModificarPerfiles;
+        internal Button BEliminarPerfiles;
+        internal Button BAltaPerfil;
+
+        #endregion
 
         internal TabControl TabControlRegPerfil;
         internal TabPage TabPageListaPerfil;
         internal DataGridView dgvRegistroPerfil;
-        internal Panel PanelRegClientes;
-        internal Button BRegistrarPerfil;
-        internal TextBox TBNombrePerfil;
-        internal Label LNombrePerfil;
-
-        #endregion
-
         private DataGridViewTextBoxColumn ID;
         private DataGridViewTextBoxColumn Descripcion;
         private DataGridViewTextBoxColumn Estado;

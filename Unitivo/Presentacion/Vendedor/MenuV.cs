@@ -9,8 +9,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Unitivo.Formularios.Vendedor;
-using Unitivo.Formularios;
-using Microsoft.VisualBasic.Logging;
+using Unitivo.Recursos;
+using Unitivo.Repositorio.Interfaces;
+using Unitivo.Repositorios.Implementaciones;
+using Unitivo.Repositorios.Interfaces;
+using Unitivo.Sessions;
 
 namespace Unitivo.Presentacion.Vendedor
 {

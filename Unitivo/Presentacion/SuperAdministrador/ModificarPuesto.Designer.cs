@@ -1,6 +1,6 @@
 ﻿namespace Unitivo.Presentacion.SuperAdministrador
 {
-    partial class ModificarPerfiles
+    partial class ModificarPuesto
     {
         /// <summary>
         /// Required designer variable.
@@ -81,7 +81,7 @@
             GroupBoxDatosPerfil.Size = new Size(473, 308);
             GroupBoxDatosPerfil.TabIndex = 19;
             GroupBoxDatosPerfil.TabStop = false;
-            GroupBoxDatosPerfil.Text = "Modificar Perfil";
+            GroupBoxDatosPerfil.Text = "Modificar Puesto";
             // 
             // TBModPerfil
             // 
@@ -100,9 +100,9 @@
             LModPerfil.Location = new Point(123, 106);
             LModPerfil.Margin = new Padding(8, 0, 8, 0);
             LModPerfil.Name = "LModPerfil";
-            LModPerfil.Size = new Size(84, 27);
+            LModPerfil.Size = new Size(98, 27);
             LModPerfil.TabIndex = 15;
-            LModPerfil.Text = "Perfil: ";
+            LModPerfil.Text = "Puesto: ";
             // 
             // BModificarPerfil
             // 
@@ -119,8 +119,9 @@
             BModificarPerfil.TabIndex = 13;
             BModificarPerfil.Text = "Modificar";
             BModificarPerfil.UseVisualStyleBackColor = false;
+            BModificarPerfil.Click += BModificarPerfil_Click;
             // 
-            // ModificarPerfiles
+            // ModificarPuesto
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -129,7 +130,7 @@
             Controls.Add(PanelModMarca);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4, 5, 4, 5);
-            Name = "ModificarPerfiles";
+            Name = "ModificarPuesto";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             PanelModMarca.ResumeLayout(false);

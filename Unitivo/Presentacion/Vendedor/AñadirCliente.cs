@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using Unitivo.Presentacion.Logica;
 using Unitivo.Presentacion.Logica.Constructores;
 using Unitivo.Repositorio.Interfaces;
-using Univivo.Repositorios.Implementaciones;
+using Unitivo.Repositorios.Implementaciones;
 using Unitivo.Modelos;
 
 namespace Unitivo.Presentacion.Vendedor
@@ -32,7 +32,6 @@ namespace Unitivo.Presentacion.Vendedor
             try
             {
                 ClienteConstructor cliente = new ClienteConstructor(
-                    // completar los parametros con los TB de la vista
                     nombre: TBNombreCliente.Text,
                     apellido: TBApellidoCliente.Text,
                     dni: int.Parse(TBDniCliente.Text),
@@ -40,18 +39,26 @@ namespace Unitivo.Presentacion.Vendedor
                     direccion: TBDireccionCliente.Text,
                     correo: TBCorreoCliente.Text
                 );
-                clienteRepositorio.AgregarCliente(cliente);
-                MessageBox.Show("Cliente agregado correctamente");
-                //quiero que los textbox se limpien despues de agregar el cliente
-                LimpiarTextBox();
+
+                if (clienteRepositorio.AgregarCliente(cliente))
+                {
+                    MessageBox.Show("Cliente agregado correctamente");
+                    LimpiarTextBox();
+                    CargarClientes();
+                }
+                else
+                {
+                    MessageBox.Show("Error al agregar cliente");
+                }
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Error al agregar cliente");
+                // Captura y maneja el error que ocurra en clienteRepositorio.AgregarCliente(cliente)
+                MessageBox.Show("Error al agregar cliente: " + ex.Message, "Clientes", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        //quiero una funcion que limpie los textbox
+
         private void LimpiarTextBox()
         {
             TBNombreCliente.Text = "";
@@ -92,8 +99,10 @@ namespace Unitivo.Presentacion.Vendedor
             }
         }
 
+        private void AñadirCliente_Load(object sender, EventArgs e)
+        {
 
-
+        }
     }
 }
 

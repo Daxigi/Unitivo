@@ -90,6 +90,7 @@
             TBNombreCategoria.Name = "TBNombreCategoria";
             TBNombreCategoria.Size = new Size(221, 42);
             TBNombreCategoria.TabIndex = 16;
+            TBNombreCategoria.KeyPress += StrNum_KeyPress;
             // 
             // LModCategoria
             // 
@@ -118,6 +119,7 @@
             BModificarCategoria.TabIndex = 13;
             BModificarCategoria.Text = "Modificar";
             BModificarCategoria.UseVisualStyleBackColor = false;
+            BModificarCategoria.Click += BModificarCategoria_Click;
             // 
             // ModificarCategoria
             // 

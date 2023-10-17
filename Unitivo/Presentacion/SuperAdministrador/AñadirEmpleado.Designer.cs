@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             Label1 = new Label();
             Panel1 = new Panel();
             BRegistrarEmpleado = new Button();
@@ -49,7 +49,7 @@
             Label2 = new Label();
             TabControlListaEmpleados = new TabControl();
             TabPageListaEmpleados = new TabPage();
-            dgvEmpleados = new DataGridView();
+            DataGridViewListarEmpleados = new DataGridView();
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
@@ -60,7 +60,7 @@
             Panel1.SuspendLayout();
             TabControlListaEmpleados.SuspendLayout();
             TabPageListaEmpleados.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvEmpleados).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DataGridViewListarEmpleados).BeginInit();
             SuspendLayout();
             // 
             // Label1
@@ -112,6 +112,7 @@
             BRegistrarEmpleado.TabIndex = 17;
             BRegistrarEmpleado.Text = "Añadir";
             BRegistrarEmpleado.UseVisualStyleBackColor = false;
+            BRegistrarEmpleado.Click += BRegistrarEmpleado_Click;
             // 
             // TBCorreoEmpleado
             // 
@@ -252,7 +253,7 @@
             // 
             // TabPageListaEmpleados
             // 
-            TabPageListaEmpleados.Controls.Add(dgvEmpleados);
+            TabPageListaEmpleados.Controls.Add(DataGridViewListarEmpleados);
             TabPageListaEmpleados.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             TabPageListaEmpleados.ForeColor = Color.White;
             TabPageListaEmpleados.Location = new Point(4, 28);
@@ -264,50 +265,51 @@
             TabPageListaEmpleados.Text = "Lista de Empleados";
             TabPageListaEmpleados.UseVisualStyleBackColor = true;
             // 
-            // dgvEmpleados
+            // DataGridViewListarEmpleados
             // 
-            dgvEmpleados.AllowUserToDeleteRows = false;
-            dgvEmpleados.BackgroundColor = Color.RosyBrown;
-            dgvEmpleados.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.DarkOliveGreen;
-            dataGridViewCellStyle1.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvEmpleados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dgvEmpleados.ColumnHeadersHeight = 20;
-            dgvEmpleados.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dgvEmpleados.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6, Column7 });
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = Color.Blue;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvEmpleados.DefaultCellStyle = dataGridViewCellStyle2;
-            dgvEmpleados.Dock = DockStyle.Fill;
-            dgvEmpleados.EnableHeadersVisualStyles = false;
-            dgvEmpleados.Location = new Point(4, 3);
-            dgvEmpleados.Margin = new Padding(5, 6, 5, 6);
-            dgvEmpleados.Name = "dgvEmpleados";
-            dgvEmpleados.ReadOnly = true;
-            dgvEmpleados.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = SystemColors.ActiveCaption;
-            dataGridViewCellStyle3.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgvEmpleados.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            dgvEmpleados.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.ForeColor = Color.Black;
-            dgvEmpleados.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            dgvEmpleados.Size = new Size(497, 525);
-            dgvEmpleados.TabIndex = 2;
+            DataGridViewListarEmpleados.AllowUserToAddRows = false;
+            DataGridViewListarEmpleados.AllowUserToDeleteRows = false;
+            DataGridViewListarEmpleados.BackgroundColor = Color.RosyBrown;
+            DataGridViewListarEmpleados.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.DarkOliveGreen;
+            dataGridViewCellStyle5.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            DataGridViewListarEmpleados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            DataGridViewListarEmpleados.ColumnHeadersHeight = 20;
+            DataGridViewListarEmpleados.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            DataGridViewListarEmpleados.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6, Column7 });
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = SystemColors.Window;
+            dataGridViewCellStyle6.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = Color.Blue;
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            DataGridViewListarEmpleados.DefaultCellStyle = dataGridViewCellStyle6;
+            DataGridViewListarEmpleados.Dock = DockStyle.Fill;
+            DataGridViewListarEmpleados.EnableHeadersVisualStyles = false;
+            DataGridViewListarEmpleados.Location = new Point(4, 3);
+            DataGridViewListarEmpleados.Margin = new Padding(5, 6, 5, 6);
+            DataGridViewListarEmpleados.Name = "DataGridViewListarEmpleados";
+            DataGridViewListarEmpleados.ReadOnly = true;
+            DataGridViewListarEmpleados.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = SystemColors.ActiveCaption;
+            dataGridViewCellStyle7.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            DataGridViewListarEmpleados.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            DataGridViewListarEmpleados.RowHeadersWidth = 51;
+            dataGridViewCellStyle8.ForeColor = Color.Black;
+            DataGridViewListarEmpleados.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            DataGridViewListarEmpleados.Size = new Size(497, 525);
+            DataGridViewListarEmpleados.TabIndex = 2;
             // 
             // Column1
             // 
@@ -382,7 +384,7 @@
             Panel1.PerformLayout();
             TabControlListaEmpleados.ResumeLayout(false);
             TabPageListaEmpleados.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgvEmpleados).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DataGridViewListarEmpleados).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -404,7 +406,7 @@
         internal Label Label2;
         internal TabControl TabControlListaEmpleados;
         internal TabPage TabPageListaEmpleados;
-        internal DataGridView dgvEmpleados;
+        internal DataGridView DataGridViewListarEmpleados;
 
         #endregion
 

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Unitivo.Modelos;
 using Unitivo.Presentacion.Logica;
-using Univivo.Repositorios.Implementaciones;
+using Unitivo.Repositorios.Implementaciones;
 
 namespace Unitivo.Presentacion.Vendedor
 {
@@ -21,27 +21,56 @@ namespace Unitivo.Presentacion.Vendedor
         {
             InitializeComponent();
             CargarClientes();
+            ComboBoxBuscar.SelectedIndex = 0;
         }
 
-        private void Num_KeyPress(object sender, KeyPressEventArgs e)
+        private void BuscarPorComboBox(object sender, KeyPressEventArgs e)
+        {
+            if (ComboBoxBuscar.Text == "DNI")
+            {
+                CommonFunctions.ValidarNumberKeyPress((TextBox)sender, e);
+            }
+            else
+            {
+                CommonFunctions.ValidarStringKeyPress((TextBox)sender, e);
+            }
+        }
+
+        private void String_KeyPress(object sender, KeyPressEventArgs e)
         {
             CommonFunctions.ValidarNumberKeyPress((TextBox)sender, e);
         }
 
+        private void NumStr_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            CommonFunctions.ValidarKeyPress((TextBox)sender, e);
+        }
 
         private void BEditarCliente_Click(object sender, EventArgs e)
         {
-            // Crear una instancia del formulario ModificarCliente
-            ModificarCliente modificarClienteForm = new ModificarCliente();
-
-            // Mostrar el formulario como un cuadro de diálogo modal
-            DialogResult result = modificarClienteForm.ShowDialog();
-
-            // Aquí puedes realizar acciones después de que se cierre el formulario ModificarCliente
-            if (result == DialogResult.OK)
+            // Verifica si hay al menos una fila seleccionada en el DataGridView
+            if (DataGridViewListarClientes.SelectedRows.Count > 0)
             {
-                // Por ejemplo, actualizar la lista de clientes o realizar otras acciones necesarias
-                // después de modificar el cliente.
+                // Obtén el ID del cliente seleccionado
+
+                int idSeleccionado = Convert.ToInt32(DataGridViewListarClientes.SelectedRows[0].Cells["ID"].Value);
+
+                // Crea una instancia del formulario ModificarCliente y pasa los detalles del cliente como parámetros
+                ModificarCliente modificarClienteForm = new ModificarCliente(idSeleccionado);
+
+                // Muestra el formulario ModificarCliente como cuadro de diálogo modal
+                DialogResult result = modificarClienteForm.ShowDialog();
+
+                // Puedes realizar acciones después de que se cierre el formulario ModificarCliente si es necesario
+                if (result == DialogResult.OK)
+                {
+                    // Realiza acciones si se cerró el formulario con DialogResult.OK
+                    CargarClientes();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selecciona un elemento en el DataGridView antes de modificarlo.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -83,7 +112,11 @@ namespace Unitivo.Presentacion.Vendedor
             {
                 CargarClientes();
             }
-
         }
+
+
     }
+
+
 }
+

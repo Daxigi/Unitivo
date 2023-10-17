@@ -67,7 +67,7 @@ namespace Unitivo.Presentacion.SuperAdministrador
 
 
 
-        private void BCerrarMenuGerente_Click(object sender, EventArgs e)
+        private void BCerrarMenuSA_Click(object sender, EventArgs e)
         {
             MsgBoxResult ask;
             ask = Interaction.MsgBox("¿Esta seguro de que quiere cerrar sesión?", (MsgBoxStyle)((int)Constants.vbExclamation + (int)Constants.vbYesNo), "Cerrar Sesión");
@@ -77,21 +77,21 @@ namespace Unitivo.Presentacion.SuperAdministrador
             }
         }
 
-        private void BMaximizarMenuGerente_Click(object sender, EventArgs e)
+        private void BMaximizarMenuSA_Click(object sender, EventArgs e)
         {
-            BMaximizarMenuGerente.Visible = false;
-            BRestaurarMenuGerente.Visible = true;
+            BMaximizarMenuSA.Visible = false;
+            BRestaurarMenuSA.Visible = true;
             WindowState = FormWindowState.Maximized;
         }
 
-        private void BRestaurarMenuGerente_Click(object sender, EventArgs e)
+        private void BRestaurarMenuSA_Click(object sender, EventArgs e)
         {
-            BRestaurarMenuGerente.Visible = false;
-            BMaximizarMenuGerente.Visible = true;
+            BRestaurarMenuSA.Visible = false;
+            BMaximizarMenuSA.Visible = true;
             WindowState = FormWindowState.Normal;
         }
 
-        private void BMinimizarMenuGerente_Click(object sender, EventArgs e)
+        private void BMinimizarMenuSA_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
         }
@@ -116,6 +116,15 @@ namespace Unitivo.Presentacion.SuperAdministrador
             }
         }
 
+        private void BBaseDeDatos_Click(object sender, EventArgs e)
+        {
+            showSubMenu(PanelSubMenuBD);
+        }
+
+        private void BFunciones_Click(object sender, EventArgs e)
+        {
+            AbrirFormulariosSuperAdministrador(new ManejoBD());
+        }
 
         private void BUsuarios_Click(object sender, EventArgs e)
         {
@@ -156,12 +165,12 @@ namespace Unitivo.Presentacion.SuperAdministrador
 
         private void BAñadirPerfil_Click(object sender, EventArgs e)
         {
-            AbrirFormulariosSuperAdministrador(new AñadirPerfil());
+            AbrirFormulariosSuperAdministrador(new AñadirPuesto());
         }
 
         private void BGestionarPerfiles_Click(object sender, EventArgs e)
         {
-            AbrirFormulariosSuperAdministrador(new GestionarPerfiles());
+            AbrirFormulariosSuperAdministrador(new GestionarPuestos());
         }
 
 

@@ -116,6 +116,16 @@ namespace Unitivo.Presentacion.Administrador
             AbrirFormulariosAdmin(new GestionarClientes());
         }
 
+        private void BReportes_Click(object sender, EventArgs e)
+        {
+            showSubMenu(PanelSubMenuReportes);
+        }
+
+        private void BVentasCategoria_Click(object sender, EventArgs e)
+        {
+            AbrirFormulariosAdmin(new VentasPorCategoria());
+        }
+
         // Variable para el formulario activo
         private Form? formularioActivo;
 

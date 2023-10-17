@@ -93,6 +93,7 @@
             BModificarProducto.TabIndex = 15;
             BModificarProducto.Text = "Modificar";
             BModificarProducto.UseVisualStyleBackColor = false;
+            BModificarProducto.Click += BModificarProducto_Click;
             // 
             // GroupBoxDatosCliente
             // 
@@ -127,6 +128,7 @@
             TBStockProducto.Name = "TBStockProducto";
             TBStockProducto.Size = new Size(213, 34);
             TBStockProducto.TabIndex = 10;
+            TBStockProducto.KeyPress += Num_KeyPress;
             // 
             // Label4
             // 
@@ -142,6 +144,7 @@
             // 
             // CBTalleProducto
             // 
+            CBTalleProducto.DropDownStyle = ComboBoxStyle.DropDownList;
             CBTalleProducto.Font = new Font("Britannic Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             CBTalleProducto.FormattingEnabled = true;
             CBTalleProducto.Items.AddRange(new object[] { "DNI", "OTRO" });
@@ -183,6 +186,7 @@
             TBPrecioProducto.Name = "TBPrecioProducto";
             TBPrecioProducto.Size = new Size(213, 34);
             TBPrecioProducto.TabIndex = 15;
+            TBPrecioProducto.KeyPress += Num_KeyPress;
             // 
             // TBNombreProducto
             // 
@@ -192,6 +196,7 @@
             TBNombreProducto.Name = "TBNombreProducto";
             TBNombreProducto.Size = new Size(213, 34);
             TBNombreProducto.TabIndex = 8;
+            TBNombreProducto.KeyPress += String_KeyPress;
             // 
             // LMarca
             // 
@@ -207,6 +212,7 @@
             // 
             // CBMarcaProducto
             // 
+            CBMarcaProducto.DropDownStyle = ComboBoxStyle.DropDownList;
             CBMarcaProducto.Font = new Font("Britannic Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             CBMarcaProducto.FormattingEnabled = true;
             CBMarcaProducto.Items.AddRange(new object[] { "DNI", "OTRO" });
@@ -242,6 +248,7 @@
             // 
             // CBCategoriaProducto
             // 
+            CBCategoriaProducto.DropDownStyle = ComboBoxStyle.DropDownList;
             CBCategoriaProducto.Font = new Font("Britannic Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             CBCategoriaProducto.FormattingEnabled = true;
             CBCategoriaProducto.Items.AddRange(new object[] { "DNI", "OTRO" });

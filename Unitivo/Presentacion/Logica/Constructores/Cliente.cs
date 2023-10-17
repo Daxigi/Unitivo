@@ -43,7 +43,6 @@ namespace Unitivo.Presentacion.Logica.Constructores
                 Telefono = telefono;
                 Direccion = direccion;
                 Correo = correo;
-
             }
     }
 

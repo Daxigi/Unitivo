@@ -37,7 +37,7 @@
             TBNombreUsuario = new TextBox();
             LNombreCliente = new Label();
             LApellidoCliente = new Label();
-            BModificarCliente = new Button();
+            BModificarUsuario = new Button();
             PanelModUsuarios.SuspendLayout();
             GroupBoxDatosCliente.SuspendLayout();
             SuspendLayout();
@@ -48,7 +48,7 @@
             PanelModUsuarios.BackgroundImageLayout = ImageLayout.None;
             PanelModUsuarios.Controls.Add(BCancelarModifCliente);
             PanelModUsuarios.Controls.Add(GroupBoxDatosCliente);
-            PanelModUsuarios.Controls.Add(BModificarCliente);
+            PanelModUsuarios.Controls.Add(BModificarUsuario);
             PanelModUsuarios.Location = new Point(91, 50);
             PanelModUsuarios.Margin = new Padding(5, 6, 5, 6);
             PanelModUsuarios.Name = "PanelModUsuarios";
@@ -89,10 +89,11 @@
             GroupBoxDatosCliente.Size = new Size(443, 408);
             GroupBoxDatosCliente.TabIndex = 19;
             GroupBoxDatosCliente.TabStop = false;
-            GroupBoxDatosCliente.Text = "Modificar Datos";
+            GroupBoxDatosCliente.Text = "Modificar Usuario";
             // 
             // ComboBoxPerfil
             // 
+            ComboBoxPerfil.DropDownStyle = ComboBoxStyle.DropDownList;
             ComboBoxPerfil.FormattingEnabled = true;
             ComboBoxPerfil.Items.AddRange(new object[] { "Vendedor", "Gerente" });
             ComboBoxPerfil.Location = new Point(131, 314);
@@ -154,21 +155,22 @@
             LApellidoCliente.TabIndex = 4;
             LApellidoCliente.Text = "Contraseña:";
             // 
-            // BModificarCliente
+            // BModificarUsuario
             // 
-            BModificarCliente.BackColor = Color.DarkOliveGreen;
-            BModificarCliente.FlatAppearance.BorderColor = Color.White;
-            BModificarCliente.FlatAppearance.BorderSize = 2;
-            BModificarCliente.FlatStyle = FlatStyle.Flat;
-            BModificarCliente.Font = new Font("Britannic Bold", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            BModificarCliente.ForeColor = Color.White;
-            BModificarCliente.Location = new Point(341, 497);
-            BModificarCliente.Margin = new Padding(5, 6, 5, 6);
-            BModificarCliente.Name = "BModificarCliente";
-            BModificarCliente.Size = new Size(143, 63);
-            BModificarCliente.TabIndex = 13;
-            BModificarCliente.Text = "Modificar";
-            BModificarCliente.UseVisualStyleBackColor = false;
+            BModificarUsuario.BackColor = Color.DarkOliveGreen;
+            BModificarUsuario.FlatAppearance.BorderColor = Color.White;
+            BModificarUsuario.FlatAppearance.BorderSize = 2;
+            BModificarUsuario.FlatStyle = FlatStyle.Flat;
+            BModificarUsuario.Font = new Font("Britannic Bold", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            BModificarUsuario.ForeColor = Color.White;
+            BModificarUsuario.Location = new Point(341, 497);
+            BModificarUsuario.Margin = new Padding(5, 6, 5, 6);
+            BModificarUsuario.Name = "BModificarUsuario";
+            BModificarUsuario.Size = new Size(143, 63);
+            BModificarUsuario.TabIndex = 13;
+            BModificarUsuario.Text = "Modificar";
+            BModificarUsuario.UseVisualStyleBackColor = false;
+            BModificarUsuario.Click += BModificarUsuario_Click;
             // 
             // ModificarUsuario
             // 
@@ -197,7 +199,7 @@
         internal TextBox TBNombreUsuario;
         internal Label LNombreCliente;
         internal Label LApellidoCliente;
-        internal Button BModificarCliente;
+        internal Button BModificarUsuario;
 
         #endregion
     }

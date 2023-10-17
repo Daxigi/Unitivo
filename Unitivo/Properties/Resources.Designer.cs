@@ -112,6 +112,16 @@ namespace Unitivo.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_base_de_datos_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-base-de-datos-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_basura_26 {
             get {
                 object obj = ResourceManager.GetObject("icons8-basura-26", resourceCulture);
@@ -425,6 +435,16 @@ namespace Unitivo.Properties {
         internal static System.Drawing.Bitmap restaurarventana {
             get {
                 object obj = ResourceManager.GetObject("restaurarventana", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ventas {
+            get {
+                object obj = ResourceManager.GetObject("ventas", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

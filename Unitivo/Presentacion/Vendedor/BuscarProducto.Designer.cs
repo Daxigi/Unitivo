@@ -31,6 +31,9 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             GroupBoxBuscarProducto = new GroupBox();
+            label3 = new Label();
+            label1 = new Label();
+            Label2 = new Label();
             comboBox3 = new ComboBox();
             ComboBox2 = new ComboBox();
             ComboBox1 = new ComboBox();
@@ -60,6 +63,9 @@
             // GroupBoxBuscarProducto
             // 
             GroupBoxBuscarProducto.BackColor = Color.Cornsilk;
+            GroupBoxBuscarProducto.Controls.Add(label3);
+            GroupBoxBuscarProducto.Controls.Add(label1);
+            GroupBoxBuscarProducto.Controls.Add(Label2);
             GroupBoxBuscarProducto.Controls.Add(comboBox3);
             GroupBoxBuscarProducto.Controls.Add(ComboBox2);
             GroupBoxBuscarProducto.Controls.Add(ComboBox1);
@@ -76,28 +82,65 @@
             GroupBoxBuscarProducto.TabStop = false;
             GroupBoxBuscarProducto.Text = "Productos";
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = Color.DarkOliveGreen;
+            label3.Location = new Point(678, 21);
+            label3.Margin = new Padding(5, 0, 5, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(66, 25);
+            label3.TabIndex = 33;
+            label3.Text = "Talle :";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor = Color.DarkOliveGreen;
+            label1.Location = new Point(494, 21);
+            label1.Margin = new Padding(5, 0, 5, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(88, 25);
+            label1.TabIndex = 32;
+            label1.Text = "Marcas :";
+            // 
+            // Label2
+            // 
+            Label2.AutoSize = true;
+            Label2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            Label2.ForeColor = Color.DarkOliveGreen;
+            Label2.Location = new Point(312, 21);
+            Label2.Margin = new Padding(5, 0, 5, 0);
+            Label2.Name = "Label2";
+            Label2.Size = new Size(118, 25);
+            Label2.TabIndex = 31;
+            Label2.Text = "Categorias :";
+            // 
             // comboBox3
             // 
+            comboBox3.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox3.Font = new Font("Britannic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
             comboBox3.FormattingEnabled = true;
             comboBox3.Location = new Point(681, 49);
             comboBox3.Name = "comboBox3";
             comboBox3.Size = new Size(160, 30);
             comboBox3.TabIndex = 30;
-            comboBox3.Text = "Talle";
             // 
             // ComboBox2
             // 
+            ComboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
             ComboBox2.Font = new Font("Britannic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
             ComboBox2.FormattingEnabled = true;
             ComboBox2.Location = new Point(496, 49);
             ComboBox2.Name = "ComboBox2";
             ComboBox2.Size = new Size(160, 30);
             ComboBox2.TabIndex = 29;
-            ComboBox2.Text = "Marcas";
             // 
             // ComboBox1
             // 
+            ComboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
             ComboBox1.Font = new Font("Britannic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
             ComboBox1.FormattingEnabled = true;
             ComboBox1.Location = new Point(315, 49);
@@ -105,7 +148,6 @@
             ComboBox1.Name = "ComboBox1";
             ComboBox1.Size = new Size(160, 30);
             ComboBox1.TabIndex = 28;
-            ComboBox1.Text = "Categorias";
             // 
             // BBuscarProducto
             // 
@@ -159,6 +201,7 @@
             // 
             // DataGridViewListaProductos
             // 
+            DataGridViewListaProductos.AllowUserToAddRows = false;
             DataGridViewListaProductos.AllowUserToDeleteRows = false;
             DataGridViewListaProductos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             DataGridViewListaProductos.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
@@ -349,5 +392,8 @@
         private Panel panel1;
         private Panel panel3;
         private Panel panel4;
+        internal Label label3;
+        internal Label label1;
+        internal Label Label2;
     }
 }

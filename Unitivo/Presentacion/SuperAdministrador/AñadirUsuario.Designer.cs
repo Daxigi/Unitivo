@@ -148,6 +148,7 @@
             // 
             // CBPerfil
             // 
+            CBPerfil.DropDownStyle = ComboBoxStyle.DropDownList;
             CBPerfil.Font = new Font("Britannic Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             CBPerfil.FormattingEnabled = true;
             CBPerfil.Location = new Point(227, 235);
@@ -218,7 +219,7 @@
             TabControlRegUsuarios.Location = new Point(43, 521);
             TabControlRegUsuarios.Name = "TabControlRegUsuarios";
             TabControlRegUsuarios.SelectedIndex = 0;
-            TabControlRegUsuarios.Size = new Size(783, 288);
+            TabControlRegUsuarios.Size = new Size(799, 288);
             TabControlRegUsuarios.TabIndex = 32;
             // 
             // TabPageListaUsuarios
@@ -229,7 +230,7 @@
             TabPageListaUsuarios.Location = new Point(4, 28);
             TabPageListaUsuarios.Name = "TabPageListaUsuarios";
             TabPageListaUsuarios.Padding = new Padding(3);
-            TabPageListaUsuarios.Size = new Size(775, 256);
+            TabPageListaUsuarios.Size = new Size(791, 256);
             TabPageListaUsuarios.TabIndex = 0;
             TabPageListaUsuarios.Text = "Lista de Usuarios";
             TabPageListaUsuarios.UseVisualStyleBackColor = true;
@@ -238,7 +239,7 @@
             // 
             dgvListaUsuarios.AllowUserToAddRows = false;
             dgvListaUsuarios.AllowUserToDeleteRows = false;
-            dgvListaUsuarios.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvListaUsuarios.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             dgvListaUsuarios.BackgroundColor = Color.RosyBrown;
             dgvListaUsuarios.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -278,7 +279,7 @@
             dgvListaUsuarios.RowHeadersWidth = 51;
             dataGridViewCellStyle4.ForeColor = Color.Black;
             dgvListaUsuarios.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            dgvListaUsuarios.Size = new Size(769, 250);
+            dgvListaUsuarios.Size = new Size(785, 250);
             dgvListaUsuarios.TabIndex = 2;
             // 
             // Column8
@@ -287,6 +288,7 @@
             Column8.MinimumWidth = 6;
             Column8.Name = "Column8";
             Column8.ReadOnly = true;
+            Column8.Width = 52;
             // 
             // Column9
             // 
@@ -294,6 +296,7 @@
             Column9.MinimumWidth = 6;
             Column9.Name = "Column9";
             Column9.ReadOnly = true;
+            Column9.Width = 93;
             // 
             // Column11
             // 
@@ -301,6 +304,7 @@
             Column11.MinimumWidth = 6;
             Column11.Name = "Column11";
             Column11.ReadOnly = true;
+            Column11.Width = 85;
             // 
             // Column12
             // 
@@ -308,6 +312,7 @@
             Column12.MinimumWidth = 6;
             Column12.Name = "Column12";
             Column12.ReadOnly = true;
+            Column12.Width = 173;
             // 
             // Column13
             // 
@@ -315,6 +320,7 @@
             Column13.MinimumWidth = 6;
             Column13.Name = "Column13";
             Column13.ReadOnly = true;
+            Column13.Width = 145;
             // 
             // Column14
             // 
@@ -322,6 +328,7 @@
             Column14.MinimumWidth = 6;
             Column14.Name = "Column14";
             Column14.ReadOnly = true;
+            Column14.Width = 76;
             // 
             // Column15
             // 
@@ -329,6 +336,7 @@
             Column15.MinimumWidth = 6;
             Column15.Name = "Column15";
             Column15.ReadOnly = true;
+            Column15.Width = 108;
             // 
             // BRegistrarUsuario
             // 
@@ -345,6 +353,7 @@
             BRegistrarUsuario.TabIndex = 33;
             BRegistrarUsuario.Text = "Registrar";
             BRegistrarUsuario.UseVisualStyleBackColor = false;
+            BRegistrarUsuario.Click += BRegistrarUsuario_Click;
             // 
             // LRegistroUsuario
             // 
@@ -386,6 +395,7 @@
             // 
             // dgvEmpleados
             // 
+            dgvEmpleados.AllowUserToAddRows = false;
             dgvEmpleados.AllowUserToDeleteRows = false;
             dgvEmpleados.BackgroundColor = Color.RosyBrown;
             dgvEmpleados.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
