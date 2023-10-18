@@ -31,14 +31,14 @@ namespace Unitivo.Presentacion.Vendedor
         {
             try
             {
-                ClienteConstructor cliente = new ClienteConstructor(
-                    nombre: TBNombreCliente.Text,
-                    apellido: TBApellidoCliente.Text,
-                    dni: int.Parse(TBDniCliente.Text),
-                    telefono: TBTelCliente.Text,
-                    direccion: TBDireccionCliente.Text,
-                    correo: TBCorreoCliente.Text
-                );
+                Cliente cliente = new Cliente();
+                    cliente.Nombre = TBNombreCliente.Text;
+                    cliente.Apellido = TBApellidoCliente.Text;
+                    cliente.Dni = int.Parse(TBDniCliente.Text);
+                    cliente.Telefono = TBTelCliente.Text;
+                    cliente.Direccion = TBDireccionCliente.Text;
+                    cliente.Correo = TBCorreoCliente.Text;
+                
 
                 if (clienteRepositorio.AgregarCliente(cliente))
                 {

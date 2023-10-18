@@ -113,10 +113,6 @@ namespace Unitivo.Presentacion.Vendedor
                 CargarClientes();
             }
         }
-
-
     }
-
-
 }
 
