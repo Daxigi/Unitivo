@@ -9,36 +9,77 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Unitivo.Presentacion.Logica;
 using Unitivo.Presentacion.Vendedor;
+using Unitivo.Repositorios.Implementaciones;
 
 namespace Unitivo.Presentacion.SuperAdministrador
 {
     public partial class GestionarEmpleados : Form
     {
+        EmpleadoRepositorio empleadoRepositorio = new EmpleadoRepositorio();
+
         public GestionarEmpleados()
         {
             InitializeComponent();
+            CargarEmpleados();
+            // Establecer la selección inicial en la primera opción.
+            // ComboBoxBuscarDni.SelectedIndex = 0;
         }
 
         private void NumStr_KeyPress(object sender, KeyPressEventArgs e)
         {
-            CommonFunctions.ValidarKeyPress((TextBox)sender, e);
+            if(ComboBoxBuscarDni.Text == "DNI")
+            {
+                CommonFunctions.ValidarNumberKeyPress((TextBox)sender, e);
+            } else
+            {
+                CommonFunctions.ValidarStringKeyPress((TextBox)sender, e);
+            }
         }
 
         private void BModificarEmpleado_Click(object sender, EventArgs e)
         {
-            // Crear una instancia del formulario ModificarEmpleado
-            //ModificarEmpleado modificarEmpleadoForm = new ModificarEmpleado();
-
-            // Mostrar el formulario como un cuadro de diálogo modal
-           // DialogResult result = modificarEmpleadoForm.ShowDialog();
-
-            // Aquí puedes realizar acciones después de que se cierre el formulario ModificarEmpleado
-            //if (result == DialogResult.OK)
+            if(dgvEmpleados.SelectedRows.Count > 0)
             {
-                // Por ejemplo, actualizar la lista de empleados o realizar otras acciones necesarias
-                // después de modificar el empleado.
+                int idSeleccionado = Convert.ToInt32(dgvEmpleados.SelectedRows[0].Cells["ID"].Value);   
+
+                ModificarEmpleado modificarEmpleadoForm = new ModificarEmpleado(idSeleccionado);
+
+                DialogResult result = modificarEmpleadoForm.ShowDialog();
+
+                if (result == DialogResult.OK)
+                {
+                    CargarEmpleados();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar una fila para modificar un empleado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; // Salir del método sin realizar ninguna acción adicional.
             }
         }
+
+        private void CargarEmpleados()
+        {
+            List<Modelos.Empleado> empleados = empleadoRepositorio.ListarEmpleados();
+            dgvEmpleados.Rows.Clear();
+            dgvEmpleados.Refresh();
+            foreach (Modelos.Empleado empleado in empleados)
+            {
+                if (empleado.Estado == true)
+                {
+                    dgvEmpleados.Rows.Add(empleado.Id, empleado.Nombre, empleado.Apellido, empleado.Dni, empleado.Telefono, empleado.Direccion, empleado.Correo);
+                }
+                else
+                {
+                    // Agregar la fila con el estado "Inactivo"
+                    int rowIndex = dgvEmpleados.Rows.Add(empleado.Id, empleado.Nombre, empleado.Apellido, empleado.Dni, empleado.Telefono, empleado.Direccion, empleado.Correo, "Inactivo");
+
+                    // Establecer el color de fondo de la fila agregada
+                    dgvEmpleados.Rows[rowIndex].DefaultCellStyle.BackColor = Color.Red;
+                }
+            }
+        }
+
 
         private void BEliminarEmpleado_Click(object sender, EventArgs e)
         {
@@ -48,9 +89,23 @@ namespace Unitivo.Presentacion.SuperAdministrador
                 MessageBox.Show("Debe seleccionar una fila para eliminar un empleado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return; // Salir del método sin realizar ninguna acción adicional.
             }
+            else
+            {
+                int idSeleccionado = Convert.ToInt32(dgvEmpleados.SelectedRows[0].Cells["ID"].Value);
 
-            // Aquí puedes agregar el código para eliminar el producto seleccionado.
+                DialogResult result = MessageBox.Show("¿Está seguro que desea eliminar el empleado seleccionado?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if(result == DialogResult.Yes){
+                    if(empleadoRepositorio.EliminarEmpleado(idSeleccionado))
+                    {
+                        MessageBox.Show("El empleado se eliminó correctamente.", "Empleados", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        CargarEmpleados();
+                    } else
+                    {
+                        MessageBox.Show("Ocurrió un error al eliminar el empleado.", "Empleados", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
         }
-
     }
 }

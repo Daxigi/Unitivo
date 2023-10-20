@@ -38,10 +38,6 @@ namespace Unitivo.Presentacion.Administrador
             }
         }
 
-        private void NumStr_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            CommonFunctions.ValidarKeyPress((TextBox)sender, e);
-        }
 
         private void BModificarCliente_Click(object sender, EventArgs e)
         {
@@ -73,12 +69,21 @@ namespace Unitivo.Presentacion.Administrador
 
         private void CargarClientes()
         {
-            List<Cliente> clientes = clienteRepositorio.ListarClientesActivos();
+            List<Cliente> clientes = clienteRepositorio.ListarClientes();
             DataGridViewListarClientes.Rows.Clear();
             DataGridViewListarClientes.Refresh();
-            foreach (Cliente cliente in clienteRepositorio.ListarClientes())
+            foreach (Cliente cliente in clientes)
             {
-                DataGridViewListarClientes.Rows.Add(cliente.Id, cliente.Nombre, cliente.Apellido, cliente.Dni, cliente.Telefono, cliente.Direccion, cliente.Correo);
+                if(cliente.Estado == true)
+                {
+                    DataGridViewListarClientes.Rows.Add(cliente.Id, cliente.Nombre, cliente.Apellido, cliente.Dni, cliente.Telefono, cliente.Direccion, cliente.Correo);
+                }
+                else 
+                {
+                    int rowIndex = DataGridViewListarClientes.Rows.Add(cliente.Id, cliente.Nombre, cliente.Apellido, cliente.Dni, cliente.Telefono, cliente.Direccion, cliente.Correo, "Inactivo");
+
+                    DataGridViewListarClientes.Rows[rowIndex].DefaultCellStyle.BackColor = Color.Red;
+                }
             }
         }
 
@@ -86,7 +91,6 @@ namespace Unitivo.Presentacion.Administrador
         private void BBuscar_Click(object sender, EventArgs e)
         {
             object parametro = TBBuscar.Text;
-
             if (parametro != null)
             {
                 List<Cliente> clientes = clienteRepositorio.BuscarCliente(parametro);
@@ -139,6 +143,5 @@ namespace Unitivo.Presentacion.Administrador
                 }
             }
         }
-
     }
 }
