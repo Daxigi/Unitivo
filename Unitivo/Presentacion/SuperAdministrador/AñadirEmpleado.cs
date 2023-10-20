@@ -46,32 +46,39 @@ namespace Unitivo.Presentacion.SuperAdministrador
 
         private void BRegistrarEmpleado_Click(object sender, EventArgs e)
         {
-            try
+            if(CommonFunctions.ValidarCamposNoVacios(this))
             {
-                Empleado empleado = new Empleado();
-                empleado.Nombre = TBNombreEmpleado.Text;
-                empleado.Apellido = TBApellidoEmpleado.Text;
-                empleado.Dni = int.Parse(TBDniEmpleado.Text);
-                empleado.Telefono = TBTelEmpleado.Text;
-                empleado.Direccion = TBDireccionEmpleado.Text;
-                empleado.Correo = TBCorreoEmpleado.Text;
-                
+                try
+                {
+                    Empleado empleado = new Empleado();
+                    empleado.Nombre = TBNombreEmpleado.Text;
+                    empleado.Apellido = TBApellidoEmpleado.Text;
+                    empleado.Dni = int.Parse(TBDniEmpleado.Text);
+                    empleado.Telefono = TBTelEmpleado.Text;
+                    empleado.Direccion = TBDireccionEmpleado.Text;
+                    empleado.Correo = TBCorreoEmpleado.Text;
+                    
 
-                if (empleadoRepositorio.AgregarEmpleado(empleado))
-                {
-                    MessageBox.Show("Empleado agregado correctamente");
-                    LimpiarTextBoxs();
-                    CargarEmpleados();
+                    if (empleadoRepositorio.AgregarEmpleado(empleado))
+                    {
+                        MessageBox.Show("Empleado agregado correctamente");
+                        LimpiarTextBoxs();
+                        CargarEmpleados();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al agregar empleado");
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Error al agregar empleado");
+                    // Captura y maneja el error que ocurra en empleadoRepositorio.AgregarEmpleado(empleado)
+                    MessageBox.Show("Error al agregar empleado: " + ex.Message, "Empleado", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            catch (Exception ex)
+            else
             {
-                // Captura y maneja el error que ocurra en empleadoRepositorio.AgregarEmpleado(empleado)
-                MessageBox.Show("Error al agregar empleado: " + ex.Message, "Empleado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Debe completar todos los campos", "Empleado", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -86,7 +93,6 @@ namespace Unitivo.Presentacion.SuperAdministrador
             }
         }
 
-
         // Método para limpiar los TextBox después de agregar un empleado.
         private void LimpiarTextBoxs()
         {
@@ -97,9 +103,5 @@ namespace Unitivo.Presentacion.SuperAdministrador
             TBDireccionEmpleado.Clear();
             TBCorreoEmpleado.Clear();
         }
-
-
-
-
     }
 }

@@ -9,7 +9,7 @@ using Unitivo.Recursos;
 using Unitivo.Repositorios.Interfaces;
 using Unitivo.Sessions;
 using Unitivo.Validators;
-
+using FluentValidation;
 namespace Unitivo.Repositorios.Implementaciones
 {
     public class EmpleadoRepositorio : EmpleadoInterface
@@ -24,22 +24,9 @@ namespace Unitivo.Repositorios.Implementaciones
         public bool AgregarEmpleado(Empleado x){
             try
             {
-                x.FechaCreacion = DateTime.Now;
-                x.Estado = true;
-
-                Empleado empleado = new Empleado();
-
-                empleado.Nombre = x.Nombre;
-                empleado.Apellido = x.Apellido;
-                empleado.Dni = x.Dni;
-                empleado.Correo = x.Correo;
-                empleado.Direccion = x.Direccion;
-                empleado.Telefono = x.Telefono;
-                empleado.FechaCreacion = x.FechaCreacion;
-                empleado.Estado = x.Estado;
-
+                //se valida el modelo
                 var validator = new EmpleadoValidator();
-                var result = validator.Validate(empleado);
+                var result = validator.Validate(x);
 
                 if (!result.IsValid)
                 {
@@ -51,30 +38,35 @@ namespace Unitivo.Repositorios.Implementaciones
                     throw new ValidationException(sb.ToString());
                 }
 
+                // se valida que no exista un empleado con el mismo dni
                 if (BuscarEmpleadosPorDni(x.Dni) != null)
                 {
-                    MessageBox.Show("El DNI ya está asociado a un empleado.", "Empleados", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("El DNI ya estï¿½ asociado a un empleado.", "Empleados", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return false; // Retorna false si ya existe un empleado con el mismo DNI
                 }
-                // Validar que el correo sea único
+                // Validar que el correo sea ï¿½nico
 
                 if (BuscarEmpleadosPorMail(x.Correo) != null)
                 {
-                    MessageBox.Show("El correo ya está asociado a un empleado.", "Empleados", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("El correo ya estï¿½ asociado a un empleado.", "Empleados", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return false; // Retorna false si ya existe un empleado con el mismo correo
                 }
+                
+                // se agregan los demas campos obligatorios
+                x.FechaCreacion = DateTime.Now;
+                x.Estado = true;
 
                 // Agrega el empleado al contexto de Entity Framework
 
-                _contexto?.Empleados.Add(empleado);
+                _contexto?.Empleados.Add(x);
                 _contexto?.SaveChanges();
 
-                // Retorna true si el empleado se agregó con éxito
+                // Retorna true si el empleado se agregï¿½ con ï¿½xito
                 return true;
             }
             catch (Exception ex)
             {
-                // Retorna false si hubo un error durante la inserción
+                // Retorna false si hubo un error durante la inserciï¿½n
                 MessageBox.Show(ex.Message, "Clientes", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
@@ -99,8 +91,20 @@ namespace Unitivo.Repositorios.Implementaciones
            return _contexto?.Empleados.Find(id)!;
         }
         
+        public Empleado BuscarEmpleadosPorDni(int id){
+           return _contexto?.Empleados.Find(id)!;
+        }
+
+        public Empleado BuscarEmpleadosPorMail(string correo){
+           return _contexto?.Empleados.Find(correo)!;
+        }
+        
         public List<Empleado> ListarEmpleados(){
             return _contexto?.Empleados.ToList()!;
+        }
+    
+        public List<Empleado> ListarEmpleadosActivos(){
+            return _contexto?.Empleados.Where(c => c.Estado == true).ToList()!;
         }
     }
 }

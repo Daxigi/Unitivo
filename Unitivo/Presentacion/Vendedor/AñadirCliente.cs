@@ -29,32 +29,37 @@ namespace Unitivo.Presentacion.Vendedor
 
         private void BRegistrarCliente_Click(object sender, EventArgs e)
         {
-            try
+            if (CommonFunctions.ValidarCamposNoVacios(this))
             {
-                ClienteConstructor cliente = new ClienteConstructor(
-                    nombre: TBNombreCliente.Text,
-                    apellido: TBApellidoCliente.Text,
-                    dni: int.Parse(TBDniCliente.Text),
-                    telefono: TBTelCliente.Text,
-                    direccion: TBDireccionCliente.Text,
-                    correo: TBCorreoCliente.Text
-                );
+                try
+                {
+                    Cliente cliente = new Cliente();
+                        cliente.Nombre = TBNombreCliente.Text;
+                        cliente.Apellido = TBApellidoCliente.Text;
+                        cliente.Dni = int.Parse(TBDniCliente.Text);
+                        cliente.Telefono = TBTelCliente.Text;
+                        cliente.Direccion = TBDireccionCliente.Text;
+                        cliente.Correo = TBCorreoCliente.Text;
 
-                if (clienteRepositorio.AgregarCliente(cliente))
-                {
-                    MessageBox.Show("Cliente agregado correctamente");
-                    LimpiarTextBox();
-                    CargarClientes();
+                    if (clienteRepositorio.AgregarCliente(cliente))
+                    {
+                        MessageBox.Show("Cliente agregado correctamente");
+                        LimpiarTextBox();
+                        CargarClientes();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al agregar cliente");
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Error al agregar cliente");
+                    // Captura y maneja el error que ocurra en clienteRepositorio.AgregarCliente(cliente)
+                    MessageBox.Show("Error al agregar cliente: " + ex.Message, "Clientes", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            }
-            catch (Exception ex)
+            }else
             {
-                // Captura y maneja el error que ocurra en clienteRepositorio.AgregarCliente(cliente)
-                MessageBox.Show("Error al agregar cliente: " + ex.Message, "Clientes", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Debe completar todos los campos", "Clientes", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

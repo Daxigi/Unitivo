@@ -21,24 +21,10 @@ namespace Unitivo.Repositorios.Implementaciones
         {
             try
             {
-                x.FechaCreacion = DateTime.Now;
-                x.Estado = true;
-                x.UsuarioCreacion = Session.idUsuario;
 
-                Cliente cliente = new Cliente();
-
-                cliente.Nombre = x.Nombre;
-                cliente.Apellido = x.Apellido;
-                cliente.Dni = x.Dni;
-                cliente.Correo = x.Correo;
-                cliente.Direccion = x.Direccion;
-                cliente.Telefono = x.Telefono;
-                cliente.FechaCreacion = x.FechaCreacion;
-                cliente.Estado = x.Estado;
-                cliente.UsuarioCreacion = x.UsuarioCreacion;
 
                 var validator = new ClienteValidators();
-                var result = validator.Validate(cliente);
+                var result = validator.Validate(x);
 
                 if (!result.IsValid)
                 {
@@ -63,9 +49,13 @@ namespace Unitivo.Repositorios.Implementaciones
                     return false; // Retorna false si ya existe un cliente con el mismo correo
                 }
 
+                
+                x.FechaCreacion = DateTime.Now;
+                x.Estado = true;
+                x.UsuarioCreacion = Session.idUsuario;
                 // Agrega el cliente al contexto de Entity Framework
 
-                _contexto?.Clientes.Add(cliente);
+                _contexto?.Clientes.Add(x);
                 _contexto?.SaveChanges();
 
                 // Retorna true si el cliente se agregó con éxito

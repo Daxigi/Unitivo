@@ -16,7 +16,6 @@ namespace Unitivo.Presentacion.Vendedor
 {
     public partial class ModificarCliente : Form
     {
-        public int fila;
         ClienteRepositorio clienteRepositorio = new ClienteRepositorio();
 
         //Valores del cliente

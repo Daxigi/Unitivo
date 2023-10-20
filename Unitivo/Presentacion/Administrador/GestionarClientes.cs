@@ -111,16 +111,33 @@ namespace Unitivo.Presentacion.Administrador
             }
         }
 
-        private void BEliminarClientes_Click(object sender, EventArgs e)
+         private void BEliminarClientes_Click(object sender, EventArgs e)
         {
             if (DataGridViewListarClientes.SelectedRows.Count == 0)
             {
                 // No hay una fila seleccionada en el dgvEmpleados, muestra un mensaje de error.
                 MessageBox.Show("Debe seleccionar una fila para eliminar un cliente.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return; // Salir del método sin realizar ninguna acción adicional.
-            }
+            } else
+            {
+                // Obtén el ID del cliente seleccionado
+                int idSeleccionado = Convert.ToInt32(DataGridViewListarClientes.SelectedRows[0].Cells["ID"].Value);
 
-            // Aquí puedes agregar el código para eliminar el producto seleccionado.
+                DialogResult result = MessageBox.Show("¿Está seguro que desea eliminar el cliente seleccionado?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    if(clienteRepositorio.EliminarCliente(idSeleccionado))
+                    {
+
+                        MessageBox.Show("El cliente se eliminó correctamente.", "Clientes", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        CargarClientes();
+                    } else
+                    {
+                        MessageBox.Show("Ocurrió un error al eliminar el cliente.", "Clientes", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
         }
 
     }

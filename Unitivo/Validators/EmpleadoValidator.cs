@@ -42,6 +42,12 @@ namespace Unitivo.Validators
                 .NotEmpty().WithMessage("El campo Direccion es obligatorio")
                 .Length(3, 50).WithMessage("El campo Direccion debe tener entre 3 y 50 caracteres")
                 ;
+            //rule para valdidar la edad, es un campo date
+            RuleFor(x => x.Edad)
+                .NotEmpty().WithMessage("El campo Edad es obligatorio")
+                .Must(x => (DateTime.Now - x).TotalDays / 365 <= 60).WithMessage("El Empleado debe ser menor a 60 años")
+                .Must(x => (DateTime.Now - x).TotalDays / 365 >= 18).WithMessage("El Empleado debe ser mayor de edad")
+                ;
         }
     }
 }

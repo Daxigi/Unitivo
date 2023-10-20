@@ -26,11 +26,13 @@ namespace Unitivo.Presentacion.SuperAdministrador
         private string? direccionOriginal;
         private string? correoOriginal;
 
+        private DateTime? EdadOriginal;
+
 
         public ModificarEmpleado(int id)
         {
             InitializeComponent();
-            MostrarEmpleado(empleadoRepositorio.BuscarEmpleadoPorId(id));
+            MostrarEmpleado(empleadoRepositorio.buscarEmpleado(id));
         }
 
         private void String_KeyPress(object sender, KeyPressEventArgs e)
@@ -78,7 +80,6 @@ namespace Unitivo.Presentacion.SuperAdministrador
 
             TBCorreoEmpleado.Text = empleado.Correo;
             correoOriginal = empleado.Correo;
-
         }
 
         private void BModEmpleado_Click(object sender, EventArgs e)
@@ -125,7 +126,5 @@ namespace Unitivo.Presentacion.SuperAdministrador
                 MessageBox.Show("No se han realizado cambios.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
-
     }
 }

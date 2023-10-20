@@ -91,7 +91,7 @@ namespace Unitivo.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Server=localhost;Database=Unitivo;Integrated Security=True;Trust Server Certificate=True;.
+        ///   Busca una cadena traducida similar a Server=(localdb)\localhost;Database=Unitivo;Integrated Security=True;Trust Server Certificate=True;.
         /// </summary>
         internal static string DB_ConnectionString {
             get {

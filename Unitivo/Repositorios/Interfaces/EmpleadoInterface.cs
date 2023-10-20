@@ -16,12 +16,13 @@ namespace Unitivo.Repositorios.Interfaces{
 
         public Empleado buscarEmpleado(int id);
 
-        public List<Empleado> ListarEmpleados();
 
-        public Empleado BuscarEmpleadoPorId(int id);
-
-        public Empleado BuscarEmpleadosPorDni();
+        public Empleado BuscarEmpleadosPorDni(int id);
 
         public Empleado BuscarEmpleadosPorMail(string mail);
+
+        public List<Empleado> ListarEmpleados();
+
+        public List<Empleado> ListarEmpleadosActivos();
     }
 }
