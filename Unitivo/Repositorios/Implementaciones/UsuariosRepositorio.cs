@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,6 +10,7 @@ using Unitivo.Modelos;
 using Unitivo.Recursos;
 using Unitivo.Repositorios.Interfaces;
 using Unitivo.Sessions;
+using Unitivo.Validators;
 
 namespace Unitivo.Repositorios.Implementaciones
 {
@@ -25,9 +27,32 @@ namespace Unitivo.Repositorios.Implementaciones
 
             LocalStorage.empleados = _contexto?.Empleados.ToList();
         }
-        public void AgregarUsuario(Usuario usuario)
+        public bool AgregarUsuario(Usuario x)
         {
-            _contexto?.Usuarios.Add(usuario);
+            try{
+                var validator = new UsuarioValidator();
+                var result = validator.Validate(x);
+                if(!result.IsValid){
+                    StringBuilder sb = new StringBuilder();
+                    foreach(var failure in result.Errors)
+                    {
+                        sb.AppendLine($"{failure.PropertyName}: {failure.ErrorMessage}");
+                    }
+                    throw new ValidationException(sb.ToString());
+                }
+
+
+                if(_contexto?.Usuarios.Find(x.IdEmpleadoNavigation.Correo)){
+                    
+                }
+
+
+                _contexto?.Usuarios.Add(x);
+                return true;
+            }
+            catch{
+                return false;
+            }
         }
 
         public Usuario BuscarUsuario(int id)
@@ -55,11 +80,15 @@ namespace Unitivo.Repositorios.Implementaciones
             return LocalStorage.usuarios!;
         }
 
+        public List<Usuario> ListarUsuariosActivos()
+        {
+            return _contexto?.Usuarios.Where(u => u.Estado == true).ToList()!;
+        }
         public bool ModificarUsuario(Usuario usuario)
         {
             _contexto?.Usuarios.Update(usuario);
             int resultado = _contexto?.SaveChanges() ?? 0;
             return resultado > 0;
         }
-    }
+    }         
 }

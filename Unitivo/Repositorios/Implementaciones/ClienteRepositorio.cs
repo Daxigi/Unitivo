@@ -21,8 +21,6 @@ namespace Unitivo.Repositorios.Implementaciones
         {
             try
             {
-
-
                 var validator = new ClienteValidators();
                 var result = validator.Validate(x);
 
@@ -48,7 +46,6 @@ namespace Unitivo.Repositorios.Implementaciones
                     MessageBox.Show("El correo ya está asociado a un cliente.", "Clientes", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return false; // Retorna false si ya existe un cliente con el mismo correo
                 }
-
                 
                 x.FechaCreacion = DateTime.Now;
                 x.Estado = true;
