@@ -10,13 +10,12 @@ namespace Unitivo.Repositorio.Interfaces
 {
     public interface PerfilInterface
     {
-        public bool AgregarPerfile(Perfile Perfile);
-        public bool EliminarPerfile(int id);
-        public bool ModificarPerfile(Perfile Perfile);
-        public Perfile BuscarClientPorId(int id);
+        public bool AgregarPerfil(Perfile Perfile);
+        public bool EliminarPerfil(int id);
+        public bool ModificarPerfil(Perfile Perfile);
+        public Perfile BuscarPerfilPorId(int id);
 
-        public Perfile BuscarPerfilePorMail(string mail);   
-        public List<Perfile> BuscarPerfile(object parametro);
+        public List<Perfile> BuscarPerfil(string nombre);
         public List<Perfile> ListarPerfiles();
         public List<Perfile> ListarPerfilesActivos();
     }

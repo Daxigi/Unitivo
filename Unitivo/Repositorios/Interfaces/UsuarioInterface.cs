@@ -15,7 +15,9 @@ namespace Unitivo.Repositorios.Interfaces
 
         public bool ModificarUsuario(Usuario usuario);
 
-        public Usuario BuscarUsuario(int id);
+        public Usuario BuscarUsuarioPorId(int id);
+
+        public List<Usuario> BuscarUsuario(object parametro);
 
         public List<Usuario> ListarUsuarios();
 

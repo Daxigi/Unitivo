@@ -24,9 +24,8 @@ namespace Unitivo.Repositorios.Implementaciones
 
         private void CargarEmpleados(){
             _contexto?.Empleados.Load();
-
-            LocalStorage.empleados = _contexto?.Empleados.ToList();
         }
+        
         public bool AgregarUsuario(Usuario x)
         {
             try{
@@ -41,11 +40,13 @@ namespace Unitivo.Repositorios.Implementaciones
                     throw new ValidationException(sb.ToString());
                 }
 
-
-                if(_contexto?.Usuarios.Find(x.IdEmpleadoNavigation.Correo)){
-                    
+                //necesito verificar que un correo no este asociado a una cuenta existente
+                if(_contexto?.Usuarios.Any(u => u.NombreUsuario == x.NombreUsuario) ?? false){
+                    throw new ValidationException("El nombre de usuario ya existe en la base de datos");
                 }
 
+                x.Estado = true;
+                x.FechaCreacion = DateTime.Now;
 
                 _contexto?.Usuarios.Add(x);
                 return true;
@@ -55,11 +56,26 @@ namespace Unitivo.Repositorios.Implementaciones
             }
         }
 
-        public Usuario BuscarUsuario(int id)
+        public Usuario BuscarUsuarioPorId(int id)
         {
             return _contexto?.Usuarios.Find(id)!;
         }
 
+        public List<Usuario> BuscarUsuario(object parametro){
+            if(int.TryParse(parametro.ToString(), out int id)){
+                List<Usuario> usuarios = _contexto?.Usuarios.Where(u => u.Id == id).ToList()!;
+                return usuarios;
+            }
+            else if( parametro is string)
+            {
+                string cadena = (string)parametro;
+                return _contexto?.Usuarios.Where(u => u.NombreUsuario!.Contains(cadena)).ToList()!;
+            }
+            else{
+                return new List<Usuario>();
+            }
+        }
+    
         public bool EliminarUsuario(int id)
         {
             Usuario? usuario = _contexto?.Usuarios.Find(id);
@@ -71,13 +87,7 @@ namespace Unitivo.Repositorios.Implementaciones
 
         public List<Usuario> ListarUsuarios()
         {
-            if(LocalStorage.empleados.IsNullOrEmpty()){
-                CargarEmpleados();
-            }
-            if(LocalStorage.usuarios.IsNullOrEmpty()){
-                LocalStorage.usuarios = _contexto?.Usuarios.ToList();
-            }
-            return LocalStorage.usuarios!;
+            return _contexto?.Usuarios.ToList()!;
         }
 
         public List<Usuario> ListarUsuariosActivos()

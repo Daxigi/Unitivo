@@ -14,7 +14,7 @@ namespace Unitivo.Validators
 
         EmpleadoRepositorio empleadoRepositorio = new EmpleadoRepositorio();
 
-    
+        PerfilRepositorio perfilRepositorio = new PerfilRepositorio();    
 
         public UsuarioValidator()
         {
@@ -23,21 +23,24 @@ namespace Unitivo.Validators
             RuleFor(x => x.NombreUsuario)
                 .NotEmpty().WithMessage("El campo Nombre es obligatorio")
                 .Length(3, 50).WithMessage("El campo Nombre debe tener entre 3 y 50 caracteres")
+                .Must(ExisteNombreUsuario).WithMessage("El nombre de usuario ya existe en la base de datos")
                 ;
-            //validar apellido
+            //validar password
             RuleFor(x => x.Password)
                 .NotEmpty().WithMessage("El campo Password es obligatorio")
-                .Length(3, 50).WithMessage("El campo Apellido debe tener entre 3 y 50 caracteres")
+                .Length(10, 50).WithMessage("El password debe contener al menos 10 caracteres")
+                .Matches(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{10,50}$").WithMessage("El password debe tener al menos una mayuscula, y un caracter especial")
                 ;
             //validar IdPerfil
             RuleFor(x => x.IdPerfil)
                 .NotEmpty().WithMessage("El campo IDPerfil es obligatorio")
                 .Must(x => x > 0).WithMessage("El campo IDPerfil debe ser mayor a 0")
-                //El idPerfil debe existir en la base de datos, en la tabla perfiles
+                .Must(ExistePerfil).WithMessage("El perfil no existe en la base de datos")
                 ;
-            //validar telefono
+            //validar idEmpleado
             RuleFor(x => x.IdEmpleado)
-                .NotEmpty().WithMessage("El campo Telefono es obligatorio")
+                .NotEmpty().WithMessage("El campo id es obligatorio")
+                .Must(ExisteId).WithMessage("El empleado no existe en la base de datos");
                 ;
         }
 
@@ -51,8 +54,19 @@ namespace Unitivo.Validators
         }
         private bool ExistePerfil(int idPerfil)
         {
-            // var perfiles = perfilesRepositorio.ObtenerPerfiles();
-            return true;
+            if(perfilRepositorio.BuscarPerfilPorId(idPerfil) != null){
+                return true;
+            }else{
+                return true;
+            }
+        }
+        private bool ExisteId(int id)
+        {
+            if(empleadoRepositorio.buscarEmpleado(id) != null){
+                return true;
+            }else{
+                return true;
+            }
         }
     }
 }

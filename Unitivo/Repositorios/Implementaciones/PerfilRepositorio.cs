@@ -17,7 +17,7 @@ namespace Unitivo.Repositorios.Implementaciones
             _contexto = Contexto.dbContexto;
         }    
         
-        public bool AgregarPerfile(Perfile Perfile){
+        public bool AgregarPerfil(Perfile Perfile){
             try{
                 return true;
             }   
@@ -26,21 +26,18 @@ namespace Unitivo.Repositorios.Implementaciones
                 return false;
             } 
         }
-        public bool EliminarPerfile(int id){
+        public bool EliminarPerfil(int id){
             return true;
         }
-        public bool ModificarPerfile(Perfile Perfile){
+        public bool ModificarPerfil(Perfile Perfile){
             return true;
         }
-        public Perfile BuscarClientPorId(int id){
+        public Perfile BuscarPerfilPorId(int id){
             Perfile perfil = _contexto?.Perfiles.Find(id)!;
             return perfil;
+        
         }
-
-        public Perfile BuscarPerfilePorMail(string mail){
-            Perfile perfil = _contexto?.Perfiles.Find(mail)!;
-            return perfil;
-        }
+        
         public List<Perfile> BuscarPerfil(string nombre){
             List<Perfile> perfiles = _contexto?.Perfiles.Where(x => x.DescripcionPerfil.Contains(nombre)).ToList()!;
             return perfiles;
