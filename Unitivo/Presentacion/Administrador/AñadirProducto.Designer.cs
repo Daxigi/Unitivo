@@ -49,7 +49,7 @@
             CBCategoria = new ComboBox();
             BAñadirProducto = new Button();
             CBMarca = new ComboBox();
-            LMarca = new Label();
+            LImagen = new Label();
             CBTalle = new ComboBox();
             Label6 = new Label();
             Label3 = new Label();
@@ -59,6 +59,7 @@
             TBPrecio = new TextBox();
             Label4 = new Label();
             TBStock = new TextBox();
+            panel3 = new Panel();
             TabControlListaProductos.SuspendLayout();
             TabPageListaProducto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)DataGridViewListaProductos).BeginInit();
@@ -70,11 +71,11 @@
             // 
             TabControlListaProductos.Controls.Add(TabPageListaProducto);
             TabControlListaProductos.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            TabControlListaProductos.Location = new Point(425, 40);
+            TabControlListaProductos.Location = new Point(34, 382);
             TabControlListaProductos.Margin = new Padding(2, 3, 2, 3);
             TabControlListaProductos.Name = "TabControlListaProductos";
             TabControlListaProductos.SelectedIndex = 0;
-            TabControlListaProductos.Size = new Size(634, 661);
+            TabControlListaProductos.Size = new Size(1019, 293);
             TabControlListaProductos.TabIndex = 17;
             // 
             // TabPageListaProducto
@@ -87,7 +88,7 @@
             TabPageListaProducto.Margin = new Padding(2, 3, 2, 3);
             TabPageListaProducto.Name = "TabPageListaProducto";
             TabPageListaProducto.Padding = new Padding(2, 3, 2, 3);
-            TabPageListaProducto.Size = new Size(626, 628);
+            TabPageListaProducto.Size = new Size(1011, 260);
             TabPageListaProducto.TabIndex = 0;
             TabPageListaProducto.Text = "Lista de Producto";
             TabPageListaProducto.UseVisualStyleBackColor = true;
@@ -128,7 +129,7 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             DataGridViewListaProductos.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             DataGridViewListaProductos.RowHeadersWidth = 51;
-            DataGridViewListaProductos.Size = new Size(622, 622);
+            DataGridViewListaProductos.Size = new Size(1007, 254);
             DataGridViewListaProductos.TabIndex = 7;
             // 
             // Column2
@@ -214,29 +215,30 @@
             DataGridViewRegistroCategorias.RowHeadersWidth = 51;
             dataGridViewCellStyle6.ForeColor = Color.Black;
             DataGridViewRegistroCategorias.RowsDefaultCellStyle = dataGridViewCellStyle6;
-            DataGridViewRegistroCategorias.Size = new Size(622, 622);
+            DataGridViewRegistroCategorias.Size = new Size(1007, 254);
             DataGridViewRegistroCategorias.TabIndex = 2;
             // 
             // Label1
             // 
             Label1.AutoSize = true;
             Label1.BackColor = Color.Cornsilk;
-            Label1.Font = new Font("Microsoft Sans Serif", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            Label1.Font = new Font("Cooper Black", 25.8000011F, FontStyle.Regular, GraphicsUnit.Point);
             Label1.ForeColor = Color.DarkOliveGreen;
-            Label1.Location = new Point(66, 40);
+            Label1.Location = new Point(318, 31);
             Label1.Margin = new Padding(6, 0, 6, 0);
             Label1.Name = "Label1";
-            Label1.Size = new Size(279, 39);
+            Label1.Size = new Size(425, 50);
             Label1.TabIndex = 15;
             Label1.Text = "Añadir Producto :";
             // 
             // Panel2
             // 
             Panel2.BackColor = Color.Cornsilk;
-            Panel2.Controls.Add(CBCategoria);
+            Panel2.Controls.Add(panel3);
             Panel2.Controls.Add(BAñadirProducto);
+            Panel2.Controls.Add(CBCategoria);
             Panel2.Controls.Add(CBMarca);
-            Panel2.Controls.Add(LMarca);
+            Panel2.Controls.Add(LImagen);
             Panel2.Controls.Add(CBTalle);
             Panel2.Controls.Add(Label6);
             Panel2.Controls.Add(Label3);
@@ -246,17 +248,17 @@
             Panel2.Controls.Add(TBPrecio);
             Panel2.Controls.Add(Label4);
             Panel2.Controls.Add(TBStock);
-            Panel2.Location = new Point(34, 113);
+            Panel2.Location = new Point(34, 122);
             Panel2.Margin = new Padding(2, 3, 2, 3);
             Panel2.Name = "Panel2";
-            Panel2.Size = new Size(338, 588);
+            Panel2.Size = new Size(1019, 211);
             Panel2.TabIndex = 16;
             // 
             // CBCategoria
             // 
             CBCategoria.DropDownStyle = ComboBoxStyle.DropDownList;
             CBCategoria.FormattingEnabled = true;
-            CBCategoria.Location = new Point(137, 131);
+            CBCategoria.Location = new Point(139, 88);
             CBCategoria.Margin = new Padding(2, 3, 2, 3);
             CBCategoria.Name = "CBCategoria";
             CBCategoria.Size = new Size(174, 28);
@@ -267,7 +269,7 @@
             BAñadirProducto.BackColor = Color.DarkOliveGreen;
             BAñadirProducto.Font = new Font("Microsoft Sans Serif", 13F, FontStyle.Regular, GraphicsUnit.Point);
             BAñadirProducto.ForeColor = Color.White;
-            BAñadirProducto.Location = new Point(96, 470);
+            BAñadirProducto.Location = new Point(883, 86);
             BAñadirProducto.Margin = new Padding(2, 3, 2, 3);
             BAñadirProducto.Name = "BAñadirProducto";
             BAñadirProducto.Size = new Size(120, 63);
@@ -280,30 +282,30 @@
             // 
             CBMarca.DropDownStyle = ComboBoxStyle.DropDownList;
             CBMarca.FormattingEnabled = true;
-            CBMarca.Location = new Point(137, 379);
+            CBMarca.Location = new Point(463, 148);
             CBMarca.Margin = new Padding(2, 3, 2, 3);
             CBMarca.Name = "CBMarca";
             CBMarca.Size = new Size(174, 28);
             CBMarca.TabIndex = 14;
             // 
-            // LMarca
+            // LImagen
             // 
-            LMarca.AutoSize = true;
-            LMarca.BackColor = Color.Cornsilk;
-            LMarca.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            LMarca.ForeColor = Color.SaddleBrown;
-            LMarca.Location = new Point(17, 380);
-            LMarca.Margin = new Padding(6, 0, 6, 0);
-            LMarca.Name = "LMarca";
-            LMarca.Size = new Size(91, 29);
-            LMarca.TabIndex = 13;
-            LMarca.Text = "Marca: ";
+            LImagen.AutoSize = true;
+            LImagen.BackColor = Color.Cornsilk;
+            LImagen.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            LImagen.ForeColor = Color.SaddleBrown;
+            LImagen.Location = new Point(343, 149);
+            LImagen.Margin = new Padding(6, 0, 6, 0);
+            LImagen.Name = "LImagen";
+            LImagen.Size = new Size(105, 29);
+            LImagen.TabIndex = 13;
+            LImagen.Text = "Imagen: ";
             // 
             // CBTalle
             // 
             CBTalle.DropDownStyle = ComboBoxStyle.DropDownList;
             CBTalle.FormattingEnabled = true;
-            CBTalle.Location = new Point(137, 321);
+            CBTalle.Location = new Point(463, 90);
             CBTalle.Margin = new Padding(2, 3, 2, 3);
             CBTalle.Name = "CBTalle";
             CBTalle.Size = new Size(174, 28);
@@ -315,7 +317,7 @@
             Label6.BackColor = Color.Cornsilk;
             Label6.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             Label6.ForeColor = Color.SaddleBrown;
-            Label6.Location = new Point(15, 320);
+            Label6.Location = new Point(341, 89);
             Label6.Margin = new Padding(6, 0, 6, 0);
             Label6.Name = "Label6";
             Label6.Size = new Size(80, 29);
@@ -328,7 +330,7 @@
             Label3.BackColor = Color.Cornsilk;
             Label3.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             Label3.ForeColor = Color.SaddleBrown;
-            Label3.Location = new Point(15, 129);
+            Label3.Location = new Point(17, 86);
             Label3.Margin = new Padding(6, 0, 6, 0);
             Label3.Name = "Label3";
             Label3.Size = new Size(130, 29);
@@ -337,7 +339,7 @@
             // 
             // TBNombreProducto
             // 
-            TBNombreProducto.Location = new Point(137, 71);
+            TBNombreProducto.Location = new Point(139, 28);
             TBNombreProducto.Margin = new Padding(6, 7, 6, 7);
             TBNombreProducto.Name = "TBNombreProducto";
             TBNombreProducto.Size = new Size(174, 27);
@@ -350,7 +352,7 @@
             Label2.BackColor = Color.Cornsilk;
             Label2.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             Label2.ForeColor = Color.SaddleBrown;
-            Label2.Location = new Point(15, 68);
+            Label2.Location = new Point(17, 25);
             Label2.Margin = new Padding(6, 0, 6, 0);
             Label2.Name = "Label2";
             Label2.Size = new Size(107, 29);
@@ -363,7 +365,7 @@
             Label5.BackColor = Color.Cornsilk;
             Label5.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             Label5.ForeColor = Color.SaddleBrown;
-            Label5.Location = new Point(15, 257);
+            Label5.Location = new Point(343, 28);
             Label5.Margin = new Padding(6, 0, 6, 0);
             Label5.Name = "Label5";
             Label5.Size = new Size(95, 29);
@@ -372,7 +374,7 @@
             // 
             // TBPrecio
             // 
-            TBPrecio.Location = new Point(137, 259);
+            TBPrecio.Location = new Point(463, 28);
             TBPrecio.Margin = new Padding(6, 7, 6, 7);
             TBPrecio.Name = "TBPrecio";
             TBPrecio.Size = new Size(174, 27);
@@ -385,7 +387,7 @@
             Label4.BackColor = Color.Cornsilk;
             Label4.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             Label4.ForeColor = Color.SaddleBrown;
-            Label4.Location = new Point(15, 193);
+            Label4.Location = new Point(17, 150);
             Label4.Margin = new Padding(6, 0, 6, 0);
             Label4.Name = "Label4";
             Label4.Size = new Size(79, 29);
@@ -394,12 +396,21 @@
             // 
             // TBStock
             // 
-            TBStock.Location = new Point(137, 196);
+            TBStock.Location = new Point(139, 153);
             TBStock.Margin = new Padding(6, 7, 6, 7);
             TBStock.Name = "TBStock";
             TBStock.Size = new Size(174, 27);
             TBStock.TabIndex = 7;
             TBStock.KeyPress += Num_KeyPress;
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.Orange;
+            panel3.Location = new Point(691, 37);
+            panel3.Margin = new Padding(2, 3, 2, 3);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(161, 142);
+            panel3.TabIndex = 18;
             // 
             // AñadirProducto
             // 
@@ -433,7 +444,7 @@
         internal ComboBox CBCategoria;
         internal Button BAñadirProducto;
         internal ComboBox CBMarca;
-        internal Label LMarca;
+        internal Label LImagen;
         internal ComboBox CBTalle;
         internal Label Label6;
         internal Label Label3;
@@ -451,6 +462,8 @@
         internal DataGridViewTextBoxColumn Talle;
 
         #endregion
+
+        internal Panel panel3;
     }
 
 
