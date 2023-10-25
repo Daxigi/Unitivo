@@ -43,8 +43,7 @@ namespace Unitivo.Presentacion.Administrador
                 CBCategoria.SelectedIndex == -1 ||
                 string.IsNullOrWhiteSpace(TBStock.Text) ||
                 string.IsNullOrWhiteSpace(TBPrecio.Text) ||
-                CBTalle.SelectedIndex == -1 ||
-                CBMarca.SelectedIndex == -1)
+                CBTalle.SelectedIndex == -1 
             {
                 // Mostrar un mensaje de error si al menos un campo está vacío.
                 MessageBox.Show("Todos los campos son obligatorios. Por favor, complete todos los campos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
