@@ -38,5 +38,6 @@ namespace Unitivo.Validators
             RuleFor(x => x.Imagen)
                 .NotEmpty().WithMessage("El campo Imagen es obligatorio")
                 ;
+        }
     }
 }
