@@ -46,6 +46,8 @@
             DataGridViewRegistroCategorias = new DataGridView();
             Label1 = new Label();
             Panel2 = new Panel();
+            BAgregarImagen = new Button();
+            pictureBoxProducto = new PictureBox();
             BAñadirProducto = new Button();
             CBCategoria = new ComboBox();
             LImagen = new Label();
@@ -58,8 +60,6 @@
             TBPrecio = new TextBox();
             Label4 = new Label();
             TBStock = new TextBox();
-            pictureBoxProducto = new PictureBox();
-            BAgregarImagen = new Button();
             TabControlListaProductos.SuspendLayout();
             TabPageListaProducto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)DataGridViewListaProductos).BeginInit();
@@ -255,6 +255,25 @@
             Panel2.Size = new Size(1019, 211);
             Panel2.TabIndex = 16;
             // 
+            // BAgregarImagen
+            // 
+            BAgregarImagen.Location = new Point(457, 153);
+            BAgregarImagen.Name = "BAgregarImagen";
+            BAgregarImagen.Size = new Size(180, 29);
+            BAgregarImagen.TabIndex = 20;
+            BAgregarImagen.Text = "Agregar";
+            BAgregarImagen.UseVisualStyleBackColor = true;
+            BAgregarImagen.Click += btnCargarImagen_Click;
+            // 
+            // pictureBoxProducto
+            // 
+            pictureBoxProducto.BackColor = Color.RosyBrown;
+            pictureBoxProducto.Location = new Point(700, 45);
+            pictureBoxProducto.Name = "pictureBoxProducto";
+            pictureBoxProducto.Size = new Size(142, 122);
+            pictureBoxProducto.TabIndex = 19;
+            pictureBoxProducto.TabStop = false;
+            // 
             // BAñadirProducto
             // 
             BAñadirProducto.BackColor = Color.DarkOliveGreen;
@@ -393,24 +412,6 @@
             TBStock.Size = new Size(174, 27);
             TBStock.TabIndex = 7;
             TBStock.KeyPress += Num_KeyPress;
-            // 
-            // pictureBoxProducto
-            // 
-            pictureBoxProducto.BackColor = Color.RosyBrown;
-            pictureBoxProducto.Location = new Point(700, 45);
-            pictureBoxProducto.Name = "pictureBoxProducto";
-            pictureBoxProducto.Size = new Size(142, 122);
-            pictureBoxProducto.TabIndex = 19;
-            pictureBoxProducto.TabStop = false;
-            // 
-            // BAgregarImagen
-            // 
-            BAgregarImagen.Location = new Point(457, 153);
-            BAgregarImagen.Name = "BAgregarImagen";
-            BAgregarImagen.Size = new Size(180, 29);
-            BAgregarImagen.TabIndex = 20;
-            BAgregarImagen.Text = "Agregar";
-            BAgregarImagen.UseVisualStyleBackColor = true;
             // 
             // AñadirProducto
             // 

@@ -23,6 +23,7 @@ namespace Unitivo.Presentacion.Administrador
         public AñadirProducto()
         {
             InitializeComponent();
+            AñadirProducto_Load();
             productoRepositorio = new ProductoRepositorio();
         }
 
@@ -40,9 +41,10 @@ namespace Unitivo.Presentacion.Administrador
 
         private void BAñadirProducto_Click(object sender, EventArgs e)
         {
-           if(verificarCamposNulos()){
+            if (verificarCamposNulos())
+            {
 
-           }
+            }
         }
 
         private void btnCargarImagen_Click(object sender, EventArgs e)
@@ -53,7 +55,7 @@ namespace Unitivo.Presentacion.Administrador
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     rutaImagenProducto = openFileDialog.FileName;
-                    // pictureBoxProducto.Image = Image.FromFile(rutaImagenProducto);
+                    pictureBoxProducto.Image = Image.FromFile(rutaImagenProducto);
                 }
             }
         }
@@ -71,8 +73,9 @@ namespace Unitivo.Presentacion.Administrador
             CBTalle.ValueMember = "Id";
         }
 
-        private bool verificarCamposNulos(){
-             // Verificar si algún TextBox está vacío.
+        private bool verificarCamposNulos()
+        {
+            // Verificar si algún TextBox está vacío.
             if (string.IsNullOrWhiteSpace(TBNombreProducto.Text) ||
                 CBCategoria.SelectedIndex == -1 ||
                 string.IsNullOrWhiteSpace(TBStock.Text) ||
