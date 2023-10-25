@@ -16,6 +16,8 @@ namespace Unitivo.Validators
 
         PerfilRepositorio perfilRepositorio = new PerfilRepositorio();    
 
+        UsuariosRepositorio usuariosRepositorio = new UsuariosRepositorio();
+
         public UsuarioValidator()
         {
             //nombre contrase;a perfil confirmarcontrase;a idempleado
@@ -23,7 +25,8 @@ namespace Unitivo.Validators
             RuleFor(x => x.NombreUsuario)
                 .NotEmpty().WithMessage("El campo Nombre es obligatorio")
                 .Length(3, 50).WithMessage("El campo Nombre debe tener entre 3 y 50 caracteres")
-                .Must(ExisteNombreUsuario).WithMessage("El nombre de usuario ya existe en la base de datos")
+                .Must(ExisteNombreUsuario).WithMessage("El nombre de usuario no existe en la base de datos")
+                .Must(NombreUsuarioNoVinculado).WithMessage("El correo ya esta vinculado a un usuario")
                 ;
             //validar password
             RuleFor(x => x.Password)
@@ -50,6 +53,16 @@ namespace Unitivo.Validators
                 return false;
             }else{
                 return true;
+            }
+        }
+
+        private bool NombreUsuarioNoVinculado(string nombreUsuario){
+            if(usuariosRepositorio.BuscarUsuario(nombreUsuario) == null){
+                return true;
+            }
+            else 
+            {
+                return false;
             }
         }
         private bool ExistePerfil(int idPerfil)

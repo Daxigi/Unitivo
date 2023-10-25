@@ -17,20 +17,41 @@ namespace Unitivo.Repositorios.Implementaciones
             _contexto = Contexto.dbContexto;
         }    
         
-        public bool AgregarPerfil(Perfile Perfile){
+        public bool AgregarPerfil(Perfile x){
             try{
+                x.EstadoPerfil = true;
+                _contexto?.Perfiles.Add(x);
                 return true;
             }   
-            catch
+            catch(Exception ex)
             {
+                MessageBox.Show(ex.Message, "Perfiles", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             } 
         }
         public bool EliminarPerfil(int id){
-            return true;
+            Perfile? perfil = _contexto?.Perfiles.Find(id);
+            if(perfil == null) return false;
+            perfil.EstadoPerfil = false;
+            int resultado = _contexto?.SaveChanges() ?? 0;
+            return resultado > 0;
         }
         public bool ModificarPerfil(Perfile Perfile){
-            return true;
+            try
+            {
+                if(BuscarPerfil(Perfile.DescripcionPerfil) != null){
+                    MessageBox.Show("Ya existe un perfil con esa descripcion", "Perfiles", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+                _contexto?.Perfiles.Update(Perfile);
+                int resultado = _contexto?.SaveChanges() ?? 0;
+                return resultado > 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Perfiles", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
         }
         public Perfile BuscarPerfilPorId(int id){
             Perfile perfil = _contexto?.Perfiles.Find(id)!;
@@ -50,6 +71,5 @@ namespace Unitivo.Repositorios.Implementaciones
             List<Perfile> perfiles = _contexto?.Perfiles.Where(x => x.EstadoPerfil == true).ToList()!;
             return perfiles;
         }
-
     }
 }

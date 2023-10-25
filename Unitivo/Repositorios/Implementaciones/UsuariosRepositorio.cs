@@ -17,7 +17,7 @@ namespace Unitivo.Repositorios.Implementaciones
     public class  UsuariosRepositorio : UsuarioInterface
     {
         private readonly UnitivoContext? _contexto;
-
+        EmpleadoRepositorio empleadoRepositorio = new EmpleadoRepositorio();
         public UsuariosRepositorio(){
             _contexto = Contexto.dbContexto;
         }
@@ -31,6 +31,7 @@ namespace Unitivo.Repositorios.Implementaciones
             try{
                 var validator = new UsuarioValidator();
                 var result = validator.Validate(x);
+
                 if(!result.IsValid){
                     StringBuilder sb = new StringBuilder();
                     foreach(var failure in result.Errors)
@@ -51,7 +52,8 @@ namespace Unitivo.Repositorios.Implementaciones
                 _contexto?.Usuarios.Add(x);
                 return true;
             }
-            catch{
+            catch(Exception ex){
+                MessageBox.Show(ex.Message,"Usuario", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }
@@ -94,11 +96,32 @@ namespace Unitivo.Repositorios.Implementaciones
         {
             return _contexto?.Usuarios.Where(u => u.Estado == true).ToList()!;
         }
-        public bool ModificarUsuario(Usuario usuario)
+        public bool ModificarUsuario(Usuario x)
         {
-            _contexto?.Usuarios.Update(usuario);
+            try{
+                var validator = new UsuarioValidator();
+                var result = validator.Validate(x);
+                if(!result.IsValid){
+                    StringBuilder sb = new StringBuilder();
+                    foreach(var failure in result.Errors){
+                        sb.AppendLine($"{failure.PropertyName}: {failure.ErrorMessage}");
+                    }
+                    throw new ValidationException(sb.ToString());
+                }
+
+            if(BuscarUsuarioPorId(x.Id).NombreUsuario != x.NombreUsuario){
+                MessageBox.Show("No se puede modificar el nombre de usuario");
+                return false;
+            }
+            
+            _contexto?.Usuarios.Update(x);
             int resultado = _contexto?.SaveChanges() ?? 0;
             return resultado > 0;
+            }
+            catch(Exception ex){
+                MessageBox.Show(ex.Message, "Usuarios", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
         }
     }         
 }
