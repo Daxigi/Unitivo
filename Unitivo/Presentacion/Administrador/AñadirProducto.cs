@@ -54,7 +54,7 @@ namespace Unitivo.Presentacion.Administrador
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     rutaImagenProducto = openFileDialog.FileName;
-                    pictureBoxProducto.Image = Image.FromFile(rutaImagenProducto);
+                    // pictureBoxProducto.Image = Image.FromFile(rutaImagenProducto);
                 }
             }
         }
