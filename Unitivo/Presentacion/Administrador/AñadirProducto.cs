@@ -18,12 +18,11 @@ namespace Unitivo.Presentacion.Administrador
     public partial class AñadirProducto : Form
     {
         private readonly ProductoInterface? productoRepositorio;
-        private string? rutaImagenProducto;
 
+        private string? rutaImagenProducto;
         public AñadirProducto()
         {
             InitializeComponent();
-            AñadirProducto_Load();
             productoRepositorio = new ProductoRepositorio();
         }
 
@@ -79,19 +78,22 @@ namespace Unitivo.Presentacion.Administrador
                 string.IsNullOrWhiteSpace(TBStock.Text) ||
                 string.IsNullOrWhiteSpace(TBPrecio.Text) ||
                 CBTalle.SelectedIndex == -1 ||
-                string.IsNullOrWhiteSpace(rutaImagenProducto))
+                string.IsNullOrWhiteSpace(rutaImagenProducto)
+                )
             {
-                // Mostrar un mensaje de error si al menos un campo está vacío.
                 MessageBox.Show("Todos los campos son obligatorios. Por favor, complete todos los campos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             else
             {
-
-                // Mostrar un mensaje de éxito.
                 MessageBox.Show("Producto registrado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return true;
             }
         }
+
+
+
+
+
     }
 }
