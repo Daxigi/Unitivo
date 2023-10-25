@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             GroupBoxGestionUsuarios = new GroupBox();
             BBuscarUsuario = new Button();
             TBGestionUsuario = new TextBox();
@@ -48,6 +48,8 @@
             Column5 = new DataGridViewTextBoxColumn();
             Column6 = new DataGridViewTextBoxColumn();
             Column7 = new DataGridViewTextBoxColumn();
+            Label2 = new Label();
+            ComboBoxBuscarDni = new ComboBox();
             GroupBoxGestionUsuarios.SuspendLayout();
             TabControlListaEmpleados.SuspendLayout();
             TabPageListaEmpleados.SuspendLayout();
@@ -57,15 +59,17 @@
             // GroupBoxGestionUsuarios
             // 
             GroupBoxGestionUsuarios.BackColor = Color.Cornsilk;
+            GroupBoxGestionUsuarios.Controls.Add(Label2);
+            GroupBoxGestionUsuarios.Controls.Add(ComboBoxBuscarDni);
             GroupBoxGestionUsuarios.Controls.Add(BBuscarUsuario);
             GroupBoxGestionUsuarios.Controls.Add(TBGestionUsuario);
             GroupBoxGestionUsuarios.Font = new Font("Cooper Black", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             GroupBoxGestionUsuarios.ForeColor = Color.Sienna;
-            GroupBoxGestionUsuarios.Location = new Point(309, 48);
+            GroupBoxGestionUsuarios.Location = new Point(210, 38);
             GroupBoxGestionUsuarios.Margin = new Padding(4, 5, 4, 5);
             GroupBoxGestionUsuarios.Name = "GroupBoxGestionUsuarios";
             GroupBoxGestionUsuarios.Padding = new Padding(4, 5, 4, 5);
-            GroupBoxGestionUsuarios.Size = new Size(431, 134);
+            GroupBoxGestionUsuarios.Size = new Size(600, 144);
             GroupBoxGestionUsuarios.TabIndex = 78;
             GroupBoxGestionUsuarios.TabStop = false;
             GroupBoxGestionUsuarios.Text = "Gestión de Empleados";
@@ -79,7 +83,7 @@
             BBuscarUsuario.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             BBuscarUsuario.ForeColor = Color.White;
             BBuscarUsuario.Image = Properties.Resources.icons8_búsqueda_26;
-            BBuscarUsuario.Location = new Point(280, 52);
+            BBuscarUsuario.Location = new Point(487, 48);
             BBuscarUsuario.Margin = new Padding(4, 5, 4, 5);
             BBuscarUsuario.Name = "BBuscarUsuario";
             BBuscarUsuario.Size = new Size(60, 63);
@@ -89,7 +93,7 @@
             // TBGestionUsuario
             // 
             TBGestionUsuario.Font = new Font("Britannic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            TBGestionUsuario.Location = new Point(73, 66);
+            TBGestionUsuario.Location = new Point(276, 75);
             TBGestionUsuario.Margin = new Padding(4, 5, 4, 5);
             TBGestionUsuario.Name = "TBGestionUsuario";
             TBGestionUsuario.Size = new Size(173, 30);
@@ -165,25 +169,25 @@
             dgvEmpleados.AllowUserToDeleteRows = false;
             dgvEmpleados.BackgroundColor = Color.RosyBrown;
             dgvEmpleados.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.DarkOliveGreen;
-            dataGridViewCellStyle1.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvEmpleados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.DarkOliveGreen;
+            dataGridViewCellStyle5.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            dgvEmpleados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dgvEmpleados.ColumnHeadersHeight = 20;
             dgvEmpleados.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dgvEmpleados.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6, Column7 });
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.Window;
-            dataGridViewCellStyle2.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = Color.Blue;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            dgvEmpleados.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = SystemColors.Window;
+            dataGridViewCellStyle6.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = Color.Blue;
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            dgvEmpleados.DefaultCellStyle = dataGridViewCellStyle6;
             dgvEmpleados.Dock = DockStyle.Fill;
             dgvEmpleados.EnableHeadersVisualStyles = false;
             dgvEmpleados.Location = new Point(4, 3);
@@ -191,17 +195,17 @@
             dgvEmpleados.Name = "dgvEmpleados";
             dgvEmpleados.ReadOnly = true;
             dgvEmpleados.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = SystemColors.ActiveCaption;
-            dataGridViewCellStyle3.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgvEmpleados.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = SystemColors.ActiveCaption;
+            dataGridViewCellStyle7.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            dgvEmpleados.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             dgvEmpleados.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.ForeColor = Color.Black;
-            dgvEmpleados.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.ForeColor = Color.Black;
+            dgvEmpleados.RowsDefaultCellStyle = dataGridViewCellStyle8;
             dgvEmpleados.Size = new Size(928, 374);
             dgvEmpleados.TabIndex = 2;
             // 
@@ -261,6 +265,31 @@
             Column7.ReadOnly = true;
             Column7.Width = 125;
             // 
+            // Label2
+            // 
+            Label2.AutoSize = true;
+            Label2.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            Label2.ForeColor = Color.DarkOliveGreen;
+            Label2.Location = new Point(52, 48);
+            Label2.Margin = new Padding(5, 0, 5, 0);
+            Label2.Name = "Label2";
+            Label2.Size = new Size(112, 25);
+            Label2.TabIndex = 16;
+            Label2.Text = "Buscar por:";
+            // 
+            // ComboBoxBuscarDni
+            // 
+            ComboBoxBuscarDni.DropDownStyle = ComboBoxStyle.DropDownList;
+            ComboBoxBuscarDni.Font = new Font("Cooper Black", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            ComboBoxBuscarDni.ForeColor = Color.SaddleBrown;
+            ComboBoxBuscarDni.FormattingEnabled = true;
+            ComboBoxBuscarDni.Items.AddRange(new object[] { "DNI", "Nombre y Apellido" });
+            ComboBoxBuscarDni.Location = new Point(56, 77);
+            ComboBoxBuscarDni.Margin = new Padding(4, 5, 4, 5);
+            ComboBoxBuscarDni.Name = "ComboBoxBuscarDni";
+            ComboBoxBuscarDni.Size = new Size(160, 31);
+            ComboBoxBuscarDni.TabIndex = 15;
+            // 
             // GestionarEmpleados
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -303,5 +332,7 @@
         private DataGridViewTextBoxColumn Column5;
         private DataGridViewTextBoxColumn Column6;
         private DataGridViewTextBoxColumn Column7;
+        internal Label Label2;
+        internal ComboBox ComboBoxBuscarDni;
     }
 }

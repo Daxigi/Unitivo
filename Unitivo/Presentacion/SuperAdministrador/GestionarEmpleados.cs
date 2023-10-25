@@ -27,10 +27,11 @@ namespace Unitivo.Presentacion.SuperAdministrador
 
         private void NumStr_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(ComboBoxBuscarDni.Text == "DNI")
+            if (ComboBoxBuscarDni.Text == "DNI")
             {
                 CommonFunctions.ValidarNumberKeyPress((TextBox)sender, e);
-            } else
+            }
+            else
             {
                 CommonFunctions.ValidarStringKeyPress((TextBox)sender, e);
             }
@@ -38,9 +39,9 @@ namespace Unitivo.Presentacion.SuperAdministrador
 
         private void BModificarEmpleado_Click(object sender, EventArgs e)
         {
-            if(dgvEmpleados.SelectedRows.Count > 0)
+            if (dgvEmpleados.SelectedRows.Count > 0)
             {
-                int idSeleccionado = Convert.ToInt32(dgvEmpleados.SelectedRows[0].Cells["ID"].Value);   
+                int idSeleccionado = Convert.ToInt32(dgvEmpleados.SelectedRows[0].Cells["ID"].Value);
 
                 ModificarEmpleado modificarEmpleadoForm = new ModificarEmpleado(idSeleccionado);
 
@@ -67,12 +68,12 @@ namespace Unitivo.Presentacion.SuperAdministrador
             {
                 if (empleado.Estado == true)
                 {
-                    dgvEmpleados.Rows.Add(empleado.Id, empleado.Nombre, empleado.Apellido, empleado.Dni, empleado.Telefono, empleado.Direccion, empleado.Correo);
+                    dgvEmpleados.Rows.Add(empleado.Id, empleado.Nombre, empleado.Apellido, empleado.Dni, empleado.Telefono, empleado.Direccion, empleado.Correo, empleado.Edad);
                 }
                 else
                 {
                     // Agregar la fila con el estado "Inactivo"
-                    int rowIndex = dgvEmpleados.Rows.Add(empleado.Id, empleado.Nombre, empleado.Apellido, empleado.Dni, empleado.Telefono, empleado.Direccion, empleado.Correo, "Inactivo");
+                    int rowIndex = dgvEmpleados.Rows.Add(empleado.Id, empleado.Nombre, empleado.Apellido, empleado.Dni, empleado.Telefono, empleado.Direccion, empleado.Correo, empleado.Edad, "Inactivo");
 
                     // Establecer el color de fondo de la fila agregada
                     dgvEmpleados.Rows[rowIndex].DefaultCellStyle.BackColor = Color.Red;
@@ -95,12 +96,14 @@ namespace Unitivo.Presentacion.SuperAdministrador
 
                 DialogResult result = MessageBox.Show("¿Está seguro que desea eliminar el empleado seleccionado?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                if(result == DialogResult.Yes){
-                    if(empleadoRepositorio.EliminarEmpleado(idSeleccionado))
+                if (result == DialogResult.Yes)
+                {
+                    if (empleadoRepositorio.EliminarEmpleado(idSeleccionado))
                     {
                         MessageBox.Show("El empleado se eliminó correctamente.", "Empleados", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         CargarEmpleados();
-                    } else
+                    }
+                    else
                     {
                         MessageBox.Show("Ocurrió un error al eliminar el empleado.", "Empleados", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }

@@ -60,6 +60,24 @@ namespace Unitivo.Presentacion.SuperAdministrador
             Close();
         }
 
+        private void DPFechaNacimiento_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime selectedDate = DateTimePickerFechaNacimiento.Value;
+            DateTime currentDate = DateTime.Now;
+            DateTime minDate = currentDate.AddYears(-100);  // Restar 100 años a la fecha actual.
+
+            if (selectedDate > currentDate)
+            {
+                MessageBox.Show("La fecha de nacimiento no puede ser futura.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DateTimePickerFechaNacimiento.Value = currentDate;  // Restaurar a la fecha actual.
+            }
+            else if (selectedDate < minDate)
+            {
+                MessageBox.Show("La fecha de nacimiento no puede ser hace más de 100 años.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DateTimePickerFechaNacimiento.Value = minDate;  // Restaurar a 100 años antes de la fecha actual.
+            }
+        }
+
         private void MostrarEmpleado(Empleado empleado)
         {
             // Cargar los datos del empleado en los TextBox
@@ -80,6 +98,9 @@ namespace Unitivo.Presentacion.SuperAdministrador
 
             TBCorreoEmpleado.Text = empleado.Correo;
             correoOriginal = empleado.Correo;
+
+            DateTimePickerFechaNacimiento.Value = empleado.Edad;
+            EdadOriginal = empleado.Edad;
         }
 
         private void BModEmpleado_Click(object sender, EventArgs e)
@@ -91,11 +112,11 @@ namespace Unitivo.Presentacion.SuperAdministrador
             string nuevoTelefono = TBTelEmpleado.Text;
             string nuevaDireccion = TBDireccionEmpleado.Text;
             string nuevoCorreo = TBCorreoEmpleado.Text;
-
+            DateTime nuevaEdad = DateTimePickerFechaNacimiento.Value;
 
             // Compara los nuevos valores con los originales
             if (nuevoNombre != nombreOriginal || nuevoApellido != apellidoOriginal || nuevoDni != dniOriginal ||
-                nuevoTelefono != telefonoOriginal || nuevaDireccion != direccionOriginal || nuevoCorreo != correoOriginal)
+                nuevoTelefono != telefonoOriginal || nuevaDireccion != direccionOriginal || nuevoCorreo != correoOriginal || nuevaEdad != EdadOriginal)
             {
                 Empleado empleado = new Empleado();
                 empleado.Nombre = nuevoNombre;
@@ -104,6 +125,7 @@ namespace Unitivo.Presentacion.SuperAdministrador
                 empleado.Telefono = nuevoTelefono;
                 empleado.Direccion = nuevaDireccion;
                 empleado.Correo = nuevoCorreo;
+                empleado.Edad = nuevaEdad;
                 try
                 {
                     if (empleadoRepositorio.ModificarEmpleado(empleado))

@@ -43,10 +43,29 @@ namespace Unitivo.Presentacion.SuperAdministrador
             CommonFunctions.ValidarEmailKeyPress((TextBox)sender, e);
         }
 
+        private void DPFechaNacimiento_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime selectedDate = DateTimePickerFechaNacimiento.Value;
+            DateTime currentDate = DateTime.Now;
+            DateTime minDate = currentDate.AddYears(-100);  // Restar 100 años a la fecha actual.
+
+            if (selectedDate > currentDate)
+            {
+                MessageBox.Show("La fecha de nacimiento no puede ser futura.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DateTimePickerFechaNacimiento.Value = currentDate;  // Restaurar a la fecha actual.
+            }
+            //else if (selectedDate < minDate)
+            //{
+            //    MessageBox.Show("La fecha de nacimiento no puede ser hace más de 100 años.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    DateTimePickerFechaNacimiento.Value = minDate;  // Restaurar a 100 años antes de la fecha actual.
+            //}
+        }
+
+
 
         private void BRegistrarEmpleado_Click(object sender, EventArgs e)
         {
-            if(CommonFunctions.ValidarCamposNoVacios(this))
+            if (CommonFunctions.ValidarCamposNoVacios(this))
             {
                 try
                 {
@@ -57,7 +76,8 @@ namespace Unitivo.Presentacion.SuperAdministrador
                     empleado.Telefono = TBTelEmpleado.Text;
                     empleado.Direccion = TBDireccionEmpleado.Text;
                     empleado.Correo = TBCorreoEmpleado.Text;
-                    
+                    empleado.Edad = DateTimePickerFechaNacimiento.Value;
+
 
                     if (empleadoRepositorio.AgregarEmpleado(empleado))
                     {
@@ -89,7 +109,7 @@ namespace Unitivo.Presentacion.SuperAdministrador
             DataGridViewListarEmpleados.Refresh();
             foreach (Empleado empleado in empleados)
             {
-                DataGridViewListarEmpleados.Rows.Add(empleado.Id, empleado.Nombre, empleado.Apellido, empleado.Dni, empleado.Telefono, empleado.Direccion, empleado.Correo);
+                DataGridViewListarEmpleados.Rows.Add(empleado.Id, empleado.Nombre, empleado.Apellido, empleado.Dni, empleado.Telefono, empleado.Direccion, empleado.Correo, empleado.Edad);
             }
         }
 

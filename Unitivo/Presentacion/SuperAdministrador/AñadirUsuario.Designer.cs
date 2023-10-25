@@ -196,9 +196,9 @@
             Label9.Location = new Point(17, 238);
             Label9.Margin = new Padding(4, 0, 4, 0);
             Label9.Name = "Label9";
-            Label9.Size = new Size(58, 20);
+            Label9.Size = new Size(69, 20);
             Label9.TabIndex = 1;
-            Label9.Text = "Perfil:";
+            Label9.Text = "Puesto:";
             // 
             // Label10
             // 

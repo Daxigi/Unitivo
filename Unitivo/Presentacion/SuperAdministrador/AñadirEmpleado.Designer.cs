@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
             Label1 = new Label();
             Panel1 = new Panel();
+            DateTimePickerFechaNacimiento = new DateTimePicker();
+            label8 = new Label();
             BRegistrarEmpleado = new Button();
             TBCorreoEmpleado = new TextBox();
             Label7 = new Label();
@@ -79,6 +81,8 @@
             // Panel1
             // 
             Panel1.BackColor = Color.Cornsilk;
+            Panel1.Controls.Add(DateTimePickerFechaNacimiento);
+            Panel1.Controls.Add(label8);
             Panel1.Controls.Add(BRegistrarEmpleado);
             Panel1.Controls.Add(TBCorreoEmpleado);
             Panel1.Controls.Add(Label7);
@@ -95,8 +99,31 @@
             Panel1.Location = new Point(53, 126);
             Panel1.Margin = new Padding(4, 5, 4, 5);
             Panel1.Name = "Panel1";
-            Panel1.Size = new Size(431, 523);
+            Panel1.Size = new Size(431, 542);
             Panel1.TabIndex = 3;
+            // 
+            // DateTimePickerFechaNacimiento
+            // 
+            DateTimePickerFechaNacimiento.Font = new Font("Britannic Bold", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            DateTimePickerFechaNacimiento.Format = DateTimePickerFormat.Short;
+            DateTimePickerFechaNacimiento.Location = new Point(212, 398);
+            DateTimePickerFechaNacimiento.Margin = new Padding(4, 5, 4, 5);
+            DateTimePickerFechaNacimiento.Name = "DateTimePickerFechaNacimiento";
+            DateTimePickerFechaNacimiento.Size = new Size(169, 28);
+            DateTimePickerFechaNacimiento.TabIndex = 34;
+            DateTimePickerFechaNacimiento.ValueChanged += DPFechaNacimiento_ValueChanged;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Cooper Black", 14.5F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.ForeColor = Color.DarkOrange;
+            label8.Location = new Point(46, 353);
+            label8.Margin = new Padding(4, 0, 4, 0);
+            label8.Name = "label8";
+            label8.Size = new Size(253, 29);
+            label8.TabIndex = 18;
+            label8.Text = "Fecha Nacimiento :";
             // 
             // BRegistrarEmpleado
             // 
@@ -105,7 +132,7 @@
             BRegistrarEmpleado.FlatStyle = FlatStyle.Flat;
             BRegistrarEmpleado.Font = new Font("Cooper Black", 16F, FontStyle.Regular, GraphicsUnit.Point);
             BRegistrarEmpleado.ForeColor = Color.Cornsilk;
-            BRegistrarEmpleado.Location = new Point(120, 409);
+            BRegistrarEmpleado.Location = new Point(123, 465);
             BRegistrarEmpleado.Margin = new Padding(4, 5, 4, 5);
             BRegistrarEmpleado.Name = "BRegistrarEmpleado";
             BRegistrarEmpleado.Size = new Size(177, 58);
@@ -116,7 +143,7 @@
             // 
             // TBCorreoEmpleado
             // 
-            TBCorreoEmpleado.Location = new Point(213, 322);
+            TBCorreoEmpleado.Location = new Point(212, 303);
             TBCorreoEmpleado.Margin = new Padding(4, 5, 4, 5);
             TBCorreoEmpleado.Name = "TBCorreoEmpleado";
             TBCorreoEmpleado.Size = new Size(169, 27);
@@ -128,7 +155,7 @@
             Label7.AutoSize = true;
             Label7.Font = new Font("Cooper Black", 14.5F, FontStyle.Regular, GraphicsUnit.Point);
             Label7.ForeColor = Color.DarkOrange;
-            Label7.Location = new Point(47, 317);
+            Label7.Location = new Point(46, 298);
             Label7.Margin = new Padding(4, 0, 4, 0);
             Label7.Name = "Label7";
             Label7.Size = new Size(106, 29);
@@ -137,7 +164,7 @@
             // 
             // TBDireccionEmpleado
             // 
-            TBDireccionEmpleado.Location = new Point(213, 266);
+            TBDireccionEmpleado.Location = new Point(212, 246);
             TBDireccionEmpleado.Margin = new Padding(4, 5, 4, 5);
             TBDireccionEmpleado.Name = "TBDireccionEmpleado";
             TBDireccionEmpleado.Size = new Size(169, 27);
@@ -149,7 +176,7 @@
             Label6.AutoSize = true;
             Label6.Font = new Font("Cooper Black", 14.5F, FontStyle.Regular, GraphicsUnit.Point);
             Label6.ForeColor = Color.DarkOrange;
-            Label6.Location = new Point(47, 262);
+            Label6.Location = new Point(46, 242);
             Label6.Margin = new Padding(4, 0, 4, 0);
             Label6.Name = "Label6";
             Label6.Size = new Size(148, 29);
@@ -158,7 +185,7 @@
             // 
             // TBTelEmpleado
             // 
-            TBTelEmpleado.Location = new Point(213, 209);
+            TBTelEmpleado.Location = new Point(212, 191);
             TBTelEmpleado.Margin = new Padding(4, 5, 4, 5);
             TBTelEmpleado.Name = "TBTelEmpleado";
             TBTelEmpleado.Size = new Size(169, 27);
@@ -170,7 +197,7 @@
             Label5.AutoSize = true;
             Label5.Font = new Font("Cooper Black", 14.5F, FontStyle.Regular, GraphicsUnit.Point);
             Label5.ForeColor = Color.DarkOrange;
-            Label5.Location = new Point(47, 205);
+            Label5.Location = new Point(46, 187);
             Label5.Margin = new Padding(4, 0, 4, 0);
             Label5.Name = "Label5";
             Label5.Size = new Size(137, 29);
@@ -179,7 +206,7 @@
             // 
             // TBDniEmpleado
             // 
-            TBDniEmpleado.Location = new Point(213, 151);
+            TBDniEmpleado.Location = new Point(212, 136);
             TBDniEmpleado.Margin = new Padding(4, 5, 4, 5);
             TBDniEmpleado.Name = "TBDniEmpleado";
             TBDniEmpleado.Size = new Size(169, 27);
@@ -191,7 +218,7 @@
             Label4.AutoSize = true;
             Label4.Font = new Font("Cooper Black", 14.5F, FontStyle.Regular, GraphicsUnit.Point);
             Label4.ForeColor = Color.DarkOrange;
-            Label4.Location = new Point(47, 146);
+            Label4.Location = new Point(46, 131);
             Label4.Margin = new Padding(4, 0, 4, 0);
             Label4.Name = "Label4";
             Label4.Size = new Size(77, 29);
@@ -200,7 +227,7 @@
             // 
             // TBApellidoEmpleado
             // 
-            TBApellidoEmpleado.Location = new Point(213, 91);
+            TBApellidoEmpleado.Location = new Point(212, 80);
             TBApellidoEmpleado.Margin = new Padding(4, 5, 4, 5);
             TBApellidoEmpleado.Name = "TBApellidoEmpleado";
             TBApellidoEmpleado.Size = new Size(169, 27);
@@ -212,7 +239,7 @@
             Label3.AutoSize = true;
             Label3.Font = new Font("Cooper Black", 14.5F, FontStyle.Regular, GraphicsUnit.Point);
             Label3.ForeColor = Color.DarkOrange;
-            Label3.Location = new Point(47, 86);
+            Label3.Location = new Point(46, 75);
             Label3.Margin = new Padding(4, 0, 4, 0);
             Label3.Name = "Label3";
             Label3.Size = new Size(135, 29);
@@ -221,7 +248,7 @@
             // 
             // TBNombreEmpleado
             // 
-            TBNombreEmpleado.Location = new Point(213, 31);
+            TBNombreEmpleado.Location = new Point(212, 21);
             TBNombreEmpleado.Margin = new Padding(4, 5, 4, 5);
             TBNombreEmpleado.Name = "TBNombreEmpleado";
             TBNombreEmpleado.Size = new Size(169, 27);
@@ -233,7 +260,7 @@
             Label2.AutoSize = true;
             Label2.Font = new Font("Cooper Black", 14.5F, FontStyle.Regular, GraphicsUnit.Point);
             Label2.ForeColor = Color.DarkOrange;
-            Label2.Location = new Point(47, 26);
+            Label2.Location = new Point(46, 16);
             Label2.Margin = new Padding(4, 0, 4, 0);
             Label2.Name = "Label2";
             Label2.Size = new Size(128, 29);
@@ -271,25 +298,25 @@
             DataGridViewListarEmpleados.AllowUserToDeleteRows = false;
             DataGridViewListarEmpleados.BackgroundColor = Color.RosyBrown;
             DataGridViewListarEmpleados.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.DarkOliveGreen;
-            dataGridViewCellStyle5.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            DataGridViewListarEmpleados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = Color.DarkOliveGreen;
+            dataGridViewCellStyle9.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle9.ForeColor = Color.White;
+            dataGridViewCellStyle9.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.True;
+            DataGridViewListarEmpleados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             DataGridViewListarEmpleados.ColumnHeadersHeight = 20;
             DataGridViewListarEmpleados.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             DataGridViewListarEmpleados.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6, Column7 });
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = SystemColors.Window;
-            dataGridViewCellStyle6.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = Color.Blue;
-            dataGridViewCellStyle6.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            DataGridViewListarEmpleados.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = SystemColors.Window;
+            dataGridViewCellStyle10.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle10.ForeColor = Color.White;
+            dataGridViewCellStyle10.SelectionBackColor = Color.Blue;
+            dataGridViewCellStyle10.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.False;
+            DataGridViewListarEmpleados.DefaultCellStyle = dataGridViewCellStyle10;
             DataGridViewListarEmpleados.Dock = DockStyle.Fill;
             DataGridViewListarEmpleados.EnableHeadersVisualStyles = false;
             DataGridViewListarEmpleados.Location = new Point(4, 3);
@@ -297,17 +324,17 @@
             DataGridViewListarEmpleados.Name = "DataGridViewListarEmpleados";
             DataGridViewListarEmpleados.ReadOnly = true;
             DataGridViewListarEmpleados.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = SystemColors.ActiveCaption;
-            dataGridViewCellStyle7.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
-            DataGridViewListarEmpleados.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = SystemColors.ActiveCaption;
+            dataGridViewCellStyle11.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle11.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.True;
+            DataGridViewListarEmpleados.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
             DataGridViewListarEmpleados.RowHeadersWidth = 51;
-            dataGridViewCellStyle8.ForeColor = Color.Black;
-            DataGridViewListarEmpleados.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle12.ForeColor = Color.Black;
+            DataGridViewListarEmpleados.RowsDefaultCellStyle = dataGridViewCellStyle12;
             DataGridViewListarEmpleados.Size = new Size(497, 525);
             DataGridViewListarEmpleados.TabIndex = 2;
             // 
@@ -417,5 +444,7 @@
         private DataGridViewTextBoxColumn Column5;
         private DataGridViewTextBoxColumn Column6;
         private DataGridViewTextBoxColumn Column7;
+        internal Label label8;
+        internal DateTimePicker DateTimePickerFechaNacimiento;
     }
 }

@@ -30,6 +30,8 @@
         {
             Label1 = new Label();
             Panel1 = new Panel();
+            DateTimePickerFechaNacimiento = new DateTimePicker();
+            label8 = new Label();
             BCancelar = new Button();
             BModEmpleado = new Button();
             TBCorreoEmpleado = new TextBox();
@@ -63,6 +65,8 @@
             // Panel1
             // 
             Panel1.BackColor = Color.RosyBrown;
+            Panel1.Controls.Add(DateTimePickerFechaNacimiento);
+            Panel1.Controls.Add(label8);
             Panel1.Controls.Add(BCancelar);
             Panel1.Controls.Add(BModEmpleado);
             Panel1.Controls.Add(TBCorreoEmpleado);
@@ -80,8 +84,31 @@
             Panel1.Location = new Point(123, 132);
             Panel1.Margin = new Padding(4, 5, 4, 5);
             Panel1.Name = "Panel1";
-            Panel1.Size = new Size(431, 523);
+            Panel1.Size = new Size(431, 557);
             Panel1.TabIndex = 3;
+            // 
+            // DateTimePickerFechaNacimiento
+            // 
+            DateTimePickerFechaNacimiento.Font = new Font("Britannic Bold", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            DateTimePickerFechaNacimiento.Format = DateTimePickerFormat.Short;
+            DateTimePickerFechaNacimiento.Location = new Point(213, 409);
+            DateTimePickerFechaNacimiento.Margin = new Padding(4, 5, 4, 5);
+            DateTimePickerFechaNacimiento.Name = "DateTimePickerFechaNacimiento";
+            DateTimePickerFechaNacimiento.Size = new Size(169, 28);
+            DateTimePickerFechaNacimiento.TabIndex = 35;
+            DateTimePickerFechaNacimiento.ValueChanged += DPFechaNacimiento_ValueChanged;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Font = new Font("Cooper Black", 14.5F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.ForeColor = Color.White;
+            label8.Location = new Point(47, 367);
+            label8.Margin = new Padding(4, 0, 4, 0);
+            label8.Name = "label8";
+            label8.Size = new Size(253, 29);
+            label8.TabIndex = 19;
+            label8.Text = "Fecha Nacimiento :";
             // 
             // BCancelar
             // 
@@ -90,7 +117,7 @@
             BCancelar.FlatStyle = FlatStyle.Flat;
             BCancelar.Font = new Font("Cooper Black", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             BCancelar.ForeColor = Color.White;
-            BCancelar.Location = new Point(49, 412);
+            BCancelar.Location = new Point(47, 473);
             BCancelar.Margin = new Padding(4, 5, 4, 5);
             BCancelar.Name = "BCancelar";
             BCancelar.Size = new Size(141, 58);
@@ -106,7 +133,7 @@
             BModEmpleado.FlatStyle = FlatStyle.Flat;
             BModEmpleado.Font = new Font("Cooper Black", 16F, FontStyle.Regular, GraphicsUnit.Point);
             BModEmpleado.ForeColor = Color.White;
-            BModEmpleado.Location = new Point(221, 412);
+            BModEmpleado.Location = new Point(219, 473);
             BModEmpleado.Margin = new Padding(4, 5, 4, 5);
             BModEmpleado.Name = "BModEmpleado";
             BModEmpleado.Size = new Size(177, 58);
@@ -117,7 +144,7 @@
             // 
             // TBCorreoEmpleado
             // 
-            TBCorreoEmpleado.Location = new Point(213, 322);
+            TBCorreoEmpleado.Location = new Point(213, 319);
             TBCorreoEmpleado.Margin = new Padding(4, 5, 4, 5);
             TBCorreoEmpleado.Name = "TBCorreoEmpleado";
             TBCorreoEmpleado.Size = new Size(169, 27);
@@ -129,7 +156,7 @@
             Label7.AutoSize = true;
             Label7.Font = new Font("Cooper Black", 14.5F, FontStyle.Regular, GraphicsUnit.Point);
             Label7.ForeColor = Color.White;
-            Label7.Location = new Point(47, 317);
+            Label7.Location = new Point(47, 314);
             Label7.Margin = new Padding(4, 0, 4, 0);
             Label7.Name = "Label7";
             Label7.Size = new Size(106, 29);
@@ -138,7 +165,7 @@
             // 
             // TBDireccionEmpleado
             // 
-            TBDireccionEmpleado.Location = new Point(213, 266);
+            TBDireccionEmpleado.Location = new Point(213, 263);
             TBDireccionEmpleado.Margin = new Padding(4, 5, 4, 5);
             TBDireccionEmpleado.Name = "TBDireccionEmpleado";
             TBDireccionEmpleado.Size = new Size(169, 27);
@@ -150,7 +177,7 @@
             Label6.AutoSize = true;
             Label6.Font = new Font("Cooper Black", 14.5F, FontStyle.Regular, GraphicsUnit.Point);
             Label6.ForeColor = Color.White;
-            Label6.Location = new Point(47, 262);
+            Label6.Location = new Point(47, 259);
             Label6.Margin = new Padding(4, 0, 4, 0);
             Label6.Name = "Label6";
             Label6.Size = new Size(148, 29);
@@ -159,7 +186,7 @@
             // 
             // TBTelEmpleado
             // 
-            TBTelEmpleado.Location = new Point(213, 209);
+            TBTelEmpleado.Location = new Point(213, 206);
             TBTelEmpleado.Margin = new Padding(4, 5, 4, 5);
             TBTelEmpleado.Name = "TBTelEmpleado";
             TBTelEmpleado.Size = new Size(169, 27);
@@ -171,7 +198,7 @@
             Label5.AutoSize = true;
             Label5.Font = new Font("Cooper Black", 14.5F, FontStyle.Regular, GraphicsUnit.Point);
             Label5.ForeColor = Color.White;
-            Label5.Location = new Point(47, 205);
+            Label5.Location = new Point(47, 202);
             Label5.Margin = new Padding(4, 0, 4, 0);
             Label5.Name = "Label5";
             Label5.Size = new Size(137, 29);
@@ -246,7 +273,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.SlateGray;
-            ClientSize = new Size(696, 692);
+            ClientSize = new Size(696, 716);
             Controls.Add(Label1);
             Controls.Add(Panel1);
             FormBorderStyle = FormBorderStyle.None;
@@ -278,5 +305,7 @@
         internal Label Label2;
 
         #endregion
+        internal Label label8;
+        internal DateTimePicker DateTimePickerFechaNacimiento;
     }
 }
