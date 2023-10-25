@@ -25,7 +25,7 @@ namespace Unitivo.Validators
                 .NotEmpty().WithMessage("El campo Talle es obligatorio")
                 ;
             //validar email
-            RuleFor(x => x.Stock )
+            RuleFor(x => x.Stock)
                 .NotEmpty().WithMessage("El campo Stock es obligatorio")
                 .Must(x => x > 0).WithMessage("El campo Stock debe ser mayor a 0")
                 ;
