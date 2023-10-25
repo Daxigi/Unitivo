@@ -46,9 +46,8 @@
             DataGridViewRegistroCategorias = new DataGridView();
             Label1 = new Label();
             Panel2 = new Panel();
-            CBCategoria = new ComboBox();
             BAñadirProducto = new Button();
-            CBMarca = new ComboBox();
+            CBCategoria = new ComboBox();
             LImagen = new Label();
             CBTalle = new ComboBox();
             Label6 = new Label();
@@ -59,12 +58,14 @@
             TBPrecio = new TextBox();
             Label4 = new Label();
             TBStock = new TextBox();
-            panel3 = new Panel();
+            pictureBoxProducto = new PictureBox();
+            BAgregarImagen = new Button();
             TabControlListaProductos.SuspendLayout();
             TabPageListaProducto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)DataGridViewListaProductos).BeginInit();
             ((System.ComponentModel.ISupportInitialize)DataGridViewRegistroCategorias).BeginInit();
             Panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxProducto).BeginInit();
             SuspendLayout();
             // 
             // TabControlListaProductos
@@ -234,10 +235,10 @@
             // Panel2
             // 
             Panel2.BackColor = Color.Cornsilk;
-            Panel2.Controls.Add(panel3);
+            Panel2.Controls.Add(BAgregarImagen);
+            Panel2.Controls.Add(pictureBoxProducto);
             Panel2.Controls.Add(BAñadirProducto);
             Panel2.Controls.Add(CBCategoria);
-            Panel2.Controls.Add(CBMarca);
             Panel2.Controls.Add(LImagen);
             Panel2.Controls.Add(CBTalle);
             Panel2.Controls.Add(Label6);
@@ -254,6 +255,20 @@
             Panel2.Size = new Size(1019, 211);
             Panel2.TabIndex = 16;
             // 
+            // BAñadirProducto
+            // 
+            BAñadirProducto.BackColor = Color.DarkOliveGreen;
+            BAñadirProducto.Font = new Font("Microsoft Sans Serif", 13F, FontStyle.Regular, GraphicsUnit.Point);
+            BAñadirProducto.ForeColor = Color.White;
+            BAñadirProducto.Location = new Point(883, 73);
+            BAñadirProducto.Margin = new Padding(2, 3, 2, 3);
+            BAñadirProducto.Name = "BAñadirProducto";
+            BAñadirProducto.Size = new Size(120, 63);
+            BAñadirProducto.TabIndex = 2;
+            BAñadirProducto.Text = "Añadir";
+            BAñadirProducto.UseVisualStyleBackColor = false;
+            BAñadirProducto.Click += BAñadirProducto_Click;
+            // 
             // CBCategoria
             // 
             CBCategoria.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -263,30 +278,6 @@
             CBCategoria.Name = "CBCategoria";
             CBCategoria.Size = new Size(174, 28);
             CBCategoria.TabIndex = 15;
-            // 
-            // BAñadirProducto
-            // 
-            BAñadirProducto.BackColor = Color.DarkOliveGreen;
-            BAñadirProducto.Font = new Font("Microsoft Sans Serif", 13F, FontStyle.Regular, GraphicsUnit.Point);
-            BAñadirProducto.ForeColor = Color.White;
-            BAñadirProducto.Location = new Point(883, 86);
-            BAñadirProducto.Margin = new Padding(2, 3, 2, 3);
-            BAñadirProducto.Name = "BAñadirProducto";
-            BAñadirProducto.Size = new Size(120, 63);
-            BAñadirProducto.TabIndex = 2;
-            BAñadirProducto.Text = "Añadir";
-            BAñadirProducto.UseVisualStyleBackColor = false;
-            BAñadirProducto.Click += BAñadirProducto_Click;
-            // 
-            // CBMarca
-            // 
-            CBMarca.DropDownStyle = ComboBoxStyle.DropDownList;
-            CBMarca.FormattingEnabled = true;
-            CBMarca.Location = new Point(463, 148);
-            CBMarca.Margin = new Padding(2, 3, 2, 3);
-            CBMarca.Name = "CBMarca";
-            CBMarca.Size = new Size(174, 28);
-            CBMarca.TabIndex = 14;
             // 
             // LImagen
             // 
@@ -403,14 +394,23 @@
             TBStock.TabIndex = 7;
             TBStock.KeyPress += Num_KeyPress;
             // 
-            // panel3
+            // pictureBoxProducto
             // 
-            panel3.BackColor = Color.Orange;
-            panel3.Location = new Point(691, 37);
-            panel3.Margin = new Padding(2, 3, 2, 3);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(161, 142);
-            panel3.TabIndex = 18;
+            pictureBoxProducto.BackColor = Color.RosyBrown;
+            pictureBoxProducto.Location = new Point(700, 45);
+            pictureBoxProducto.Name = "pictureBoxProducto";
+            pictureBoxProducto.Size = new Size(142, 122);
+            pictureBoxProducto.TabIndex = 19;
+            pictureBoxProducto.TabStop = false;
+            // 
+            // BAgregarImagen
+            // 
+            BAgregarImagen.Location = new Point(457, 153);
+            BAgregarImagen.Name = "BAgregarImagen";
+            BAgregarImagen.Size = new Size(180, 29);
+            BAgregarImagen.TabIndex = 20;
+            BAgregarImagen.Text = "Agregar";
+            BAgregarImagen.UseVisualStyleBackColor = true;
             // 
             // AñadirProducto
             // 
@@ -431,6 +431,7 @@
             ((System.ComponentModel.ISupportInitialize)DataGridViewRegistroCategorias).EndInit();
             Panel2.ResumeLayout(false);
             Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxProducto).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -443,7 +444,6 @@
         internal Panel Panel2;
         internal ComboBox CBCategoria;
         internal Button BAñadirProducto;
-        internal ComboBox CBMarca;
         internal Label LImagen;
         internal ComboBox CBTalle;
         internal Label Label6;
@@ -463,7 +463,8 @@
 
         #endregion
 
-        internal Panel panel3;
+        private PictureBox pictureBoxProducto;
+        private Button BAgregarImagen;
     }
 
 
