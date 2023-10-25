@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,32 +10,74 @@ using Unitivo.Modelos;
 using Unitivo.Recursos;
 using Unitivo.Repositorios.Interfaces;
 using Unitivo.Sessions;
+using Unitivo.Validators;
 
 namespace Unitivo.Repositorios.Implementaciones
 {
     public class  UsuariosRepositorio : UsuarioInterface
     {
         private readonly UnitivoContext? _contexto;
-
+        EmpleadoRepositorio empleadoRepositorio = new EmpleadoRepositorio();
         public UsuariosRepositorio(){
             _contexto = Contexto.dbContexto;
         }
 
         private void CargarEmpleados(){
             _contexto?.Empleados.Load();
-
-            LocalStorage.empleados = _contexto?.Empleados.ToList();
         }
-        public void AgregarUsuario(Usuario usuario)
+        
+        public bool AgregarUsuario(Usuario x)
         {
-            _contexto?.Usuarios.Add(usuario);
+            try{
+                var validator = new UsuarioValidator();
+                var result = validator.Validate(x);
+
+                if(!result.IsValid){
+                    StringBuilder sb = new StringBuilder();
+                    foreach(var failure in result.Errors)
+                    {
+                        sb.AppendLine($"{failure.PropertyName}: {failure.ErrorMessage}");
+                    }
+                    throw new ValidationException(sb.ToString());
+                }
+
+                //necesito verificar que un correo no este asociado a una cuenta existente
+                if(_contexto?.Usuarios.Any(u => u.NombreUsuario == x.NombreUsuario) ?? false){
+                    throw new ValidationException("El nombre de usuario ya existe en la base de datos");
+                }
+
+                x.Estado = true;
+                x.FechaCreacion = DateTime.Now;
+
+                _contexto?.Usuarios.Add(x);
+                return true;
+            }
+            catch(Exception ex){
+                MessageBox.Show(ex.Message,"Usuario", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
         }
 
-        public Usuario BuscarUsuario(int id)
+        public Usuario BuscarUsuarioPorId(int id)
         {
             return _contexto?.Usuarios.Find(id)!;
         }
 
+        public List<Usuario> BuscarUsuario(object parametro){
+            if(int.TryParse(parametro.ToString(), out int id)){
+                List<Usuario> usuarios = _contexto?.Usuarios.Where(u => u.Id == id).ToList()!;
+                return usuarios;
+            }
+            else if( parametro is string)
+            {
+                string cadena = (string)parametro;
+                return _contexto?.Usuarios.Where(u => u.NombreUsuario!.Contains(cadena)).ToList()!;
+            }
+            else{
+                return new List<Usuario>();
+            }
+        }
+    
         public bool EliminarUsuario(int id)
         {
             Usuario? usuario = _contexto?.Usuarios.Find(id);
@@ -46,20 +89,39 @@ namespace Unitivo.Repositorios.Implementaciones
 
         public List<Usuario> ListarUsuarios()
         {
-            if(LocalStorage.empleados.IsNullOrEmpty()){
-                CargarEmpleados();
-            }
-            if(LocalStorage.usuarios.IsNullOrEmpty()){
-                LocalStorage.usuarios = _contexto?.Usuarios.ToList();
-            }
-            return LocalStorage.usuarios!;
+            return _contexto?.Usuarios.ToList()!;
         }
 
-        public bool ModificarUsuario(Usuario usuario)
+        public List<Usuario> ListarUsuariosActivos()
         {
-            _contexto?.Usuarios.Update(usuario);
+            return _contexto?.Usuarios.Where(u => u.Estado == true).ToList()!;
+        }
+        public bool ModificarUsuario(Usuario x)
+        {
+            try{
+                var validator = new UsuarioValidator();
+                var result = validator.Validate(x);
+                if(!result.IsValid){
+                    StringBuilder sb = new StringBuilder();
+                    foreach(var failure in result.Errors){
+                        sb.AppendLine($"{failure.PropertyName}: {failure.ErrorMessage}");
+                    }
+                    throw new ValidationException(sb.ToString());
+                }
+
+            if(BuscarUsuarioPorId(x.Id).NombreUsuario != x.NombreUsuario){
+                MessageBox.Show("No se puede modificar el nombre de usuario");
+                return false;
+            }
+            
+            _contexto?.Usuarios.Update(x);
             int resultado = _contexto?.SaveChanges() ?? 0;
             return resultado > 0;
+            }
+            catch(Exception ex){
+                MessageBox.Show(ex.Message, "Usuarios", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
         }
-    }
+    }         
 }

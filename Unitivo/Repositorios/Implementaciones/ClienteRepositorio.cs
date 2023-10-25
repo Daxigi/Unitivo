@@ -21,8 +21,6 @@ namespace Unitivo.Repositorios.Implementaciones
         {
             try
             {
-
-
                 var validator = new ClienteValidators();
                 var result = validator.Validate(x);
 
@@ -48,7 +46,6 @@ namespace Unitivo.Repositorios.Implementaciones
                     MessageBox.Show("El correo ya está asociado a un cliente.", "Clientes", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return false; // Retorna false si ya existe un cliente con el mismo correo
                 }
-
                 
                 x.FechaCreacion = DateTime.Now;
                 x.Estado = true;
@@ -72,17 +69,8 @@ namespace Unitivo.Repositorios.Implementaciones
         public bool ModificarCliente(Cliente x){
             try
             {
-                Cliente cliente = BuscarClientePorDni(x.Dni);
-
-                cliente.Nombre = x.Nombre;
-                cliente.Apellido = x.Apellido;
-                cliente.Dni = x.Dni;
-                cliente.Correo = x.Correo;
-                cliente.Direccion = x.Direccion;
-                cliente.Telefono = x.Telefono;
-
                 var validator = new ClienteValidators();
-                var result = validator.Validate(cliente);
+                var result = validator.Validate(x);
 
                 if (!result.IsValid)
                 {
@@ -94,14 +82,14 @@ namespace Unitivo.Repositorios.Implementaciones
                     throw new ValidationException(sb.ToString());
                 }
 
-                if (BuscarClientePorDni(x.Dni).Dni != cliente.Dni)
+                if (BuscarClientePorDni(x.Dni).Dni != x.Dni)
                 {
                     MessageBox.Show("El DNI ya está asociado a un cliente.", "Clientes", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return false; // Retorna false si ya existe un cliente con el mismo DNI
                 }
                 // Validar que el correo sea único
 
-                if (BuscarClientePorMail(x.Correo).Correo != cliente.Correo)
+                if (BuscarClientePorMail(x.Correo).Correo != x.Correo)
                 {
                     MessageBox.Show("El correo ya está asociado a un cliente.", "Clientes", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return false; // Retorna false si ya existe un cliente con el mismo correo
@@ -109,7 +97,9 @@ namespace Unitivo.Repositorios.Implementaciones
 
                 // Agrega el cliente al contexto de Entity Framework
 
-                _contexto?.Clientes.Update(cliente);
+                x.FechaModificacion = DateTime.Now;
+
+                _contexto?.Clientes.Update(x);
                 _contexto?.SaveChanges();
 
                 // Retorna true si el cliente se agregó con éxito

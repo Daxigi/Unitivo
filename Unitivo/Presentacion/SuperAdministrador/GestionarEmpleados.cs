@@ -22,7 +22,6 @@ namespace Unitivo.Presentacion.SuperAdministrador
             InitializeComponent();
             CargarEmpleados();
             // Establecer la selección inicial en la primera opción.
-            // ComboBoxBuscarDni.SelectedIndex = 0;
         }
 
         private void NumStr_KeyPress(object sender, KeyPressEventArgs e)

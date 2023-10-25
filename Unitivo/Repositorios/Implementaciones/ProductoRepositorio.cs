@@ -65,5 +65,9 @@ namespace Unitivo.Repositorios.Implementaciones
             int resultado = _contexto?.SaveChanges() ?? 0;
             return resultado > 0;
         }
+
+        public List<Producto> ListarProductosActivos(){
+            return _contexto?.Productos.Where(c => c.Estado == true).ToList()!;
+        }
     }
 }

@@ -9,14 +9,19 @@ namespace Unitivo.Repositorios.Interfaces
 {
     public interface UsuarioInterface
     {
-        public void AgregarUsuario(Usuario usuario);
+        public bool AgregarUsuario(Usuario usuario);
 
         public bool EliminarUsuario(int id);
 
         public bool ModificarUsuario(Usuario usuario);
 
-        public Usuario BuscarUsuario(int id);
+        public Usuario BuscarUsuarioPorId(int id);
+
+        public List<Usuario> BuscarUsuario(object parametro);
 
         public List<Usuario> ListarUsuarios();
+
+        public List<Usuario> ListarUsuariosActivos();
+
     }
 }
