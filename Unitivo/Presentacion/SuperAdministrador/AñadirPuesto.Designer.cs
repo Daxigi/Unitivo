@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             TabControlRegPerfil = new TabControl();
             TabPageListaPerfil = new TabPage();
-            dgvRegistroPerfil = new DataGridView();
+            DataGridViewListarPerfiles = new DataGridView();
             ID = new DataGridViewTextBoxColumn();
             Descripcion = new DataGridViewTextBoxColumn();
             Estado = new DataGridViewTextBoxColumn();
@@ -42,7 +42,7 @@
             LNombrePerfil = new Label();
             TabControlRegPerfil.SuspendLayout();
             TabPageListaPerfil.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvRegistroPerfil).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DataGridViewListarPerfiles).BeginInit();
             PanelRegClientes.SuspendLayout();
             SuspendLayout();
             // 
@@ -58,7 +58,7 @@
             // 
             // TabPageListaPerfil
             // 
-            TabPageListaPerfil.Controls.Add(dgvRegistroPerfil);
+            TabPageListaPerfil.Controls.Add(DataGridViewListarPerfiles);
             TabPageListaPerfil.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             TabPageListaPerfil.ForeColor = Color.White;
             TabPageListaPerfil.Location = new Point(4, 28);
@@ -69,45 +69,45 @@
             TabPageListaPerfil.Text = "Lista de Puestos";
             TabPageListaPerfil.UseVisualStyleBackColor = true;
             // 
-            // dgvRegistroPerfil
+            // DataGridViewListarPerfiles
             // 
-            dgvRegistroPerfil.AllowUserToAddRows = false;
-            dgvRegistroPerfil.AllowUserToDeleteRows = false;
-            dgvRegistroPerfil.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvRegistroPerfil.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dgvRegistroPerfil.BackgroundColor = Color.RosyBrown;
-            dgvRegistroPerfil.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.DarkOliveGreen;
-            dataGridViewCellStyle1.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvRegistroPerfil.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dgvRegistroPerfil.ColumnHeadersHeight = 20;
-            dgvRegistroPerfil.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dgvRegistroPerfil.Columns.AddRange(new DataGridViewColumn[] { ID, Descripcion, Estado });
-            dgvRegistroPerfil.Dock = DockStyle.Fill;
-            dgvRegistroPerfil.EnableHeadersVisualStyles = false;
-            dgvRegistroPerfil.Location = new Point(3, 3);
-            dgvRegistroPerfil.Name = "dgvRegistroPerfil";
-            dgvRegistroPerfil.ReadOnly = true;
-            dgvRegistroPerfil.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.ActiveCaption;
-            dataGridViewCellStyle2.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgvRegistroPerfil.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dgvRegistroPerfil.RowHeadersWidth = 51;
-            dgvRegistroPerfil.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dgvRegistroPerfil.RowTemplate.DefaultCellStyle.ForeColor = Color.Black;
-            dgvRegistroPerfil.RowTemplate.Height = 24;
-            dgvRegistroPerfil.Size = new Size(699, 334);
-            dgvRegistroPerfil.TabIndex = 0;
+            DataGridViewListarPerfiles.AllowUserToAddRows = false;
+            DataGridViewListarPerfiles.AllowUserToDeleteRows = false;
+            DataGridViewListarPerfiles.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            DataGridViewListarPerfiles.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            DataGridViewListarPerfiles.BackgroundColor = Color.RosyBrown;
+            DataGridViewListarPerfiles.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.DarkOliveGreen;
+            dataGridViewCellStyle3.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            DataGridViewListarPerfiles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            DataGridViewListarPerfiles.ColumnHeadersHeight = 20;
+            DataGridViewListarPerfiles.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            DataGridViewListarPerfiles.Columns.AddRange(new DataGridViewColumn[] { ID, Descripcion, Estado });
+            DataGridViewListarPerfiles.Dock = DockStyle.Fill;
+            DataGridViewListarPerfiles.EnableHeadersVisualStyles = false;
+            DataGridViewListarPerfiles.Location = new Point(3, 3);
+            DataGridViewListarPerfiles.Name = "DataGridViewListarPerfiles";
+            DataGridViewListarPerfiles.ReadOnly = true;
+            DataGridViewListarPerfiles.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = SystemColors.ActiveCaption;
+            dataGridViewCellStyle4.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            DataGridViewListarPerfiles.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            DataGridViewListarPerfiles.RowHeadersWidth = 51;
+            DataGridViewListarPerfiles.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            DataGridViewListarPerfiles.RowTemplate.DefaultCellStyle.ForeColor = Color.Black;
+            DataGridViewListarPerfiles.RowTemplate.Height = 24;
+            DataGridViewListarPerfiles.Size = new Size(699, 334);
+            DataGridViewListarPerfiles.TabIndex = 0;
             // 
             // ID
             // 
@@ -197,7 +197,7 @@
             Text = "Form1";
             TabControlRegPerfil.ResumeLayout(false);
             TabPageListaPerfil.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgvRegistroPerfil).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DataGridViewListarPerfiles).EndInit();
             PanelRegClientes.ResumeLayout(false);
             PanelRegClientes.PerformLayout();
             ResumeLayout(false);
@@ -205,7 +205,7 @@
 
         internal TabControl TabControlRegPerfil;
         internal TabPage TabPageListaPerfil;
-        internal DataGridView dgvRegistroPerfil;
+        internal DataGridView DataGridViewListarPerfiles;
         internal Panel PanelRegClientes;
         internal Button BRegistrarPerfil;
         internal TextBox TBNombrePerfil;
