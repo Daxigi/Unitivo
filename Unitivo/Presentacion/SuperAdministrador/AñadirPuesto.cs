@@ -7,15 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Unitivo.Modelos;
 using Unitivo.Presentacion.Logica;
+using Unitivo.Repositorios.Implementaciones;
 
 namespace Unitivo.Presentacion.SuperAdministrador
 {
     public partial class AñadirPuesto : Form
     {
+        PerfilRepositorio perfilRepositorio = new PerfilRepositorio();
         public AñadirPuesto()
         {
             InitializeComponent();
+            CargarPerfiles();
         }
 
         private void String_KeyPress(object sender, KeyPressEventArgs e)
@@ -25,38 +29,53 @@ namespace Unitivo.Presentacion.SuperAdministrador
 
         private void BRegistrarPerfil_Click(object sender, EventArgs e)
         {
-            // Verificar si el campo Nombre de Perfil está vacío.
-            if (string.IsNullOrWhiteSpace(TBNombrePerfil.Text))
+            if (CommonFunctions.ValidarCamposNoVacios(this))
             {
-                // Mostrar un mensaje de error si el campo está vacío.
-                MessageBox.Show("El campo Nombre de Perfil es obligatorio. Por favor, complételo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                try
+                {
+                    Perfile perfile = new Perfile();
+                    perfile.DescripcionPerfil = TBNombrePerfil.Text;
+
+
+                    if (perfilRepositorio.AgregarPerfil(perfile))
+                    {
+                        MessageBox.Show("Puesto agregado correctamente");
+                        LimpiarTextBoxs();
+                        CargarPerfiles();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al agregar puesto");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Captura y maneja el error que ocurra en perfilRepositorio.AgregarPerfil(perfil)
+                    MessageBox.Show("Error al agregar puesto: " + ex.Message, "Puesto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
-                // El campo Nombre de Perfil está lleno, puedes proceder a agregar el perfil al DataGridView.
-
-                // Valores estáticos para el ID y el estado.
-                string id = "1";
-                string nombrePerfil = TBNombrePerfil.Text;
-                string estado = "1";
-
-                // Crear una nueva fila para el DataGridView.
-                DataGridViewRow row = new DataGridViewRow();
-                row.Cells.Add(new DataGridViewTextBoxCell { Value = id });
-                row.Cells.Add(new DataGridViewTextBoxCell { Value = nombrePerfil });
-                row.Cells.Add(new DataGridViewTextBoxCell { Value = estado });
-
-                // Agregar la fila al DataGridView.
-                dgvRegistroPerfil.Rows.Add(row);
-
-                // Limpiar el campo Nombre de Perfil después de agregar el perfil.
-                TBNombrePerfil.Clear();
-
-                // Mostrar un mensaje de éxito.
-                MessageBox.Show("Puesto registrado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Debe completar todos los campos", "Puesto", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
+        private void CargarPerfiles()
+        {
+            List<Perfile> perfiles = perfilRepositorio.ListarPerfiles();
+            DataGridViewListarPerfiles.Rows.Clear();
+            DataGridViewListarPerfiles.Refresh();
+            foreach (Perfile perfile in perfiles)
+            {
+                DataGridViewListarPerfiles.Rows.Add(perfile.Id, perfile.DescripcionPerfil,perfile.EstadoPerfil);
+            }
+        }
+
+        // Método para limpiar los TextBox después de agregar un perfil.
+        private void LimpiarTextBoxs()
+        {
+            TBNombrePerfil.Clear();
+        }
 
 
     }
