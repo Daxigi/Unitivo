@@ -43,7 +43,21 @@ namespace Unitivo.Presentacion.Administrador
         {
             if (verificarCamposNulos())
             {
+                Producto producto = new Producto();
+                producto.Nombre = TBNombreProducto.Text;
+                producto.IdCategoria = ((Categoria)CBCategoria.SelectedItem).Id;
+                producto.Stock = int.Parse(TBStock.Text);
+                producto.Precio = double.Parse(TBPrecio.Text);
+                producto.IdTalle = ((Talle)CBTalle.SelectedItem).Id;
+                producto.Imagen = rutaImagenProducto!;
 
+                try{
+                    productoRepositorio!.AgregarProducto(producto);
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 

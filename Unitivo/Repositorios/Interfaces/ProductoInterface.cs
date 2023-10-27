@@ -15,6 +15,6 @@ namespace Unitivo.Repositorios.Interfaces
         public Producto BuscarProducto(int id);
         public List<Producto> ListarProductos();
         public List<Producto> ListarProductosActivos();
-
+        public List<Producto> BuscarProductoNombre(string nombre);
     }
 }

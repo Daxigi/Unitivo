@@ -54,22 +54,17 @@ namespace Unitivo.Repositorios.Implementaciones
             }
         }
         public Perfile BuscarPerfilPorId(int id){
-            Perfile perfil = _contexto?.Perfiles.Find(id)!;
-            return perfil;
-        
+            return _contexto?.Perfiles.Find(id)!;
         }
         
         public List<Perfile> BuscarPerfil(string nombre){
-            List<Perfile> perfiles = _contexto?.Perfiles.Where(x => x.DescripcionPerfil.Contains(nombre)).ToList()!;
-            return perfiles;
+            return _contexto?.Perfiles.Where(x => x.DescripcionPerfil.Contains(nombre)).ToList()!;
         }
         public List<Perfile> ListarPerfiles(){
-            List<Perfile> perfiles = _contexto?.Perfiles.ToList()!;
-            return perfiles;
+            return _contexto?.Perfiles.ToList()!;
         }
         public List<Perfile> ListarPerfilesActivos(){
-            List<Perfile> perfiles = _contexto?.Perfiles.Where(x => x.EstadoPerfil == true).ToList()!;
-            return perfiles;
+            return _contexto?.Perfiles.Where(x => x.EstadoPerfil == true).ToList()!;
         }
     }
 }

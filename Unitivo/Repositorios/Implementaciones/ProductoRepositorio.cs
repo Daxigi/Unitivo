@@ -2,6 +2,7 @@
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,6 +10,7 @@ using Unitivo.Modelos;
 using Unitivo.Recursos;
 using Unitivo.Repositorios.Interfaces;
 using Unitivo.Sessions;
+using Unitivo.Validators;
 
 namespace Unitivo.Repositorios.Implementaciones
 {
@@ -27,9 +29,31 @@ namespace Unitivo.Repositorios.Implementaciones
             LocalStorage.categorias = _contexto?.Categorias.ToList();
             LocalStorage.talles = _contexto?.Talles.ToList();
         }
-        public void AgregarProducto(Producto producto)
+        public void AgregarProducto(Producto x)
         {
-            _contexto?.Productos.Add(producto);
+            try
+            {
+                var validator = new ProductoValidator();
+                var result = validator.Validate(x);
+
+                if(!result.IsValid)
+                {
+                    StringBuilder sb = new StringBuilder();
+                    foreach (var failure in result.Errors)
+                    {
+                        sb.AppendLine($"{failure.PropertyName}: {failure.ErrorMessage}");
+                    }
+                    throw new ValidationException(sb.ToString());
+                }
+
+                
+
+                _contexto?.Productos.Add(x);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
         public Producto BuscarProducto(int id)
@@ -68,6 +92,10 @@ namespace Unitivo.Repositorios.Implementaciones
 
         public List<Producto> ListarProductosActivos(){
             return _contexto?.Productos.Where(c => c.Estado == true).ToList()!;
+        }
+
+        public List<Producto> BuscarProductoNombre(string nombre){
+            return _contexto?.Productos.Where(c => c.Nombre == nombre).ToList()!;
         }
     }
 }
