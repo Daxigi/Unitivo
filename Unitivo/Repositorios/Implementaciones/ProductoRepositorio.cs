@@ -46,7 +46,13 @@ namespace Unitivo.Repositorios.Implementaciones
                     throw new ValidationException(sb.ToString());
                 }
 
-                
+                string nombreAleatorio = Path.Combine("C:\\MisImagenes", 
+                Guid.NewGuid().ToString() + "_" + DateTime.Now.ToString("yyyyMMddHHmmss") + ".jpg"
+                );
+
+                x.Imagen = nombreAleatorio;
+                x.Estado = true;
+                x.FechaCreacion = DateTime.Now;
 
                 _contexto?.Productos.Add(x);
             }
@@ -83,15 +89,17 @@ namespace Unitivo.Repositorios.Implementaciones
            return LocalStorage.productos!;
         }
 
-        public bool ModificarProducto(Producto producto)
+        public bool ModificarProducto(Producto x, int stockAdic)
         {
+            Producto? producto = _contexto?.Productos.Find(x.Id);
+            producto!.Stock = producto.Stock + stockAdic;
             _contexto?.Productos.Update(producto);
             int resultado = _contexto?.SaveChanges() ?? 0;
             return resultado > 0;
         }
 
         public List<Producto> ListarProductosActivos(){
-            return _contexto?.Productos.Where(c => c.Estado == true).ToList()!;
+            return _contexto?.Productos.Where(c => c.Estado == true || c.Stock != 0).ToList()!;
         }
 
         public List<Producto> BuscarProductoNombre(string nombre){

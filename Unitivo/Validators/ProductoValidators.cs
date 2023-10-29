@@ -49,6 +49,7 @@ namespace Unitivo.Validators
             //validar imagen
             RuleFor(x => x.Imagen)
                 .NotEmpty().WithMessage("El campo Imagen es obligatorio")
+                .Must(x => x.Contains(".jpg") || x.Contains(".png") || x.Contains(".jpeg")).WithMessage("El campo Imagen debe ser un archivo .jpg, .png o .jpeg")
                 ;
         }
 
@@ -62,8 +63,6 @@ namespace Unitivo.Validators
                 return true;
             }
         }
-
-        
         private bool ExisteCategoria(int id)
         {
             if(categoriaRepositorio!.BuscarCategoriaPorId(id) != null){
@@ -74,10 +73,6 @@ namespace Unitivo.Validators
                 return true;
             }
         }
-
-
-
-        //necesito que copies el modelo de ExisteCategoria para talle y nombre del producto
         private bool ExisteTalle(int id){
             if(talleRepositorio!.BuscarTalle(id) != null){
                 return false;

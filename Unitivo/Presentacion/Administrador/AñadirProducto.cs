@@ -12,6 +12,7 @@ using Unitivo.Presentacion.Logica;
 using Unitivo.Repositorios.Implementaciones;
 using Unitivo.Repositorios.Interfaces;
 using Unitivo.Sessions;
+using System.IO;
 
 namespace Unitivo.Presentacion.Administrador
 {
@@ -20,6 +21,7 @@ namespace Unitivo.Presentacion.Administrador
         private readonly ProductoInterface? productoRepositorio;
 
         private string? rutaImagenProducto;
+        private Image? image;
         public AñadirProducto()
         {
             InitializeComponent();
@@ -70,6 +72,7 @@ namespace Unitivo.Presentacion.Administrador
                 {
                     rutaImagenProducto = openFileDialog.FileName;
                     pictureBoxProducto.Image = Image.FromFile(rutaImagenProducto);
+                    image!.Save(rutaImagenProducto);
                 }
             }
         }
