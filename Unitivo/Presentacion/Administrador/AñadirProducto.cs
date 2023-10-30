@@ -12,6 +12,7 @@ using Unitivo.Presentacion.Logica;
 using Unitivo.Repositorios.Implementaciones;
 using Unitivo.Repositorios.Interfaces;
 using Unitivo.Sessions;
+using System.IO;
 
 namespace Unitivo.Presentacion.Administrador
 {
@@ -20,6 +21,7 @@ namespace Unitivo.Presentacion.Administrador
         private readonly ProductoInterface? productoRepositorio;
 
         private string? rutaImagenProducto;
+        private Image? image;
         public AñadirProducto()
         {
             InitializeComponent();
@@ -43,7 +45,21 @@ namespace Unitivo.Presentacion.Administrador
         {
             if (verificarCamposNulos())
             {
+                Producto producto = new Producto();
+                producto.Nombre = TBNombreProducto.Text;
+                producto.IdCategoria = ((Categoria)CBCategoria.SelectedItem).Id;
+                producto.Stock = int.Parse(TBStock.Text);
+                producto.Precio = double.Parse(TBPrecio.Text);
+                producto.IdTalle = ((Talle)CBTalle.SelectedItem).Id;
+                producto.Imagen = rutaImagenProducto!;
 
+                try{
+                    productoRepositorio!.AgregarProducto(producto);
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -56,6 +72,7 @@ namespace Unitivo.Presentacion.Administrador
                 {
                     rutaImagenProducto = openFileDialog.FileName;
                     pictureBoxProducto.Image = Image.FromFile(rutaImagenProducto);
+                    image!.Save(rutaImagenProducto);
                 }
             }
         }
