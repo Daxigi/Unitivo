@@ -52,5 +52,9 @@ namespace Unitivo.Presentacion.Administrador
             // Aquí puedes agregar el código para eliminar el producto seleccionado.
         }
 
+        private void BAltaTalle_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

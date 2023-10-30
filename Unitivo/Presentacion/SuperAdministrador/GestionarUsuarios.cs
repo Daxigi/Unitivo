@@ -50,6 +50,5 @@ namespace Unitivo.Presentacion.SuperAdministrador
 
             // Aquí puedes agregar el código para eliminar el producto seleccionado.
         }
-
     }
 }

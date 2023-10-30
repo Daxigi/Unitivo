@@ -47,10 +47,19 @@
             Column13 = new DataGridViewTextBoxColumn();
             Column14 = new DataGridViewTextBoxColumn();
             Column15 = new DataGridViewTextBoxColumn();
+            GroupBoxDatosCliente = new GroupBox();
+            button1 = new Button();
+            ComboBoxPerfil = new ComboBox();
+            LDni = new Label();
+            TBContraseñaUsuario = new TextBox();
+            TBNombreUsuario = new TextBox();
+            LNombreCliente = new Label();
+            LApellidoCliente = new Label();
             GroupBoxGestionUsuarios.SuspendLayout();
             TabControlRegUsuarios.SuspendLayout();
             TabPageListaUsuarios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvListaUsuarios).BeginInit();
+            GroupBoxDatosCliente.SuspendLayout();
             SuspendLayout();
             // 
             // BModificarUsuario
@@ -58,7 +67,7 @@
             BModificarUsuario.BackColor = Color.SteelBlue;
             BModificarUsuario.ForeColor = Color.White;
             BModificarUsuario.Image = Properties.Resources.icons8_editar_archivo_26;
-            BModificarUsuario.Location = new Point(928, 358);
+            BModificarUsuario.Location = new Point(959, 282);
             BModificarUsuario.Margin = new Padding(4, 5, 4, 5);
             BModificarUsuario.Name = "BModificarUsuario";
             BModificarUsuario.Size = new Size(67, 69);
@@ -71,7 +80,7 @@
             BEliminarUsuario.BackColor = Color.Brown;
             BEliminarUsuario.ForeColor = Color.White;
             BEliminarUsuario.Image = Properties.Resources.icons8_basura_26;
-            BEliminarUsuario.Location = new Point(928, 452);
+            BEliminarUsuario.Location = new Point(959, 376);
             BEliminarUsuario.Margin = new Padding(4, 5, 4, 5);
             BEliminarUsuario.Name = "BEliminarUsuario";
             BEliminarUsuario.Size = new Size(67, 69);
@@ -86,7 +95,7 @@
             GroupBoxGestionUsuarios.Controls.Add(TBGestionUsuario);
             GroupBoxGestionUsuarios.Font = new Font("Britannic Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             GroupBoxGestionUsuarios.ForeColor = Color.Sienna;
-            GroupBoxGestionUsuarios.Location = new Point(331, 57);
+            GroupBoxGestionUsuarios.Location = new Point(341, 24);
             GroupBoxGestionUsuarios.Margin = new Padding(4, 5, 4, 5);
             GroupBoxGestionUsuarios.Name = "GroupBoxGestionUsuarios";
             GroupBoxGestionUsuarios.Padding = new Padding(4, 5, 4, 5);
@@ -125,10 +134,10 @@
             // 
             TabControlRegUsuarios.Controls.Add(TabPageListaUsuarios);
             TabControlRegUsuarios.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            TabControlRegUsuarios.Location = new Point(82, 230);
+            TabControlRegUsuarios.Location = new Point(64, 182);
             TabControlRegUsuarios.Name = "TabControlRegUsuarios";
             TabControlRegUsuarios.SelectedIndex = 0;
-            TabControlRegUsuarios.Size = new Size(799, 379);
+            TabControlRegUsuarios.Size = new Size(844, 323);
             TabControlRegUsuarios.TabIndex = 75;
             // 
             // TabPageListaUsuarios
@@ -139,7 +148,7 @@
             TabPageListaUsuarios.Location = new Point(4, 28);
             TabPageListaUsuarios.Name = "TabPageListaUsuarios";
             TabPageListaUsuarios.Padding = new Padding(3);
-            TabPageListaUsuarios.Size = new Size(791, 347);
+            TabPageListaUsuarios.Size = new Size(836, 291);
             TabPageListaUsuarios.TabIndex = 0;
             TabPageListaUsuarios.Text = "Lista de Usuarios";
             TabPageListaUsuarios.UseVisualStyleBackColor = true;
@@ -148,7 +157,7 @@
             // 
             dgvListaUsuarios.AllowUserToAddRows = false;
             dgvListaUsuarios.AllowUserToDeleteRows = false;
-            dgvListaUsuarios.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            dgvListaUsuarios.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvListaUsuarios.BackgroundColor = Color.RosyBrown;
             dgvListaUsuarios.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -186,9 +195,10 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
             dgvListaUsuarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dgvListaUsuarios.RowHeadersWidth = 51;
+            dgvListaUsuarios.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle4.ForeColor = Color.Black;
             dgvListaUsuarios.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            dgvListaUsuarios.Size = new Size(785, 341);
+            dgvListaUsuarios.Size = new Size(830, 285);
             dgvListaUsuarios.TabIndex = 2;
             // 
             // Column8
@@ -197,7 +207,6 @@
             Column8.MinimumWidth = 6;
             Column8.Name = "Column8";
             Column8.ReadOnly = true;
-            Column8.Width = 52;
             // 
             // Column9
             // 
@@ -205,7 +214,6 @@
             Column9.MinimumWidth = 6;
             Column9.Name = "Column9";
             Column9.ReadOnly = true;
-            Column9.Width = 93;
             // 
             // Column11
             // 
@@ -213,7 +221,6 @@
             Column11.MinimumWidth = 6;
             Column11.Name = "Column11";
             Column11.ReadOnly = true;
-            Column11.Width = 85;
             // 
             // Column12
             // 
@@ -221,7 +228,6 @@
             Column12.MinimumWidth = 6;
             Column12.Name = "Column12";
             Column12.ReadOnly = true;
-            Column12.Width = 173;
             // 
             // Column13
             // 
@@ -229,7 +235,6 @@
             Column13.MinimumWidth = 6;
             Column13.Name = "Column13";
             Column13.ReadOnly = true;
-            Column13.Width = 145;
             // 
             // Column14
             // 
@@ -237,7 +242,6 @@
             Column14.MinimumWidth = 6;
             Column14.Name = "Column14";
             Column14.ReadOnly = true;
-            Column14.Width = 76;
             // 
             // Column15
             // 
@@ -245,14 +249,113 @@
             Column15.MinimumWidth = 6;
             Column15.Name = "Column15";
             Column15.ReadOnly = true;
-            Column15.Width = 108;
+            // 
+            // GroupBoxDatosCliente
+            // 
+            GroupBoxDatosCliente.BackColor = Color.RosyBrown;
+            GroupBoxDatosCliente.Controls.Add(button1);
+            GroupBoxDatosCliente.Controls.Add(ComboBoxPerfil);
+            GroupBoxDatosCliente.Controls.Add(LDni);
+            GroupBoxDatosCliente.Controls.Add(TBContraseñaUsuario);
+            GroupBoxDatosCliente.Controls.Add(TBNombreUsuario);
+            GroupBoxDatosCliente.Controls.Add(LNombreCliente);
+            GroupBoxDatosCliente.Controls.Add(LApellidoCliente);
+            GroupBoxDatosCliente.Font = new Font("Britannic Bold", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            GroupBoxDatosCliente.ForeColor = Color.White;
+            GroupBoxDatosCliente.Location = new Point(172, 575);
+            GroupBoxDatosCliente.Margin = new Padding(4, 5, 4, 5);
+            GroupBoxDatosCliente.Name = "GroupBoxDatosCliente";
+            GroupBoxDatosCliente.Padding = new Padding(4, 5, 4, 5);
+            GroupBoxDatosCliente.Size = new Size(668, 291);
+            GroupBoxDatosCliente.TabIndex = 76;
+            GroupBoxDatosCliente.TabStop = false;
+            GroupBoxDatosCliente.Text = "Modificar Usuario";
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.DarkOliveGreen;
+            button1.FlatAppearance.BorderColor = Color.White;
+            button1.FlatAppearance.BorderSize = 2;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Britannic Bold", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(408, 190);
+            button1.Margin = new Padding(5, 6, 5, 6);
+            button1.Name = "button1";
+            button1.Size = new Size(143, 52);
+            button1.TabIndex = 21;
+            button1.Text = "Modificar";
+            button1.UseVisualStyleBackColor = false;
+            // 
+            // ComboBoxPerfil
+            // 
+            ComboBoxPerfil.DropDownStyle = ComboBoxStyle.DropDownList;
+            ComboBoxPerfil.FormattingEnabled = true;
+            ComboBoxPerfil.Items.AddRange(new object[] { "Vendedor", "Gerente" });
+            ComboBoxPerfil.Location = new Point(366, 97);
+            ComboBoxPerfil.Name = "ComboBoxPerfil";
+            ComboBoxPerfil.Size = new Size(213, 45);
+            ComboBoxPerfil.TabIndex = 20;
+            // 
+            // LDni
+            // 
+            LDni.AutoSize = true;
+            LDni.Font = new Font("Britannic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            LDni.ForeColor = Color.White;
+            LDni.Location = new Point(363, 68);
+            LDni.Margin = new Padding(5, 0, 5, 0);
+            LDni.Name = "LDni";
+            LDni.Size = new Size(58, 22);
+            LDni.TabIndex = 19;
+            LDni.Text = "Perfil";
+            // 
+            // TBContraseñaUsuario
+            // 
+            TBContraseñaUsuario.Location = new Point(92, 197);
+            TBContraseñaUsuario.Margin = new Padding(5, 6, 5, 6);
+            TBContraseñaUsuario.Name = "TBContraseñaUsuario";
+            TBContraseñaUsuario.Size = new Size(213, 45);
+            TBContraseñaUsuario.TabIndex = 8;
+            // 
+            // TBNombreUsuario
+            // 
+            TBNombreUsuario.Location = new Point(92, 98);
+            TBNombreUsuario.Margin = new Padding(5, 6, 5, 6);
+            TBNombreUsuario.Name = "TBNombreUsuario";
+            TBNombreUsuario.Size = new Size(213, 45);
+            TBNombreUsuario.TabIndex = 6;
+            // 
+            // LNombreCliente
+            // 
+            LNombreCliente.AutoSize = true;
+            LNombreCliente.Font = new Font("Britannic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            LNombreCliente.ForeColor = Color.White;
+            LNombreCliente.Location = new Point(89, 66);
+            LNombreCliente.Margin = new Padding(5, 0, 5, 0);
+            LNombreCliente.Name = "LNombreCliente";
+            LNombreCliente.Size = new Size(85, 22);
+            LNombreCliente.TabIndex = 0;
+            LNombreCliente.Text = "Nombre:";
+            // 
+            // LApellidoCliente
+            // 
+            LApellidoCliente.AutoSize = true;
+            LApellidoCliente.Font = new Font("Britannic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            LApellidoCliente.ForeColor = Color.White;
+            LApellidoCliente.Location = new Point(89, 167);
+            LApellidoCliente.Margin = new Padding(5, 0, 5, 0);
+            LApellidoCliente.Name = "LApellidoCliente";
+            LApellidoCliente.Size = new Size(118, 22);
+            LApellidoCliente.TabIndex = 4;
+            LApellidoCliente.Text = "Contraseña:";
             // 
             // GestionarUsuarios
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSeaGreen;
-            ClientSize = new Size(1067, 738);
+            ClientSize = new Size(1080, 908);
+            Controls.Add(GroupBoxDatosCliente);
             Controls.Add(TabControlRegUsuarios);
             Controls.Add(GroupBoxGestionUsuarios);
             Controls.Add(BModificarUsuario);
@@ -266,6 +369,8 @@
             TabControlRegUsuarios.ResumeLayout(false);
             TabPageListaUsuarios.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvListaUsuarios).EndInit();
+            GroupBoxDatosCliente.ResumeLayout(false);
+            GroupBoxDatosCliente.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -287,5 +392,13 @@
         private DataGridViewTextBoxColumn Column13;
         private DataGridViewTextBoxColumn Column14;
         private DataGridViewTextBoxColumn Column15;
+        internal GroupBox GroupBoxDatosCliente;
+        internal ComboBox ComboBoxPerfil;
+        internal Label LDni;
+        internal TextBox TBContraseñaUsuario;
+        internal TextBox TBNombreUsuario;
+        internal Label LNombreCliente;
+        internal Label LApellidoCliente;
+        internal Button button1;
     }
 }

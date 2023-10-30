@@ -94,6 +94,9 @@
     <Compile Update="Presentacion\Vendedor\BuscarProducto.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Presentacion\Vendedor\FacturaVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Presentacion\Vendedor\ListarClientes.cs">
       <SubType>Form</SubType>
     </Compile>

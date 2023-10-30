@@ -42,10 +42,15 @@
             ID = new DataGridViewTextBoxColumn();
             Descripcion = new DataGridViewTextBoxColumn();
             Estado = new DataGridViewTextBoxColumn();
+            GroupBoxDatosPerfil = new GroupBox();
+            BModEmpleado = new Button();
+            TBModPerfil = new TextBox();
+            LModPerfil = new Label();
             GroupBoxGestionPerfil.SuspendLayout();
             TabControlRegPerfil.SuspendLayout();
             TabPageListaPerfil.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvRegistroPerfil).BeginInit();
+            GroupBoxDatosPerfil.SuspendLayout();
             SuspendLayout();
             // 
             // GroupBoxGestionPerfil
@@ -55,11 +60,11 @@
             GroupBoxGestionPerfil.Controls.Add(TBGestionPerfil);
             GroupBoxGestionPerfil.Font = new Font("Cooper Black", 18F, FontStyle.Regular, GraphicsUnit.Point);
             GroupBoxGestionPerfil.ForeColor = Color.Sienna;
-            GroupBoxGestionPerfil.Location = new Point(343, 54);
+            GroupBoxGestionPerfil.Location = new Point(334, 34);
             GroupBoxGestionPerfil.Margin = new Padding(4, 5, 4, 5);
             GroupBoxGestionPerfil.Name = "GroupBoxGestionPerfil";
             GroupBoxGestionPerfil.Padding = new Padding(4, 5, 4, 5);
-            GroupBoxGestionPerfil.Size = new Size(407, 143);
+            GroupBoxGestionPerfil.Size = new Size(407, 127);
             GroupBoxGestionPerfil.TabIndex = 84;
             GroupBoxGestionPerfil.TabStop = false;
             GroupBoxGestionPerfil.Text = "Gestión de Puestos";
@@ -73,17 +78,17 @@
             BBuscarPerfil.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             BBuscarPerfil.ForeColor = Color.White;
             BBuscarPerfil.Image = Properties.Resources.icons8_búsqueda_26;
-            BBuscarPerfil.Location = new Point(283, 57);
+            BBuscarPerfil.Location = new Point(289, 48);
             BBuscarPerfil.Margin = new Padding(4, 5, 4, 5);
             BBuscarPerfil.Name = "BBuscarPerfil";
-            BBuscarPerfil.Size = new Size(60, 63);
+            BBuscarPerfil.Size = new Size(60, 56);
             BBuscarPerfil.TabIndex = 14;
             BBuscarPerfil.UseVisualStyleBackColor = false;
             // 
             // TBGestionPerfil
             // 
             TBGestionPerfil.Font = new Font("Britannic Bold", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            TBGestionPerfil.Location = new Point(76, 71);
+            TBGestionPerfil.Location = new Point(75, 61);
             TBGestionPerfil.Margin = new Padding(4, 5, 4, 5);
             TBGestionPerfil.Name = "TBGestionPerfil";
             TBGestionPerfil.Size = new Size(173, 30);
@@ -95,7 +100,7 @@
             BModificarPerfiles.BackColor = Color.SteelBlue;
             BModificarPerfiles.ForeColor = Color.White;
             BModificarPerfiles.Image = Properties.Resources.icons8_editar_archivo_26;
-            BModificarPerfiles.Location = new Point(933, 353);
+            BModificarPerfiles.Location = new Point(954, 337);
             BModificarPerfiles.Margin = new Padding(4, 5, 4, 5);
             BModificarPerfiles.Name = "BModificarPerfiles";
             BModificarPerfiles.Size = new Size(67, 69);
@@ -108,7 +113,7 @@
             BEliminarPerfiles.BackColor = Color.Brown;
             BEliminarPerfiles.ForeColor = Color.White;
             BEliminarPerfiles.Image = Properties.Resources.icons8_basura_26;
-            BEliminarPerfiles.Location = new Point(933, 447);
+            BEliminarPerfiles.Location = new Point(954, 431);
             BEliminarPerfiles.Margin = new Padding(4, 5, 4, 5);
             BEliminarPerfiles.Name = "BEliminarPerfiles";
             BEliminarPerfiles.Size = new Size(67, 69);
@@ -121,7 +126,7 @@
             BAltaPerfil.BackColor = Color.DarkOliveGreen;
             BAltaPerfil.ForeColor = Color.White;
             BAltaPerfil.Image = Properties.Resources.icons8_más_2_matemáticas_30;
-            BAltaPerfil.Location = new Point(933, 447);
+            BAltaPerfil.Location = new Point(954, 431);
             BAltaPerfil.Margin = new Padding(4, 5, 4, 5);
             BAltaPerfil.Name = "BAltaPerfil";
             BAltaPerfil.Size = new Size(67, 69);
@@ -132,10 +137,10 @@
             // 
             TabControlRegPerfil.Controls.Add(TabPageListaPerfil);
             TabControlRegPerfil.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            TabControlRegPerfil.Location = new Point(158, 226);
+            TabControlRegPerfil.Location = new Point(72, 234);
             TabControlRegPerfil.Name = "TabControlRegPerfil";
             TabControlRegPerfil.SelectedIndex = 0;
-            TabControlRegPerfil.Size = new Size(713, 372);
+            TabControlRegPerfil.Size = new Size(833, 317);
             TabControlRegPerfil.TabIndex = 87;
             // 
             // TabPageListaPerfil
@@ -146,7 +151,7 @@
             TabPageListaPerfil.Location = new Point(4, 28);
             TabPageListaPerfil.Name = "TabPageListaPerfil";
             TabPageListaPerfil.Padding = new Padding(3);
-            TabPageListaPerfil.Size = new Size(705, 340);
+            TabPageListaPerfil.Size = new Size(825, 285);
             TabPageListaPerfil.TabIndex = 0;
             TabPageListaPerfil.Text = "Lista de Puestos";
             TabPageListaPerfil.UseVisualStyleBackColor = true;
@@ -188,7 +193,7 @@
             dgvRegistroPerfil.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dgvRegistroPerfil.RowTemplate.DefaultCellStyle.ForeColor = Color.Black;
             dgvRegistroPerfil.RowTemplate.Height = 24;
-            dgvRegistroPerfil.Size = new Size(699, 334);
+            dgvRegistroPerfil.Size = new Size(819, 279);
             dgvRegistroPerfil.TabIndex = 0;
             // 
             // ID
@@ -212,12 +217,65 @@
             Estado.Name = "Estado";
             Estado.ReadOnly = true;
             // 
-            // GestionarPerfiles
+            // GroupBoxDatosPerfil
+            // 
+            GroupBoxDatosPerfil.BackColor = Color.RosyBrown;
+            GroupBoxDatosPerfil.Controls.Add(BModEmpleado);
+            GroupBoxDatosPerfil.Controls.Add(TBModPerfil);
+            GroupBoxDatosPerfil.Controls.Add(LModPerfil);
+            GroupBoxDatosPerfil.Font = new Font("Cooper Black", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            GroupBoxDatosPerfil.ForeColor = Color.White;
+            GroupBoxDatosPerfil.Location = new Point(257, 636);
+            GroupBoxDatosPerfil.Margin = new Padding(4, 5, 4, 5);
+            GroupBoxDatosPerfil.Name = "GroupBoxDatosPerfil";
+            GroupBoxDatosPerfil.Padding = new Padding(4, 5, 4, 5);
+            GroupBoxDatosPerfil.Size = new Size(522, 207);
+            GroupBoxDatosPerfil.TabIndex = 88;
+            GroupBoxDatosPerfil.TabStop = false;
+            GroupBoxDatosPerfil.Text = "Modificar Puesto";
+            // 
+            // BModEmpleado
+            // 
+            BModEmpleado.BackColor = Color.DarkOliveGreen;
+            BModEmpleado.FlatAppearance.BorderSize = 2;
+            BModEmpleado.FlatStyle = FlatStyle.Flat;
+            BModEmpleado.Font = new Font("Cooper Black", 16F, FontStyle.Regular, GraphicsUnit.Point);
+            BModEmpleado.ForeColor = Color.White;
+            BModEmpleado.Location = new Point(321, 102);
+            BModEmpleado.Margin = new Padding(4, 5, 4, 5);
+            BModEmpleado.Name = "BModEmpleado";
+            BModEmpleado.Size = new Size(166, 58);
+            BModEmpleado.TabIndex = 18;
+            BModEmpleado.Text = "Modificar";
+            BModEmpleado.UseVisualStyleBackColor = false;
+            // 
+            // TBModPerfil
+            // 
+            TBModPerfil.Location = new Point(64, 110);
+            TBModPerfil.Margin = new Padding(4, 5, 4, 5);
+            TBModPerfil.Name = "TBModPerfil";
+            TBModPerfil.Size = new Size(221, 42);
+            TBModPerfil.TabIndex = 16;
+            // 
+            // LModPerfil
+            // 
+            LModPerfil.AutoSize = true;
+            LModPerfil.Font = new Font("Britannic Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            LModPerfil.ForeColor = Color.White;
+            LModPerfil.Location = new Point(61, 67);
+            LModPerfil.Margin = new Padding(8, 0, 8, 0);
+            LModPerfil.Name = "LModPerfil";
+            LModPerfil.Size = new Size(98, 27);
+            LModPerfil.TabIndex = 15;
+            LModPerfil.Text = "Puesto: ";
+            // 
+            // GestionarPuestos
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSeaGreen;
-            ClientSize = new Size(1067, 692);
+            ClientSize = new Size(1080, 908);
+            Controls.Add(GroupBoxDatosPerfil);
             Controls.Add(TabControlRegPerfil);
             Controls.Add(GroupBoxGestionPerfil);
             Controls.Add(BModificarPerfiles);
@@ -225,13 +283,15 @@
             Controls.Add(BAltaPerfil);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4, 5, 4, 5);
-            Name = "GestionarPerfiles";
+            Name = "GestionarPuestos";
             Text = "Form1";
             GroupBoxGestionPerfil.ResumeLayout(false);
             GroupBoxGestionPerfil.PerformLayout();
             TabControlRegPerfil.ResumeLayout(false);
             TabPageListaPerfil.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvRegistroPerfil).EndInit();
+            GroupBoxDatosPerfil.ResumeLayout(false);
+            GroupBoxDatosPerfil.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -250,5 +310,9 @@
         private DataGridViewTextBoxColumn ID;
         private DataGridViewTextBoxColumn Descripcion;
         private DataGridViewTextBoxColumn Estado;
+        internal GroupBox GroupBoxDatosPerfil;
+        internal TextBox TBModPerfil;
+        internal Label LModPerfil;
+        internal Button BModEmpleado;
     }
 }
