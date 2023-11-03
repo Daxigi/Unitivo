@@ -43,6 +43,23 @@ namespace Unitivo.Presentacion.SuperAdministrador
             CommonFunctions.ValidarEmailKeyPress((TextBox)sender, e);
         }
 
+        private void DPFechaNacimiento_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime selectedDate = DateTimePickerFechaNacimiento.Value;
+            DateTime currentDate = DateTime.Now;
+            DateTime minDate = currentDate.AddYears(-100);  // Restar 100 años a la fecha actual.
+
+            if (selectedDate > currentDate)
+            {
+                MessageBox.Show("La fecha de nacimiento no puede ser futura.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DateTimePickerFechaNacimiento.Value = currentDate;  // Restaurar a la fecha actual.
+            }
+            //else if (selectedDate < minDate)
+            //{
+            //    MessageBox.Show("La fecha de nacimiento no puede ser hace más de 100 años.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    DateTimePickerFechaNacimiento.Value = minDate;  // Restaurar a 100 años antes de la fecha actual.
+            //}
+        }
 
 
 
@@ -75,7 +92,6 @@ namespace Unitivo.Presentacion.SuperAdministrador
                 }
                 catch (Exception ex)
                 {
-                    // Captura y maneja el error que ocurra en empleadoRepositorio.AgregarEmpleado(empleado)
                     MessageBox.Show("Error al agregar empleado: " + ex.Message, "Empleado", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }

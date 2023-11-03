@@ -50,10 +50,17 @@ namespace Unitivo.Repositorios.Implementaciones
                 x.FechaCreacion = DateTime.Now;
 
                 _contexto?.Usuarios.Add(x);
+                _contexto?.SaveChanges();
+                
                 return true;
             }
             catch(Exception ex){
-                MessageBox.Show(ex.Message,"Usuario", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string message = ex.Message;
+                if (ex.InnerException != null)
+                {
+                    message += "\nInner Exception: " + ex.InnerException.Message;
+                }
+                MessageBox.Show(message, "Usuario", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }
@@ -64,7 +71,8 @@ namespace Unitivo.Repositorios.Implementaciones
         }
 
         public List<Usuario> BuscarUsuario(object parametro){
-            if(int.TryParse(parametro.ToString(), out int id)){
+            if(int.TryParse(parametro.ToString(), out int id))
+            {
                 List<Usuario> usuarios = _contexto?.Usuarios.Where(u => u.Id == id).ToList()!;
                 return usuarios;
             }

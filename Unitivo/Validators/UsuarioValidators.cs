@@ -50,14 +50,14 @@ namespace Unitivo.Validators
         private bool ExisteNombreUsuario(string nombreUsuario)
         {
             if(empleadoRepositorio.BuscarEmpleadosPorMail(nombreUsuario) != null){
-                return false;
-            }else{
                 return true;
+            }else{
+                return false;
             }
         }
 
         private bool NombreUsuarioNoVinculado(string nombreUsuario){
-            if(usuariosRepositorio.BuscarUsuario(nombreUsuario) == null){
+            if(usuariosRepositorio.BuscarUsuario(nombreUsuario).Count() == 0){
                 return true;
             }
             else 

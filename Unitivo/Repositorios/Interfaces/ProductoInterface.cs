@@ -11,7 +11,7 @@ namespace Unitivo.Repositorios.Interfaces
     {
         public void AgregarProducto(Producto producto);
         public bool EliminarProducto(int id);
-        public bool ModificarProducto(Producto producto);
+        public bool ModificarProducto(Producto producto, int stock);
         public Producto BuscarProducto(int id);
         public List<Producto> ListarProductos();
         public List<Producto> ListarProductosActivos();

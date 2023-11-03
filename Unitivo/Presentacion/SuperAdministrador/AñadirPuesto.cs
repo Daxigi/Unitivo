@@ -65,7 +65,7 @@ namespace Unitivo.Presentacion.SuperAdministrador
             List<Perfile> perfiles = perfilRepositorio.ListarPerfilesActivos();
             DataGridViewListarPerfiles.Rows.Clear();
             DataGridViewListarPerfiles.Refresh();
-            foreach (Perfile perfile in perfilRepositorio.ListarPerfiles())
+            foreach (Perfile perfile in perfiles)
             {
                 DataGridViewListarPerfiles.Rows.Add(perfile.Id, perfile.DescripcionPerfil, perfile.EstadoPerfil);
             }

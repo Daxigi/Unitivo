@@ -67,7 +67,7 @@ namespace Unitivo.Repositorios.Implementaciones
             catch (Exception ex)
             {
                 // Retorna false si hubo un error durante la inserci�n
-                MessageBox.Show(ex.Message, "Clientes", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Empleados", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
@@ -96,7 +96,7 @@ namespace Unitivo.Repositorios.Implementaciones
         }
 
         public Empleado BuscarEmpleadosPorMail(string correo){
-           return _contexto?.Empleados.Find(correo)!;
+           return _contexto?.Empleados.FirstOrDefault(c => c.Correo == correo)!;
         }
         
         public List<Empleado> ListarEmpleados(){

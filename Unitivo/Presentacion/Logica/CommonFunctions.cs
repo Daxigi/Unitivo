@@ -72,17 +72,13 @@
 
         public static bool ValidarCamposNoVacios(Control control)
         {
-            // Verifica si el control es TextBox.
-            if (control is TextBox textBox)
+            if (control is TextBox textBox && string.IsNullOrWhiteSpace(textBox.Text))
             {
-                // Muestra un mensaje de error que incluye el nombre del campo.
                 MessageBox.Show($"Debes completar todos campos obligatorios(*)", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            // Verifica si el control es ComboBox.
             else if (control is ComboBox comboBox && comboBox.SelectedItem == null)
             {
-                // Muestra un mensaje de error que incluye el nombre del campo.
                 MessageBox.Show($"No pueden quedar campos vacios!.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
@@ -91,11 +87,5 @@
                 return true;
             }
         }
-
-
-
-
-
-
     }
 }

@@ -252,7 +252,7 @@ public partial class UnitivoContext : DbContext
             entity.Property(e => e.IdEmpleado).HasColumnName("id_empleado");
             entity.Property(e => e.IdPerfil).HasColumnName("id_perfil");
             entity.Property(e => e.NombreUsuario)
-                .HasMaxLength(1)
+                .HasMaxLength(255)
                 .IsUnicode(false)
                 .HasColumnName("nombre_usuario");
             entity.Property(e => e.Password)

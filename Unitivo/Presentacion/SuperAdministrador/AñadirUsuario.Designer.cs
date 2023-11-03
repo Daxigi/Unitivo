@@ -62,13 +62,10 @@
             TabControlListaEmpleados = new TabControl();
             TabPageListaEmpleados = new TabPage();
             dgvEmpleados = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
+            ID = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
-            Column5 = new DataGridViewTextBoxColumn();
-            Column6 = new DataGridViewTextBoxColumn();
-            Column7 = new DataGridViewTextBoxColumn();
+            Email = new DataGridViewTextBoxColumn();
             GroupBox3.SuspendLayout();
             TabControlRegUsuarios.SuspendLayout();
             TabPageListaUsuarios.SuspendLayout();
@@ -93,9 +90,11 @@
             GroupBox3.Controls.Add(Label10);
             GroupBox3.Font = new Font("Britannic Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             GroupBox3.ForeColor = Color.DarkOliveGreen;
-            GroupBox3.Location = new Point(43, 128);
+            GroupBox3.Location = new Point(38, 96);
+            GroupBox3.Margin = new Padding(3, 2, 3, 2);
             GroupBox3.Name = "GroupBox3";
-            GroupBox3.Size = new Size(401, 357);
+            GroupBox3.Padding = new Padding(3, 2, 3, 2);
+            GroupBox3.Size = new Size(351, 268);
             GroupBox3.TabIndex = 35;
             GroupBox3.TabStop = false;
             GroupBox3.Text = "Nuevo Usuario";
@@ -104,10 +103,10 @@
             // 
             TBEmpleado.Enabled = false;
             TBEmpleado.Font = new Font("Britannic Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            TBEmpleado.Location = new Point(227, 291);
-            TBEmpleado.Margin = new Padding(4, 5, 4, 5);
+            TBEmpleado.Location = new Point(199, 218);
+            TBEmpleado.Margin = new Padding(4);
             TBEmpleado.Name = "TBEmpleado";
-            TBEmpleado.Size = new Size(151, 27);
+            TBEmpleado.Size = new Size(133, 23);
             TBEmpleado.TabIndex = 24;
             TBEmpleado.KeyPress += Num_KeyPress;
             // 
@@ -116,10 +115,10 @@
             Label1.AutoSize = true;
             Label1.Font = new Font("Britannic Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             Label1.ForeColor = Color.SaddleBrown;
-            Label1.Location = new Point(17, 295);
+            Label1.Location = new Point(15, 221);
             Label1.Margin = new Padding(4, 0, 4, 0);
             Label1.Name = "Label1";
-            Label1.Size = new Size(140, 20);
+            Label1.Size = new Size(112, 16);
             Label1.TabIndex = 23;
             Label1.Text = "ID de Empleado:";
             // 
@@ -128,10 +127,10 @@
             Label11.AutoSize = true;
             Label11.Font = new Font("Britannic Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             Label11.ForeColor = Color.SaddleBrown;
-            Label11.Location = new Point(17, 180);
+            Label11.Location = new Point(15, 135);
             Label11.Margin = new Padding(4, 0, 4, 0);
             Label11.Name = "Label11";
-            Label11.Size = new Size(195, 20);
+            Label11.Size = new Size(155, 16);
             Label11.TabIndex = 22;
             Label11.Text = "Confirmar Contraseña:";
             // 
@@ -139,10 +138,10 @@
             // 
             TBNombreUsuario.Enabled = false;
             TBNombreUsuario.Font = new Font("Britannic Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            TBNombreUsuario.Location = new Point(227, 52);
-            TBNombreUsuario.Margin = new Padding(4, 5, 4, 5);
+            TBNombreUsuario.Location = new Point(199, 39);
+            TBNombreUsuario.Margin = new Padding(4);
             TBNombreUsuario.Name = "TBNombreUsuario";
-            TBNombreUsuario.Size = new Size(151, 27);
+            TBNombreUsuario.Size = new Size(133, 23);
             TBNombreUsuario.TabIndex = 20;
             TBNombreUsuario.KeyPress += Email_KeyPress;
             // 
@@ -151,9 +150,10 @@
             CBPerfil.DropDownStyle = ComboBoxStyle.DropDownList;
             CBPerfil.Font = new Font("Britannic Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             CBPerfil.FormattingEnabled = true;
-            CBPerfil.Location = new Point(227, 235);
+            CBPerfil.Location = new Point(199, 176);
+            CBPerfil.Margin = new Padding(3, 2, 3, 2);
             CBPerfil.Name = "CBPerfil";
-            CBPerfil.Size = new Size(151, 28);
+            CBPerfil.Size = new Size(133, 24);
             CBPerfil.TabIndex = 18;
             // 
             // Label8
@@ -161,30 +161,30 @@
             Label8.AutoSize = true;
             Label8.Font = new Font("Britannic Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             Label8.ForeColor = Color.SaddleBrown;
-            Label8.Location = new Point(17, 57);
+            Label8.Location = new Point(15, 43);
             Label8.Margin = new Padding(4, 0, 4, 0);
             Label8.Name = "Label8";
-            Label8.Size = new Size(169, 20);
+            Label8.Size = new Size(135, 16);
             Label8.TabIndex = 0;
             Label8.Text = "Nombre de Usuario:";
             // 
             // TBContraseñaUsuario
             // 
             TBContraseñaUsuario.Font = new Font("Britannic Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            TBContraseñaUsuario.Location = new Point(227, 111);
-            TBContraseñaUsuario.Margin = new Padding(4, 5, 4, 5);
+            TBContraseñaUsuario.Location = new Point(199, 83);
+            TBContraseñaUsuario.Margin = new Padding(4);
             TBContraseñaUsuario.Name = "TBContraseñaUsuario";
-            TBContraseñaUsuario.Size = new Size(151, 27);
+            TBContraseñaUsuario.Size = new Size(133, 23);
             TBContraseñaUsuario.TabIndex = 6;
             TBContraseñaUsuario.KeyPress += Contraseña_KeyPress;
             // 
             // TBConfirmarPass
             // 
             TBConfirmarPass.Font = new Font("Britannic Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            TBConfirmarPass.Location = new Point(227, 177);
-            TBConfirmarPass.Margin = new Padding(4, 5, 4, 5);
+            TBConfirmarPass.Location = new Point(199, 133);
+            TBConfirmarPass.Margin = new Padding(4);
             TBConfirmarPass.Name = "TBConfirmarPass";
-            TBConfirmarPass.Size = new Size(151, 27);
+            TBConfirmarPass.Size = new Size(133, 23);
             TBConfirmarPass.TabIndex = 8;
             TBConfirmarPass.KeyPress += Contraseña_KeyPress;
             // 
@@ -193,10 +193,10 @@
             Label9.AutoSize = true;
             Label9.Font = new Font("Britannic Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             Label9.ForeColor = Color.SaddleBrown;
-            Label9.Location = new Point(17, 238);
+            Label9.Location = new Point(15, 178);
             Label9.Margin = new Padding(4, 0, 4, 0);
             Label9.Name = "Label9";
-            Label9.Size = new Size(69, 20);
+            Label9.Size = new Size(56, 16);
             Label9.TabIndex = 1;
             Label9.Text = "Puesto:";
             // 
@@ -205,10 +205,10 @@
             Label10.AutoSize = true;
             Label10.Font = new Font("Britannic Bold", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             Label10.ForeColor = Color.SaddleBrown;
-            Label10.Location = new Point(17, 114);
+            Label10.Location = new Point(15, 86);
             Label10.Margin = new Padding(4, 0, 4, 0);
             Label10.Name = "Label10";
-            Label10.Size = new Size(107, 20);
+            Label10.Size = new Size(85, 16);
             Label10.TabIndex = 4;
             Label10.Text = "Contraseña:";
             // 
@@ -216,10 +216,11 @@
             // 
             TabControlRegUsuarios.Controls.Add(TabPageListaUsuarios);
             TabControlRegUsuarios.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            TabControlRegUsuarios.Location = new Point(43, 521);
+            TabControlRegUsuarios.Location = new Point(38, 391);
+            TabControlRegUsuarios.Margin = new Padding(3, 2, 3, 2);
             TabControlRegUsuarios.Name = "TabControlRegUsuarios";
             TabControlRegUsuarios.SelectedIndex = 0;
-            TabControlRegUsuarios.Size = new Size(799, 288);
+            TabControlRegUsuarios.Size = new Size(699, 216);
             TabControlRegUsuarios.TabIndex = 32;
             // 
             // TabPageListaUsuarios
@@ -227,10 +228,11 @@
             TabPageListaUsuarios.Controls.Add(dgvListaUsuarios);
             TabPageListaUsuarios.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             TabPageListaUsuarios.ForeColor = Color.White;
-            TabPageListaUsuarios.Location = new Point(4, 28);
+            TabPageListaUsuarios.Location = new Point(4, 25);
+            TabPageListaUsuarios.Margin = new Padding(3, 2, 3, 2);
             TabPageListaUsuarios.Name = "TabPageListaUsuarios";
-            TabPageListaUsuarios.Padding = new Padding(3);
-            TabPageListaUsuarios.Size = new Size(791, 256);
+            TabPageListaUsuarios.Padding = new Padding(3, 2, 3, 2);
+            TabPageListaUsuarios.Size = new Size(691, 187);
             TabPageListaUsuarios.TabIndex = 0;
             TabPageListaUsuarios.Text = "Lista de Usuarios";
             TabPageListaUsuarios.UseVisualStyleBackColor = true;
@@ -263,8 +265,8 @@
             dgvListaUsuarios.DefaultCellStyle = dataGridViewCellStyle2;
             dgvListaUsuarios.Dock = DockStyle.Fill;
             dgvListaUsuarios.EnableHeadersVisualStyles = false;
-            dgvListaUsuarios.Location = new Point(3, 3);
-            dgvListaUsuarios.Margin = new Padding(4, 5, 4, 5);
+            dgvListaUsuarios.Location = new Point(3, 2);
+            dgvListaUsuarios.Margin = new Padding(4);
             dgvListaUsuarios.Name = "dgvListaUsuarios";
             dgvListaUsuarios.ReadOnly = true;
             dgvListaUsuarios.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
@@ -279,7 +281,7 @@
             dgvListaUsuarios.RowHeadersWidth = 51;
             dataGridViewCellStyle4.ForeColor = Color.Black;
             dgvListaUsuarios.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            dgvListaUsuarios.Size = new Size(785, 250);
+            dgvListaUsuarios.Size = new Size(685, 183);
             dgvListaUsuarios.TabIndex = 2;
             // 
             // Column8
@@ -288,7 +290,7 @@
             Column8.MinimumWidth = 6;
             Column8.Name = "Column8";
             Column8.ReadOnly = true;
-            Column8.Width = 52;
+            Column8.Width = 43;
             // 
             // Column9
             // 
@@ -296,7 +298,7 @@
             Column9.MinimumWidth = 6;
             Column9.Name = "Column9";
             Column9.ReadOnly = true;
-            Column9.Width = 93;
+            Column9.Width = 78;
             // 
             // Column11
             // 
@@ -304,7 +306,7 @@
             Column11.MinimumWidth = 6;
             Column11.Name = "Column11";
             Column11.ReadOnly = true;
-            Column11.Width = 85;
+            Column11.Width = 72;
             // 
             // Column12
             // 
@@ -312,7 +314,7 @@
             Column12.MinimumWidth = 6;
             Column12.Name = "Column12";
             Column12.ReadOnly = true;
-            Column12.Width = 173;
+            Column12.Width = 145;
             // 
             // Column13
             // 
@@ -320,7 +322,7 @@
             Column13.MinimumWidth = 6;
             Column13.Name = "Column13";
             Column13.ReadOnly = true;
-            Column13.Width = 145;
+            Column13.Width = 121;
             // 
             // Column14
             // 
@@ -328,7 +330,7 @@
             Column14.MinimumWidth = 6;
             Column14.Name = "Column14";
             Column14.ReadOnly = true;
-            Column14.Width = 76;
+            Column14.Width = 63;
             // 
             // Column15
             // 
@@ -336,7 +338,7 @@
             Column15.MinimumWidth = 6;
             Column15.Name = "Column15";
             Column15.ReadOnly = true;
-            Column15.Width = 108;
+            Column15.Width = 90;
             // 
             // BRegistrarUsuario
             // 
@@ -346,10 +348,10 @@
             BRegistrarUsuario.FlatStyle = FlatStyle.Flat;
             BRegistrarUsuario.Font = new Font("Britannic Bold", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             BRegistrarUsuario.ForeColor = Color.White;
-            BRegistrarUsuario.Location = new Point(888, 661);
-            BRegistrarUsuario.Margin = new Padding(4, 5, 4, 5);
+            BRegistrarUsuario.Location = new Point(777, 496);
+            BRegistrarUsuario.Margin = new Padding(4);
             BRegistrarUsuario.Name = "BRegistrarUsuario";
-            BRegistrarUsuario.Size = new Size(133, 63);
+            BRegistrarUsuario.Size = new Size(116, 47);
             BRegistrarUsuario.TabIndex = 33;
             BRegistrarUsuario.Text = "Registrar";
             BRegistrarUsuario.UseVisualStyleBackColor = false;
@@ -361,10 +363,10 @@
             LRegistroUsuario.BackColor = Color.Cornsilk;
             LRegistroUsuario.Font = new Font("Britannic Bold", 21.75F, FontStyle.Regular, GraphicsUnit.Point);
             LRegistroUsuario.ForeColor = Color.DarkOliveGreen;
-            LRegistroUsuario.Location = new Point(404, 17);
+            LRegistroUsuario.Location = new Point(354, 13);
             LRegistroUsuario.Margin = new Padding(4, 0, 4, 0);
             LRegistroUsuario.Name = "LRegistroUsuario";
-            LRegistroUsuario.Size = new Size(309, 41);
+            LRegistroUsuario.Size = new Size(240, 32);
             LRegistroUsuario.TabIndex = 31;
             LRegistroUsuario.Text = "Registrar Usuario";
             // 
@@ -372,11 +374,11 @@
             // 
             TabControlListaEmpleados.Controls.Add(TabPageListaEmpleados);
             TabControlListaEmpleados.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            TabControlListaEmpleados.Location = new Point(497, 106);
-            TabControlListaEmpleados.Margin = new Padding(4, 3, 4, 3);
+            TabControlListaEmpleados.Location = new Point(435, 80);
+            TabControlListaEmpleados.Margin = new Padding(4, 2, 4, 2);
             TabControlListaEmpleados.Name = "TabControlListaEmpleados";
             TabControlListaEmpleados.SelectedIndex = 0;
-            TabControlListaEmpleados.Size = new Size(558, 391);
+            TabControlListaEmpleados.Size = new Size(488, 293);
             TabControlListaEmpleados.TabIndex = 36;
             // 
             // TabPageListaEmpleados
@@ -384,11 +386,11 @@
             TabPageListaEmpleados.Controls.Add(dgvEmpleados);
             TabPageListaEmpleados.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             TabPageListaEmpleados.ForeColor = Color.White;
-            TabPageListaEmpleados.Location = new Point(4, 28);
-            TabPageListaEmpleados.Margin = new Padding(4, 3, 4, 3);
+            TabPageListaEmpleados.Location = new Point(4, 25);
+            TabPageListaEmpleados.Margin = new Padding(4, 2, 4, 2);
             TabPageListaEmpleados.Name = "TabPageListaEmpleados";
-            TabPageListaEmpleados.Padding = new Padding(4, 3, 4, 3);
-            TabPageListaEmpleados.Size = new Size(550, 359);
+            TabPageListaEmpleados.Padding = new Padding(4, 2, 4, 2);
+            TabPageListaEmpleados.Size = new Size(480, 264);
             TabPageListaEmpleados.TabIndex = 0;
             TabPageListaEmpleados.Text = "Lista de Empleados";
             TabPageListaEmpleados.UseVisualStyleBackColor = true;
@@ -407,9 +409,7 @@
             dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
             dgvEmpleados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            dgvEmpleados.ColumnHeadersHeight = 20;
-            dgvEmpleados.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dgvEmpleados.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5, Column6, Column7 });
+            dgvEmpleados.Columns.AddRange(new DataGridViewColumn[] { ID, Column2, Column3, Email });
             dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = SystemColors.Window;
             dataGridViewCellStyle6.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
@@ -420,8 +420,8 @@
             dgvEmpleados.DefaultCellStyle = dataGridViewCellStyle6;
             dgvEmpleados.Dock = DockStyle.Fill;
             dgvEmpleados.EnableHeadersVisualStyles = false;
-            dgvEmpleados.Location = new Point(4, 3);
-            dgvEmpleados.Margin = new Padding(5, 6, 5, 6);
+            dgvEmpleados.Location = new Point(4, 2);
+            dgvEmpleados.Margin = new Padding(4);
             dgvEmpleados.Name = "dgvEmpleados";
             dgvEmpleados.ReadOnly = true;
             dgvEmpleados.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
@@ -433,19 +433,20 @@
             dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
             dgvEmpleados.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dgvEmpleados.RowHeadersVisible = false;
             dgvEmpleados.RowHeadersWidth = 51;
             dataGridViewCellStyle8.ForeColor = Color.Black;
             dgvEmpleados.RowsDefaultCellStyle = dataGridViewCellStyle8;
-            dgvEmpleados.Size = new Size(542, 353);
+            dgvEmpleados.Size = new Size(472, 260);
             dgvEmpleados.TabIndex = 2;
+            dgvEmpleados.CellContentDoubleClick += dgvEmpleados_CellContentDoubleClick;
             // 
-            // Column1
+            // ID
             // 
-            Column1.HeaderText = "ID";
-            Column1.MinimumWidth = 6;
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
-            Column1.Width = 125;
+            ID.HeaderText = "ID";
+            ID.Name = "ID";
+            ID.ReadOnly = true;
+            ID.Width = 40;
             // 
             // Column2
             // 
@@ -463,53 +464,30 @@
             Column3.ReadOnly = true;
             Column3.Width = 125;
             // 
-            // Column4
+            // Email
             // 
-            Column4.HeaderText = "Dni";
-            Column4.MinimumWidth = 6;
-            Column4.Name = "Column4";
-            Column4.ReadOnly = true;
-            Column4.Width = 125;
-            // 
-            // Column5
-            // 
-            Column5.HeaderText = "Telefono";
-            Column5.MinimumWidth = 6;
-            Column5.Name = "Column5";
-            Column5.ReadOnly = true;
-            Column5.Width = 125;
-            // 
-            // Column6
-            // 
-            Column6.HeaderText = "Direccion";
-            Column6.MinimumWidth = 6;
-            Column6.Name = "Column6";
-            Column6.ReadOnly = true;
-            Column6.Width = 125;
-            // 
-            // Column7
-            // 
-            Column7.HeaderText = "Email";
-            Column7.MinimumWidth = 6;
-            Column7.Name = "Column7";
-            Column7.ReadOnly = true;
-            Column7.Width = 125;
+            Email.HeaderText = "Email";
+            Email.MinimumWidth = 6;
+            Email.Name = "Email";
+            Email.ReadOnly = true;
+            Email.Width = 179;
             // 
             // AñadirUsuario
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSeaGreen;
-            ClientSize = new Size(1080, 908);
+            ClientSize = new Size(945, 681);
             Controls.Add(TabControlListaEmpleados);
             Controls.Add(GroupBox3);
             Controls.Add(TabControlRegUsuarios);
             Controls.Add(BRegistrarUsuario);
             Controls.Add(LRegistroUsuario);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(4, 5, 4, 5);
+            Margin = new Padding(4);
             Name = "AñadirUsuario";
             Text = "Form1";
+            Load += AñadirUsuario_Load;
             GroupBox3.ResumeLayout(false);
             GroupBox3.PerformLayout();
             TabControlRegUsuarios.ResumeLayout(false);
@@ -543,13 +521,6 @@
         internal TabControl TabControlListaEmpleados;
         internal TabPage TabPageListaEmpleados;
         internal DataGridView dgvEmpleados;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
-        private DataGridViewTextBoxColumn Column5;
-        private DataGridViewTextBoxColumn Column6;
-        private DataGridViewTextBoxColumn Column7;
         private DataGridViewTextBoxColumn Column8;
         private DataGridViewTextBoxColumn Column9;
         private DataGridViewTextBoxColumn Column11;
@@ -557,5 +528,10 @@
         private DataGridViewTextBoxColumn Column13;
         private DataGridViewTextBoxColumn Column14;
         private DataGridViewTextBoxColumn Column15;
+        private DataGridViewTextBoxColumn ID;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Column7;
+        private DataGridViewTextBoxColumn Email;
     }
 }

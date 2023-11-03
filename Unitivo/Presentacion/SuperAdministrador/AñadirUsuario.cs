@@ -9,13 +9,18 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Unitivo.Modelos;
 using Unitivo.Presentacion.Logica;
+using Unitivo.Repositorios;
 using Unitivo.Repositorios.Implementaciones;
 
 namespace Unitivo.Presentacion.SuperAdministrador
 {
     public partial class AñadirUsuario : Form
     {
-            UsuariosRepositorio usuariosRepositorio = new UsuariosRepositorio();
+        EmpleadoRepositorio empleadoRepositorio = new EmpleadoRepositorio();
+        UsuariosRepositorio usuarioRepositorio = new UsuariosRepositorio();
+        PerfilRepositorio perfilRepositorio = new PerfilRepositorio();
+
+
         public AñadirUsuario()
         {
             InitializeComponent();
@@ -38,7 +43,6 @@ namespace Unitivo.Presentacion.SuperAdministrador
 
         private void BRegistrarUsuario_Click(object sender, EventArgs e)
         {
-            // Verificar si algún TextBox está vacío o si no se ha seleccionado un perfil.
             if (!VerificarCamposVacios())
             {
                 // Mostrar un mensaje de error si algún campo está vacío o si no se ha seleccionado un perfil.
@@ -46,26 +50,28 @@ namespace Unitivo.Presentacion.SuperAdministrador
             }
             else
             {
-                if(TBContraseñaUsuario.Text != TBConfirmarPass.Text){
+                if (TBContraseñaUsuario.Text != TBConfirmarPass.Text)
+                {
                     MessageBox.Show("El password y el re-password deben coincidir", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                
+
                 Usuario x = new Usuario();
 
-                x.NombreUsuario = TBNombreUsuario.Text;            
-                x.Password = TBContraseñaUsuario.Text;            
+                x.NombreUsuario = TBNombreUsuario.Text;
+                x.Password = TBContraseñaUsuario.Text;
                 x.IdEmpleado = int.Parse(TBEmpleado.Text);
-                x.IdPerfil = int.Parse(CBPerfil.Text);            
+                x.IdPerfil = int.Parse(CBPerfil.Text);
 
-                if(usuariosRepositorio.AgregarUsuario(x)){
+                if (usuarioRepositorio!.AgregarUsuario(x))
+                {
                     MessageBox.Show("Usuario" + x.NombreUsuario + " agregado con exito!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     LimpiarTextBoxs();
-                    CargarUsuarios();
+                    CargarEmpleados();
+                    // CargarUsuarios();
+                } else
+                {
+                    MessageBox.Show("Hubo problemas para agregar al usuario.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                LimpiarTextBoxs();
-
-                // Mostrar un mensaje de éxito.
-                MessageBox.Show("Usuario registrado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -78,19 +84,22 @@ namespace Unitivo.Presentacion.SuperAdministrador
             TBEmpleado.Clear();
         }
 
-        private void CargarUsuarios(){
-            List<Usuario> usuarios = usuariosRepositorio.ListarUsuarios();
+        private void CargarEmpleados()
+        {
+            List<Empleado> empleados = empleadoRepositorio!.ListarEmpleadosActivos();
+
             dgvEmpleados.Rows.Clear();
             dgvEmpleados.Refresh();
-            foreach(Usuario usuario in usuarios)
+            foreach (Empleado empleado in empleados)
             {
-                dgvEmpleados.Rows.Add(usuario.Id, usuario.NombreUsuario, usuario.IdEmpleadoNavigation.Nombre, usuario.IdEmpleadoNavigation.Apellido);
+                dgvEmpleados.Rows.Add(empleado.Id, empleado.Nombre, empleado.Apellido, empleado.Correo);
             }
-
         }
 
-        private bool VerificarCamposVacios(){
-            if(
+
+        private bool VerificarCamposVacios()
+        {
+            if (
             CommonFunctions.ValidarCamposNoVacios(TBNombreUsuario) ||
             CommonFunctions.ValidarCamposNoVacios(TBContraseñaUsuario) ||
             CommonFunctions.ValidarCamposNoVacios(TBConfirmarPass) ||
@@ -99,11 +108,35 @@ namespace Unitivo.Presentacion.SuperAdministrador
             {
                 return true;
             }
-            else{
+            else
+            {
                 return false;
             }
         }
 
+        private void dgvEmpleados_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                // Obtiene el valor de la celda en la fila seleccionada.
+                string correoEmpleado = dgvEmpleados.Rows[e.RowIndex].Cells["Email"].Value.ToString()!;
+                int idEmpleado = Convert.ToInt32(dgvEmpleados.Rows[e.RowIndex].Cells["ID"].Value);
 
+
+                // Carga el valor en el TextBox.
+                TBNombreUsuario.Text = correoEmpleado;
+                TBEmpleado.Text = idEmpleado.ToString();
+            }
+        }
+
+        private void AñadirUsuario_Load(object sender, EventArgs e)
+        {
+            CargarEmpleados();
+            var perfiles = perfilRepositorio.ListarPerfiles();
+            foreach (var perfil in perfiles)
+            {
+                CBPerfil.Items.Add(perfil.Id);
+            }
+        }
     }
 }

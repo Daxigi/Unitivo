@@ -21,6 +21,7 @@ namespace Unitivo.Repositorios.Implementaciones
             try{
                 x.EstadoPerfil = true;
                 _contexto?.Perfiles.Add(x);
+                _contexto?.SaveChanges();
                 return true;
             }   
             catch(Exception ex)
