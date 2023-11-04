@@ -89,22 +89,7 @@ namespace Unitivo.Formularios.Vendedor
                 MessageBox.Show("Venta añadida con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
-        private void BConfirmar_Click(object sender, EventArgs e)
-        {
-            if (dgvListaVentas.RowCount > 0)
-            {
-                // Hay elementos en dgvListaVentas, puedes realizar la acción deseada (por ejemplo, confirmar la venta).
-                // Agrega aquí el código para confirmar la venta.
-
-                MessageBox.Show("Venta confirmada.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                // No se ha realizado la venta de ningún producto.
-                MessageBox.Show("No se ha realizado la venta de ningún producto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+        
 
         private void BEliminarProducto_Click(object sender, EventArgs e)
         {
@@ -131,7 +116,21 @@ namespace Unitivo.Formularios.Vendedor
         }
 
 
+        private void BConfirmar_Click(object sender, EventArgs e)
+        {
+            // Crear una instancia del formulario ModificarPerfiles
+            FacturaVenta facturaVentaForm = new FacturaVenta();
 
+            // Mostrar el formulario como un cuadro de diálogo modal
+            DialogResult result = facturaVentaForm.ShowDialog();
+
+            // Aquí puedes realizar acciones después de que se cierre el formulario ModificarPerfiles
+            if (result == DialogResult.OK)
+            {
+                // Por ejemplo, actualizar la lista de perfiles o realizar otras acciones necesarias
+                // después de modificar el perfil.
+            }
+        }
 
 
 
