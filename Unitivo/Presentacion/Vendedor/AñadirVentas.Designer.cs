@@ -553,7 +553,7 @@ namespace Unitivo.Formularios.Vendedor
             BConfirmar.TabIndex = 66;
             BConfirmar.Text = "Confirmar";
             BConfirmar.UseVisualStyleBackColor = false;
-            BConfirmar.Click += BConfirmar_Click;
+            BConfirmar.Click += this.BConfirmar_Click;
             // 
             // BModificarProducto
             // 
