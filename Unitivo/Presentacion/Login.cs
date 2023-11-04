@@ -13,6 +13,8 @@ using Unitivo.Presentacion.Administrador;
 using Unitivo.Presentacion.SuperAdministrador;
 using Unitivo.Sessions;
 using Unitivo.Presentacion.Logica;
+using Unitivo.Modelos;
+using Unitivo.Repositorios.Implementaciones;
 
 
 namespace Unitivo.Presentacion
@@ -23,6 +25,8 @@ namespace Unitivo.Presentacion
         private int px, py;
         private bool mover;
 
+        UsuariosRepositorio usuariosRepositorio = new UsuariosRepositorio();
+
         public Login()
         {
             InitializeComponent();
@@ -31,72 +35,70 @@ namespace Unitivo.Presentacion
 
         private void String_KeyPress(object sender, KeyPressEventArgs e)
         {
-            CommonFunctions.ValidarStringKeyPress((TextBox)sender, e);
+            CommonFunctions.ValidarEmailKeyPress((TextBox)sender, e);
         }
 
         private void BLogin_Click(object sender, EventArgs e)
         {
-            string usuario = TBUsuario.Text;
-            string contraseña = TBContraseña.Text;
-
             if (!EspacioEnBlanco())
             {
-                if (usuario == "JUANIV" && contraseña == "123")
+                MessageBox.Show("No se permiten espacios en blanco", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            string nombreUsuario = TBUsuario.Text;
+            string contraseña = TBContraseña.Text;
+
+            usuariosRepositorio.LoggUser(nombreUsuario, contraseña);
+
+            if (Session.usuario != null)
+            {
+                int perfil = Session.usuario.IdPerfil;
+
+                switch (perfil)
                 {
-                    Session.idUsuario = 1;
-                    MenuV menuVForm = new();
-                    menuVForm.Show();
-                    this.Hide();
+                    case 1 :
+                        MenuV menuVForm = new();
+                        menuVForm.Show();
+                        this.Hide();
+                
+                    break;
+                    case 2 :
+                        this.Hide();
+                        MenuA menuAForm = new();
+                        menuAForm.Show();
+                    break;
+                
+                    case 3 :
+                        this.Hide();
+                        MenuSA menuSAForm = new();
+                        menuSAForm.Show();
+                    break;
+                    default:
+                        MessageBox.Show("No se ha podido iniciar sesión", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    break;
                 }
-                else if (usuario == "JUANISA" && contraseña == "123")
-                {
-                    Session.idUsuario = 2;
-                    this.Hide();
-                    MenuSA menuSAForm = new();
-                    menuSAForm.Show();
-                }
-                else if (usuario == "JUANIA" && contraseña == "123")
-                {
-                    Session.idUsuario = 3;
-                    this.Hide();
-                    MenuA menuAForm = new();
-                    menuAForm.Show();
-                }
-                else
-                {
-                    MessageBox.Show("Nombre de Usuario y/o Contraseña no válidos", "Datos inválidos", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    TBUsuario.Clear();
-                    TBContraseña.Clear();
-                    TBUsuario.Focus();
-                }
+            }
+            else
+            {
+                MessageBox.Show("Nombre de Usuario y/o Contraseña no válidos", "Datos inválidos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                TBUsuario.Clear();
+                TBContraseña.Clear();
+                TBUsuario.Focus();
             }
         }
 
-
-
-
         public bool EspacioEnBlanco()
         {
-            DialogResult ask;
-            string usuario = TBUsuario.Text;
-            string contraseña = TBContraseña.Text;
-
-            if (string.IsNullOrWhiteSpace(usuario) || string.IsNullOrWhiteSpace(contraseña))
+            if( CommonFunctions.ValidarCamposNoVacios(TBUsuario) ||
+                CommonFunctions.ValidarCamposNoVacios(TBContraseña))
             {
-                ask = MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return (ask == DialogResult.OK);
+                return true;
             }
             else
             {
                 return false;
             }
-        }
-
-
-        private void TBUsuario_TextChanged(object sender, EventArgs e)
-        {
-            TBUsuario.Text = Strings.UCase(TBUsuario.Text);
-            TBUsuario.SelectionStart = Strings.Len(TBUsuario.Text);
         }
 
         private void PictureBoxContraseña_Click(object sender, EventArgs e)
@@ -115,8 +117,6 @@ namespace Unitivo.Presentacion
             }
         }
 
-
-
         private void Login_Load(object sender, EventArgs e)
         {
             TBUsuario.Focus(); // Establecer el foco en el TextBox TBUsuario al cargar el formulario.
@@ -124,7 +124,6 @@ namespace Unitivo.Presentacion
             PictureBoxContraseña.Tag = "cerrado"; // Establecer el PictureBox en el estado "cerrado" por defecto.
             PictureBoxContraseña.BackgroundImage = Properties.Resources.ojo_cerrado;
         }
-
 
         private void Login_KeyDown(object sender, KeyEventArgs e)
         {
@@ -138,9 +137,6 @@ namespace Unitivo.Presentacion
         {
             TBUsuario.Focus();
         }
-
-
-
 
         private void PanelBarraMenuLogin_MouseDown(object sender, MouseEventArgs e)
         {
@@ -190,3 +186,4 @@ namespace Unitivo.Presentacion
         }
     }
 }
+

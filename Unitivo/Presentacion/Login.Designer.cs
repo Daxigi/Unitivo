@@ -209,7 +209,6 @@
             TBUsuario.Name = "TBUsuario";
             TBUsuario.Size = new Size(199, 27);
             TBUsuario.TabIndex = 4;
-            TBUsuario.TextChanged += TBUsuario_TextChanged;
             TBUsuario.KeyPress += String_KeyPress;
             // 
             // BLogin

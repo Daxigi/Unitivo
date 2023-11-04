@@ -73,7 +73,6 @@
             BModificarUsuario.Size = new Size(67, 69);
             BModificarUsuario.TabIndex = 71;
             BModificarUsuario.UseVisualStyleBackColor = false;
-            BModificarUsuario.Click += BModificarUsuario_Click;
             // 
             // BEliminarUsuario
             // 

@@ -23,21 +23,6 @@ namespace Unitivo.Presentacion.SuperAdministrador
             CommonFunctions.ValidarStringKeyPress((TextBox)sender, e);
         }
 
-        private void BModificarUsuario_Click(object sender, EventArgs e)
-        {
-            // Crear una instancia del formulario ModificarUsuario
-            ModificarUsuario modificarUsuarioForm = new ModificarUsuario();
-
-            // Mostrar el formulario como un cuadro de diálogo modal
-            DialogResult result = modificarUsuarioForm.ShowDialog();
-
-            // Aquí puedes realizar acciones después de que se cierre el formulario ModificarUsuario
-            if (result == DialogResult.OK)
-            {
-                // Por ejemplo, actualizar la lista de usuarios o realizar otras acciones necesarias
-                // después de modificar el usuario.
-            }
-        }
 
         private void BEliminarUsuario_Click(object sender, EventArgs e)
         {

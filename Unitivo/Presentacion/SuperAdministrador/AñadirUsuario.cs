@@ -64,7 +64,7 @@ namespace Unitivo.Presentacion.SuperAdministrador
 
                 if (usuarioRepositorio!.AgregarUsuario(x))
                 {
-                    MessageBox.Show("Usuario" + x.NombreUsuario + " agregado con exito!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Usuario " + x.NombreUsuario + " agregado con exito!", "Exito", MessageBoxButtons.OK);
                     LimpiarTextBoxs();
                     CargarEmpleados();
                     CargarUsuarios();
@@ -96,16 +96,17 @@ namespace Unitivo.Presentacion.SuperAdministrador
                 dgvEmpleados.Rows.Add(empleado.Id, empleado.Nombre, empleado.Apellido, empleado.Correo);
             }
         }
+
         private void CargarUsuarios()
         {
             List<Usuario> usuarios = usuarioRepositorio!.ListarUsuariosActivos();
 
-            dgvEmpleados.Rows.Clear();
-            dgvEmpleados.Refresh();
-            foreach (Usuario usuario in usuarios)
+            dgvListaUsuarios.Rows.Clear();
+            dgvListaUsuarios.Refresh();
+
+            foreach(Usuario usuario in usuarios)
             {
-                //debe listar el id del usuario, su nombreusuario, debe acceder al perfil y listar el nombre del perfil, y acceder al empleado y mostrar el nombre del empleado
-                dgvListaUsuarios.Rows.Add(usuario.Id ,usuario.NombreUsuario ,usuario.IdPerfilNavigation.DescripcionPerfil,usuario.IdEmpleadoNavigation.Nombre ,usuario.IdEmpleadoNavigation.Apellido );
+                dgvListaUsuarios.Rows.Add(usuario.Id, usuario.IdPerfilNavigation.DescripcionPerfil, usuario.NombreUsuario, usuario.IdEmpleadoNavigation.Nombre, usuario.IdEmpleadoNavigation.Apellido, usuario.Estado);
             }
         }
 
@@ -113,11 +114,11 @@ namespace Unitivo.Presentacion.SuperAdministrador
         private bool VerificarCamposVacios()
         {
             if (
-            CommonFunctions.ValidarCamposNoVacios(TBNombreUsuario) ||
-            CommonFunctions.ValidarCamposNoVacios(TBContraseñaUsuario) ||
-            CommonFunctions.ValidarCamposNoVacios(TBConfirmarPass) ||
-            CommonFunctions.ValidarCamposNoVacios(TBEmpleado) ||
-            CBPerfil.SelectedIndex == -1)
+                CommonFunctions.ValidarCamposNoVacios(TBNombreUsuario) ||
+                CommonFunctions.ValidarCamposNoVacios(TBContraseñaUsuario) ||
+                CommonFunctions.ValidarCamposNoVacios(TBConfirmarPass) ||
+                CommonFunctions.ValidarCamposNoVacios(TBEmpleado) ||
+                CBPerfil.SelectedIndex == -1)
             {
                 return true;
             }

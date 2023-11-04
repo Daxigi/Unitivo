@@ -24,22 +24,6 @@ namespace Unitivo.Presentacion.Administrador
             CommonFunctions.ValidarKeyPress((TextBox)sender, e);
         }
 
-        private void BModificarTalle_Click(object sender, EventArgs e)
-        {
-            // Crear una instancia del formulario ModificarTalle
-            ModificarTalle modificarTalleForm = new ModificarTalle();
-
-            // Mostrar el formulario como un cuadro de diálogo modal
-            DialogResult result = modificarTalleForm.ShowDialog();
-
-            // Aquí puedes realizar acciones después de que se cierre el formulario ModificarTalle
-            if (result == DialogResult.OK)
-            {
-                // Por ejemplo, actualizar la lista de talle o realizar otras acciones necesarias
-                // después de modificar el talle.
-            }
-        }
-
         private void BEliminarTalle_Click(object sender, EventArgs e)
         {
             if (dgvListarTalles.SelectedRows.Count == 0)

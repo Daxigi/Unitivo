@@ -112,7 +112,6 @@
             BModificarTalle.Size = new Size(67, 69);
             BModificarTalle.TabIndex = 89;
             BModificarTalle.UseVisualStyleBackColor = false;
-            BModificarTalle.Click += BModificarTalle_Click;
             // 
             // BEliminarTalle
             // 

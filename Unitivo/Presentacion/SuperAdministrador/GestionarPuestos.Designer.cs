@@ -106,7 +106,6 @@
             BModificarPerfiles.Size = new Size(67, 69);
             BModificarPerfiles.TabIndex = 82;
             BModificarPerfiles.UseVisualStyleBackColor = false;
-            BModificarPerfiles.Click += BModificarPerfiles_Click;
             // 
             // BEliminarPerfiles
             // 

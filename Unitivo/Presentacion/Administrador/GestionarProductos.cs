@@ -24,22 +24,6 @@ namespace Unitivo.Presentacion.Administrador
             CommonFunctions.ValidarKeyPress((TextBox)sender, e);
         }
 
-        private void BModificarProducto_Click(object sender, EventArgs e)
-        {
-            // Crear una instancia del formulario ModificarProducto
-            ModificarProducto modificarProductoForm = new ModificarProducto();
-
-            // Mostrar el formulario como un cuadro de diálogo modal
-            DialogResult result = modificarProductoForm.ShowDialog();
-
-            // Aquí puedes realizar acciones después de que se cierre el formulario ModificarProducto
-            if (result == DialogResult.OK)
-            {
-                // Por ejemplo, actualizar la lista de producto o realizar otras acciones necesarias
-                // después de modificar el producto.
-            }
-        }
-
         private void BEliminarProducto_Click(object sender, EventArgs e)
         {
             if (DataGridViewListaProductos.SelectedRows.Count == 0)

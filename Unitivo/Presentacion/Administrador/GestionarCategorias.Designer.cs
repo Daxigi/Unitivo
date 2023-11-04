@@ -110,8 +110,6 @@
             BModificarCategoria.Size = new Size(67, 69);
             BModificarCategoria.TabIndex = 25;
             BModificarCategoria.UseVisualStyleBackColor = false;
-            BModificarCategoria.Click += BModificarCategoria_Click;
-            // 
             // BEliminarCategoria
             // 
             BEliminarCategoria.BackColor = Color.Brown;

@@ -23,22 +23,6 @@ namespace Unitivo.Presentacion.SuperAdministrador
             CommonFunctions.ValidarStringKeyPress((TextBox)sender, e);
         }
 
-        private void BModificarPerfiles_Click(object sender, EventArgs e)
-        {
-            // Crear una instancia del formulario ModificarPerfiles
-            ModificarPuesto modificarPerfilesForm = new ModificarPuesto();
-
-            // Mostrar el formulario como un cuadro de diálogo modal
-            DialogResult result = modificarPerfilesForm.ShowDialog();
-
-            // Aquí puedes realizar acciones después de que se cierre el formulario ModificarPerfiles
-            if (result == DialogResult.OK)
-            {
-                // Por ejemplo, actualizar la lista de perfiles o realizar otras acciones necesarias
-                // después de modificar el perfil.
-            }
-        }
-
         private void BEliminarPerfiles_Click(object sender, EventArgs e)
         {
             if (dgvRegistroPerfil.SelectedRows.Count == 0)

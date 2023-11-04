@@ -9,9 +9,9 @@ using Microsoft.IdentityModel.Tokens;
 using Unitivo.Modelos;
 using Unitivo.Recursos;
 using Unitivo.Repositorios.Interfaces;
-using Unitivo.Sessions;
 using Unitivo.Validators;
 using BCrypt.Net;
+using Unitivo.Sessions;
 
 namespace Unitivo.Repositorios.Implementaciones
 {
@@ -23,8 +23,9 @@ namespace Unitivo.Repositorios.Implementaciones
             _contexto = Contexto.dbContexto;
         }
 
-        private void CargarEmpleados(){
+        public void CargarEmpleados(){
             _contexto?.Empleados.Load();
+            _contexto?.Perfiles.Load();
         }
         
         public bool AgregarUsuario(Usuario x)
@@ -104,6 +105,7 @@ namespace Unitivo.Repositorios.Implementaciones
 
         public List<Usuario> ListarUsuariosActivos()
         {
+            CargarEmpleados();
             return _contexto?.Usuarios.Where(u => u.Estado == true).ToList()!;
         }
         public bool ModificarUsuario(Usuario x)
@@ -135,6 +137,32 @@ namespace Unitivo.Repositorios.Implementaciones
             catch(Exception ex){
                 MessageBox.Show(ex.Message, "Usuarios", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
+            }
+        }
+
+        public Usuario LoggUser(string usuario, string password){
+            try{    
+                Usuario? user = _contexto?.Usuarios.Where(u => u.NombreUsuario == usuario).FirstOrDefault();
+                if(user == null){
+                    MessageBox.Show("Usuario no encontrado", "Usuarios", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return null!;
+                }else{
+                    if(BCrypt.Net.BCrypt.Verify(password, user.Password)){
+                        if(user.Estado == false){
+                            MessageBox.Show("Usuario desactivado", "Usuarios", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return null!;
+                        }else{
+                            Session.usuario = user;
+                            return user!;
+                        }
+                    }else{
+                        MessageBox.Show("Contraseña incorrecta", "Usuarios", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return null!;
+                    }
+                }
+            }catch(Exception ex){
+                MessageBox.Show(ex.Message, "Usuarios", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null!;
             }
         }
     }         

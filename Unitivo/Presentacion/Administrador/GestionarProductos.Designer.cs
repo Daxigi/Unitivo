@@ -105,8 +105,6 @@
             BModificarProducto.Size = new Size(67, 69);
             BModificarProducto.TabIndex = 13;
             BModificarProducto.UseVisualStyleBackColor = false;
-            BModificarProducto.Click += BModificarProducto_Click;
-            // 
             // GroupBoxBuscarProducto
             // 
             GroupBoxBuscarProducto.BackColor = Color.Cornsilk;
