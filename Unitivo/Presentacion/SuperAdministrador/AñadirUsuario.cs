@@ -67,6 +67,7 @@ namespace Unitivo.Presentacion.SuperAdministrador
                     MessageBox.Show("Usuario" + x.NombreUsuario + " agregado con exito!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     LimpiarTextBoxs();
                     CargarEmpleados();
+                    CargarUsuarios();
                     // CargarUsuarios();
                 } else
                 {
@@ -93,6 +94,18 @@ namespace Unitivo.Presentacion.SuperAdministrador
             foreach (Empleado empleado in empleados)
             {
                 dgvEmpleados.Rows.Add(empleado.Id, empleado.Nombre, empleado.Apellido, empleado.Correo);
+            }
+        }
+        private void CargarUsuarios()
+        {
+            List<Usuario> usuarios = usuarioRepositorio!.ListarUsuariosActivos();
+
+            dgvEmpleados.Rows.Clear();
+            dgvEmpleados.Refresh();
+            foreach (Usuario usuario in usuarios)
+            {
+                //debe listar el id del usuario, su nombreusuario, debe acceder al perfil y listar el nombre del perfil, y acceder al empleado y mostrar el nombre del empleado
+                dgvListaUsuarios.Rows.Add(usuario.Id ,usuario.NombreUsuario ,usuario.IdPerfilNavigation.DescripcionPerfil,usuario.IdEmpleadoNavigation.Nombre ,usuario.IdEmpleadoNavigation.Apellido );
             }
         }
 
@@ -132,6 +145,7 @@ namespace Unitivo.Presentacion.SuperAdministrador
         private void AñadirUsuario_Load(object sender, EventArgs e)
         {
             CargarEmpleados();
+            CargarUsuarios();
             var perfiles = perfilRepositorio.ListarPerfiles();
             foreach (var perfil in perfiles)
             {

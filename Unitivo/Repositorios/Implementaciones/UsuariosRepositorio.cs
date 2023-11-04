@@ -11,6 +11,7 @@ using Unitivo.Recursos;
 using Unitivo.Repositorios.Interfaces;
 using Unitivo.Sessions;
 using Unitivo.Validators;
+using BCrypt.Net;
 
 namespace Unitivo.Repositorios.Implementaciones
 {
@@ -41,10 +42,11 @@ namespace Unitivo.Repositorios.Implementaciones
                     throw new ValidationException(sb.ToString());
                 }
 
-                //necesito verificar que un correo no este asociado a una cuenta existente
-                if(_contexto?.Usuarios.Any(u => u.NombreUsuario == x.NombreUsuario) ?? false){
-                    throw new ValidationException("El nombre de usuario ya existe en la base de datos");
-                }
+                //debo encriptar la contraseña
+                string salt = BCrypt.Net.BCrypt.GenerateSalt();
+
+                x.Password = BCrypt.Net.BCrypt.HashPassword(x.Password, salt);
+
 
                 x.Estado = true;
                 x.FechaCreacion = DateTime.Now;
@@ -117,14 +119,18 @@ namespace Unitivo.Repositorios.Implementaciones
                     throw new ValidationException(sb.ToString());
                 }
 
-            if(BuscarUsuarioPorId(x.Id).NombreUsuario != x.NombreUsuario){
-                MessageBox.Show("No se puede modificar el nombre de usuario");
-                return false;
-            }
-            
-            _contexto?.Usuarios.Update(x);
-            int resultado = _contexto?.SaveChanges() ?? 0;
-            return resultado > 0;
+                if(BuscarUsuarioPorId(x.Id).NombreUsuario != x.NombreUsuario){
+                    MessageBox.Show("No se puede modificar el nombre de usuario");
+                    return false;
+                }
+
+                string salt = BCrypt.Net.BCrypt.GenerateSalt();
+
+                x.Password = BCrypt.Net.BCrypt.HashPassword(x.Password, salt);
+                
+                _contexto?.Usuarios.Update(x);
+                int resultado = _contexto?.SaveChanges() ?? 0;
+                return resultado > 0;
             }
             catch(Exception ex){
                 MessageBox.Show(ex.Message, "Usuarios", MessageBoxButtons.OK, MessageBoxIcon.Error);

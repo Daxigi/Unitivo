@@ -50,13 +50,6 @@
             TabControlRegUsuarios = new TabControl();
             TabPageListaUsuarios = new TabPage();
             dgvListaUsuarios = new DataGridView();
-            Column8 = new DataGridViewTextBoxColumn();
-            Column9 = new DataGridViewTextBoxColumn();
-            Column11 = new DataGridViewTextBoxColumn();
-            Column12 = new DataGridViewTextBoxColumn();
-            Column13 = new DataGridViewTextBoxColumn();
-            Column14 = new DataGridViewTextBoxColumn();
-            Column15 = new DataGridViewTextBoxColumn();
             BRegistrarUsuario = new Button();
             LRegistroUsuario = new Label();
             TabControlListaEmpleados = new TabControl();
@@ -66,6 +59,12 @@
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
             Email = new DataGridViewTextBoxColumn();
+            Column8 = new DataGridViewTextBoxColumn();
+            Column14 = new DataGridViewTextBoxColumn();
+            NombreUsuario = new DataGridViewTextBoxColumn();
+            Column13 = new DataGridViewTextBoxColumn();
+            Apellido = new DataGridViewTextBoxColumn();
+            Column11 = new DataGridViewTextBoxColumn();
             GroupBox3.SuspendLayout();
             TabControlRegUsuarios.SuspendLayout();
             TabPageListaUsuarios.SuspendLayout();
@@ -241,6 +240,7 @@
             // 
             dgvListaUsuarios.AllowUserToAddRows = false;
             dgvListaUsuarios.AllowUserToDeleteRows = false;
+            dgvListaUsuarios.AllowUserToResizeRows = false;
             dgvListaUsuarios.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             dgvListaUsuarios.BackgroundColor = Color.RosyBrown;
             dgvListaUsuarios.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
@@ -254,7 +254,7 @@
             dgvListaUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvListaUsuarios.ColumnHeadersHeight = 20;
             dgvListaUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dgvListaUsuarios.Columns.AddRange(new DataGridViewColumn[] { Column8, Column9, Column11, Column12, Column13, Column14, Column15 });
+            dgvListaUsuarios.Columns.AddRange(new DataGridViewColumn[] { Column8, Column14, NombreUsuario, Column13, Apellido, Column11 });
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.Window;
             dataGridViewCellStyle2.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
@@ -278,67 +278,12 @@
             dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
             dgvListaUsuarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dgvListaUsuarios.RowHeadersVisible = false;
             dgvListaUsuarios.RowHeadersWidth = 51;
             dataGridViewCellStyle4.ForeColor = Color.Black;
             dgvListaUsuarios.RowsDefaultCellStyle = dataGridViewCellStyle4;
             dgvListaUsuarios.Size = new Size(685, 183);
             dgvListaUsuarios.TabIndex = 2;
-            // 
-            // Column8
-            // 
-            Column8.HeaderText = "ID";
-            Column8.MinimumWidth = 6;
-            Column8.Name = "Column8";
-            Column8.ReadOnly = true;
-            Column8.Width = 43;
-            // 
-            // Column9
-            // 
-            Column9.HeaderText = "Nombre";
-            Column9.MinimumWidth = 6;
-            Column9.Name = "Column9";
-            Column9.ReadOnly = true;
-            Column9.Width = 78;
-            // 
-            // Column11
-            // 
-            Column11.HeaderText = "Estado";
-            Column11.MinimumWidth = 6;
-            Column11.Name = "Column11";
-            Column11.ReadOnly = true;
-            Column11.Width = 72;
-            // 
-            // Column12
-            // 
-            Column12.HeaderText = "FechaModificacion";
-            Column12.MinimumWidth = 6;
-            Column12.Name = "Column12";
-            Column12.ReadOnly = true;
-            Column12.Width = 145;
-            // 
-            // Column13
-            // 
-            Column13.HeaderText = "FechaCreacion";
-            Column13.MinimumWidth = 6;
-            Column13.Name = "Column13";
-            Column13.ReadOnly = true;
-            Column13.Width = 121;
-            // 
-            // Column14
-            // 
-            Column14.HeaderText = "Perfil";
-            Column14.MinimumWidth = 6;
-            Column14.Name = "Column14";
-            Column14.ReadOnly = true;
-            Column14.Width = 63;
-            // 
-            // Column15
-            // 
-            Column15.HeaderText = "Empleado";
-            Column15.MinimumWidth = 6;
-            Column15.Name = "Column15";
-            Column15.ReadOnly = true;
-            Column15.Width = 90;
             // 
             // BRegistrarUsuario
             // 
@@ -399,6 +344,7 @@
             // 
             dgvEmpleados.AllowUserToAddRows = false;
             dgvEmpleados.AllowUserToDeleteRows = false;
+            dgvEmpleados.AllowUserToResizeRows = false;
             dgvEmpleados.BackgroundColor = Color.RosyBrown;
             dgvEmpleados.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
@@ -472,6 +418,52 @@
             Email.ReadOnly = true;
             Email.Width = 179;
             // 
+            // Column8
+            // 
+            Column8.HeaderText = "ID";
+            Column8.MinimumWidth = 6;
+            Column8.Name = "Column8";
+            Column8.ReadOnly = true;
+            Column8.Width = 43;
+            // 
+            // Column14
+            // 
+            Column14.HeaderText = "Perfil";
+            Column14.MinimumWidth = 6;
+            Column14.Name = "Column14";
+            Column14.ReadOnly = true;
+            Column14.Width = 63;
+            // 
+            // NombreUsuario
+            // 
+            NombreUsuario.HeaderText = "NombreUsuario";
+            NombreUsuario.Name = "NombreUsuario";
+            NombreUsuario.ReadOnly = true;
+            NombreUsuario.Width = 126;
+            // 
+            // Column13
+            // 
+            Column13.HeaderText = "Nombre";
+            Column13.MinimumWidth = 6;
+            Column13.Name = "Column13";
+            Column13.ReadOnly = true;
+            Column13.Width = 78;
+            // 
+            // Apellido
+            // 
+            Apellido.HeaderText = "Apellido";
+            Apellido.Name = "Apellido";
+            Apellido.ReadOnly = true;
+            Apellido.Width = 81;
+            // 
+            // Column11
+            // 
+            Column11.HeaderText = "Estado";
+            Column11.MinimumWidth = 6;
+            Column11.Name = "Column11";
+            Column11.ReadOnly = true;
+            Column11.Width = 72;
+            // 
             // AñadirUsuario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -521,17 +513,16 @@
         internal TabControl TabControlListaEmpleados;
         internal TabPage TabPageListaEmpleados;
         internal DataGridView dgvEmpleados;
-        private DataGridViewTextBoxColumn Column8;
-        private DataGridViewTextBoxColumn Column9;
-        private DataGridViewTextBoxColumn Column11;
-        private DataGridViewTextBoxColumn Column12;
-        private DataGridViewTextBoxColumn Column13;
-        private DataGridViewTextBoxColumn Column14;
-        private DataGridViewTextBoxColumn Column15;
         private DataGridViewTextBoxColumn ID;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column7;
         private DataGridViewTextBoxColumn Email;
+        private DataGridViewTextBoxColumn Column8;
+        private DataGridViewTextBoxColumn Column14;
+        private DataGridViewTextBoxColumn NombreUsuario;
+        private DataGridViewTextBoxColumn Column13;
+        private DataGridViewTextBoxColumn Apellido;
+        private DataGridViewTextBoxColumn Column11;
     }
 }
