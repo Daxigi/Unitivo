@@ -24,6 +24,7 @@ namespace Unitivo.Presentacion.SuperAdministrador
         public AñadirUsuario()
         {
             InitializeComponent();
+            usuarioRepositorio.CargarEmpleados();
         }
 
         private void Email_KeyPress(object sender, KeyPressEventArgs e)
@@ -150,7 +151,7 @@ namespace Unitivo.Presentacion.SuperAdministrador
             var perfiles = perfilRepositorio.ListarPerfiles();
             foreach (var perfil in perfiles)
             {
-                CBPerfil.Items.Add(perfil.Id);
+                CBPerfil.Items.Add(perfil.DescripcionPerfil);
             }
         }
     }

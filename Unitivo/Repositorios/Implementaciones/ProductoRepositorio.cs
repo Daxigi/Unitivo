@@ -3,6 +3,7 @@ using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,9 +20,10 @@ namespace Unitivo.Repositorios.Implementaciones
         private readonly UnitivoContext? _contexto;
         public ProductoRepositorio() {
             _contexto = Contexto.dbContexto;
+
         }
 
-        private void CargarTalleYCategorias()
+        public void CargarTalleYCategorias()
         {
             _contexto?.Categorias.Load();
             _contexto?.Talles.Load();
@@ -29,7 +31,7 @@ namespace Unitivo.Repositorios.Implementaciones
             LocalStorage.categorias = _contexto?.Categorias.ToList();
             LocalStorage.talles = _contexto?.Talles.ToList();
         }
-        public void AgregarProducto(Producto x)
+        public bool AgregarProducto(Producto x)
         {
             try
             {
@@ -46,18 +48,16 @@ namespace Unitivo.Repositorios.Implementaciones
                     throw new ValidationException(sb.ToString());
                 }
 
-                string nombreAleatorio = Path.Combine("C:\\MisImagenes", 
-                Guid.NewGuid().ToString() + "_" + DateTime.Now.ToString("yyyyMMddHHmmss") + ".jpg"
-                );
-
-                x.Imagen = nombreAleatorio;
                 x.Estado = true;
                 x.FechaCreacion = DateTime.Now;
 
                 _contexto?.Productos.Add(x);
+                _contexto?.SaveChanges();
+                return true;
             }
             catch (Exception ex)
             {
+                return false;
                 throw new Exception(ex.Message);
             }
         }

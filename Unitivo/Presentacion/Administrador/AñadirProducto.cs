@@ -13,27 +13,33 @@ using Unitivo.Repositorios.Implementaciones;
 using Unitivo.Repositorios.Interfaces;
 using Unitivo.Sessions;
 using System.IO;
+using static System.Drawing.Image;
+using Unitivo.Repositorio.Interfaces;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Unitivo.Properties;
 
 namespace Unitivo.Presentacion.Administrador
 {
     public partial class AñadirProducto : Form
     {
-        private readonly ProductoInterface? productoRepositorio;
+        ProductoRepositorio? productoRepositorio = new ProductoRepositorio();
+        TalleRepositorio? talleRepositorio = new TalleRepositorio();
+        CategoriaRepositorio? categoriaRepositorio = new CategoriaRepositorio();
 
-        private string? rutaImagenProducto;
-        private Image? image;
+        string imageName = string.Empty;
+        string filePath = string.Empty;
+        string fileSavePath = string.Empty;
+
         public AñadirProducto()
         {
             InitializeComponent();
             AñadirProducto_Load();
-            productoRepositorio = new ProductoRepositorio();
         }
-
 
 
         private void String_KeyPress(object sender, KeyPressEventArgs e)
         {
-            CommonFunctions.ValidarStringKeyPress((TextBox)sender, e);
+            CommonFunctions.ValidarKeyPress((TextBox)sender, e);
         }
 
         private void Num_KeyPress(object sender, KeyPressEventArgs e)
@@ -45,18 +51,26 @@ namespace Unitivo.Presentacion.Administrador
         {
             if (verificarCamposNulos())
             {
-                Producto producto = new Producto();
-                producto.Nombre = TBNombreProducto.Text;
-                producto.IdCategoria = ((Categoria)CBCategoria.SelectedItem).Id;
-                producto.Stock = int.Parse(TBStock.Text);
-                producto.Precio = double.Parse(TBPrecio.Text);
-                producto.IdTalle = ((Talle)CBTalle.SelectedItem).Id;
-                producto.Imagen = rutaImagenProducto!;
+                try
+                {
+                    Producto producto = new Producto();
+                    producto.Nombre = TBNombreProducto.Text;
+                    producto.IdCategoria = ((Categoria)CBCategoria.SelectedItem).Id;
+                    producto.Stock = int.Parse(TBStock.Text);
+                    producto.Precio = double.Parse(TBPrecio.Text);
+                    producto.IdTalle = ((Talle)CBTalle.SelectedItem).Id;
+                    producto.Imagen = imageName;
 
-                try{
-                    productoRepositorio!.AgregarProducto(producto);
+
+                    if (productoRepositorio!.AgregarProducto(producto)){
+                        File.Copy(filePath!, fileSavePath!, true);
+                        MessageBox.Show("El producto se agrego correctamente!","Producto", MessageBoxButtons.OK);
+                    }else{
+                        MessageBox.Show("El producto no se pudo agregar!","Producto", MessageBoxButtons.OK);
+                    }
+
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
@@ -65,21 +79,31 @@ namespace Unitivo.Presentacion.Administrador
 
         private void btnCargarImagen_Click(object sender, EventArgs e)
         {
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            OpenFileDialog openFileDialog = new()
             {
-                openFileDialog.Filter = "Archivos de imagen|*.jpg;*.jpeg;*.png;*.bmp|Todos los archivos|*.*";
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    rutaImagenProducto = openFileDialog.FileName;
-                    pictureBoxProducto.Image = Image.FromFile(rutaImagenProducto);
-                    image!.Save(rutaImagenProducto);
-                }
+                Filter = "Image files (*.png) | *.png",
+                InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures),
+                Multiselect = false,
+                RestoreDirectory = true,
+                Title = "Seleccione una imagen"
+            };
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                imageName = Guid.NewGuid().ToString() + ".png";
+
+                string fileSavePath = Path.Combine("..", "..", "..", "products", imageName!);
+                string fileName = openFileDialog.SafeFileName;
+                this.fileSavePath = fileSavePath;
+                filePath = openFileDialog.FileName;
+                
+                pictureBoxProducto.Image = FromFile(filePath);
             }
         }
 
         private void AñadirProducto_Load()
         {
-            // Cargar las categorías.
+            productoRepositorio!.CargarTalleYCategorias();            // Cargar las categorías.
             CBCategoria.DataSource = LocalStorage.categorias;
             CBCategoria.DisplayMember = "Nombre";
             CBCategoria.ValueMember = "Id";
@@ -88,6 +112,8 @@ namespace Unitivo.Presentacion.Administrador
             CBTalle.DataSource = LocalStorage.talles;
             CBTalle.DisplayMember = "Nombre";
             CBTalle.ValueMember = "Id";
+
+            
         }
 
         private bool verificarCamposNulos()
@@ -97,8 +123,7 @@ namespace Unitivo.Presentacion.Administrador
                 CBCategoria.SelectedIndex == -1 ||
                 string.IsNullOrWhiteSpace(TBStock.Text) ||
                 string.IsNullOrWhiteSpace(TBPrecio.Text) ||
-                CBTalle.SelectedIndex == -1 ||
-                string.IsNullOrWhiteSpace(rutaImagenProducto)
+                CBTalle.SelectedIndex == -1
                 )
             {
                 MessageBox.Show("Todos los campos son obligatorios. Por favor, complete todos los campos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -106,14 +131,8 @@ namespace Unitivo.Presentacion.Administrador
             }
             else
             {
-                MessageBox.Show("Producto registrado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return true;
             }
         }
-
-
-
-
-
     }
 }

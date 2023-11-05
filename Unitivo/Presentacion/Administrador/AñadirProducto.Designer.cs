@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
             TabControlListaProductos = new TabControl();
             TabPageListaProducto = new TabPage();
             DataGridViewListaProductos = new DataGridView();
@@ -60,23 +61,27 @@
             TBPrecio = new TextBox();
             Label4 = new Label();
             TBStock = new TextBox();
+            talleBindingSource = new BindingSource(components);
+            categoriaBindingSource = new BindingSource(components);
             TabControlListaProductos.SuspendLayout();
             TabPageListaProducto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)DataGridViewListaProductos).BeginInit();
             ((System.ComponentModel.ISupportInitialize)DataGridViewRegistroCategorias).BeginInit();
             Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxProducto).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)talleBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)categoriaBindingSource).BeginInit();
             SuspendLayout();
             // 
             // TabControlListaProductos
             // 
             TabControlListaProductos.Controls.Add(TabPageListaProducto);
             TabControlListaProductos.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            TabControlListaProductos.Location = new Point(34, 382);
-            TabControlListaProductos.Margin = new Padding(2, 3, 2, 3);
+            TabControlListaProductos.Location = new Point(30, 286);
+            TabControlListaProductos.Margin = new Padding(2, 2, 2, 2);
             TabControlListaProductos.Name = "TabControlListaProductos";
             TabControlListaProductos.SelectedIndex = 0;
-            TabControlListaProductos.Size = new Size(1019, 293);
+            TabControlListaProductos.Size = new Size(892, 220);
             TabControlListaProductos.TabIndex = 17;
             // 
             // TabPageListaProducto
@@ -85,11 +90,11 @@
             TabPageListaProducto.Controls.Add(DataGridViewRegistroCategorias);
             TabPageListaProducto.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             TabPageListaProducto.ForeColor = Color.White;
-            TabPageListaProducto.Location = new Point(4, 29);
-            TabPageListaProducto.Margin = new Padding(2, 3, 2, 3);
+            TabPageListaProducto.Location = new Point(4, 26);
+            TabPageListaProducto.Margin = new Padding(2, 2, 2, 2);
             TabPageListaProducto.Name = "TabPageListaProducto";
-            TabPageListaProducto.Padding = new Padding(2, 3, 2, 3);
-            TabPageListaProducto.Size = new Size(1011, 260);
+            TabPageListaProducto.Padding = new Padding(2, 2, 2, 2);
+            TabPageListaProducto.Size = new Size(884, 190);
             TabPageListaProducto.TabIndex = 0;
             TabPageListaProducto.Text = "Lista de Producto";
             TabPageListaProducto.UseVisualStyleBackColor = true;
@@ -103,34 +108,34 @@
             DataGridViewListaProductos.BackgroundColor = Color.RosyBrown;
             DataGridViewListaProductos.BorderStyle = BorderStyle.None;
             DataGridViewListaProductos.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.DarkOliveGreen;
-            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = SystemColors.Window;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            DataGridViewListaProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = Color.DarkOliveGreen;
+            dataGridViewCellStyle7.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = SystemColors.Window;
+            dataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            DataGridViewListaProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             DataGridViewListaProductos.ColumnHeadersHeight = 20;
             DataGridViewListaProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             DataGridViewListaProductos.Columns.AddRange(new DataGridViewColumn[] { Column2, Column3, Categoria, Stock, Column4, Talle });
             DataGridViewListaProductos.Dock = DockStyle.Fill;
             DataGridViewListaProductos.EnableHeadersVisualStyles = false;
-            DataGridViewListaProductos.Location = new Point(2, 3);
-            DataGridViewListaProductos.Margin = new Padding(5, 4, 5, 4);
+            DataGridViewListaProductos.Location = new Point(2, 2);
+            DataGridViewListaProductos.Margin = new Padding(4, 3, 4, 3);
             DataGridViewListaProductos.Name = "DataGridViewListaProductos";
             DataGridViewListaProductos.ReadOnly = true;
             DataGridViewListaProductos.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.NavajoWhite;
-            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            DataGridViewListaProductos.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = Color.NavajoWhite;
+            dataGridViewCellStyle8.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
+            DataGridViewListaProductos.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             DataGridViewListaProductos.RowHeadersWidth = 51;
-            DataGridViewListaProductos.Size = new Size(1007, 254);
+            DataGridViewListaProductos.Size = new Size(880, 186);
             DataGridViewListaProductos.TabIndex = 7;
             // 
             // Column2
@@ -181,42 +186,42 @@
             DataGridViewRegistroCategorias.AllowUserToDeleteRows = false;
             DataGridViewRegistroCategorias.BackgroundColor = Color.FromArgb(31, 31, 69);
             DataGridViewRegistroCategorias.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(255, 128, 0);
-            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            DataGridViewRegistroCategorias.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = Color.FromArgb(255, 128, 0);
+            dataGridViewCellStyle9.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle9.ForeColor = Color.White;
+            dataGridViewCellStyle9.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.True;
+            DataGridViewRegistroCategorias.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             DataGridViewRegistroCategorias.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = SystemColors.Window;
-            dataGridViewCellStyle4.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = Color.Blue;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            DataGridViewRegistroCategorias.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = SystemColors.Window;
+            dataGridViewCellStyle10.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle10.ForeColor = Color.White;
+            dataGridViewCellStyle10.SelectionBackColor = Color.Blue;
+            dataGridViewCellStyle10.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.False;
+            DataGridViewRegistroCategorias.DefaultCellStyle = dataGridViewCellStyle10;
             DataGridViewRegistroCategorias.Dock = DockStyle.Fill;
             DataGridViewRegistroCategorias.EnableHeadersVisualStyles = false;
-            DataGridViewRegistroCategorias.Location = new Point(2, 3);
-            DataGridViewRegistroCategorias.Margin = new Padding(5, 4, 5, 4);
+            DataGridViewRegistroCategorias.Location = new Point(2, 2);
+            DataGridViewRegistroCategorias.Margin = new Padding(4, 3, 4, 3);
             DataGridViewRegistroCategorias.Name = "DataGridViewRegistroCategorias";
             DataGridViewRegistroCategorias.ReadOnly = true;
             DataGridViewRegistroCategorias.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = SystemColors.ActiveCaption;
-            dataGridViewCellStyle5.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            DataGridViewRegistroCategorias.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = SystemColors.ActiveCaption;
+            dataGridViewCellStyle11.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle11.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.True;
+            DataGridViewRegistroCategorias.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
             DataGridViewRegistroCategorias.RowHeadersWidth = 51;
-            dataGridViewCellStyle6.ForeColor = Color.Black;
-            DataGridViewRegistroCategorias.RowsDefaultCellStyle = dataGridViewCellStyle6;
-            DataGridViewRegistroCategorias.Size = new Size(1007, 254);
+            dataGridViewCellStyle12.ForeColor = Color.Black;
+            DataGridViewRegistroCategorias.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            DataGridViewRegistroCategorias.Size = new Size(880, 186);
             DataGridViewRegistroCategorias.TabIndex = 2;
             // 
             // Label1
@@ -225,10 +230,10 @@
             Label1.BackColor = Color.Cornsilk;
             Label1.Font = new Font("Cooper Black", 25.8000011F, FontStyle.Regular, GraphicsUnit.Point);
             Label1.ForeColor = Color.DarkOliveGreen;
-            Label1.Location = new Point(318, 31);
-            Label1.Margin = new Padding(6, 0, 6, 0);
+            Label1.Location = new Point(278, 23);
+            Label1.Margin = new Padding(5, 0, 5, 0);
             Label1.Name = "Label1";
-            Label1.Size = new Size(425, 50);
+            Label1.Size = new Size(337, 40);
             Label1.TabIndex = 15;
             Label1.Text = "Añadir Producto :";
             // 
@@ -249,17 +254,18 @@
             Panel2.Controls.Add(TBPrecio);
             Panel2.Controls.Add(Label4);
             Panel2.Controls.Add(TBStock);
-            Panel2.Location = new Point(34, 122);
-            Panel2.Margin = new Padding(2, 3, 2, 3);
+            Panel2.Location = new Point(30, 92);
+            Panel2.Margin = new Padding(2, 2, 2, 2);
             Panel2.Name = "Panel2";
-            Panel2.Size = new Size(1019, 211);
+            Panel2.Size = new Size(892, 158);
             Panel2.TabIndex = 16;
             // 
             // BAgregarImagen
             // 
-            BAgregarImagen.Location = new Point(457, 153);
+            BAgregarImagen.Location = new Point(400, 115);
+            BAgregarImagen.Margin = new Padding(3, 2, 3, 2);
             BAgregarImagen.Name = "BAgregarImagen";
-            BAgregarImagen.Size = new Size(180, 29);
+            BAgregarImagen.Size = new Size(158, 22);
             BAgregarImagen.TabIndex = 20;
             BAgregarImagen.Text = "Agregar";
             BAgregarImagen.UseVisualStyleBackColor = true;
@@ -268,9 +274,10 @@
             // pictureBoxProducto
             // 
             pictureBoxProducto.BackColor = Color.RosyBrown;
-            pictureBoxProducto.Location = new Point(700, 45);
+            pictureBoxProducto.Location = new Point(612, 34);
+            pictureBoxProducto.Margin = new Padding(3, 2, 3, 2);
             pictureBoxProducto.Name = "pictureBoxProducto";
-            pictureBoxProducto.Size = new Size(142, 122);
+            pictureBoxProducto.Size = new Size(124, 92);
             pictureBoxProducto.TabIndex = 19;
             pictureBoxProducto.TabStop = false;
             // 
@@ -279,10 +286,10 @@
             BAñadirProducto.BackColor = Color.DarkOliveGreen;
             BAñadirProducto.Font = new Font("Microsoft Sans Serif", 13F, FontStyle.Regular, GraphicsUnit.Point);
             BAñadirProducto.ForeColor = Color.White;
-            BAñadirProducto.Location = new Point(883, 73);
-            BAñadirProducto.Margin = new Padding(2, 3, 2, 3);
+            BAñadirProducto.Location = new Point(773, 55);
+            BAñadirProducto.Margin = new Padding(2, 2, 2, 2);
             BAñadirProducto.Name = "BAñadirProducto";
-            BAñadirProducto.Size = new Size(120, 63);
+            BAñadirProducto.Size = new Size(105, 47);
             BAñadirProducto.TabIndex = 2;
             BAñadirProducto.Text = "Añadir";
             BAñadirProducto.UseVisualStyleBackColor = false;
@@ -290,12 +297,13 @@
             // 
             // CBCategoria
             // 
+            CBCategoria.DataSource = categoriaBindingSource;
             CBCategoria.DropDownStyle = ComboBoxStyle.DropDownList;
             CBCategoria.FormattingEnabled = true;
-            CBCategoria.Location = new Point(139, 88);
-            CBCategoria.Margin = new Padding(2, 3, 2, 3);
+            CBCategoria.Location = new Point(122, 66);
+            CBCategoria.Margin = new Padding(2, 2, 2, 2);
             CBCategoria.Name = "CBCategoria";
-            CBCategoria.Size = new Size(174, 28);
+            CBCategoria.Size = new Size(153, 23);
             CBCategoria.TabIndex = 15;
             // 
             // LImagen
@@ -304,21 +312,22 @@
             LImagen.BackColor = Color.Cornsilk;
             LImagen.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             LImagen.ForeColor = Color.SaddleBrown;
-            LImagen.Location = new Point(343, 149);
-            LImagen.Margin = new Padding(6, 0, 6, 0);
+            LImagen.Location = new Point(300, 112);
+            LImagen.Margin = new Padding(5, 0, 5, 0);
             LImagen.Name = "LImagen";
-            LImagen.Size = new Size(105, 29);
+            LImagen.Size = new Size(83, 24);
             LImagen.TabIndex = 13;
             LImagen.Text = "Imagen: ";
             // 
             // CBTalle
             // 
+            CBTalle.DataSource = talleBindingSource;
             CBTalle.DropDownStyle = ComboBoxStyle.DropDownList;
             CBTalle.FormattingEnabled = true;
-            CBTalle.Location = new Point(463, 90);
-            CBTalle.Margin = new Padding(2, 3, 2, 3);
+            CBTalle.Location = new Point(405, 68);
+            CBTalle.Margin = new Padding(2, 2, 2, 2);
             CBTalle.Name = "CBTalle";
-            CBTalle.Size = new Size(174, 28);
+            CBTalle.Size = new Size(153, 23);
             CBTalle.TabIndex = 11;
             // 
             // Label6
@@ -327,10 +336,10 @@
             Label6.BackColor = Color.Cornsilk;
             Label6.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             Label6.ForeColor = Color.SaddleBrown;
-            Label6.Location = new Point(341, 89);
-            Label6.Margin = new Padding(6, 0, 6, 0);
+            Label6.Location = new Point(298, 67);
+            Label6.Margin = new Padding(5, 0, 5, 0);
             Label6.Name = "Label6";
-            Label6.Size = new Size(80, 29);
+            Label6.Size = new Size(61, 24);
             Label6.TabIndex = 10;
             Label6.Text = "Talle: ";
             // 
@@ -340,19 +349,19 @@
             Label3.BackColor = Color.Cornsilk;
             Label3.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             Label3.ForeColor = Color.SaddleBrown;
-            Label3.Location = new Point(17, 86);
-            Label3.Margin = new Padding(6, 0, 6, 0);
+            Label3.Location = new Point(15, 64);
+            Label3.Margin = new Padding(5, 0, 5, 0);
             Label3.Name = "Label3";
-            Label3.Size = new Size(130, 29);
+            Label3.Size = new Size(100, 24);
             Label3.TabIndex = 1;
             Label3.Text = "Categoría: ";
             // 
             // TBNombreProducto
             // 
-            TBNombreProducto.Location = new Point(139, 28);
-            TBNombreProducto.Margin = new Padding(6, 7, 6, 7);
+            TBNombreProducto.Location = new Point(122, 21);
+            TBNombreProducto.Margin = new Padding(5, 5, 5, 5);
             TBNombreProducto.Name = "TBNombreProducto";
-            TBNombreProducto.Size = new Size(174, 27);
+            TBNombreProducto.Size = new Size(153, 23);
             TBNombreProducto.TabIndex = 5;
             TBNombreProducto.KeyPress += String_KeyPress;
             // 
@@ -362,10 +371,10 @@
             Label2.BackColor = Color.Cornsilk;
             Label2.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             Label2.ForeColor = Color.SaddleBrown;
-            Label2.Location = new Point(17, 25);
-            Label2.Margin = new Padding(6, 0, 6, 0);
+            Label2.Location = new Point(15, 19);
+            Label2.Margin = new Padding(5, 0, 5, 0);
             Label2.Name = "Label2";
-            Label2.Size = new Size(107, 29);
+            Label2.Size = new Size(84, 24);
             Label2.TabIndex = 0;
             Label2.Text = "Nombre:";
             // 
@@ -375,19 +384,19 @@
             Label5.BackColor = Color.Cornsilk;
             Label5.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             Label5.ForeColor = Color.SaddleBrown;
-            Label5.Location = new Point(343, 28);
-            Label5.Margin = new Padding(6, 0, 6, 0);
+            Label5.Location = new Point(300, 21);
+            Label5.Margin = new Padding(5, 0, 5, 0);
             Label5.Name = "Label5";
-            Label5.Size = new Size(95, 29);
+            Label5.Size = new Size(74, 24);
             Label5.TabIndex = 3;
             Label5.Text = "Precio: ";
             // 
             // TBPrecio
             // 
-            TBPrecio.Location = new Point(463, 28);
-            TBPrecio.Margin = new Padding(6, 7, 6, 7);
+            TBPrecio.Location = new Point(405, 21);
+            TBPrecio.Margin = new Padding(5, 5, 5, 5);
             TBPrecio.Name = "TBPrecio";
-            TBPrecio.Size = new Size(174, 27);
+            TBPrecio.Size = new Size(153, 23);
             TBPrecio.TabIndex = 8;
             TBPrecio.KeyPress += Num_KeyPress;
             // 
@@ -397,33 +406,41 @@
             Label4.BackColor = Color.Cornsilk;
             Label4.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             Label4.ForeColor = Color.SaddleBrown;
-            Label4.Location = new Point(17, 150);
-            Label4.Margin = new Padding(6, 0, 6, 0);
+            Label4.Location = new Point(15, 112);
+            Label4.Margin = new Padding(5, 0, 5, 0);
             Label4.Name = "Label4";
-            Label4.Size = new Size(79, 29);
+            Label4.Size = new Size(61, 24);
             Label4.TabIndex = 2;
             Label4.Text = "Stock:";
             // 
             // TBStock
             // 
-            TBStock.Location = new Point(139, 153);
-            TBStock.Margin = new Padding(6, 7, 6, 7);
+            TBStock.Location = new Point(122, 115);
+            TBStock.Margin = new Padding(5, 5, 5, 5);
             TBStock.Name = "TBStock";
-            TBStock.Size = new Size(174, 27);
+            TBStock.Size = new Size(153, 23);
             TBStock.TabIndex = 7;
             TBStock.KeyPress += Num_KeyPress;
             // 
+            // talleBindingSource
+            // 
+            talleBindingSource.DataSource = typeof(Modelos.Talle);
+            // 
+            // categoriaBindingSource
+            // 
+            categoriaBindingSource.DataSource = typeof(Modelos.Categoria);
+            // 
             // AñadirProducto
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSeaGreen;
-            ClientSize = new Size(1080, 760);
+            ClientSize = new Size(945, 570);
             Controls.Add(TabControlListaProductos);
             Controls.Add(Label1);
             Controls.Add(Panel2);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(5, 4, 5, 4);
+            Margin = new Padding(4, 3, 4, 3);
             Name = "AñadirProducto";
             Text = "     ";
             TabControlListaProductos.ResumeLayout(false);
@@ -433,6 +450,8 @@
             Panel2.ResumeLayout(false);
             Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxProducto).EndInit();
+            ((System.ComponentModel.ISupportInitialize)talleBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)categoriaBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -466,6 +485,8 @@
 
         private PictureBox pictureBoxProducto;
         private Button BAgregarImagen;
+        private BindingSource categoriaBindingSource;
+        private BindingSource talleBindingSource;
     }
 
 

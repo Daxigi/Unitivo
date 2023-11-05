@@ -15,10 +15,9 @@ namespace Unitivo.Validators
     public class ProductoValidator : AbstractValidator<Producto>
     {
 
-        private readonly ProductoInterface? productoRepositorio;
-        private readonly CategoriaInterface? categoriaRepositorio;
-        private readonly TalleInterface? talleRepositorio;
-        
+        ProductoRepositorio productoRepositorio = new ProductoRepositorio();
+        CategoriaRepositorio categoriaRepositorio = new CategoriaRepositorio();
+        TalleRepositorio talleRepositorio = new TalleRepositorio();
         public ProductoValidator()
         {
             //validar Nombre
@@ -55,7 +54,8 @@ namespace Unitivo.Validators
 
 
         private bool ExisteNombre(string nombre){
-            if(productoRepositorio!.BuscarProductoNombre(nombre) != null){
+            if(productoRepositorio!.BuscarProductoNombre(nombre).Count() != 0)
+            {
                 return false;
             }
             else
@@ -65,7 +65,7 @@ namespace Unitivo.Validators
         }
         private bool ExisteCategoria(int id)
         {
-            if(categoriaRepositorio!.BuscarCategoriaPorId(id) != null){
+            if(categoriaRepositorio!.BuscarCategoriaPorId(id) == null){
                 return false;
             }
             else
@@ -74,7 +74,7 @@ namespace Unitivo.Validators
             }
         }
         private bool ExisteTalle(int id){
-            if(talleRepositorio!.BuscarTallePorId(id) != null){
+            if(talleRepositorio!.BuscarTallePorId(id) == null){
                 return false;
             }
             else

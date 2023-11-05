@@ -105,7 +105,6 @@ namespace Unitivo.Repositorios.Implementaciones
 
         public List<Usuario> ListarUsuariosActivos()
         {
-            CargarEmpleados();
             return _contexto?.Usuarios.Where(u => u.Estado == true).ToList()!;
         }
         public bool ModificarUsuario(Usuario x)
