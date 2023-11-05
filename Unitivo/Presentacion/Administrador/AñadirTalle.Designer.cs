@@ -32,7 +32,7 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             TabControlRegTalles = new TabControl();
             TabPageListaTalles = new TabPage();
-            dgvRegistroTalles = new DataGridView();
+            DataGridViewListarTalles = new DataGridView();
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
@@ -42,7 +42,7 @@
             LNombreTalle = new Label();
             TabControlRegTalles.SuspendLayout();
             TabPageListaTalles.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvRegistroTalles).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DataGridViewListarTalles).BeginInit();
             PanelRegTalles.SuspendLayout();
             SuspendLayout();
             // 
@@ -58,7 +58,7 @@
             // 
             // TabPageListaTalles
             // 
-            TabPageListaTalles.Controls.Add(dgvRegistroTalles);
+            TabPageListaTalles.Controls.Add(DataGridViewListarTalles);
             TabPageListaTalles.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             TabPageListaTalles.ForeColor = Color.White;
             TabPageListaTalles.Location = new Point(4, 28);
@@ -69,14 +69,14 @@
             TabPageListaTalles.Text = "Lista de Talles";
             TabPageListaTalles.UseVisualStyleBackColor = true;
             // 
-            // dgvRegistroTalles
+            // DataGridViewListarTalles
             // 
-            dgvRegistroTalles.AllowUserToAddRows = false;
-            dgvRegistroTalles.AllowUserToDeleteRows = false;
-            dgvRegistroTalles.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvRegistroTalles.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dgvRegistroTalles.BackgroundColor = Color.RosyBrown;
-            dgvRegistroTalles.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            DataGridViewListarTalles.AllowUserToAddRows = false;
+            DataGridViewListarTalles.AllowUserToDeleteRows = false;
+            DataGridViewListarTalles.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            DataGridViewListarTalles.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            DataGridViewListarTalles.BackgroundColor = Color.RosyBrown;
+            DataGridViewListarTalles.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = Color.DarkOliveGreen;
             dataGridViewCellStyle1.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
@@ -84,16 +84,16 @@
             dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvRegistroTalles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dgvRegistroTalles.ColumnHeadersHeight = 20;
-            dgvRegistroTalles.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dgvRegistroTalles.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3 });
-            dgvRegistroTalles.Dock = DockStyle.Fill;
-            dgvRegistroTalles.EnableHeadersVisualStyles = false;
-            dgvRegistroTalles.Location = new Point(3, 3);
-            dgvRegistroTalles.Name = "dgvRegistroTalles";
-            dgvRegistroTalles.ReadOnly = true;
-            dgvRegistroTalles.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            DataGridViewListarTalles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            DataGridViewListarTalles.ColumnHeadersHeight = 20;
+            DataGridViewListarTalles.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            DataGridViewListarTalles.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3 });
+            DataGridViewListarTalles.Dock = DockStyle.Fill;
+            DataGridViewListarTalles.EnableHeadersVisualStyles = false;
+            DataGridViewListarTalles.Location = new Point(3, 3);
+            DataGridViewListarTalles.Name = "DataGridViewListarTalles";
+            DataGridViewListarTalles.ReadOnly = true;
+            DataGridViewListarTalles.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = SystemColors.ActiveCaption;
             dataGridViewCellStyle2.Font = new Font("Britannic Bold", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
@@ -101,13 +101,13 @@
             dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgvRegistroTalles.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dgvRegistroTalles.RowHeadersWidth = 51;
-            dgvRegistroTalles.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dgvRegistroTalles.RowTemplate.DefaultCellStyle.ForeColor = Color.Black;
-            dgvRegistroTalles.RowTemplate.Height = 24;
-            dgvRegistroTalles.Size = new Size(699, 334);
-            dgvRegistroTalles.TabIndex = 0;
+            DataGridViewListarTalles.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            DataGridViewListarTalles.RowHeadersWidth = 51;
+            DataGridViewListarTalles.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            DataGridViewListarTalles.RowTemplate.DefaultCellStyle.ForeColor = Color.Black;
+            DataGridViewListarTalles.RowTemplate.Height = 24;
+            DataGridViewListarTalles.Size = new Size(699, 334);
+            DataGridViewListarTalles.TabIndex = 0;
             // 
             // Column1
             // 
@@ -168,7 +168,7 @@
             TBNombreTalle.Name = "TBNombreTalle";
             TBNombreTalle.Size = new Size(371, 30);
             TBNombreTalle.TabIndex = 6;
-            TBNombreTalle.KeyPress += String_KeyPress;
+            TBNombreTalle.KeyPress += Num_KeyPress;
             // 
             // LNombreTalle
             // 
@@ -197,7 +197,7 @@
             Text = "Form1";
             TabControlRegTalles.ResumeLayout(false);
             TabPageListaTalles.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgvRegistroTalles).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DataGridViewListarTalles).EndInit();
             PanelRegTalles.ResumeLayout(false);
             PanelRegTalles.PerformLayout();
             ResumeLayout(false);
@@ -205,7 +205,7 @@
 
         internal TabControl TabControlRegTalles;
         internal TabPage TabPageListaTalles;
-        internal DataGridView dgvRegistroTalles;
+        internal DataGridView DataGridViewListarTalles;
         internal Panel PanelRegTalles;
         internal Button BRegistrarTalle;
         internal TextBox TBNombreTalle;

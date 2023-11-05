@@ -21,6 +21,7 @@ namespace Unitivo.Repositorios.Implementaciones
             try{
                 x.Estado = true;
                 _contexto?.Categorias.Add(x);
+                _contexto?.SaveChanges();
                 return true;
             }   
             catch(Exception ex)

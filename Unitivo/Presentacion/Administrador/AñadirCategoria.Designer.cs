@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             TabControlRegCategoria = new TabControl();
             TabPageListaCategoria = new TabPage();
-            dgvRegistroCategoria = new DataGridView();
+            DataGridViewListarCategorias = new DataGridView();
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
@@ -42,7 +42,7 @@
             LNombreCategoria = new Label();
             TabControlRegCategoria.SuspendLayout();
             TabPageListaCategoria.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvRegistroCategoria).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DataGridViewListarCategorias).BeginInit();
             PanelRegCategoria.SuspendLayout();
             SuspendLayout();
             // 
@@ -59,7 +59,7 @@
             // 
             // TabPageListaCategoria
             // 
-            TabPageListaCategoria.Controls.Add(dgvRegistroCategoria);
+            TabPageListaCategoria.Controls.Add(DataGridViewListarCategorias);
             TabPageListaCategoria.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             TabPageListaCategoria.ForeColor = Color.White;
             TabPageListaCategoria.Location = new Point(4, 29);
@@ -71,46 +71,46 @@
             TabPageListaCategoria.Text = "Lista de Categorias";
             TabPageListaCategoria.UseVisualStyleBackColor = true;
             // 
-            // dgvRegistroCategoria
+            // DataGridViewListarCategorias
             // 
-            dgvRegistroCategoria.AllowUserToAddRows = false;
-            dgvRegistroCategoria.AllowUserToDeleteRows = false;
-            dgvRegistroCategoria.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvRegistroCategoria.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            dgvRegistroCategoria.BackgroundColor = Color.RosyBrown;
-            dgvRegistroCategoria.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = Color.DarkOliveGreen;
-            dataGridViewCellStyle1.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvRegistroCategoria.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dgvRegistroCategoria.ColumnHeadersHeight = 20;
-            dgvRegistroCategoria.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dgvRegistroCategoria.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3 });
-            dgvRegistroCategoria.Dock = DockStyle.Fill;
-            dgvRegistroCategoria.EnableHeadersVisualStyles = false;
-            dgvRegistroCategoria.Location = new Point(2, 3);
-            dgvRegistroCategoria.Margin = new Padding(2, 3, 2, 3);
-            dgvRegistroCategoria.Name = "dgvRegistroCategoria";
-            dgvRegistroCategoria.ReadOnly = true;
-            dgvRegistroCategoria.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.ActiveCaption;
-            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgvRegistroCategoria.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dgvRegistroCategoria.RowHeadersWidth = 51;
-            dgvRegistroCategoria.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dgvRegistroCategoria.RowTemplate.DefaultCellStyle.ForeColor = Color.Black;
-            dgvRegistroCategoria.RowTemplate.Height = 24;
-            dgvRegistroCategoria.Size = new Size(701, 333);
-            dgvRegistroCategoria.TabIndex = 0;
+            DataGridViewListarCategorias.AllowUserToAddRows = false;
+            DataGridViewListarCategorias.AllowUserToDeleteRows = false;
+            DataGridViewListarCategorias.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            DataGridViewListarCategorias.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            DataGridViewListarCategorias.BackgroundColor = Color.RosyBrown;
+            DataGridViewListarCategorias.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.DarkOliveGreen;
+            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            DataGridViewListarCategorias.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            DataGridViewListarCategorias.ColumnHeadersHeight = 20;
+            DataGridViewListarCategorias.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            DataGridViewListarCategorias.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3 });
+            DataGridViewListarCategorias.Dock = DockStyle.Fill;
+            DataGridViewListarCategorias.EnableHeadersVisualStyles = false;
+            DataGridViewListarCategorias.Location = new Point(2, 3);
+            DataGridViewListarCategorias.Margin = new Padding(2, 3, 2, 3);
+            DataGridViewListarCategorias.Name = "DataGridViewListarCategorias";
+            DataGridViewListarCategorias.ReadOnly = true;
+            DataGridViewListarCategorias.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = SystemColors.ActiveCaption;
+            dataGridViewCellStyle4.Font = new Font("Microsoft Sans Serif", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            DataGridViewListarCategorias.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            DataGridViewListarCategorias.RowHeadersWidth = 51;
+            DataGridViewListarCategorias.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            DataGridViewListarCategorias.RowTemplate.DefaultCellStyle.ForeColor = Color.Black;
+            DataGridViewListarCategorias.RowTemplate.Height = 24;
+            DataGridViewListarCategorias.Size = new Size(701, 333);
+            DataGridViewListarCategorias.TabIndex = 0;
             // 
             // Column1
             // 
@@ -200,7 +200,7 @@
             Text = "Form1";
             TabControlRegCategoria.ResumeLayout(false);
             TabPageListaCategoria.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgvRegistroCategoria).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DataGridViewListarCategorias).EndInit();
             PanelRegCategoria.ResumeLayout(false);
             PanelRegCategoria.PerformLayout();
             ResumeLayout(false);
@@ -208,7 +208,7 @@
 
         internal TabControl TabControlRegCategoria;
         internal TabPage TabPageListaCategoria;
-        internal DataGridView dgvRegistroCategoria;
+        internal DataGridView DataGridViewListarCategorias;
         internal Panel PanelRegCategoria;
         internal Button BRegistrarCategoria;
         internal TextBox TBNombreCategoria;

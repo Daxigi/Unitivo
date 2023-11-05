@@ -74,7 +74,7 @@ namespace Unitivo.Validators
             }
         }
         private bool ExisteTalle(int id){
-            if(talleRepositorio!.BuscarTalle(id) != null){
+            if(talleRepositorio!.BuscarTallePorId(id) != null){
                 return false;
             }
             else

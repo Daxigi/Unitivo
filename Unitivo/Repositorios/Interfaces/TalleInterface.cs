@@ -9,12 +9,14 @@ namespace Unitivo.Repositorios.Interfaces
 {
     public interface TalleInterface
     {
-        public void AgregarTalle(Talle Talle);
+        public bool AgregarTalle(Talle Talle);
         public bool EliminarTalle(int id);
         public bool ModificarTalle(Talle Talle);
-        public Talle BuscarTalle(int id);
+
+        public Talle BuscarTallePorId(int id);
+        public List<Talle> BuscarTalle(string descripcion);
+
         public List<Talle> ListarTalles();
         public List<Talle> ListarTallesActivos();
-        public List<Talle> BuscarTalleDescripcion(string descripcion);
     }
 }
